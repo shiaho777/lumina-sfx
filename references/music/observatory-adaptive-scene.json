@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "id": "observatory-adaptive-scene",
+  "music": { "score": "observatory-adaptive.json", "gainDb": -5 },
+  "sfx": [
+    { "id": "light-rain-loop", "durationSec": 30, "gainDb": -4 },
+    { "id": "grass-footstep", "atBeat": 4, "gainDb": 1, "pan": -0.20, "seed": 13 },
+    { "id": "grass-footstep", "atBeat": 5.05, "gainDb": 1, "pan": 0.20, "seed": 27 },
+    { "id": "timer-complete-chime", "atBeat": 24, "duckMusicDb": 5 }
+  ]
+}

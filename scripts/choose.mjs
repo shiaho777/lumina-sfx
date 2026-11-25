@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import { rankByIntent } from './intent-search.mjs';
+import { readDesign } from './remix-design.mjs';
+import { ROOT } from './recipes.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
   isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
@@ -20,16 +23,6 @@ const requests = positionals.map(query => {
     closest: ranked[0] && { id: ranked[0].id, unmatchedWords: ranked[0].missing } };
 });
 
-// Only an exact cover of the requested performances qualifies as a reusable timed scene.
-// Walk the published scene index, including nested groups and file references.
-async function leafIds(spec, base, ancestors = []) {
-  if (typeof spec === 'string') {
-    const url = new URL(spec, base);
-    if (ancestors.includes(url.href)) throw Error('Circular design ' + spec);
-    return leafIds(await read(url), url, [...ancestors, url.href]);
-  }
-  return (await Promise.all(spec.layers.map(l => l.id ?? leafIds(l.design, base, ancestors)))).flat();
-}
 function assign(leaves, index, used) {
   if (index === requests.length) return [];
   for (const [i,id] of leaves.entries()) {
@@ -43,8 +36,7 @@ async function savedScene() {
   const index = await read(new URL('../references/scenes/index.json', import.meta.url));
   for (const scene of index) {
     if (values.isolated && scene.isolation !== 'isolated') continue;
-    const url = new URL('../'+scene.file, import.meta.url);
-    const leaves = await leafIds(await read(url), url);
+    const { leaves } = await readDesign(resolve(ROOT, scene.file));
     if (leaves.length !== requests.length) continue;
     const ids = assign(leaves, 0, new Set());
     if (ids) return { id:scene.id, file:scene.file, sources:ids };

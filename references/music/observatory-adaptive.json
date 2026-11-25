@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "id": "observatory-adaptive",
+  "score": "observatory-plan.json",
+  "initial": "quiet",
+  "states": {
+    "quiet": "first-light",
+    "explore": "ascent",
+    "shelter": "still-air",
+    "danger": "return",
+    "release": "afterglow"
+  },
+  "oneShot": ["release"],
+  "defaults": { "at": "bar", "entry": "start", "fadeBeats": 0.4 },
+  "transitions": [
+    { "from": "quiet", "to": "explore", "at": "end", "fadeBeats": 0.6 },
+    { "from": "explore", "to": "danger", "entry": "phase", "fadeBeats": 0.6 },
+    { "from": "danger", "to": "explore", "entry": "phase", "fadeBeats": 0.6 },
+    { "from": "danger", "to": "shelter", "at": "end", "fadeBeats": 0.7 }
+  ],
+  "intensity": [
+    { "min": 0, "state": "quiet" },
+    { "min": 0.5, "state": "explore" },
+    { "min": 0.82, "state": "danger" }
+  ],
+  "hysteresis": 0.045,
+  "preview": {
+    "beats": 48,
+    "finish": "release",
+    "changes": [
+      { "beat": 1, "intensity": 0.2 },
+      { "beat": 3.1, "intensity": 0.59 },
+      { "beat": 3.6, "intensity": 0.49 },
+      { "beat": 11.2, "intensity": 0.94 },
+      { "beat": 23.4, "state": "shelter" },
+      { "beat": 31.1, "intensity": 0.68 }
+    ]
+  }
+}

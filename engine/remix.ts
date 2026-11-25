@@ -84,6 +84,10 @@ export interface RemixDesign {
 }
 
 export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]): SoundRecipe {
+  return resolveRemix(design, layers).recipe;
+}
+
+export function resolveRemix(design: RemixDesign, layers: readonly RemixLayer[]) {
   if (typeof design.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(design.id))
     throw Error('Use a lowercase hyphenated remix ID');
   if (!layers.length || layers.length > 4) throw Error('A remix uses one to four layers');
@@ -183,7 +187,11 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         let relative = reference.length;
         if (atMarker) {
           const marker = layers[source].recipe.markers?.[atMarker.name];
-          if (typeof marker !== 'number' || !Number.isFinite(marker)) throw Error('Unknown anchor marker');
+          if (typeof marker !== 'number' || !Number.isFinite(marker)) {
+            const names = Object.keys(layers[source].recipe.markers ?? {});
+            throw Error('Unknown anchor marker ' + atMarker.name + ' on layer ' + (source + 1) + ' referenced by layer ' + (index + 1) +
+              (names.length ? '. Available markers: ' + names.join(', ') : '. That source has no markers'));
+          }
           relative = marker / reference.speed - reference.start;
           if (relative < 0 || relative >= reference.length) throw Error('Anchor outside selected layer window');
         } else if (layers[source].recipe.loopable && layers[source].durationSec === undefined && layers[source].fitSec === undefined) {
@@ -388,7 +396,25 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         }
       : undefined,
   };
-  if (durationSec > 120 || renderDurationSec(result) > 120 || renderDurationSec(result) < 0.01)
+  const outputDurationSec = renderDurationSec(result);
+  if (durationSec > 120 || outputDurationSec > 120 || outputDurationSec < 0.01)
     throw Error('Remix duration must be 0.01 to 120 seconds');
-  return result;
+  return {
+    recipe: result,
+    layout: () => ({
+      id: design.id, durationSec, outputDurationSec, loopable, mood, markers,
+      layers: tracks.map((track, index) => {
+        const repeats = track.recipe.loopable && track.span === undefined;
+        return {
+          layer: index + 1, id: track.recipe.id, label: layers[index].label,
+          offsetSec: track.offsetSec, endSec: repeats ? durationSec : track.offsetSec + track.length,
+          sourceStartSec: track.start, speed: positions[index].speed, repeats,
+          gain: track.gain, under: track.relativeTo === undefined ? undefined : { layer: track.relativeTo + 1, byDb: track.byDb },
+          ...(fades[index].incoming ? { fadeInSec: fades[index].incoming } : {}),
+          ...(fades[index].outgoing ? { fadeOutSec: fades[index].outgoing } : {}),
+          controls: Object.fromEntries(Object.keys(track.recipe.params).map(key => [key, params[paramKey(index, key)]])),
+        };
+      }),
+    }),
+  };
 }

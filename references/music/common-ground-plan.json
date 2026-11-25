@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "common-ground",
+  "style": "cinematic",
+  "bpm": 92,
+  "key": "D minor",
+  "seed": 26083,
+  "loop": false,
+  "master": { "targetLufs": -20, "ceilingDbtp": -1 },
+  "motifs": {
+    "lantern": [
+      { "beat": 0.58, "degree": 5, "octave": 3, "duration": 0.66, "velocity": 0.58 },
+      { "beat": 1.28, "degree": 1, "duration": 0.62, "velocity": 0.68 },
+      { "beat": 1.96, "degree": 2, "duration": 0.57, "velocity": 0.63 },
+      { "beat": 2.59, "degree": 3, "duration": 1.12, "velocity": 0.72 },
+      { "beat": 4.14, "degree": 5, "duration": 0.88, "velocity": 0.69 },
+      { "beat": 5.08, "degree": 3, "duration": 0.61, "velocity": 0.62 },
+      { "beat": 5.75, "degree": 2, "duration": 1.28, "velocity": 0.57 }
+    ],
+    "answer": [
+      { "beat": 0.33, "degree": 3, "duration": 0.72, "velocity": 0.56 },
+      { "beat": 1.10, "degree": 5, "duration": 0.57, "velocity": 0.64 },
+      { "beat": 1.72, "degree": 6, "duration": 1.54, "velocity": 0.70 },
+      { "beat": 4.43, "degree": 5, "duration": 0.82, "velocity": 0.59 },
+      { "beat": 5.31, "degree": 1, "duration": 1.76, "velocity": 0.51 }
+    ]
+  },
+  "sections": [
+    {
+      "id": "ember", "role": "intro", "chords": ["Dmadd9", "Bbmaj7", "iv7", "@pivot"],
+      "mute": ["percussion"],
+      "statements": [
+        { "track": "piano", "motif": "lantern", "transpose": 12 },
+        { "track": "piano", "motif": "answer", "bar": 3, "strength": 0.85 }
+      ]
+    },
+    {
+      "id": "daylight", "role": "main", "key": "F major", "chords": ["Iadd9", "ii7", "IVmaj7", "@dominant"],
+      "mute": ["guitar", "timpani"],
+      "statements": [
+        { "track": "horn", "motif": "lantern", "articulation": "legato", "strength": 0.89 },
+        { "track": "horn", "motif": "answer", "bar": 3, "articulation": "legato", "strength": 0.85 }
+      ]
+    },
+    {
+      "id": "distance", "role": "main", "key": "D minor", "chords": ["Dmadd9", "Gm7", "Bbmaj7", "A7"],
+      "statements": [
+        { "track": "horn", "motif": "lantern", "articulation": "legato" },
+        { "track": "horn", "motif": "answer", "bar": 3, "articulation": "legato", "transpose": 12, "strength": 0.98 }
+      ]
+    },
+    {
+      "id": "settle", "role": "outro", "chords": ["Gm7", "Dmadd9"],
+      "mute": ["percussion", "cello"],
+      "statements": [{ "track": "piano", "motif": "lantern", "strength": 0.66 }]
+    }
+  ],
+  "mix": {
+    "piano": {
+      "gainDb": -8, "reverb": 0.24,
+      "pedal": [[0.2,1],[3.92,0],[4.12,1],[7.82,0],[8.1,1],[11.87,0],[12.16,1],[15.72,0],
+        [48.16,1],[51.78,0],[52.16,1],[55.64,0]]
+    },
+    "strings": { "gainDb": -14, "dynamics": [[0,0.22],[15,0.47],[26,0.61],[32,0.46],[45,0.80],[48,0.31],[56,0.17]] },
+    "horn": { "gainDb": -10, "dynamics": [[0,0.3],[16,0.4],[28,0.57],[32,0.49],[45,0.76],[48,0.44]] },
+    "cello": { "gainDb": -15 },
+    "percussion": { "gainDb": -14 },
+    "guitar": { "gainDb": -15 }
+  }
+}

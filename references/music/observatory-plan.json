@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "id": "observatory",
+  "style": "cinematic",
+  "key": "F minor",
+  "bpm": 96,
+  "seed": 54821,
+  "loop": false,
+  "quality": "studio",
+  "master": { "targetLufs": -20, "ceilingDbtp": -1 },
+  "motifs": {
+    "signal": [
+      { "beat": 0.62, "note": "C4", "duration": 0.58, "velocity": 0.57 },
+      { "beat": 1.23, "note": "Eb4", "duration": 0.69, "velocity": 0.63 },
+      { "beat": 1.95, "note": "F4", "duration": 1.42, "velocity": 0.74 },
+      { "beat": 4.20, "note": "Ab4", "duration": 0.83, "velocity": 0.71 },
+      { "beat": 5.07, "note": "F4", "duration": 1.30, "velocity": 0.64 },
+      { "beat": 6.46, "note": "Eb4", "duration": 0.84, "velocity": 0.55 }
+    ],
+    "reply": [
+      { "beat": 0.40, "note": "Eb4", "duration": 0.64, "velocity": 0.61 },
+      { "beat": 1.09, "note": "C4", "duration": 0.70, "velocity": 0.67 },
+      { "beat": 1.83, "note": "Eb4", "duration": 1.13, "velocity": 0.69 },
+      { "beat": 4.19, "note": "G4", "duration": 1.48, "velocity": 0.73 },
+      { "beat": 5.70, "note": "F4", "duration": 0.52, "velocity": 0.60 },
+      { "beat": 6.25, "note": "Eb4", "duration": 0.93, "velocity": 0.57 }
+    ],
+    "bridge": [
+      { "beat": 0.48, "note": "Bb3", "duration": 1.18, "velocity": 0.60 },
+      { "beat": 1.7, "note": "Db4", "duration": 1.48, "velocity": 0.63 },
+      { "beat": 4.82, "note": "C4", "duration": 1.41, "velocity": 0.58 },
+      { "beat": 6.26, "note": "G3", "duration": 1.32, "velocity": 0.51 }
+    ],
+    "resolve": [
+      { "beat": 0.22, "note": "Ab4", "duration": 0.71, "velocity": 0.55 },
+      { "beat": 1.08, "note": "F4", "duration": 1.44, "velocity": 0.50 },
+      { "beat": 4.12, "note": "F3", "duration": 3.60, "velocity": 0.48 },
+      { "beat": 4.18, "note": "C4", "duration": 3.53, "velocity": 0.41 },
+      { "beat": 4.25, "note": "Ab4", "duration": 3.42, "velocity": 0.38 },
+      { "beat": 5.17, "note": "G4", "duration": 2.16, "velocity": 0.36 }
+    ]
+  },
+  "sections": [
+    {
+      "id": "first-light",
+      "role": "intro",
+      "chords": ["Fmadd9", "Dbmaj7"],
+      "statements": [{ "track": "piano", "motif": "signal", "transpose": 12, "strength": 0.91 }]
+    },
+    {
+      "id": "ascent",
+      "role": "main",
+      "chords": ["Fmadd9", "Dbmaj7", "Abadd9", "Eb"],
+      "mute": ["guitar", "timpani"],
+      "statements": [
+        { "track": "horn", "motif": "signal", "articulation": "legato" },
+        { "track": "horn", "motif": "reply", "beat": 8, "articulation": "legato" }
+      ]
+    },
+    {
+      "id": "still-air",
+      "role": "break",
+      "chords": ["Bbm7", "Csus4"],
+      "mute": ["percussion", "horn", "ostinato"],
+      "statements": [{ "track": "cello", "motif": "bridge", "articulation": "legato" }]
+    },
+    {
+      "id": "return",
+      "role": "main",
+      "chords": ["Fmadd9", "Dbmaj7", "Abadd9", "C7"],
+      "statements": [
+        { "track": "horn", "motif": "signal", "articulation": "legato", "strength": 1.13 },
+        { "track": "horn", "motif": "reply", "beat": 8, "transpose": 12, "articulation": "legato", "strength": 1.09 }
+      ]
+    },
+    {
+      "id": "afterglow",
+      "role": "outro",
+      "chords": ["Dbmaj7", "Fmadd9"],
+      "mute": ["cello"],
+      "statements": [{ "track": "piano", "motif": "resolve" }]
+    }
+  ],
+  "mix": {
+    "piano": { "gainDb": -8, "reverb": 0.28, "expression": [[0, 0.94], [28, 0.70], [48, 0.88], [56, 0.72]] },
+    "strings": { "gainDb": -14, "dynamics": [[0, 0.25], [8, 0.48], [23, 0.67], [24, 0.27], [32, 0.50], [45, 0.86], [48, 0.37], [56, 0.18]] },
+    "cello": { "gainDb": -15, "dynamics": [[0, 0.28], [20, 0.57], [24, 0.35], [29, 0.68], [32, 0.48], [48, 0.32]] },
+    "horn": { "gainDb": -10, "reverb": 0.30, "dynamics": [[0, 0.39], [8, 0.43], [17, 0.62], [24, 0.43], [32, 0.52], [41.5, 0.72], [45, 0.88], [48, 0.52]] },
+    "guitar": { "gainDb": -14, "expression": [[0, 0.55], [32, 0.73], [46, 1], [48, 0.72]] },
+    "percussion": { "gainDb": -13 },
+    "timpani": { "gainDb": -13 }
+  }
+}
