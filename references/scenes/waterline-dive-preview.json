@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "id": "waterline-dive-preview",
+  "music": { "score": "../music/waterline-adaptive.json", "gainDb": -3 },
+  "sfx": [
+    { "id": "current-beneath-a-moored-hull-gentle-laps-loop", "durationSec": 39, "gainDb": -14 },
+    { "design": "dive-beneath-the-boat.json", "atBeat": 16, "alignMarker": "layer2.entry", "gainDb": -4, "duckMusicDb": 2 }
+  ]
+}

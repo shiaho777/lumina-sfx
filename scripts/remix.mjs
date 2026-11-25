@@ -9,6 +9,8 @@ import { checkIsolatedRecipes, installRecipes } from './install-files.mjs';
 
 
 const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --dest <game/audio>
+  node scripts/remix.mjs --spec <design.json> --inspect
+  node scripts/remix.mjs <base-id> --inspect
   --punch 0..1 --size 0..1 --distance 0..1 --grit 0..1
   --space dry|small_room|hallway|outdoor_open|canyon_echo|underwater|outdoor|cavern --wetness 0..1 --speed 0.25..4 --pitchShift -24..24
   --fit-seconds N (fit one complete cue to a game animation)
@@ -30,6 +32,7 @@ async function main() {
     options: {
       ...options,
       help: { type: 'boolean' },
+      inspect: { type: 'boolean' },
       isolated: { type: 'boolean' },
       extremes: { type: 'boolean' },
     },
@@ -38,7 +41,10 @@ async function main() {
     console.log(usage);
     return;
   }
-  if (!v.dest) throw Error('Specify --dest for the target game audio directory');
+  if (v.inspect && (v.dest !== undefined || v.format !== undefined || v.extremes)) {
+    throw Error('--inspect reads the design. Omit --dest, --format and --extremes');
+  }
+  if (!v.inspect && !v.dest) throw Error('Specify --dest for the target game audio directory');
   const format = v.format ?? 'ts';
   if (!['ts','wav','ogg','opus'].includes(format)) throw Error('Expected --format ts, wav, ogg or opus');
   let spec;
@@ -49,6 +55,7 @@ async function main() {
     }
     spec = v.spec;
   } else {
+    if (!positionals.length) throw Error('Choose a source recipe or provide --spec');
     if (fit !== undefined && (positionals.length !== 1 || v.style !== undefined || v.speed !== undefined)) {
       throw Error('--fit-seconds takes one recipe and sets its pace; supply layers or style via --spec');
     }
@@ -57,7 +64,7 @@ async function main() {
       names.filter((k) => v[k] !== undefined).map((k) => [k, k === 'space' ? v[k] : Number(v[k] || NaN)]),
     );
     spec = {
-      id: v.id,
+      id: v.id ?? (v.inspect ? positionals[0] + '-draft' : undefined),
       name: v.name,
       style: v.style,
       macros: fit === undefined ? macros : undefined,
@@ -68,13 +75,17 @@ async function main() {
     };
   }
   const { loadDesign } = await import('./remix-design.mjs');
-  const { renderDurationSec } = await import('../engine/sculpt.ts');
-  const { checkRecipe } = await import('../qa/check-recipe.mjs');
-  const { recipe, selected, source } = await loadDesign(spec, process.cwd(), v.mood);
+  const { recipe, selected, source, layout } = await loadDesign(spec, process.cwd(), v.mood);
   if (v.isolated) {
     await checkIsolatedRecipes(selected);
     if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');
   }
+  if (v.inspect) {
+    console.log(JSON.stringify(layout(), null, 2));
+    return;
+  }
+  const { renderDurationSec } = await import('../engine/sculpt.ts');
+  const { checkRecipe } = await import('../qa/check-recipe.mjs');
   const temp = await mkdtemp(join(tmpdir(), 'lumina-remix-'));
   let qa, wav;
   try {

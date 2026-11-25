@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { composeRecipe, renderSound } from '../engine/index.ts';
 import { readFile } from 'node:fs/promises';
@@ -115,6 +116,13 @@ assert.equal(nested.selected.length, 5);
 assert.ok(Object.hasOwn(nested.recipe.markers, 'layer1.layer4.buckle'));
 assert.ok(nested.source.includes('const group2 = composeRecipe('));
 assert.ok(!nested.source.includes('wet-road-barrier.json'));
+const inspect = fileURLToPath(new URL('../scripts/remix.mjs', import.meta.url));
+const nestedFile = fileURLToPath(new URL('../references/scenes/barrier-and-broken-glass.json', import.meta.url));
+const layout = JSON.parse(execFileSync(process.execPath, [...process.execArgv, inspect, '--spec', nestedFile, '--inspect']));
+assert.deepEqual(layout.markers, nested.recipe.markers);
+assert.equal(layout.layers[0].design.layers.length, 4);
+assert.equal(layout.layers[1].offsetSec, nested.recipe.markers['layer1.layer4.buckle'] + 0.055);
+assert.equal(layout.layers[1].endSec, nested.recipe.durationSec);
 await assert.rejects(
   loadDesign({ id: 'broken', layers: [{ id: 'light-blade-swish', design: {} }] }),
   /one id or design/,

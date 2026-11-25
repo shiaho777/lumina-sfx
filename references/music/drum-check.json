@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "id": "drum-check",
+  "bpm": 100,
+  "beatsPerBar": 4,
+  "bars": 4,
+  "seed": 31913,
+  "quality": "studio",
+  "loop": false,
+  "master": { "targetLufs": -22, "ceilingDbtp": -1 },
+  "tracks": [
+    {
+      "id": "kit",
+      "instrument": "drums",
+      "gainDb": -5,
+      "notes": [
+        { "beat": 0.18, "duration": 0.52, "note": "kick", "velocity": 0.65 },
+        { "beat": 1.24, "duration": 0.55, "note": "kick", "velocity": 0.86 },
+        { "beat": 2.60, "duration": 0.62, "note": "low-drum", "velocity": 0.80 },
+        { "beat": 4.10, "duration": 0.34, "note": "snare", "velocity": 0.74 },
+        { "beat": 4.82, "duration": 0.24, "note": "snare", "velocity": 0.35 },
+        { "beat": 5.28, "duration": 0.33, "note": "snare", "velocity": 0.89 },
+        { "beat": 6.29, "duration": 0.36, "note": "tom", "velocity": 0.64 },
+        { "beat": 6.81, "duration": 0.36, "note": "tom", "velocity": 0.78 },
+        { "beat": 8.15, "duration": 0.39, "note": "kick", "velocity": 0.82 },
+        { "beat": 9.12, "duration": 0.31, "note": "snare", "velocity": 0.68 },
+        { "beat": 10.31, "duration": 0.35, "note": "kick", "velocity": 0.72 },
+        { "beat": 10.78, "duration": 0.36, "note": "kick", "velocity": 0.80 },
+        { "beat": 11.15, "duration": 0.28, "note": "snare", "velocity": 0.79 },
+        { "beat": 11.69, "duration": 0.29, "note": "tom", "velocity": 0.70 },
+        { "beat": 12.13, "duration": 0.56, "note": "low-drum", "velocity": 0.86 }
+      ]
+    }
+  ]
+}

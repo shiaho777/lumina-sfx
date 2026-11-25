@@ -1,6 +1,6 @@
 # Lumina SFX
 
-An offline sound studio for coding agents. Find a sound among 2,844 editable effects, layer it with others, and export a WAV or wire it into your game.
+An offline sound studio for coding agents. Find a sound among 2,844 editable effects, layer it with others, and export a WAV or wire it into your game. Compose instrumental game music and export an editable score, stereo WAV and track stems.
 
 ## Listen
 
@@ -12,7 +12,7 @@ An offline sound studio for coding agents. Find a sound among 2,844 editable eff
 
 ## Install
 
-With Git and Node.js 22.20 or newer installed, run this command and select your coding agent.
+With Git and Node.js 22.12 or newer installed, run this command and select your coding agent.
 
 ```sh
 npx skills add LuminaBench/lumina-sfx -g
@@ -45,6 +45,7 @@ npx skills remove lumina-sfx -g
 
 Export WAVs for any audio editor, or install playback helpers for Web Audio / Three.js, Godot 4, Unity, Unreal Engine 5 and Python / Pygame. Web projects can also use the editable TypeScript recipes.
 
+- **Game music.** Arrange chamber, groove, ambient, menu, arcade or cinematic cues. Export a stereo master and stems, or build an adaptive bank that changes sections on the musical clock. Compare scores on the audition desk and preview them with catalog effects. [Music workflow](references/music-workflow.md)
 - **Menus and launch videos.** Fit a click, a typed word or a directional swipe to a cut. [Menu examples](references/menu-design.md) · [Launch audio](references/launch-audio.md)
 - **Games and ambience.** Tie footsteps to ground contact, blend a car engine with road noise, or let a thunderstorm build around a campfire. [Scene recipes](references/scene-design.md) · [Mood and crossfades](references/scene-intent.md)
 
@@ -58,7 +59,9 @@ node scripts/choose.mjs "thocky mechanical keyboard click" --isolated
 node scripts/choose.mjs "fire crackle" "distant thunder" --scene
 node scripts/search.mjs rain --loop
 node scripts/search.mjs moored hull --background-checked
+node scripts/remix.mjs --spec references/scenes/fireside-distant-thunder.json --inspect
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio
+npm run --silent music -- inspect references/music/common-ground-adaptive.json
 node scripts/install-sfx.mjs grass-footstep gravel-footstep --engine godot --project /path/to/game
 npm run --silent qa -- grass-footstep --both-levels --extremes
 ```

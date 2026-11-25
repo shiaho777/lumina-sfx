@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "common-ground-adaptive",
+  "score": "common-ground-plan.json",
+  "initial": "quiet",
+  "states": { "quiet": "ember", "bright": "daylight", "threat": "distance", "leave": "settle" },
+  "oneShot": ["leave"],
+  "defaults": { "at": "bar", "entry": "harmonic", "waitBars": 1, "fadeBeats": 0.35 },
+  "preview": {
+    "beats": 40,
+    "finish": "leave",
+    "changes": [{ "beat": 7.2, "state": "bright" }, { "beat": 15.1, "state": "threat" }]
+  }
+}

@@ -1,14 +1,48 @@
 // Audio delivery uses the exact master that passed QA. Keep compressed delivery optional.
 import { createHash } from 'node:crypto';
-import { existsSync } from 'node:fs';
-import { link, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { existsSync, writeFileSync } from 'node:fs';
+import { link, mkdir, mkdtemp, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import { homedir, tmpdir } from 'node:os';
-import { basename, dirname, join } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 
 const run = promisify(execFile);
 export const digest = bytes => createHash('sha256').update(bytes).digest('hex');
+
+export async function publishAudioProject(directory, id, build) {
+  const destination = resolve(directory);
+  const project = join(destination, id);
+  await mkdir(destination, { recursive: true });
+  const stage = await mkdtemp(join(destination, '.lumina-audio-'));
+  try {
+    const write = (file, bytes) => {
+      writeFileSync(join(stage, file), bytes);
+      return { file, sha256: digest(bytes) };
+    };
+    const assets = await build(write);
+    try {
+      await rename(stage, project);
+    } catch (error) {
+      if (!['EEXIST', 'ENOTEMPTY', 'ENOTDIR', 'EISDIR'].includes(error.code)) throw error;
+      const expected = (await readdir(stage)).sort();
+      let existing;
+      try {
+        existing = (await readdir(project)).sort();
+      } catch (statError) {
+        if (statError.code !== 'ENOTDIR') throw statError;
+      }
+      const conflict = () => Error('Project already exists with different files: ' + project);
+      if (!existing || existing.length !== expected.length || expected.some((name, i) => name !== existing[i])) throw conflict();
+      for (const name of expected) {
+        if (digest(await readFile(join(stage, name))) !== digest(await readFile(join(project, name)))) throw conflict();
+      }
+    }
+    return { project, assets };
+  } finally {
+    await rm(stage, { recursive: true, force: true });
+  }
+}
 
 export async function publishAsset(path, bytes) {
   await mkdir(dirname(path), { recursive: true });
@@ -37,7 +71,7 @@ export async function encodeDelivery(wav, format) {
   try {
     const source = join(temp, 'master.wav'), output = join(temp, 'delivery.' + format);
     const channels = wav.readUInt16LE(22), rate = wav.readUInt32LE(24);
-    const frames = (wav.length - 44) / (2 * channels);
+    const frames = wav.readUInt32LE(40) / wav.readUInt16LE(32);
     await writeFile(source, wav);
     const codec = format === 'ogg' ? ['-c:a', 'libvorbis', '-q:a', '6'] : ['-c:a', 'libopus', '-b:a', channels === 2 ? '128k' : '80k'];
     for (const trimDb of [1.5, 3, 6]) {

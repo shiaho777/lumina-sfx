@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "id": "waterline-adaptive",
+  "score": "waterline-plan.json",
+  "initial": "drift",
+  "states": { "drift": "surface", "flow": "current", "leave": "shore" },
+  "oneShot": ["leave"],
+  "transitions": [{ "from": "drift", "to": "flow", "at": "end", "fadeBeats": 0.38 }],
+  "preview": {
+    "beats": 48,
+    "changes": [{ "beat": 12.5, "state": "flow" }],
+    "finish": "leave"
+  }
+}

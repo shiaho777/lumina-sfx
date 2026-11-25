@@ -11,18 +11,28 @@ Start with what the listener should recognize, where their ears are, and what th
 
 For emotional direction, shared pitched accents and transitions between beds, use the [scene intent guide](scene-intent.md).
 
+Use `scene:preview` to play a score, plan or adaptive routing alongside catalog recipes and existing remix JSON designs. Place effects in seconds or musical beats. Use `alignMarker` to land a contact at that time and `duckMusicDb` to give the event priority. The preview exports the mix and aligned music and SFX buses. [Music and SFX preview example](music-workflow.md#review-the-cue-in-its-game-mix)
+
 ## Print a timed scene
 
 ```sh
+node scripts/remix.mjs --spec references/scenes/dive-beneath-the-boat.json --inspect
 node scripts/remix.mjs --spec references/scenes/dive-beneath-the-boat.json --format wav --extremes --dest /absolute/game/audio
 ```
 
+Inspect a recipe ID or design before exporting. The JSON gives each group's layer offsets and ends, source seek and playback speed, crossfades, markers, and native control ranges with the selected defaults. Layer times and markers are local to their group, before group-wide speed and room processing. `outputDurationSec` includes that processing. Listening and `--extremes` check the rendered sound.
+
 - Anchor an arrival with `"atMarker":{"layer":1,"name":"closest","shiftSec":-0.1}`. Layer numbers start at one. This cue enters 100 ms before the first layer's closest pass. Anchors resolve after that layer's seek and speed adjustments. Override timing with an explicit offset only when it stands alone.
+- Use `fitSec` on a layer or `--fit-seconds 0.18` on a single recipe to fit an animation. Add `afterLayer.crossfadeSec` when one layer should carry into the next.
 - Use `fromMarker` to seek into a take. Use `durationSec` to crop a one-shot or hold a repeating loop for a fixed time. Cropped edges receive short fades. A bounded loop prints as a one-shot.
 - Write `envelope` as increasing pairs of local playback seconds and linear gain. Between points the engine interpolates power. Pair complementary fades over uncorrelated sounds such as wet tire spray and friction. For two copies of the same recording, listen for a hollow or doubled attack. Use one copy where it carries the event.
 - Muffle a source across a transition with `"muffle":{"cutoffHz":300,"envelope":[[0,0],[0.4,1]]}`. The second number is the filtered fraction. Keep local bubbles and the actual hydrophone track audible when filtering the surface boat.
 - Set the design's `style` to `natural`, `cinematic`, or `arcade`. Explicit design macros override preset fields. Use the native recipe controls for performance differences such as force. Mastering and pitch processing can shift a transient slightly. Landmarks describe authored timing in the base performance, with the current seed and controls determining the exact audible accent.
 - Export a design as TypeScript to retain its editable layers, credits, and qualified landmarks such as `layer2.contact`. For deeper arrangements, import that recipe into another call to `composeRecipe` in the target game. In a CLI design, a layer can also supply `"design":"wet-road-barrier.json"` or an inline design object in place of `id`. Paths resolve relative to the containing file. A nested export embeds its arrangement in the game recipe. [Five-source road and glass example](scenes/barrier-and-broken-glass.json)
+
+Native controls in `params` shape the action. The macros at the root of [catalog.json](../catalog.json) cover attack (`punch`), low-end weight (`size`), perspective (`distance`), room (`space`, `wetness`), saturation (`grit`), pace (`speed`) and independent pitch (`pitchShift`). Layer gains are linear. Leave an audible layer at zero and use `under` to keep an ambience bed below its focus. [Mood and relative gain examples](scene-intent.md)
+
+Render as `ts` for editable playback or `wav` for PCM and sample-accurate loops. `ogg` and `opus` require local FFmpeg. Preserve the delivery metadata for recording credits.
 
 ## Wire actions to the game
 
@@ -31,6 +41,8 @@ npm run scene:install -- references/scenes/wet-road-live.json --dest /absolute/g
 ```
 
 The Web Audio installer generates a scene factory and copies the recipes and local runtime it imports. It detects conflicts with edited game files. Create the scene after audio is unlocked, and reuse it for the lifetime of the vehicle.
+
+For individual IDs, use `node scripts/install-sfx.mjs <id> --project /absolute/game`. You can select `web`, `godot`, `unity`, `unreal`, `python` or `wav` with `--engine`. For a source-only Web Audio install, pass `--dest /absolute/game/src/audio` and import the installed recipe and `SfxPlayer` from `./audio/engine/index.ts`.
 
 ```ts
 import createRoad from './audio/scenes/wet-road-live.ts';

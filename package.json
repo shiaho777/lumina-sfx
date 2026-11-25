@@ -9,7 +9,10 @@
   "scripts": {
     "qa": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/run.mjs",
     "test:scenes": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/scene.test.mjs qa/scene-mood.test.mjs qa/intent-search.test.mjs qa/editorial.test.mjs",
+    "test:music": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/music.test.mjs qa/music-render.test.mjs qa/production-audio.test.mjs qa/adaptive-music.test.mjs qa/harmony-performance.test.mjs",
+    "music": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/music.mjs",
     "scene:install": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/install-scene.mjs",
+    "scene:preview": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/preview-scene.mjs",
     "audition": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/audition.mjs",
     "compare": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/compare.mjs",
     "catalog": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build-catalog.mjs",
