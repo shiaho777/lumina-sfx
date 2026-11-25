@@ -8,6 +8,7 @@ This development fork maintains the native instrument models, editable music sco
 
 | Preview | In the mix |
 | --- | --- |
+| [▶ Music example](https://cdn.jsdelivr.net/gh/shiaho777/lumina-sfx@studio/.github/previews/music-example.m4a) · 15 s | Piano, solo violin and layered strings synthesized in Lumina. |
 | [▶ Upwind](https://cdn.jsdelivr.net/gh/shiaho777/lumina-sfx@studio/.github/previews/upwind.m4a) · 20 s | An original piano and violin hook grows into strings and timpani. [Editable arrangement](references/music/upwind-plan.json) |
 | [▶ Heavy rain and close thunder](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/storm-front.mp3) · 5 s | A gust moves through heavy rain. A close thunderclap breaks over it. |
 | [▶ Three shots on steel](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/pistol-steel-ricochet.mp3) · 2.85 s | Three sharp reports, each answered by a steel impact and a ricochet. |
