@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "id": "upwind",
+  "style": "cinematic",
+  "bpm": 108,
+  "key": "Eb major",
+  "quality": "studio",
+  "room": "hall",
+  "seed": 889327,
+  "loop": false,
+  "backing": false,
+  "master": {
+    "targetLufs": -16.5,
+    "ceilingDbtp": -1.3
+  },
+  "parts": {
+    "piano": "piano",
+    "violin": "violin",
+    "cello": "cello",
+    "strings": "strings",
+    "timpani": "timpani",
+    "kit": "drums"
+  },
+  "motifs": {
+    "opening-hook": [
+      {"beat":0.06,"note":"G4","duration":0.55,"velocity":0.69},
+      {"beat":0.62,"note":"C5","duration":0.27,"velocity":0.73,"articulation":"legato"},
+      {"beat":0.9,"note":"D5","duration":0.37,"velocity":0.65,"articulation":"legato"},
+      {"beat":1.28,"note":"Eb5","duration":1.24,"velocity":0.84,"articulation":"legato"},
+      {"beat":2.54,"note":"G5","duration":0.35,"velocity":0.78,"articulation":"legato"},
+      {"beat":2.9,"note":"F5","duration":0.95,"velocity":0.67,"articulation":"legato"},
+      {"beat":4.05,"note":"Eb5","duration":1.01,"velocity":0.74,"articulation":"legato"},
+      {"beat":5.07,"note":"C5","duration":0.69,"velocity":0.66,"articulation":"legato"},
+      {"beat":5.77,"note":"Bb4","duration":0.44,"velocity":0.6,"articulation":"legato"},
+      {"beat":6.22,"note":"Ab4","duration":1.06,"velocity":0.68,"articulation":"legato"},
+      {"beat":7.29,"note":"Bb4","duration":0.56,"velocity":0.62,"articulation":"legato"}
+    ],
+    "answer": [
+      {"beat":0,"note":"G4","duration":0.6,"velocity":0.67},
+      {"beat":0.61,"note":"Bb4","duration":0.28,"velocity":0.68,"articulation":"legato"},
+      {"beat":0.9,"note":"D5","duration":0.37,"velocity":0.71,"articulation":"legato"},
+      {"beat":1.28,"note":"Eb5","duration":1.24,"velocity":0.84,"articulation":"legato"},
+      {"beat":2.54,"note":"Bb5","duration":0.36,"velocity":0.81,"articulation":"legato"},
+      {"beat":2.91,"note":"G5","duration":0.89,"velocity":0.74,"articulation":"legato"},
+      {"beat":4.03,"note":"F5","duration":1.04,"velocity":0.76,"articulation":"legato"},
+      {"beat":5.08,"note":"Eb5","duration":0.62,"velocity":0.7,"articulation":"legato"},
+      {"beat":5.71,"note":"C5","duration":0.43,"velocity":0.64,"articulation":"legato"},
+      {"beat":6.15,"note":"Bb4","duration":1.64,"velocity":0.71,"articulation":"legato"}
+    ],
+    "lifted-hook": [
+      {"beat":0.06,"note":"Bb4","duration":0.55,"velocity":0.71},
+      {"beat":0.62,"note":"D5","duration":0.27,"velocity":0.73,"articulation":"legato"},
+      {"beat":0.9,"note":"F5","duration":0.37,"velocity":0.77,"articulation":"legato"},
+      {"beat":1.28,"note":"G5","duration":1.24,"velocity":0.87,"articulation":"legato"},
+      {"beat":2.54,"note":"F5","duration":0.17,"velocity":0.67,"articulation":"legato"},
+      {"beat":2.72,"note":"G5","duration":0.17,"velocity":0.73,"articulation":"legato"},
+      {"beat":2.9,"note":"G5","duration":0.21,"velocity":0.72,"articulation":"accent"},
+      {"beat":3.12,"note":"F5","duration":0.73,"velocity":0.69,"articulation":"legato"},
+      {"beat":4.07,"note":"Ab5","duration":0.74,"velocity":0.87,"articulation":"legato"},
+      {"beat":4.82,"note":"G5","duration":0.58,"velocity":0.8,"articulation":"legato"},
+      {"beat":5.41,"note":"Eb5","duration":0.91,"velocity":0.72,"articulation":"legato"},
+      {"beat":6.33,"note":"C5","duration":0.74,"velocity":0.66,"articulation":"legato"},
+      {"beat":7.08,"note":"Eb5","duration":0.75,"velocity":0.75,"articulation":"legato"}
+    ],
+    "resolve": [
+      {"beat":0.06,"note":"F5","duration":0.62,"velocity":0.8},
+      {"beat":0.69,"note":"G5","duration":0.32,"velocity":0.77,"articulation":"legato"},
+      {"beat":1.02,"note":"Ab5","duration":1.1,"velocity":0.88,"articulation":"legato"},
+      {"beat":2.14,"note":"F5","duration":0.46,"velocity":0.74,"articulation":"legato"},
+      {"beat":2.61,"note":"D5","duration":1.31,"velocity":0.76,"articulation":"legato"},
+      {"beat":4,"note":"Eb5","duration":2.51,"velocity":0.82,"articulation":"legato"},
+      {"beat":6.53,"note":"G4","duration":0.4,"velocity":0.53,"articulation":"legato"},
+      {"beat":6.94,"note":"Bb4","duration":0.32,"velocity":0.54,"articulation":"legato"},
+      {"beat":7.28,"note":"Eb5","duration":0.49,"velocity":0.54,"articulation":"legato"}
+    ],
+    "piano-outline": [
+      {"beat":0.02,"note":"C3","duration":1.62,"velocity":0.57},
+      {"beat":0.07,"note":"G3","duration":1.66,"velocity":0.47},
+      {"beat":0.16,"note":"Eb4","duration":1.41,"velocity":0.43},
+      {"beat":0.53,"note":"Bb3","duration":1.32,"velocity":0.43},
+      {"beat":1.08,"note":"G4","duration":0.34,"velocity":0.4},
+      {"beat":1.49,"note":"Eb5","duration":0.73,"velocity":0.46},
+      {"beat":2.22,"note":"G3","duration":0.54,"velocity":0.45},
+      {"beat":2.75,"note":"D4","duration":0.81,"velocity":0.4},
+      {"beat":3.18,"note":"G4","duration":0.51,"velocity":0.38},
+      {"beat":4.02,"note":"Ab2","duration":2.04,"velocity":0.59},
+      {"beat":4.07,"note":"Eb3","duration":1.91,"velocity":0.46},
+      {"beat":4.16,"note":"G3","duration":1.87,"velocity":0.45},
+      {"beat":4.26,"note":"C4","duration":1.42,"velocity":0.4},
+      {"beat":5.43,"note":"Eb4","duration":0.53,"velocity":0.4},
+      {"beat":6.29,"note":"Eb3","duration":0.91,"velocity":0.44},
+      {"beat":6.84,"note":"G3","duration":0.45,"velocity":0.38},
+      {"beat":7.31,"note":"C4","duration":0.59,"velocity":0.4}
+    ],
+    "piano-answer": [
+      {"beat":0.015,"note":"Eb2","duration":1.76,"velocity":0.64},
+      {"beat":0.056,"note":"Bb2","duration":1.64,"velocity":0.52},
+      {"beat":0.11,"note":"F3","duration":1.52,"velocity":0.43},
+      {"beat":0.21,"note":"G3","duration":1.57,"velocity":0.51},
+      {"beat":0.55,"note":"Bb3","duration":0.82,"velocity":0.44},
+      {"beat":1.59,"note":"G4","duration":0.38,"velocity":0.53},
+      {"beat":2.02,"note":"Bb3","duration":1.03,"velocity":0.53},
+      {"beat":2.59,"note":"Eb4","duration":0.47,"velocity":0.48},
+      {"beat":3.1,"note":"G4","duration":0.65,"velocity":0.44},
+      {"beat":4,"note":"Bb2","duration":1.77,"velocity":0.61},
+      {"beat":4.06,"note":"F3","duration":1.64,"velocity":0.47},
+      {"beat":4.13,"note":"Ab3","duration":1.68,"velocity":0.48},
+      {"beat":4.22,"note":"C4","duration":1.37,"velocity":0.4},
+      {"beat":5.41,"note":"Eb4","duration":0.53,"velocity":0.43},
+      {"beat":6.12,"note":"Bb3","duration":0.9,"velocity":0.51},
+      {"beat":7.09,"note":"F4","duration":0.73,"velocity":0.4},
+      {"beat":8.04,"note":"G2","duration":1.91,"velocity":0.56},
+      {"beat":8.09,"note":"D3","duration":1.81,"velocity":0.51},
+      {"beat":8.17,"note":"F3","duration":1.72,"velocity":0.49},
+      {"beat":8.24,"note":"Bb3","duration":1.71,"velocity":0.56},
+      {"beat":9.42,"note":"D4","duration":0.62,"velocity":0.47},
+      {"beat":10.16,"note":"G3","duration":0.71,"velocity":0.48},
+      {"beat":10.93,"note":"Bb3","duration":0.56,"velocity":0.49},
+      {"beat":11.5,"note":"D4","duration":0.37,"velocity":0.43},
+      {"beat":12.01,"note":"Ab2","duration":2.08,"velocity":0.66},
+      {"beat":12.08,"note":"Eb3","duration":2.01,"velocity":0.49},
+      {"beat":12.14,"note":"G3","duration":1.98,"velocity":0.53},
+      {"beat":12.24,"note":"C4","duration":1.73,"velocity":0.53},
+      {"beat":13.43,"note":"Eb4","duration":0.53,"velocity":0.53},
+      {"beat":14.04,"note":"C4","duration":0.44,"velocity":0.49},
+      {"beat":14.55,"note":"Eb4","duration":0.48,"velocity":0.57},
+      {"beat":15.09,"note":"G4","duration":0.69,"velocity":0.5}
+    ],
+    "piano-cadence": [
+      {"beat":0.02,"note":"Bb2","duration":2.41,"velocity":0.65},
+      {"beat":0.058,"note":"F3","duration":1.86,"velocity":0.53},
+      {"beat":0.14,"note":"Ab3","duration":2.28,"velocity":0.52},
+      {"beat":0.18,"note":"D4","duration":1.94,"velocity":0.46},
+      {"beat":1.64,"note":"F4","duration":0.92,"velocity":0.48},
+      {"beat":2.68,"note":"Bb3","duration":0.98,"velocity":0.52},
+      {"beat":3.19,"note":"D4","duration":0.67,"velocity":0.53},
+      {"beat":4.01,"note":"Eb2","duration":3.65,"velocity":0.66},
+      {"beat":4.065,"note":"Bb2","duration":3.34,"velocity":0.55},
+      {"beat":4.12,"note":"Eb3","duration":3.13,"velocity":0.5},
+      {"beat":4.18,"note":"G3","duration":2.94,"velocity":0.54},
+      {"beat":4.29,"note":"Bb3","duration":2.87,"velocity":0.46},
+      {"beat":4.38,"note":"F4","duration":2.65,"velocity":0.43},
+      {"beat":4.54,"note":"G4","duration":2.46,"velocity":0.5},
+      {"beat":7.31,"note":"Eb4","duration":0.58,"velocity":0.44}
+    ],
+    "cello-motion": [
+      {"beat":0.025,"note":"Eb3","duration":1.23,"velocity":0.53},
+      {"beat":1.27,"note":"G3","duration":0.65,"velocity":0.58},
+      {"beat":1.93,"note":"Bb3","duration":1.26,"velocity":0.58},
+      {"beat":3.21,"note":"G3","duration":0.65,"velocity":0.51},
+      {"beat":4.08,"note":"F3","duration":1.84,"velocity":0.56},
+      {"beat":5.93,"note":"Eb3","duration":0.83,"velocity":0.53},
+      {"beat":6.77,"note":"D3","duration":1.05,"velocity":0.56},
+      {"beat":8.09,"note":"G3","duration":2.52,"velocity":0.55},
+      {"beat":10.62,"note":"Bb3","duration":1.2,"velocity":0.57},
+      {"beat":12.04,"note":"Ab3","duration":0.96,"velocity":0.63},
+      {"beat":13.01,"note":"G3","duration":0.7,"velocity":0.54},
+      {"beat":13.72,"note":"Eb3","duration":1.95,"velocity":0.58}
+    ],
+    "cello-home": [
+      {"beat":0.03,"note":"D3","duration":1.94,"velocity":0.61},
+      {"beat":1.98,"note":"F3","duration":1.82,"velocity":0.66},
+      {"beat":4.01,"note":"Eb3","duration":3.52,"velocity":0.63}
+    ],
+    "ensemble-lift": [
+      {"beat":0.12,"note":"G3","duration":3.58,"velocity":0.45},
+      {"beat":0.28,"note":"Bb3","duration":3.37,"velocity":0.47},
+      {"beat":0.44,"note":"Eb4","duration":3.17,"velocity":0.44},
+      {"beat":4.1,"note":"F3","duration":3.64,"velocity":0.43},
+      {"beat":4.22,"note":"Ab3","duration":3.57,"velocity":0.45},
+      {"beat":4.29,"note":"C4","duration":3.51,"velocity":0.41},
+      {"beat":8.12,"note":"G3","duration":3.66,"velocity":0.5},
+      {"beat":8.24,"note":"Bb3","duration":3.54,"velocity":0.48},
+      {"beat":8.31,"note":"D4","duration":3.47,"velocity":0.45},
+      {"beat":12.1,"note":"Ab3","duration":3.57,"velocity":0.51},
+      {"beat":12.22,"note":"C4","duration":3.51,"velocity":0.55},
+      {"beat":12.34,"note":"Eb4","duration":3.44,"velocity":0.48}
+    ],
+    "ensemble-home": [
+      {"beat":0.06,"note":"F3","duration":3.78,"velocity":0.54},
+      {"beat":0.14,"note":"Ab3","duration":3.72,"velocity":0.52},
+      {"beat":0.29,"note":"D4","duration":3.57,"velocity":0.6},
+      {"beat":4.04,"note":"G3","duration":3.69,"velocity":0.57},
+      {"beat":4.14,"note":"Bb3","duration":3.54,"velocity":0.52},
+      {"beat":4.27,"note":"Eb4","duration":3.41,"velocity":0.53}
+    ],
+    "timpani-lift": [
+      {"beat":0.012,"note":"Eb3","duration":1.65,"velocity":0.58},
+      {"beat":7.39,"note":"Bb2","duration":0.56,"velocity":0.51},
+      {"beat":8.02,"note":"G2","duration":1.75,"velocity":0.59},
+      {"beat":12.04,"note":"Ab2","duration":1.53,"velocity":0.62}
+    ],
+    "timpani-home": [
+      {"beat":0.012,"note":"Bb2","duration":1.27,"velocity":0.59},
+      {"beat":2.9,"note":"Bb2","duration":0.39,"velocity":0.38},
+      {"beat":3.42,"note":"Bb2","duration":0.49,"velocity":0.58},
+      {"beat":4.012,"note":"Eb3","duration":2.93,"velocity":0.77}
+    ],
+    "kit-lift": [
+      {"beat":0.008,"note":"low-drum","duration":1.15,"velocity":0.63},
+      {"beat":2.9,"note":"tom","duration":0.7,"velocity":0.49},
+      {"beat":4,"note":"kick","duration":0.59,"velocity":0.59},
+      {"beat":6.49,"note":"tom","duration":0.6,"velocity":0.57},
+      {"beat":7.59,"note":"snare","duration":0.35,"velocity":0.42},
+      {"beat":8.017,"note":"crash","duration":2.1,"velocity":0.57},
+      {"beat":8.03,"note":"low-drum","duration":1.43,"velocity":0.63},
+      {"beat":10.52,"note":"kick","duration":0.59,"velocity":0.61},
+      {"beat":11.18,"note":"snare","duration":0.6,"velocity":0.49},
+      {"beat":12.016,"note":"low-drum","duration":1.09,"velocity":0.7},
+      {"beat":14.2,"note":"tom","duration":0.59,"velocity":0.5},
+      {"beat":14.68,"note":"tom","duration":0.54,"velocity":0.52},
+      {"beat":15.27,"note":"snare","duration":0.53,"velocity":0.51}
+    ],
+    "kit-home": [
+      {"beat":0.02,"note":"kick","duration":0.67,"velocity":0.59},
+      {"beat":1.16,"note":"snare","duration":0.52,"velocity":0.54},
+      {"beat":2.58,"note":"tom","duration":0.45,"velocity":0.53},
+      {"beat":3.5,"note":"tom","duration":0.41,"velocity":0.68},
+      {"beat":4.008,"note":"low-drum","duration":1.64,"velocity":0.75},
+      {"beat":4.032,"note":"crash","duration":2.56,"velocity":0.63},
+      {"beat":5.96,"note":"kick","duration":0.63,"velocity":0.49}
+    ]
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "role": "intro",
+      "chords": ["Cmadd9","Abmaj7"],
+      "statements": [
+        {"track":"piano","motif":"piano-outline"},
+        {"track":"piano","motif":"opening-hook","strength":0.75,"articulation":"sustain"},
+        {"track":"violin","motif":"opening-hook","strength":0.88}
+      ]
+    },
+    {
+      "id": "ascent",
+      "role": "main",
+      "chords": ["Ebadd9","Bb7sus4","Gm7","Abmaj7"],
+      "statements": [
+        {"track":"piano","motif":"piano-answer"},
+        {"track":"violin","motif":"answer"},
+        {"track":"violin","motif":"lifted-hook","bar":3},
+        {"track":"cello","motif":"cello-motion","articulation":"legato"},
+        {"track":"strings","motif":"ensemble-lift","articulation":"swell"},
+        {"track":"timpani","motif":"timpani-lift"},
+        {"track":"kit","motif":"kit-lift"}
+      ]
+    },
+    {
+      "id": "arrival",
+      "role": "outro",
+      "chords": ["Bb7","Ebadd9"],
+      "statements": [
+        {"track":"piano","motif":"piano-cadence"},
+        {"track":"violin","motif":"resolve"},
+        {"track":"cello","motif":"cello-home","articulation":"legato"},
+        {"track":"strings","motif":"ensemble-home","articulation":"swell"},
+        {"track":"timpani","motif":"timpani-home"},
+        {"track":"kit","motif":"kit-home"}
+      ]
+    }
+  ],
+  "mix": {
+    "piano": {
+      "gainDb": -9.5,
+      "pan": -0.22,
+      "reverb": 0.1,
+      "pedal": [
+        [0,0],
+        [0.04,1],
+        [3.76,0],
+        [4.07,1],
+        [7.82,0],
+        [8.1,1],
+        [11.78,0],
+        [12.08,1],
+        [15.81,0],
+        [16.09,1],
+        [19.76,0],
+        [20.07,1],
+        [23.77,0],
+        [24.08,1],
+        [27.76,0],
+        [28.07,1],
+        [31.48,0]
+      ]
+    },
+    "violin": {
+      "gainDb": -8,
+      "pan": 0.13,
+      "reverb": 0.19,
+      "dynamics": [
+        [0,0.39],
+        [1.48,0.58],
+        [3.14,0.48],
+        [5.13,0.4],
+        [7.92,0.46],
+        [9.34,0.62],
+        [11.05,0.68],
+        [13.7,0.47],
+        [15.97,0.51],
+        [17.37,0.72],
+        [21,0.82],
+        [23.92,0.55],
+        [25.11,0.83],
+        [27.81,0.67],
+        [28,0.72],
+        [29.43,0.56],
+        [30.44,0.39],
+        [32,0.28]
+      ]
+    },
+    "cello": {
+      "gainDb": -13,
+      "pan": -0.26,
+      "reverb": 0.15,
+      "dynamics": [[0,0.33],[9,0.39],[14,0.51],[19.2,0.58],[25,0.66],[28,0.53],[32,0.2]]
+    },
+    "strings": {
+      "gainDb": -15.1,
+      "pan": 0.04,
+      "reverb": 0.19,
+      "dynamics": [[0,0.29],[8,0.35],[11.9,0.49],[15.83,0.48],[20,0.65],[25,0.72],[28,0.74],[30.3,0.58],[32,0.23]]
+    },
+    "timpani": {
+      "gainDb": -12.7,
+      "pan": -0.08,
+      "reverb": 0.18
+    },
+    "kit": {
+      "gainDb": -11.5,
+      "pan": 0,
+      "reverb": 0.12,
+      "expression": [[0,0.65],[8,0.74],[20,0.83],[25,0.91],[28,1],[30,0.75],[32,0.5]]
+    }
+  }
+}

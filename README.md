@@ -8,6 +8,7 @@ This development fork maintains the native instrument models, editable music sco
 
 | Preview | In the mix |
 | --- | --- |
+| [▶ Upwind](https://cdn.jsdelivr.net/gh/shiaho777/lumina-sfx@studio/.github/previews/upwind.m4a) · 20 s | An original piano and violin hook grows into strings and timpani. [Editable arrangement](references/music/upwind-plan.json) |
 | [▶ Heavy rain and close thunder](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/storm-front.mp3) · 5 s | A gust moves through heavy rain. A close thunderclap breaks over it. |
 | [▶ Three shots on steel](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/pistol-steel-ricochet.mp3) · 2.85 s | Three sharp reports, each answered by a steel impact and a ricochet. |
 | [▶ Fireside storm](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/fireside-distant-thunder.mp3) · 10 s | The fire crackles up close. Thunder rolls in the distance. |
@@ -65,6 +66,7 @@ node scripts/search.mjs moored hull --background-checked
 node scripts/remix.mjs --spec references/scenes/fireside-distant-thunder.json --inspect
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio
 npm run --silent music -- inspect references/music/common-ground-adaptive.json
+npm run --silent music -- arrange references/music/upwind-plan.json --no-stems --dest /path/to/game/audio
 node scripts/install-sfx.mjs grass-footstep gravel-footstep --engine godot --project /path/to/game
 npm run --silent qa -- grass-footstep --both-levels --extremes
 ```
