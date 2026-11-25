@@ -6,7 +6,7 @@ import { musicSourceKind, readMusicSource } from '../engine/music/plan.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { loadAdaptiveMusic } from './adaptive-music.mjs';
 import { digest, publishAudioProject } from './audio-export.mjs';
-import { loadRecipes } from './recipes.mjs';
+import { loadMusicRecipes, loadRecipes } from './recipes.mjs';
 import { loadDesign } from './remix-design.mjs';
 
 const usage = `npm run scene:preview -- <preview.json> --dest <directory>
@@ -32,7 +32,8 @@ try {
       timeline: adaptive.session.timeline,
     };
     const recipes = await loadRecipes(new Set(preview.sfx.flatMap(event => event.id === undefined ? [] : [event.id])));
-    const sources = new Map(recipes.map(recipe => [recipe.id, recipe]));
+    const sources = await loadMusicRecipes(score);
+    for (const recipe of recipes) sources.set(recipe.id, recipe);
     for (const event of preview.sfx) {
       if (event.design && !sources.has(event.design)) {
         const { recipe } = await loadDesign(event.design, dirname(file));

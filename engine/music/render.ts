@@ -1,10 +1,13 @@
 import { readAutomation } from './automation.ts';
 import { masterAudio, roundMeasurement as round, scaleStereo, type StereoPcm } from '../master.ts';
 import { analyzeSpectrum, analyzeStereo, samplePeakDb } from '../meter.ts';
-import { adsrCurve, clamp, dbToGain, gainToDb, panGains } from './dsp.ts';
+import type { SoundRecipe } from '../types.ts';
+import { clamp, dbToGain, gainToDb, panGains } from './dsp.ts';
 import { createVoice } from './instruments.ts';
+import { studioElectricPickup, studioGuitarAmp } from './keys-and-strings.ts';
 import { addPianoResonance } from './pedal.ts';
-import { scheduleNotes } from './performance.ts';
+import { performanceEnvelope, scheduleNotes } from './performance.ts';
+import { prepareRecipePart, renderRecipePart } from './recipe-part.ts';
 import { applyRoom, roomTailFrames } from './room.ts';
 import { maxMusicSeconds, musicSampleRate, readMusicScore, studioSampleRate } from './score.ts';
 import { midiHz } from './theory.ts';
@@ -14,6 +17,7 @@ export { masterAudio, type StereoPcm } from '../master.ts';
 export interface MusicRenderOptions {
   onStem?: (id: string, channels: StereoPcm) => void;
   normalize?: boolean;
+  recipes?: ReadonlyMap<string, SoundRecipe>;
 }
 
 function rms(channels: StereoPcm, from = 0, to = channels[0].length): number {
@@ -22,7 +26,12 @@ function rms(channels: StereoPcm, from = 0, to = channels[0].length): number {
   return gainToDb(Math.sqrt(energy / (2 * Math.max(1, to - from))));
 }
 
-export function prepareMusicRender(input: unknown) {
+function hashText(seed: number, key: string) {
+  for (const char of key) seed = Math.imul(seed ^ char.charCodeAt(0), 16777619);
+  return seed;
+}
+
+export function prepareMusicRender(input: unknown, recipes?: MusicRenderOptions['recipes'], beatOffset = 0) {
   const score = readMusicScore(input);
   const studio = score.quality === 'studio';
   const rate = studio ? studioSampleRate : musicSampleRate;
@@ -30,52 +39,82 @@ export function prepareMusicRender(input: unknown) {
   const totalBeats = score.bars * score.beatsPerBar;
   const scoreFrames = Math.round(totalBeats * framesPerBeat);
   const room = score.room ?? 'hall';
-  const scheduled = score.tracks.map(track => scheduleNotes(track, rate, framesPerBeat, totalBeats, score.loop));
+  const parts = score.tracks.map(track => track.instrument === 'recipe' ? prepareRecipePart(track, recipes, rate, framesPerBeat, scoreFrames) :
+    { recipe: undefined, notes: scheduleNotes(track, rate, framesPerBeat, totalBeats, score.loop, studio) });
   let frames = scoreFrames;
   if (!score.loop) {
-    for (const [i, notes] of scheduled.entries()) {
+    for (const [i, { notes }] of parts.entries()) {
       const tail = score.tracks[i].reverb ? roomTailFrames(room, rate) : 0;
       for (const note of notes) frames = Math.max(frames, note.start + note.length + tail);
     }
     if (frames > maxMusicSeconds * rate) throw Error('Score and release tails exceed ' + maxMusicSeconds + ' seconds');
   }
-  return { score, studio, rate, framesPerBeat, totalBeats, scoreFrames, room, scheduled, frames };
+  return { score, studio, rate, framesPerBeat, totalBeats, scoreFrames, room, parts, frames, beatOffset };
 }
 
 export function renderMusic(input: unknown, options: MusicRenderOptions = {}) {
-  return renderPreparedMusic(prepareMusicRender(input), options);
+  return renderPreparedMusic(prepareMusicRender(input, options.recipes), options);
 }
 
 export function renderPreparedMusic(prepared: ReturnType<typeof prepareMusicRender>, options: MusicRenderOptions = {}) {
-  const { score, studio, rate, framesPerBeat, totalBeats, scoreFrames, room, scheduled, frames } = prepared;
+  const { score, studio, rate, framesPerBeat, totalBeats, scoreFrames, room, parts, frames, beatOffset } = prepared;
   const mix: StereoPcm = [new Float32Array(frames), new Float32Array(frames)];
   const tracks = score.tracks.map((track, trackIndex) => {
     const stem: StereoPcm = [new Float32Array(frames), new Float32Array(frames)];
-    let seed = score.seed ^ 2166136261;
-    for (const char of track.id) seed = Math.imul(seed ^ char.charCodeAt(0), 16777619);
+    const seed = hashText(score.seed ^ 2166136261, track.id);
     const trackGain = dbToGain(track.gainDb);
     const expression = track.expression && readAutomation(track.expression, totalBeats, score.loop);
-    for (const [eventIndex, note] of scheduled[trackIndex].entries()) {
-      const { attack, decay, sustain, release } = note.envelope;
-      const envelope = adsrCurve(note.length, rate, note.hold, attack, decay, sustain, release);
-      const pressure = track.dynamics && readAutomation(track.dynamics, totalBeats, score.loop);
-      const synth = createVoice(note.voice, rate, midiHz(note.midi), seed ^ Math.imul(eventIndex + 1, 2654435761), {
-        velocity: note.velocity, articulation: note.articulation, studio, fromHz: note.fromHz,
-        dynamics: pressure ? time => pressure(note.start / framesPerBeat + time * score.bpm / 60) : undefined,
-      });
-      const spread = track.instrument === 'pad' || track.instrument === 'strings' ? ((note.midi % 5) - 2) * 0.15 : 0;
-      const pan = clamp(track.pan + spread * (1 - Math.abs(track.pan)), -1, 1);
-      const [leftGain, rightGain] = panGains(pan).map(gain => gain * trackGain * note.velocity);
-      let position = note.start;
-      for (let i = 0; i < envelope.length; i++) {
-        const sample = synth(i / rate) * envelope[i];
-        stem[0][position] += sample * leftGain;
-        stem[1][position] += sample * rightGain;
-        position = position + 1 === frames ? 0 : position + 1;
+    const part = parts[trackIndex];
+    if (part.recipe) {
+      renderRecipePart(stem, track, part, rate, seed, trackGain);
+    } else {
+      const sharedAmp = studio && track.instrument === 'electric-guitar';
+      const onsets = studio ? new Map<string, number>() : undefined;
+      for (const [eventIndex, note] of part.notes.entries()) {
+        const envelope = performanceEnvelope(note, rate, studio);
+        const pressure = track.dynamics && readAutomation(track.dynamics, totalBeats, score.loop);
+        const hz = midiHz(note.midi);
+        let noteSeed = seed ^ Math.imul(eventIndex + 1, 2654435761);
+        if (onsets) {
+          const onset = Math.round((note.beat + beatOffset) * 1_000_000);
+          const key = note.voice + '/' + onset + '/' + note.midi;
+          const unison = onsets.get(key) ?? 0;
+          onsets.set(key, unison + 1);
+          noteSeed = hashText(seed, key) ^ Math.imul(unison, 2654435761);
+        }
+        const synth = sharedAmp ? studioElectricPickup(rate, hz, noteSeed, note.velocity, note.articulation) :
+          createVoice(note.voice, rate, hz, noteSeed, {
+            velocity: note.velocity, articulation: note.articulation, studio, fromHz: note.fromHz, gateSeconds: note.hold / rate,
+            dynamics: pressure ? time => pressure(note.start / framesPerBeat + time * score.bpm / 60) : undefined,
+          });
+        const spread = track.instrument === 'pad' || track.instrument === 'strings' ? ((note.midi % 5) - 2) * 0.15 : 0;
+        const pan = clamp(track.pan + spread * (1 - Math.abs(track.pan)), -1, 1);
+        const [leftGain, rightGain] = sharedAmp ? [note.velocity, 0] : panGains(pan).map(gain => gain * trackGain * note.velocity);
+        let position = note.start;
+        for (let i = 0; i < envelope.length; i++) {
+          const sample = synth(i / rate) * envelope[i];
+          stem[0][position] += sample * leftGain;
+          stem[1][position] += sample * rightGain;
+          position = position + 1 === frames ? 0 : position + 1;
+        }
       }
+      if (sharedAmp && part.notes.length) {
+        const amp = studioGuitarAmp(rate);
+        const [leftGain, rightGain] = panGains(track.pan).map(gain => gain * trackGain);
+        const [pickup, right] = stem;
+        if (score.loop) {
+          const first = Math.max(0, frames - Math.round(rate * 0.12));
+          for (let i = first; i < frames; i++) amp(pickup[i]);
+        }
+        for (let i = 0; i < frames; i++) {
+          const sample = amp(pickup[i]);
+          pickup[i] = sample * leftGain;
+          right[i] = sample * rightGain;
+        }
+      }
+      if (studio && track.pedal) addPianoResonance(stem, track.pedal, part.notes.map(note => note.midi),
+        { rate, framesPerBeat, beats: totalBeats, loop: score.loop });
     }
-    if (studio && track.pedal) addPianoResonance(stem, track.pedal, scheduled[trackIndex].map(note => note.midi),
-      { rate, framesPerBeat, beats: totalBeats, loop: score.loop });
     if (expression) {
       for (let i = 0; i < frames; i++) {
         const gain = expression(i / framesPerBeat);
@@ -83,7 +122,7 @@ export function renderPreparedMusic(prepared: ReturnType<typeof prepareMusicRend
         stem[1][i] *= gain;
       }
     }
-    if (track.reverb && scheduled[trackIndex].length) applyRoom(stem[0], stem[1], rate, room, track.reverb, score.loop);
+    if (track.reverb && part.notes.length) applyRoom(stem[0], stem[1], rate, room, track.reverb, score.loop);
     for (let i = 0; i < frames; i++) {
       mix[0][i] += stem[0][i];
       mix[1][i] += stem[1][i];
@@ -95,7 +134,10 @@ export function renderPreparedMusic(prepared: ReturnType<typeof prepareMusicRend
       scaleStereo(stem, dbToGain(wavTrimDb));
       options.onStem(track.id, stem);
     }
-    return { id: track.id, instrument: track.instrument, notes: track.notes.length, rmsDbfs, samplePeakDbfs: round(peak), wavTrimDb: round(wavTrimDb) };
+    const source = part.recipe && { recipe: part.recipe.id,
+      credits: [part.recipe.recording, ...(part.recipe.additionalRecordings ?? [])].filter(Boolean) };
+    return { id: track.id, instrument: track.instrument, notes: track.notes.length, rmsDbfs, samplePeakDbfs: round(peak), wavTrimDb: round(wavTrimDb),
+      ...(source ? { source } : {}) };
   });
 
   const master = masterAudio(mix, score, rate, options.normalize ?? true);

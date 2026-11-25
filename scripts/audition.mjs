@@ -4,7 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { checkIsolatedRecipes, selectRecipes } from './install-files.mjs';
 import { loadDesign } from './remix-design.mjs';
-import { loadRecipes } from './recipes.mjs';
+import { loadMusicRecipes, loadRecipes } from './recipes.mjs';
 import { renderChannels, SAMPLE_RATE, DEFAULT_SEED } from '../engine/render.ts';
 import { measureLevel } from '../engine/levels.ts';
 import { measureLoudness } from '../engine/meter.ts';
@@ -53,7 +53,9 @@ async function candidate(input, style, mood) {
   if (kind) {
     if (style || mood) throw Error('For music, pass two or three plans or scores');
     const score = readMusicSource(json);
-    return { id: score.id, score };
+    const recipes = await loadMusicRecipes(score);
+    if (values.isolated && recipes.size) await checkIsolatedRecipes(await selectRecipes([...recipes.keys()]));
+    return { id: score.id, score, recipes };
   }
   if (mood) {
     const spec = json ?? { id: input, layers: [{ id: input }] };
@@ -70,7 +72,7 @@ async function candidate(input, style, mood) {
   return group({ ...spec, id: spec.id + '-' + style, style }, dirname(resolve(input)));
 }
 function preview(sound, seed) {
-  const music = sound.score ? renderMusic(sound.score) : undefined;
+  const music = sound.score ? renderMusic(sound.score, { recipes: sound.recipes }) : undefined;
   const rate = music?.report.sampleRate ?? SAMPLE_RATE;
   const channels = music?.channels ?? renderChannels(sound, { seed, level: 'balanced' });
   const start = Math.round(atSec * rate);

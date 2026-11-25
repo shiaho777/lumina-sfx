@@ -4,11 +4,12 @@ import { parseArgs } from 'node:util';
 import { composeMusic, musicStyles } from '../engine/music/compose.ts';
 import { inspectMusic } from '../engine/music/inspect.ts';
 import { arrangeMusic, musicSourceKind } from '../engine/music/plan.ts';
-import { renderMusic } from '../engine/music/render.ts';
+import { prepareMusicRender, renderMusic } from '../engine/music/render.ts';
 import { drumSounds, instrumentCatalog, musicSampleRate, qualities, readMusicScore, rooms, sectionRoles, studioSampleRate } from '../engine/music/score.ts';
 import { musicPlanTemplate } from '../engine/music/template.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { digest, publishAudioProject } from './audio-export.mjs';
+import { loadMusicRecipes } from './recipes.mjs';
 
 const usage = `Usage
   node scripts/music.mjs compose --dest <directory> [--style ${musicStyles.join('|')}] [--id <id>]
@@ -41,7 +42,9 @@ const commandHelp = {
   One chord sets one bar. Section IDs are kept in the exported score and report.
   A statement replaces that track's backing in its section. Use layer:true to add to it.
   Statements accept transpose (semitones), stretch, strength, articulation and carry:true into the next section.
-  Add other instruments with parts, for example {"keys":"electric-piano"}.
+  Add other instruments with parts, for example {"keys":"electric-piano"} or
+  {"tick":{"instrument":"recipe","recipe":"settings-tab-walnut-detent"}}. Use note:"hit" for percussion or set root for pitched notes.
+  Set backing:false to use only the declared parts.
   A section key changes its Roman chords and degree notes. Use @pivot or @dominant on the preceding last bar.
   Use a section's mute array to remove backing tracks. Use mix to adjust named tracks.
   Run npm run --silent music -- instruments, then npm run --silent music -- inspect <plan.json>.`,
@@ -129,7 +132,9 @@ async function music(args) {
       console.log(JSON.stringify(await inspectAdaptiveSource(file, input), null, 2));
       return;
     }
-    const analysis = inspectMusic(kind === 'score' ? input : arrangeMusic(input));
+    const score = kind === 'score' ? readMusicScore(input) : arrangeMusic(input);
+    if (score.tracks.some(track => track.recipe)) prepareMusicRender(score, await loadMusicRecipes(score));
+    const analysis = inspectMusic(score);
     const statements = kind === 'score' ? undefined : input.sections.flatMap(section =>
       (section.statements ?? []).map(statement => ({ section: section.id, ...statement })));
     console.log(JSON.stringify({ ...analysis, ...(statements ? { statements } : {}) }, null, 2));
@@ -187,6 +192,7 @@ async function music(args) {
   }
 
   const studio = score.quality === 'studio';
+  const recipes = await loadMusicRecipes(score);
   const rate = studio ? studioSampleRate : musicSampleRate;
   const { project, assets } = await publishAudioProject(values.dest, score.id, write => {
     const wav = (file, channels) => {
@@ -197,7 +203,7 @@ async function music(args) {
     const onStem = values['no-stems'] ? undefined : (id, channels) => {
       stems.push({ id, ...wav('stem-' + id + '.wav', channels) });
     };
-    const rendered = renderMusic(score, { onStem });
+    const rendered = renderMusic(score, { onStem, recipes });
     const source = write('score.json', JSON.stringify(rendered.score, null, 2) + '\n');
     const master = wav('master.wav', rendered.channels);
     const files = { score: source, master, stems, ...(plan ? { plan: write('plan.json', JSON.stringify(plan, null, 2) + '\n') } : {}) };

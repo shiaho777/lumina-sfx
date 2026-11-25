@@ -80,8 +80,8 @@ export interface PreviewMusicTrack {
   timeline?: readonly MusicStart[];
 }
 
-function renderScore(input: unknown): PreviewMusicTrack {
-  const { score, report, channels } = renderMusic(input);
+function renderScore(input: unknown, sources: ReadonlyMap<string, SoundRecipe>): PreviewMusicTrack {
+  const { score, report, channels } = renderMusic(input, { recipes: sources });
   return { id: score.id, bpm: score.bpm, beats: score.bars * score.beatsPerBar, loop: score.loop,
     rate: report.sampleRate, frames: report.frames, channels };
 }
@@ -101,7 +101,7 @@ function routeDuck(envelope: Float32Array, start: number, end: number, reduction
 export function renderAudioPreview(
   preview: AudioPreview, inputScore: unknown, sources: ReadonlyMap<string, SoundRecipe>, prepared?: PreviewMusicTrack,
 ) {
-  const music = preview.music ? prepared ?? renderScore(inputScore) : undefined;
+  const music = preview.music ? prepared ?? renderScore(inputScore, sources) : undefined;
   const rate = music?.rate ?? studioSampleRate;
   const frames = preview.durationSec === undefined && music ? music.frames : Math.round(preview.durationSec! * rate);
   const musicBus = stereo(frames), sfxBus = stereo(frames);

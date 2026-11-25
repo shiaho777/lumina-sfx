@@ -45,9 +45,16 @@ The chamber and groove templates alternate theme and answer between instruments 
 | `statements[]` | Place a `motif` on a `track` at a section-relative `beat` or one-based `bar`. Set optional `transpose` in semitones, `stretch`, velocity `strength` or `articulation`. `carry: true` lets a note that begins here sustain into the following section |
 | `mute`, `layer` | Mute backing tracks in a section with `mute`. A statement replaces its track's stock notes in that section by default. Set `layer: true` to add to the backing |
 | `parts` | Add named instruments to the palette. For example, `{"signal":"electric-piano"}` adds a track that statements and mix settings can address |
+| `backing` | Set `false` to use only the instruments declared under `parts` |
 | `mix` | Override `gainDb`, `pan`, `reverb`, `dynamics`, `expression` or piano `pedal` by track ID |
 
 Before rendering, run `inspect` and check section lengths, intended motif statements, instrument registers, and peak written polyphony. A typo in a plan field stops compilation with the source path. Investigate a large note count on a sustained lead or several full-register accompaniment parts playing underneath it. Revise the smallest relevant section or track and retain the plan as the editable source. Use `compile` for an editable resolved score when you only need to check note and chord placement.
+
+### Play sound effects as instruments
+
+In `parts`, use `{"keys":{"instrument":"recipe","recipe":"menu-confirm-pluck","root":"C5"}}` to play a catalog recipe on the music clock. Name the sounding reference pitch as `root`, then write ordinary notes or scale degrees. The recipe renderer shifts pitch independently of duration. Leave out the root for a drum-like or environmental source and write `"note":"hit"`. Use `params` on the part for the recipe's native controls.
+
+Note duration gates the sound. A one-shot can end earlier on its own, and a loop repeats while the note is held. A short fade closes a cropped take or loop. Track pan, gain, expression and room work on recipe parts as on built-in instruments. The export report names each catalog source and keeps its recording credits. In [Pocket Workshop](music/catalog-miniature-plan.json), a menu pluck supplies lead and bass, a wooden step and detent supply the rhythm, and rain carries across phrases. All five tracks use catalog recipes.
 
 ### Change key while keeping the motif
 
@@ -63,20 +70,32 @@ The cinematic preset opens with piano, carries the theme into a horn lead over s
 npm run --silent music -- instruments
 ```
 
-The inventory lists each instrument's recommended register and accepted articulations. Piano, bowed strings, cello, horn, electric guitar, timpani and percussion are synthesized by the project from the score. All presets render with Node alone.
+The inventory lists each instrument's recommended register and accepted articulations. Piano, bowed strings, cello, violin, horn, electric guitar, timpani and percussion are synthesized by the project from the score. All presets render with Node alone. Add a solo violin with `"parts":{"lead":"violin"}` and target `lead` in a statement. Use `strings` for a section and `cello` for a low solo line.
 
-The nylon guitar models the position of the finger pluck and several body resonances. The electric piano models a decaying tine, short impact modes and a nonlinear pickup. Harder strikes excite more high-frequency energy in both instruments. Studio pad, bass and pluck voices use velocity-dependent tone and quieter upper harmonics or a slower detune. [String excitation](https://www.dsprelated.com/freebooks/pasp/String_Excitation.html) · [Tine and pickup modeling](https://www.dafx17.eca.ed.ac.uk/papers/DAFx17_paper_79.pdf)
+Studio piano uses velocity-dependent hammer excitation, two-stage decay and detuned unison strings above the lowest keys. For an exposed line, vary `velocity` to change both impact and tone. Give bass notes more space to ring and use lighter velocities for inner chord tones. [Piano hammer and string modeling](https://www.dafx.de/papers/DAFX02_Bank_Sujbert_piano_synthesis.pdf)
+
+Studio bowed strings approximate the string's grip and release at the bow, the force it transfers to the bridge, and the resonances that radiate from the instrument. The first note of a phrase builds its bow contact. Adjacent `legato` notes enter with the bow already engaged. Use `dynamics` to change bow pressure over a phrase and `expression` for level adjustments. [Bowed-string onsets](https://www.knutsacoustics.com/files/starting-transients-guettler.pdf) · [Measured violin body and bridge response](https://strad3d.org/files/bissinger/BissingerStructAcousticModel_vn_rad_prof.pdf)
+
+Studio horn separates the breath at the start of a note, the lip vibration and the sound radiated by the bell. A rising `dynamics` curve brings out upper harmonics as well as volume. Join notes on a single line with `legato` and leave gaps where the player should breathe. [Brass acoustics](https://phys.unsw.edu.au/jw/brassacoustics.html)
+
+Studio guitars model where the string is plucked and how it loses energy after the stroke. The nylon guitar radiates through the soundboard and air cavity. The electric guitar senses the string at two pickup positions and sends all notes on one track through one amplifier. Keep notes of a chord on the same track for shared distortion. Change `velocity` for a softer stroke or more drive, and use track `gainDb` to balance the amplified result. [Acoustic guitar response](https://aaltodoc.aalto.fi/bitstreams/e198ec92-e1f8-4a20-aa79-0e2984c1835c/download) · [Magnetic pickup measurements](https://www.eecs.qmul.ac.uk/~simond/pub/2017/MohamadHarteDixon-ICASSP2017.pdf)
+
+The studio electric piano combines a tine with a slower-decaying resonance, the hammer's short impact modes, and a magnetic pickup that responds to changing flux. Use light velocities for warm chord tones and harder strikes for a brighter attack. [Tine and pickup modeling](https://www.dafx17.eca.ed.ac.uk/papers/DAFx17_paper_79.pdf)
+
+Studio synth bass keeps a steady fundamental under a velocity-sensitive filter sweep. The pad opens slowly and moves across slightly detuned oscillators. The pluck uses a short FM transient that resolves to a stable pitch. Chip lead uses a band-limited pulse whose duty cycle changes with the stroke. [Time-varying FM spectra](https://people.ece.cornell.edu/land/courses/ece4760/Math/GCC644/FM_synth/Chowning.pdf)
+
+Studio instruments use eased attack and release edges. The attack and handoff in a fast bowed or horn phrase fit the written note length. Nearby repetitions of the same pitch get a fresh attack with a shorter preceding tail. Note variation follows the track, pitch and onset on the source score, so edits earlier in a part and adaptive crops preserve the following notes' excitation.
 
 | Control | Use |
 | --- | --- |
 | `sustain` | Hold the written length with the instrument's natural attack and release |
 | `short` | Play a detached note. Use for string ostinati under sustained melody |
-| `swell` | Build intensity across a held note. Use for strings, cello, horn or pad |
+| `swell` | Build intensity across a held note. Use for strings, cello, violin, horn or pad |
 | `accent` | Use a faster, stronger onset. Use for accents and section entrances |
-| `mute` | Dampen an electric guitar note. Use for palm-muted rhythms |
-| `legato` | Connect neighboring notes in a single line on strings, cello or horn. Leave a gap between phrases |
+| `mute` | Dampen a nylon or electric guitar note. Use for short muted figures and palm-muted rhythms |
+| `legato` | Connect adjacent pitches in a single line on strings, cello, violin or horn. Studio bowed voices and horn join different pitches with a short blend. Write the previous note through the next onset and leave a gap between phrases |
 | `reverb` | Send a track to its stereo room at a level from 0 to 1. Start with 0.15–0.35 |
-| `dynamics` | Shape pressure and tone on strings, cello and horn. Write absolute-score `[beat, value]` pairs between 0 and 1 |
+| `dynamics` | Shape pressure and tone on strings, cello, violin and horn. Write absolute-score `[beat, value]` pairs between 0 and 1 |
 | `expression` | Ride the dry part's gain before its room send. Write the same kind of curve. Zero mutes the part |
 | `pedal` | Lift and restore the piano dampers with absolute-score pairs such as `[[0.2,1],[3.92,0]]`. A new strike of the same pitch releases the previous key's held note |
 
@@ -140,7 +159,7 @@ Each section clip renders the notes held across its written start before cutting
 
 ## Check the drums before the full mix
 
-Use `kick` or `low-drum` for the low impulse, `snare` for the drumhead and wire response, and `tom` for moving fills. `hat` and `crash` provide cymbal color. Write lower-velocity pickup or ghost notes and leave the strongest hits for structural accents. Studio mode models the head, shell and contact separately, with a short wire response on snare. [Snare acoustics research](https://www.research.ed.ac.uk/files/14078222/BILBAO_S_Time_domain_simulation_and_sound_synthesis_for_the_snare_drum.pdf)
+Use `kick` or `low-drum` for the low impulse, `snare` for the drumhead and wire response, and `tom` for moving fills. In studio mode, the strike drives coupled heads and the shell, and movement of the resonant head excites the snare wires. `hat` uses quick plate contacts and rapid damping. `crash` builds a longer wash from a bank of uneven resonances. Give exposed hits enough written duration for the body to ring and use lighter velocities for ghost notes. [Tom-tom measurements](https://www.speech.kth.se/qpsr/1997/1997_38_1_059-065.pdf) · [Snare acoustics research](https://www.pure.ed.ac.uk/ws/portalfiles/portal/11222120/1.3651240.pdf) · [Hi-hat plate modeling](https://www.jstage.jst.go.jp/article/ast/44/5/44_E2293/_article)
 
 ```sh
 npm run --silent music -- render references/music/drum-check.json --dest /absolute/game/audio
@@ -187,14 +206,14 @@ This one-bar example starts with half a beat of rest and lets the final note rin
 }
 ```
 
-- `beat` starts at zero. Fractional beats control timing within the beat. `duration` is the note's held time in beats. Overlapping notes form chords. Loops wrap releases across the boundary.
+- `beat` starts at zero. Fractional beats control timing within the beat. `duration` is the note's held time in beats. Write each attack separately for repeated pitches, pickups and ornaments. When transcribing, compare the lead and accompaniment events separately before adjusting the mix. Overlapping notes form chords. Loops wrap releases across the boundary.
 - Pitched notes accept names such as `Bb3` or MIDI integers from 0 to 127. A `drums` track uses `kick`, `snare`, `hat`, `low-drum`, `tom` and `crash`. A `timpani` track uses pitched notes. Add `"articulation": "short"` to a supported note to change its performance.
 - Each track has a unique lowercase hyphenated ID. Velocity is 0–1 and defaults to 0.8. Pan is −1 to 1 and defaults to center. Track gain defaults to 0 dB. Use `notes: []` for a silent track.
 - A score supports 30–300 BPM, 2–12 beats per bar, up to 16 tracks and up to 300 seconds including one-shot tails. The composer writes 4/4. In an edited score, optional sections label contiguous bars as `{"role":"intro","bars":4}` and must cover the score. Change the note events to edit the music in those bars.
 
 ## Read the export
 
-- `master.wav` is the mastered stereo mix. `studio` writes deterministically dithered 48 kHz, 24-bit PCM, with a resonant piano body, independent string oscillator phases and oversampled guitar distortion. It is the default for plans. Saved scores without a quality setting and the `classic` profile use 44.1 kHz, 16-bit PCM. The default target is −18 LUFS with a −1 dBTP ceiling. Read `master.integratedLufs`, `master.truePeakDbtp` and the limiter and trim values to see the delivered level.
+- `master.wav` is the mastered stereo mix. `studio` writes deterministically dithered 48 kHz, 24-bit PCM and uses the studio instrument models. It is the default for plans. Saved scores without a quality setting and the `classic` profile use 44.1 kHz, 16-bit PCM. The default target is −18 LUFS with a −1 dBTP ceiling. Read `master.integratedLufs`, `master.truePeakDbtp` and the limiter and trim values to see the delivered level.
 - `stem-<id>.wav` is the track after pan, track gain and any room send, before the master processing. Each stem starts at frame zero. If a stem needed gain reduction to fit PCM, `tracks[].wavTrimDb` records the adjustment.
 - `report.json` includes RMS by track, bar and section, spectrum bands, stereo correlation and asset hashes. For a loop, use the exact `loop.startFrame` and exclusive `loop.endFrame` at the reported sample rate. `loop.boundaryJumpDbfs` measures the sample step across the seam. An intentional opening note can raise `startRmsDbfs` relative to `endRmsDbfs`.
 

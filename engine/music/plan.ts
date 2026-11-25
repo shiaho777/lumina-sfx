@@ -1,6 +1,6 @@
 import { composeMusic, musicStyles, paletteKey, type ComposeMusicOptions } from './compose.ts';
 import { resolveHarmony, type HarmonySection } from './harmony.ts';
-import { instruments, readMusicScore, sectionRoles, type MusicNote, type MusicScore, type MusicTrack } from './score.ts';
+import { readMusicPart, readMusicScore, sectionRoles, type MusicNote, type MusicScore, type MusicTrack } from './score.ts';
 import { chordName, degreeMidi, type Key, noteMidi, parseKey, scaleLength } from './theory.ts';
 
 type MotifPitch = { note: string | number } | { degree: number; octave: number; accidental: number };
@@ -101,6 +101,7 @@ function readSections(value: unknown) {
 function transposePitch(pitch: MotifPitch, transpose: number, key: Key, track: MusicTrack, path: string): string | number {
   if ('note' in pitch && !transpose) return pitch.note;
   if (track.instrument === 'drums') throw Error(path + ' needs an untransposed drum sound');
+  if (track.instrument === 'recipe' && track.root === undefined) throw Error(path + ' needs a recipe root to transpose notes');
   if ('note' in pitch) return (typeof pitch.note === 'number' ? pitch.note : noteMidi(pitch.note)) + transpose;
   if (pitch.degree > scaleLength(key)) throw Error(path + ' degree ' + pitch.degree + ' is outside ' + key.name);
   return degreeMidi(key, pitch.degree - 1, pitch.accidental) + (pitch.octave - 4) * 12 + transpose;
@@ -140,11 +141,12 @@ function placeStatement(input: unknown, path: string, section: {
 }
 
 export function arrangeMusic(input: unknown): MusicScore {
-  const plan = record(input, 'Plan', 'version id style bpm key seed loop quality room master motifs sections parts mix');
+  const plan = record(input, 'Plan', 'version id style bpm key seed loop quality room master backing motifs sections parts mix');
   if (plan.version !== 1) throw Error('Plan.version must be 1');
   const id = text(plan.id, 'Plan.id');
   const style = musicStyles.find(style => style === (plan.style ?? 'cinematic'));
   if (!style) throw Error('Plan.style must be one of ' + musicStyles.join(', '));
+  if (plan.backing !== undefined && typeof plan.backing !== 'boolean') throw Error('Plan.backing must be true or false');
   const key = parseKey(text(plan.key ?? paletteKey(style), 'Plan.key'));
   const motifs = readMotifs(plan.motifs ?? {});
   const sections = readSections(plan.sections);
@@ -158,16 +160,18 @@ export function arrangeMusic(input: unknown): MusicScore {
     bpm: plan.bpm as ComposeMusicOptions['bpm'], seed: plan.seed as ComposeMusicOptions['seed'],
     loop: (plan.loop ?? false) as ComposeMusicOptions['loop'], quality: (plan.quality ?? 'studio') as ComposeMusicOptions['quality'],
   });
+  if (plan.backing === false) base.tracks = [];
   const backing = new Set(base.tracks.flatMap(track => track.notes));
   const tracks = new Map(base.tracks.map(track => [track.id, track]));
   for (const [id, value] of Object.entries(record(plan.parts ?? {}, 'Plan.parts'))) {
-    const instrument = instruments.find(instrument => instrument === value);
-    if (!instrument) throw Error('Plan.parts.' + id + ' must be an instrument from music instruments');
     if (tracks.has(id)) throw Error('Plan.parts.' + id + ' already belongs to the ' + style + ' palette');
-    const track = { id, instrument, gainDb: -12, pan: 0, notes: [] };
+    const path = 'Plan.parts.' + id;
+    const input = typeof value === 'string' ? { instrument: value } : record(value, path, 'instrument recipe root params');
+    const track = { id, ...readMusicPart(input, path), gainDb: -12, pan: 0, notes: [] };
     tracks.set(id, track);
     base.tracks.push(track);
   }
+  if (!tracks.size) throw Error('Plan.parts must define tracks when backing is false');
   let start = 0;
   for (const [i, { bars, path, mutes, statements }] of sections.entries()) {
     const end = start + bars * base.beatsPerBar;

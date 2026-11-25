@@ -2,6 +2,8 @@
 
 An offline sound studio for coding agents. Find a sound among 2,853 editable effects, layer it with others, and export a WAV or wire it into your game. Compose instrumental game music and export an editable score, stereo WAV and track stems.
 
+This development fork maintains the native instrument models, editable music scores, and adaptive music workflow. LuminaBench maintains the original repository and sound library. [Upstream repository](https://github.com/LuminaBench/lumina-sfx) · [Music workflow](references/music-workflow.md)
+
 ## Listen
 
 | Preview | In the mix |

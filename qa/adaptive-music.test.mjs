@@ -10,6 +10,7 @@ import { compileAdaptiveMusic, renderAdaptivePreview } from '../engine/music/ada
 import { AdaptiveMusicPlayer } from '../engine/music/adaptive-player.ts';
 import { fft } from '../engine/music/dsp.ts';
 import { createVoice } from '../engine/music/instruments.ts';
+import { renderMusic } from '../engine/music/render.ts';
 
 const json = async path => JSON.parse(await readFile(path, 'utf8'));
 const entry = name => fileURLToPath(new URL('../scripts/' + name, import.meta.url));
@@ -146,6 +147,26 @@ test('velocity opens the nylon and tine transients while preserving their tuned 
   }
 });
 
+test('a studio instrument keeps the same excitation through a cropped adaptive entry', () => {
+  const score = {
+    version: 1, id: 'carried-seed', quality: 'studio', bpm: 120, bars: 3, loop: false, seed: 641,
+    sections: [{ id: 'opening', role: 'intro', bars: 2 }, { id: 'answer', role: 'main', bars: 1 }],
+    tracks: [{ id: 'air', instrument: 'pad', gainDb: -18, notes: [
+      { beat: 0, duration: 1, note: 'D4' },
+      { beat: 4.5, duration: 0.5, note: 'E4' },
+      { beat: 7.25, duration: 2.5, note: 'A4' },
+    ] }],
+  };
+  const standalone = renderMusic(score, { normalize: false }).channels[0];
+  const routing = compileAdaptiveMusic({ version: 1, id: 'carried', initial: 'opening',
+    states: { opening: 'opening', answer: 'answer' } }, score);
+  const [answer] = routing.pcm.get('answer');
+  const gain = 10 ** (routing.sharedGainDb / 20);
+  const boundary = 8 * 24000;
+  assert.ok(answer.subarray(0, 2400).some(value => Math.abs(value) > 0.02));
+  for (let i = 0; i < 2400; i++) assert.ok(Math.abs(answer[i] - standalone[boundary + i] * gain) < 1e-7);
+});
+
 test('player schedules phased buffers on Web Audio time and releases its nodes', t => {
   const bank = readAdaptiveBank(bankData);
   const sources = [];
@@ -224,7 +245,8 @@ test('the exported adaptive bank and original catalog cues use the same game-mix
     sections: [{ id: 'opening', role: 'intro', bars: 1 }, { id: 'main-part', role: 'main', bars: 1 }],
     tracks: [{ id: 'pad', instrument: 'pad', reverb: 0.2, notes: [
       { beat: 0, duration: 4, note: 'D4' }, { beat: 4, duration: 4, note: 'F4' },
-    ] }],
+    ] }, { id: 'button', instrument: 'recipe', recipe: 'settings-tab-walnut-detent',
+      notes: [{ beat: 1, duration: 0.3, note: 'hit' }, { beat: 5, duration: 0.3, note: 'hit' }] }],
   };
   const spec = {
     version: 1, id: 'bank', score: 'score.json', initial: 'idle',
@@ -241,6 +263,7 @@ test('the exported adaptive bank and original catalog cues use the same game-mix
   assert.deepEqual((await readdir(folder)).sort(), ['routing.json', 'scene.json', 'score.json']);
   const bank = cli('music.mjs', 'adaptive', join(folder, 'routing.json'), '--dest', folder);
   const report = await json(bank.report);
+  assert.equal(report.sources[0].recipe, 'settings-tab-walnut-detent');
   assert.deepEqual(inspected.clips, (await json(bank.manifest)).clips);
   assert.equal(inspected.preview.frames, report.frames);
   assert.deepEqual(inspected.preview.timeline, report.timeline.map(({ boundaryJumpDbfs, ...cue }) => cue));

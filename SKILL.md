@@ -33,6 +33,8 @@ npm run --silent music -- arrange plan.json --dest /absolute/game/audio
 
 Choose the palette for the cue. Use `chamber` for acoustic interplay, `groove` for syncopated keys and drums, `ambient` for a sustained bed, `menu` or `arcade` for game loops, and `cinematic` for the large ensemble. Edit motifs, keys and chords in the plan. Add an instrument via `parts` and put `carry: true` on a statement that needs to sustain into the next section. Check harmony, register and motif entries before export. [Music workflow](references/music-workflow.md)
 
+To play a catalog effect as music, declare a `recipe` instrument in `parts`. Use `note: "hit"` for percussion or set `root` to transpose a known pitch. Set `backing: false` to use only your declared parts. [Catalog-only score](references/music/catalog-miniature-plan.json)
+
 For gameplay-driven music, route states to named sections. Run `music -- inspect routing.json` to see where state changes land, then `music -- adaptive routing.json --dest /absolute/game/audio`. Use `scene:preview` to combine music with catalog cues and existing layered designs. Use `alignMarker` to land a sound's contact on a beat. [Shared scene workflow](references/music-workflow.md#review-the-cue-in-its-game-mix) · [Adaptive routing](references/music-workflow.md#adapt-music-to-the-game)
 
 ## Verify and invent

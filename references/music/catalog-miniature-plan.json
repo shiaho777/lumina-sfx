@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "id": "pocket-workshop",
+  "style": "menu",
+  "backing": false,
+  "bpm": 96,
+  "key": "C major",
+  "room": "studio",
+  "parts": {
+    "lead": { "instrument": "recipe", "recipe": "menu-confirm-pluck", "root": "C5", "params": { "pressure": 0.54 } },
+    "low-pluck": { "instrument": "recipe", "recipe": "menu-confirm-pluck", "root": "C5", "params": { "pressure": 0.33 } },
+    "wood": { "instrument": "recipe", "recipe": "indoor-hardwood-shoe-step" },
+    "detent": { "instrument": "recipe", "recipe": "settings-tab-walnut-detent" },
+    "rain": { "instrument": "recipe", "recipe": "light-rain-loop" }
+  },
+  "motifs": {
+    "question": [
+      { "beat": 0.12, "note": "A4", "duration": 0.49, "velocity": 0.68 },
+      { "beat": 0.88, "note": "C5", "duration": 0.48, "velocity": 0.62 },
+      { "beat": 1.63, "note": "E5", "duration": 0.55, "velocity": 0.82 },
+      { "beat": 2.45, "note": "E5", "duration": 0.46, "velocity": 0.64 },
+      { "beat": 3.30, "note": "C5", "duration": 0.40, "velocity": 0.55 },
+      { "beat": 4.47, "note": "G4", "duration": 0.51, "velocity": 0.69 },
+      { "beat": 5.23, "note": "E5", "duration": 0.55, "velocity": 0.70 },
+      { "beat": 6.11, "note": "G5", "duration": 0.52, "velocity": 0.76 },
+      { "beat": 7.16, "note": "E5", "duration": 0.61, "velocity": 0.57 }
+    ],
+    "answer": [
+      { "beat": 0.18, "note": "F5", "duration": 0.48, "velocity": 0.76 },
+      { "beat": 0.91, "note": "C5", "duration": 0.53, "velocity": 0.64 },
+      { "beat": 1.72, "note": "A4", "duration": 0.46, "velocity": 0.67 },
+      { "beat": 2.63, "note": "C5", "duration": 0.58, "velocity": 0.61 },
+      { "beat": 4.27, "note": "G4", "duration": 0.50, "velocity": 0.62 },
+      { "beat": 4.97, "note": "B4", "duration": 0.51, "velocity": 0.68 },
+      { "beat": 5.70, "note": "D5", "duration": 0.52, "velocity": 0.79 },
+      { "beat": 6.63, "note": "B4", "duration": 0.55, "velocity": 0.58 },
+      { "beat": 7.43, "note": "G4", "duration": 0.42, "velocity": 0.55 }
+    ],
+    "bass-line": [
+      { "beat": 0, "note": "A3", "duration": 0.65, "velocity": 0.84 },
+      { "beat": 2.47, "note": "E4", "duration": 0.35, "velocity": 0.53 },
+      { "beat": 4, "note": "C3", "duration": 0.65, "velocity": 0.82 },
+      { "beat": 6.53, "note": "G3", "duration": 0.34, "velocity": 0.56 },
+      { "beat": 8, "note": "F3", "duration": 0.66, "velocity": 0.81 },
+      { "beat": 10.53, "note": "C4", "duration": 0.35, "velocity": 0.54 },
+      { "beat": 12, "note": "G3", "duration": 0.65, "velocity": 0.82 },
+      { "beat": 14.72, "note": "D4", "duration": 0.38, "velocity": 0.60 }
+    ],
+    "steps": [
+      { "beat": 0, "note": "hit", "duration": 0.43, "velocity": 0.74 },
+      { "beat": 2.47, "note": "hit", "duration": 0.42, "velocity": 0.53 },
+      { "beat": 4, "note": "hit", "duration": 0.43, "velocity": 0.69 },
+      { "beat": 6.77, "note": "hit", "duration": 0.42, "velocity": 0.51 }
+    ],
+    "ticks": [
+      { "beat": 1.10, "note": "hit", "duration": 0.29, "velocity": 0.53 },
+      { "beat": 3.03, "note": "hit", "duration": 0.29, "velocity": 0.63 },
+      { "beat": 5.15, "note": "hit", "duration": 0.29, "velocity": 0.49 },
+      { "beat": 7.08, "note": "hit", "duration": 0.29, "velocity": 0.56 },
+      { "beat": 7.66, "note": "hit", "duration": 0.27, "velocity": 0.37 }
+    ],
+    "long-rain": [{ "beat": 0, "note": "hit", "duration": 31.98, "velocity": 0.56 }],
+    "rain-tail": [{ "beat": 0, "note": "hit", "duration": 15.62, "velocity": 0.50 }],
+    "close": [
+      { "beat": 0.11, "note": "A4", "duration": 0.53, "velocity": 0.65 },
+      { "beat": 0.91, "note": "C5", "duration": 0.50, "velocity": 0.59 },
+      { "beat": 1.84, "note": "E5", "duration": 0.54, "velocity": 0.67 },
+      { "beat": 3.03, "note": "C5", "duration": 0.67, "velocity": 0.56 },
+      { "beat": 5.21, "note": "A4", "duration": 1.30, "velocity": 0.77 }
+    ]
+  },
+  "sections": [
+    { "id": "listen", "role": "intro", "chords": ["Am", "C", "F", "G"], "statements": [
+      { "track": "lead", "motif": "question", "strength": 0.88 },
+      { "track": "lead", "motif": "answer", "bar": 3, "strength": 0.86 },
+      { "track": "low-pluck", "motif": "bass-line", "strength": 0.72 },
+      { "track": "detent", "motif": "ticks", "bar": 3, "strength": 0.56 },
+      { "track": "rain", "motif": "long-rain", "carry": true }
+    ] },
+    { "id": "get-moving", "role": "main", "chords": ["Am", "C", "F", "G"], "statements": [
+      { "track": "lead", "motif": "question" },
+      { "track": "lead", "motif": "answer", "bar": 3 },
+      { "track": "low-pluck", "motif": "bass-line" },
+      { "track": "wood", "motif": "steps" },
+      { "track": "wood", "motif": "steps", "bar": 3, "strength": 0.92 },
+      { "track": "detent", "motif": "ticks" },
+      { "track": "detent", "motif": "ticks", "bar": 3 }
+    ] },
+    { "id": "come-home", "role": "outro", "chords": ["F", "G", "Am", "Am"], "statements": [
+      { "track": "lead", "motif": "answer", "strength": 0.82 },
+      { "track": "lead", "motif": "close", "bar": 3 },
+      { "track": "wood", "motif": "steps", "strength": 0.62 },
+      { "track": "rain", "motif": "rain-tail" }
+    ] }
+  ],
+  "mix": {
+    "lead": { "gainDb": 1.5, "reverb": 0.33, "pan": 0.12 },
+    "low-pluck": { "gainDb": -1.5, "reverb": 0.18, "pan": -0.12 },
+    "wood": { "gainDb": -6, "pan": -0.30, "reverb": 0.09 },
+    "detent": { "gainDb": -6, "pan": 0.41, "reverb": 0.16 },
+    "rain": { "gainDb": -12, "expression": [[0, 0.64], [13, 0.49], [17, 0.39], [30, 0.45], [37, 0.63], [46, 0.31], [48, 0]] }
+  }
+}

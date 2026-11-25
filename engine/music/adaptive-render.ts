@@ -8,7 +8,7 @@ import { harmonySignature } from './harmony.ts';
 import { masterAudio, scaleStereo, type StereoPcm } from '../master.ts';
 import { truePeakDb } from '../meter.ts';
 import { cropPedal } from './pedal.ts';
-import { prepareMusicRender, renderPreparedMusic } from './render.ts';
+import { prepareMusicRender, renderPreparedMusic, type MusicRenderOptions } from './render.ts';
 import { maxMusicSeconds, type AutomationPoint } from './score.ts';
 import { parseChord, parseKey } from './theory.ts';
 
@@ -61,11 +61,11 @@ function readPreview(value: unknown, routing: ReturnType<typeof readMusicRouting
   return { beats, changes, finish, keepTail: preview.keepTail !== false };
 }
 
-function prepareAdaptiveMusic(input: unknown, inputScore: unknown) {
+function prepareAdaptiveMusic(input: unknown, inputScore: unknown, recipes?: MusicRenderOptions['recipes']) {
   const spec = musicObject(input, 'Adaptive');
   if (spec.version !== 1) throw Error('Adaptive.version must be 1');
   const id = musicId(spec.id, 'Adaptive.id');
-  const full = prepareMusicRender(inputScore);
+  const full = prepareMusicRender(inputScore, recipes);
   const { score, rate: sampleRate, totalBeats } = full;
   const regions = new Map<string, MusicRegion>();
   let start = 0;
@@ -88,7 +88,7 @@ function prepareAdaptiveMusic(input: unknown, inputScore: unknown) {
     const region = regions.get(name)!;
     const end = region.start + region.beats;
     const firstFrame = Math.round(region.start * full.framesPerBeat);
-    const carried = full.scheduled.map(notes => notes.filter(note =>
+    const carried = full.parts.map(({ notes }) => notes.filter(note =>
       note.beat < region.start && note.start + note.hold > firstFrame));
     const earliest = carried.reduce((first, notes) => notes.reduce((at, note) => Math.min(at, note.beat), first), region.start);
     const preRollBars = Math.ceil((region.start - earliest) / score.beatsPerBar);
@@ -107,7 +107,7 @@ function prepareAdaptiveMusic(input: unknown, inputScore: unknown) {
         expression: cropCurve(track.expression, start, end, totalBeats, score.loop),
         pedal: cropPedal(track.pedal, start, end, score.loop),
       })),
-    });
+    }, recipes, start);
     const trim = segment.scoreFrames - Math.round(region.beats * full.framesPerBeat);
     const clip: AdaptiveClip = { file: 'section-' + name + '.wav', frames: segment.frames - trim, beats: region.beats,
       ...(region.harmony ? { harmony: region.harmony } : {}) };
@@ -141,15 +141,15 @@ function prepareRoutingPreview(bank: AdaptiveMusicBank, preview: ReturnType<type
   return plan;
 }
 
-export function inspectAdaptiveMusic(input: unknown, inputScore: unknown) {
-  const { full, bank, preview } = prepareAdaptiveMusic(input, inputScore);
+export function inspectAdaptiveMusic(input: unknown, inputScore: unknown, recipes?: MusicRenderOptions['recipes']) {
+  const { full, bank, preview } = prepareAdaptiveMusic(input, inputScore, recipes);
   return { ...bank, score: full.score.id, ...(preview && { preview }) };
 }
 
-export function compileAdaptiveMusic(input: unknown, inputScore: unknown) {
-  const { full, bank, sections, preview } = prepareAdaptiveMusic(input, inputScore);
+export function compileAdaptiveMusic(input: unknown, inputScore: unknown, recipes?: MusicRenderOptions['recipes']) {
+  const { full, bank, sections, preview } = prepareAdaptiveMusic(input, inputScore, recipes);
   const { score } = full;
-  const { master } = renderPreparedMusic(full).report;
+  const { master, tracks } = renderPreparedMusic(full).report;
   const pcm = new Map<string, StereoPcm>();
   const preGainPeak: number[] = [];
   for (const { name, segment, trim } of sections) {
@@ -164,7 +164,8 @@ export function compileAdaptiveMusic(input: unknown, inputScore: unknown) {
   const gain = dbToGain(sharedGainDb);
   for (const channels of pcm.values()) scaleStereo(channels, gain);
   const session = preview && renderPlannedPreview(bank, pcm, preview, score.master.ceilingDbtp);
-  return { bank, pcm, score, sharedGainDb, session };
+  const sources = tracks.flatMap(track => track.source ? [{ id: track.id, ...track.source }] : []);
+  return { bank, pcm, score, sharedGainDb, session, sources };
 }
 
 function planAdaptivePreview(bank: AdaptiveMusicBank, changes: readonly MusicChange[], beats: number) {

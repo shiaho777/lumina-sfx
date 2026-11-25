@@ -1,9 +1,10 @@
 import { noise } from '../dsp.ts';
 import { biquad, clamp, makeSVF, pulseOsc, rng, sawOsc, sineOsc, triangleOsc, TAU } from './dsp.ts';
 import { drumVoice, isDrumVoice } from './drums.ts';
-import { nylonVoice, tineVoice } from './keys-and-strings.ts';
+import { nylonVoice, studioNylonGuitar, studioTineVoice, tineVoice } from './keys-and-strings.ts';
 import { createOrchestralVoice, orchestralEnvelopes, type VoiceCharacter } from './orchestra.ts';
 import type { Articulation, DrumSound, Instrument } from './score.ts';
+import { studioSynth } from './synths.ts';
 
 type Envelope = { attack: number; decay: number; sustain: number; release: number };
 
@@ -19,7 +20,7 @@ const envelopes = {
   snare: { attack: 0.002, decay: 0.24, sustain: 1, release: 0.09 },
   hat: { attack: 0.001, decay: 0.12, sustain: 1, release: 0.06 },
   tom: { attack: 0.003, decay: 0.28, sustain: 0.86, release: 0.28 },
-} satisfies Record<Exclude<Instrument, 'drums'> | DrumSound, Envelope>;
+} satisfies Record<Exclude<Instrument, 'drums' | 'recipe'> | DrumSound, Envelope>;
 
 export function noteEnvelope(voice: keyof typeof envelopes, articulation: Articulation | undefined, rate: number, frames: number) {
   const base = envelopes[voice];
@@ -50,10 +51,20 @@ export function noteEnvelope(voice: keyof typeof envelopes, articulation: Articu
 export function createVoice(
   voice: keyof typeof envelopes, rate: number, hz: number, seed: number, character: VoiceCharacter = { velocity: 0.8 },
 ): (time: number) => number {
-  if (voice === 'tom') return drumVoice(voice, rate, hz, seed, character.velocity);
-  if (character.studio && isDrumVoice(voice)) return drumVoice(voice, rate, hz, seed, character.velocity);
-  if (voice === 'nylon-guitar') return nylonVoice(rate, hz, seed, character.velocity);
-  if (voice === 'electric-piano') return tineVoice(rate, hz, seed, character.velocity);
+  if ((character.studio || voice === 'tom') && isDrumVoice(voice)) {
+    return drumVoice(voice, rate, hz, seed, character.velocity, character.studio === true);
+  }
+  if (voice === 'nylon-guitar') {
+    return character.studio
+      ? studioNylonGuitar(rate, hz, seed, character.velocity, character.articulation)
+      : nylonVoice(rate, hz, seed, character.velocity);
+  }
+  if (voice === 'electric-piano') {
+    return (character.studio ? studioTineVoice : tineVoice)(rate, hz, seed, character.velocity);
+  }
+  if (character.studio && (voice === 'bass' || voice === 'pad' || voice === 'pluck' || voice === 'chip')) {
+    return studioSynth(voice, rate, hz, seed, character.velocity);
+  }
   const sine = sineOsc(rate);
   switch (voice) {
     case 'kick':
@@ -75,26 +86,9 @@ export function createVoice(
     }
     case 'bass': {
       const triangle = triangleOsc(rate);
-      if (character.studio) {
-        const second = sineOsc(rate), third = sineOsc(rate);
-        const octaveGain = 2 * hz < rate * 0.45 ? 0.095 + 0.08 * character.velocity : 0;
-        const thirdGain = 3 * hz < rate * 0.45 ? 1 : 0;
-        return time => 0.51 * sine(hz) + octaveGain * second(2 * hz) +
-          thirdGain * (0.031 + 0.11 * character.velocity * Math.exp(-time / 0.11)) * third(3 * hz);
-      }
       return time => 0.59 * sine(hz) - triangle(hz) * (0.08 + 0.13 * Math.exp(-time / 0.09));
     }
     case 'pad': {
-      if (character.studio) {
-        const random = rng(seed);
-        const lower = sawOsc(rate, random()), upper = sawOsc(rate, random());
-        const movement = random() * TAU;
-        const filter = biquad('lowpass', Math.min(rate * 0.18, Math.max(730, hz * (1.8 + character.velocity))), 0.66, rate);
-        return time => {
-          const drift = Math.sin(movement + TAU * 0.29 * time) * 0.0018;
-          return filter(0.36 * sine(hz) + 0.145 * lower(hz * (0.9971 + drift)) + 0.14 * upper(hz * (1.0026 - drift)));
-        };
-      }
       const lower = sawOsc(rate);
       const upper = sawOsc(rate);
       const filter = biquad('lowpass', Math.min(rate * 0.26, Math.max(1150, hz * 2.6)), 0.75, rate);
@@ -107,7 +101,7 @@ export function createVoice(
     case 'pluck': {
       const filter = makeSVF(rate);
       const modulator = sineOsc(rate);
-      const index = (character.studio ? 0.55 + 1.25 * character.velocity : 1.5) * clamp((rate / 2 - 2 * hz) / (4 * hz), 0, 1);
+      const index = 1.5 * clamp((rate / 2 - 2 * hz) / (4 * hz), 0, 1);
       let phase = 0;
       return time => {
         const modulation = modulator(2 * hz) * index * Math.exp(-time / 0.075);

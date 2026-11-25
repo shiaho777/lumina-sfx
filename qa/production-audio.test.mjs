@@ -197,3 +197,40 @@ test('a scene marker stays on its target sample after the recipe renderer trims 
   assert.equal(sfxBus[0][23999], 0);
   assert.ok(sfxBus[0][24000] > 0.015);
 });
+
+test('recipe parts keep the catalog source and gate pitched notes and one-shots on the music clock', () => {
+  const tone = {
+    id: 'tone', name: 'Tone', category: 'Sci-Fi & UI', tags: [], loopable: false, durationSec: 0.35, params: {},
+    render({ frames, sampleRate }) {
+      return Float32Array.from({ length: frames }, (_, i) => Math.sin(2 * Math.PI * 440 * i / sampleRate));
+    },
+  };
+  const plan = {
+    version: 1, id: 'recipe-test', backing: false, style: 'menu', bpm: 120,
+    parts: { pitched: { instrument: 'recipe', recipe: 'tone', root: 'A4' }, raw: { instrument: 'recipe', recipe: 'tone' } },
+    motifs: {
+      tune: [{ beat: 0, duration: 0.5, note: 'A4' }, { beat: 1, duration: 0.5, note: 'A5' }],
+      tap: [{ beat: 0.5, duration: 0.2, note: 'hit' }],
+    },
+    sections: [{ id: 'phrase', role: 'main', chords: ['A'],
+      statements: [{ track: 'pitched', motif: 'tune' }, { track: 'raw', motif: 'tap' }] }],
+  };
+  const score = arrangeMusic(plan);
+  assert.deepEqual(score.tracks.map(track => track.id), ['pitched', 'raw']);
+  assert.throws(() => renderMusic(score), /needs the catalog recipe tone/);
+  const recipes = new Map([['tone', tone]]);
+  const stems = new Map();
+  const { report } = renderMusic(score, { recipes, onStem: (id, pcm) => stems.set(id, pcm[0]) });
+  assert.deepEqual(report.tracks.map(track => track.source.recipe), ['tone', 'tone']);
+  const cycles = (samples, at) => {
+    let count = 0;
+    for (let frame = at + 1; frame < at + 4800; frame++) if (samples[frame - 1] <= 0 && samples[frame] > 0) count++;
+    return count;
+  };
+  assert.ok(Math.abs(cycles(stems.get('pitched'), 1500) - 44) <= 2);
+  assert.ok(Math.abs(cycles(stems.get('pitched'), 25500) - 88) <= 3);
+  assert.ok(stems.get('raw').subarray(12000, 16800).some(value => Math.abs(value) > 0.01));
+  assert.ok(stems.get('raw').subarray(16800).every(value => value === 0));
+  const invalid = { ...score, tracks: [{ ...score.tracks[0], notes: [{ beat: 0, note: 'A7', duration: 0.5 }] }] };
+  assert.throws(() => renderMusic(invalid, { recipes }), /recipe pitch range/);
+});

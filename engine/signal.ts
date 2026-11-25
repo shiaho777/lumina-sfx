@@ -65,17 +65,30 @@ export function triangleOsc(rate: number): (hz: number) => number {
 }
 
 // Level at release starts from whatever the attack or decay reached when the note was short.
-export function adsrCurve(total: number, rate: number, hold: number, attack: number, decay: number, sustain: number, release: number): Float32Array {
+export function adsrCurve(total: number, rate: number, hold: number, attack: number, decay: number, sustain: number, release: number, smooth = false): Float32Array {
   const out = new Float32Array(total);
   const a = Math.max(1, Math.round(attack * rate)), d = Math.max(1, Math.round(decay * rate)), r = Math.max(1, Math.round(release * rate));
   const held = Math.max(0, Math.min(hold, total));
-  const level = (i: number) => (i < a ? i / a : i - a < d ? 1 - (1 - sustain) * ((i - a) / d) : sustain);
+  const edge = (progress: number) => {
+    const ratio = progress / 0.12;
+    return ratio < 1 ? progress * ratio * (2 - ratio) : progress;
+  };
+  const shape = (progress: number) => progress <= 0.5 ? edge(progress) : 1 - edge(1 - progress);
+  const level = (i: number) => {
+    if (i < a) return smooth ? shape(i / a) : i / a;
+    if (i - a >= d) return sustain;
+    const progress = (i - a) / d;
+    return 1 - (1 - sustain) * (smooth ? shape(progress) : progress);
+  };
   const released = held ? level(held - 1) : 0;
   for (let i = 0; i < total; i++) {
     if (i < held) out[i] = level(i);
     else {
       const t = i - held;
-      out[i] = t < r ? released * Math.exp((-7 * t) / r) * (1 - t / r) : 0;
+      if (t < r) {
+        const progress = smooth ? shape(t / r) : t / r;
+        out[i] = released * Math.exp(smooth ? -7 * progress : (-7 * t) / r) * (1 - progress);
+      }
     }
   }
   return out;

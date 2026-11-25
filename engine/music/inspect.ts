@@ -8,7 +8,7 @@ export function inspectMusic(input: unknown) {
   const tracks = score.tracks.map((track, i) => {
     const events = notes[i];
     const entry = instrumentCatalog[track.instrument];
-    const pitches = 'range' in entry ? events.map(note => typeof note.note === 'number' ? note.note : noteMidi(note.note)) : [];
+    const pitches = 'range' in entry || track.root !== undefined ? events.map(note => typeof note.note === 'number' ? note.note : noteMidi(note.note)) : [];
     const range = 'range' in entry ? entry.range : undefined;
     const outside = range ? pitches.flatMap((pitch, i) => pitch < noteMidi(range[0]) || pitch > noteMidi(range[1]) ?
       [{ beat: events[i].beat, note: midiName(pitch) }] : []) : [];
@@ -21,6 +21,7 @@ export function inspectMusic(input: unknown) {
     }
     return {
       id: track.id, instrument: track.instrument, notes: events.length, peakWrittenPolyphony,
+      ...(track.recipe ? { recipe: track.recipe, ...(track.root === undefined ? {} : { root: midiName(track.root) }) } : {}),
       pitchRange: pitches.length ? [midiName(Math.min(...pitches)), midiName(Math.max(...pitches))] : undefined,
       outOfRecommendedRange: outside.length,
       ...(outside.length ? { rangeExamples: outside.slice(0, 4) } : {}),

@@ -1,6 +1,7 @@
 import { noteMidi, parseChord, parseKey } from './theory.ts';
 
 export const instrumentCatalog = {
+  recipe: { role: 'Catalog sound recipe played as a pitch or a hit', articulations: [] },
   drums: { role: 'Drum kit and ensemble percussion', articulations: ['short', 'accent'] },
   bass: { role: 'Round synth bass', range: ['C1', 'C4'], articulations: ['sustain', 'short', 'accent'] },
   pad: { role: 'Detuned synth harmony', range: ['C3', 'C6'], articulations: ['sustain', 'short', 'swell'] },
@@ -11,6 +12,7 @@ export const instrumentCatalog = {
   'electric-piano': { role: 'Warm tine keys for syncopated chords or melody', range: ['A1', 'C7'], articulations: ['sustain', 'short', 'accent'] },
   strings: { role: 'Bowed string section and rhythmic ostinati', range: ['C2', 'E7'], articulations: ['sustain', 'short', 'accent', 'swell', 'legato'], dynamics: true },
   cello: { role: 'Solo bowed voice and lower countermelody', range: ['C2', 'G5'], articulations: ['sustain', 'short', 'accent', 'swell', 'legato'], dynamics: true },
+  violin: { role: 'Solo bowed melody and high countermelody', range: ['G3', 'E7'], articulations: ['sustain', 'short', 'accent', 'swell', 'legato'], dynamics: true },
   horn: { role: 'Rounded brass theme and accents', range: ['F2', 'C6'], articulations: ['sustain', 'short', 'accent', 'swell', 'legato'], dynamics: true },
   'electric-guitar': { role: 'Amplified picked strings and power chords', range: ['E2', 'E6'], articulations: ['sustain', 'short', 'accent', 'mute'] },
   timpani: { role: 'Tuned orchestral drums', range: ['D2', 'A3'], articulations: ['sustain', 'short', 'accent'] },
@@ -51,6 +53,9 @@ export interface MusicNote {
 export interface MusicTrack {
   id: string;
   instrument: Instrument;
+  recipe?: string;
+  root?: number;
+  params?: Record<string, number>;
   gainDb: number;
   pan: number;
   reverb?: number;
@@ -101,7 +106,32 @@ function id(value: unknown, path: string): string {
   return value;
 }
 
-function readNote(value: unknown, instrument: Instrument, beats: number, path: string): MusicNote {
+export function readMusicPart(track: Record<string, unknown>, path: string) {
+  const instrument = instruments.find(name => name === track.instrument);
+  if (!instrument) throw Error(path + '.instrument must be one of ' + instruments.join(', '));
+  if (instrument !== 'recipe') {
+    if (track.recipe !== undefined || track.root !== undefined || track.params !== undefined) {
+      throw Error(path + ' needs instrument "recipe" to set recipe, root or params');
+    }
+    return { instrument };
+  }
+  if (typeof track.recipe !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(track.recipe)) {
+    throw Error(path + '.recipe must name a catalog sound');
+  }
+  let root: number | undefined;
+  if (track.root !== undefined) {
+    try {
+      root = typeof track.root === 'string' ? noteMidi(track.root) : numberInRange(track.root, 0, 127, path + '.root', true);
+    } catch {
+      throw Error(path + '.root must be a note name or MIDI number');
+    }
+  }
+  const params = track.params === undefined ? undefined : Object.fromEntries(Object.entries(object(track.params, path + '.params'))
+    .map(([key, value]) => [key, numberInRange(value, -Number.MAX_VALUE, Number.MAX_VALUE, path + '.params.' + key)]));
+  return { instrument, recipe: track.recipe, ...(root === undefined ? {} : { root }), ...(params ? { params } : {}) };
+}
+
+function readNote(value: unknown, instrument: Instrument, root: number | undefined, beats: number, path: string): MusicNote {
   const data = object(value, path);
   const beat = numberInRange(data.beat, 0, beats, path + '.beat');
   if (beat >= beats) throw Error(path + '.beat must start before the end of the score');
@@ -110,6 +140,8 @@ function readNote(value: unknown, instrument: Instrument, beats: number, path: s
   const note = data.note;
   if (instrument === 'drums') {
     if (!drumSounds.some(sound => sound === note)) throw Error(path + '.note must be one of ' + drumSounds.join(', '));
+  } else if (instrument === 'recipe' && root === undefined) {
+    if (note !== 'hit') throw Error(path + '.note must be "hit" for a recipe without a root');
   } else if (typeof note === 'string') {
     try {
       noteMidi(note);
@@ -122,6 +154,7 @@ function readNote(value: unknown, instrument: Instrument, beats: number, path: s
   const allowed = instrumentCatalog[instrument].articulations;
   const articulation = allowed.find(value => value === data.articulation);
   if (data.articulation !== undefined && !articulation) {
+    if (instrument === 'recipe') throw Error(path + '.articulation is unavailable on recipe notes. Set duration and velocity');
     throw Error(path + '.articulation for ' + instrument + ' must be one of ' + allowed.join(', '));
   }
   return { beat, duration, note: note as string | number, velocity, ...(articulation ? { articulation } : {}) };
@@ -218,13 +251,14 @@ export function readMusicScore(input: unknown): MusicScore {
     const trackId = id(track.id, path + '.id');
     if (seen.has(trackId)) throw Error('Duplicate track ID: ' + trackId);
     seen.add(trackId);
-    const instrument = instruments.find(name => name === track.instrument);
-    if (!instrument) throw Error(path + '.instrument must be one of ' + instruments.join(', '));
+    const part = readMusicPart(track, path);
+    const { instrument } = part;
+    const root = part.instrument === 'recipe' ? part.root : undefined;
     const gainDb = numberInRange(track.gainDb ?? 0, -90, 12, path + '.gainDb');
     const pan = numberInRange(track.pan ?? 0, -1, 1, path + '.pan');
     const reverb = track.reverb === undefined ? undefined : numberInRange(track.reverb, 0, 1, path + '.reverb');
     if (track.dynamics !== undefined && !('dynamics' in instrumentCatalog[instrument])) {
-      throw Error(path + '.dynamics is supported on strings, cello and horn. Use expression to shape gain on other tracks');
+      throw Error(path + '.dynamics is supported on strings, cello, violin and horn. Use expression to shape gain on other tracks');
     }
     const dynamics = track.dynamics === undefined ? undefined : readCurve(track.dynamics, beats, path + '.dynamics');
     const expression = track.expression === undefined ? undefined : readCurve(track.expression, beats, path + '.expression');
@@ -240,9 +274,9 @@ export function readMusicScore(input: unknown): MusicScore {
     if (!Array.isArray(track.notes) || track.notes.length > 4096) {
       throw Error(path + '.notes must be an array with up to 4096 events');
     }
-    const notes = track.notes.map((note, j) => readNote(note, instrument, beats, path + '.notes[' + j + ']'));
+    const notes = track.notes.map((note, j) => readNote(note, instrument, root, beats, path + '.notes[' + j + ']'));
     return {
-      id: trackId, instrument, gainDb, pan, ...(reverb === undefined ? {} : { reverb }),
+      id: trackId, ...part, gainDb, pan, ...(reverb === undefined ? {} : { reverb }),
       ...(dynamics ? { dynamics } : {}), ...(expression ? { expression } : {}), ...(pedal ? { pedal } : {}), notes,
     };
   });

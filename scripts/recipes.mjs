@@ -18,3 +18,8 @@ export async function loadRecipes(ids) {
     return recipe;
   }));
 }
+
+export async function loadMusicRecipes(score) {
+  const ids = new Set(score?.tracks.flatMap(track => track.recipe ? [track.recipe] : []));
+  return new Map(ids.size ? (await loadRecipes(ids)).map(recipe => [recipe.id, recipe]) : []);
+}
