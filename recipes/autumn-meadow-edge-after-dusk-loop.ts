@@ -5,6 +5,7 @@ import source from './_recordings/field-stalk-bed.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "autumn-meadow-edge-after-dusk-loop",
   name: "Autumn Meadow Edge after Dusk",
   category: "Weather & Ambience",

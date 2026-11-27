@@ -2,6 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { surfaceRain } from './_shared/weather-textures.ts';
 
 export default {
+  isolation: 'isolated', components: ['rain'],
   id: "fine-drizzle-loop", name: "Fine Mist Drizzle", category: 'Weather & Ambience',
   tags: ["rain","drizzle","gentle","slow"], loopable: true, durationSec: 7.5,
   params: { mist: { label: "Mist", min: 0, max: 1, default: 0.56 } },

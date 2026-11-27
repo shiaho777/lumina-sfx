@@ -6,11 +6,12 @@ import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
   isolation: 'isolated',
+  components: ['jet-engine'],
   id: 'interceptor-turbofan-dry-thrust-cruise-loop',
   name: 'Interceptor turbofan dry thrust cruise loop',
   category: 'Aircraft',
   tags: ["aircraft", "jet", "engine", "cruise", "interceptor", "turbofan", "dry", "thrust", "loop"],
-  loopable: true,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 4.67,
   targetRmsDbfs: -24,
   mixRole: 'vehicle',

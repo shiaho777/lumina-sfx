@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/demo-tram-squeal.ts';
+import source from './_recordings/isolated-rail-bend.ts';
 import source2 from './_recordings/demo-rail-joints.ts';
 
 export default {

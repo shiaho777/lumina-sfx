@@ -6,6 +6,7 @@ import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
   isolation: 'isolated',
+  components: ['jet-engine'],
   id: 'interceptor-turbofan-augmented-exhaust-roar-loop',
   name: 'Interceptor turbofan augmented exhaust roar loop',
   category: 'Aircraft',

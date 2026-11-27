@@ -11,6 +11,8 @@ export interface Powertrain {
   // Effective exhaust, tread, blade, or shaft pulse rates at the two operating points.
   pulseHz: [number, number];
   timbre: number;
+  // Bring out the recorded exhaust stroke on bass-heavy small motors.
+  exhaustBandHz?: number;
   idleWindow: [number, number];
   powerWindow: [number, number];
 }
@@ -100,6 +102,14 @@ export function propulsion(ctx: RenderContext, seed: number, demand: number, rpm
       const shell = body(raw + (impulse - .25) * (airframe ? .055 : .10) * (.32 + load));
       filtered += lp * (raw - filtered);
       out[j] = cab(filtered + shell * (room ? .64 : .18 + .20 * edge)) * volume;
+    }
+  }
+  if (spec.exhaustBandHz) {
+    const exhaustBody = biquad('bandpass', spec.exhaustBandHz, .72, ctx.sampleRate);
+    const hullRumble = biquad('highpass', 78, .71, ctx.sampleRate);
+    for (let i = 0; i < out.length; i++) {
+      const dry = hullRumble(out[i]);
+      out[i] = dry + 1.15 * exhaustBody(dry);
     }
   }
   return out;

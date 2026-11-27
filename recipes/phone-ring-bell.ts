@@ -2,7 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { beeps } from './_shared/alerts.ts';
 
 export default {
-  id: "phone-ring-bell", name: "Phone Ring · Mechanical Bell", category: "Footsteps & UI",
+  id: "phone-ring-bell", name: "Phone Ring · Electronic Bell Cadence", category: "Footsteps & UI",
   tags: ["phone","ringtone","bell","retro"], loopable: false, durationSec: 2.1,
   params: { ring: { label: "Ring", min: 0, max: 1, default: 0.7 } },
   targetRmsDbfs: -22,

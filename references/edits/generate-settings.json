@@ -1,0 +1,16 @@
+{
+  "id": "fieldwork-brief",
+  "format": "product",
+  "fps": 30,
+  "durationFrames": 300,
+  "events": [
+    {"id":"generate","frame":39,"action":"press","device":"mouse","label":"Generate"},
+    {"id":"generated-text","frame":43,"endFrame":118,"action":"stream","label":"Brief streams into the document"},
+    {"id":"read","frame":119,"endFrame":139,"action":"hold"},
+    {"id":"settings-input","frame":143,"gesture":"settings","action":"press","device":"mouse"},
+    {"id":"settings-tab","frame":143,"gesture":"settings","action":"tab","label":"Settings becomes active"},
+    {"id":"tab-indicator","frame":143,"gesture":"settings","action":"slide","direction":"right"},
+    {"id":"headings","frame":198,"syncFrame":205,"action":"toggle-on","label":"Keep section headings"},
+    {"id":"signature","frame":241,"endFrame":268,"action":"logo"}
+  ]
+}

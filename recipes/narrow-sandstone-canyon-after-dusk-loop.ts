@@ -5,6 +5,7 @@ import source from './_recordings/demo-sheltered-wind.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "narrow-sandstone-canyon-after-dusk-loop",
   name: "Narrow Sandstone Canyon after Dusk",
   category: "Weather & Ambience",

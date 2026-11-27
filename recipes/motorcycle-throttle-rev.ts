@@ -1,6 +1,6 @@
 import { renderRecording } from '../engine/recording.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import recording from './_recordings/motorcycle-throttle-rev.ts';
+import recording from './_recordings/response-trail-bike-surge.ts';
 
 export default {
   id: 'motorcycle-throttle-rev', name: 'Motorcycle Throttle Rev', category: 'Vehicles & Engines',

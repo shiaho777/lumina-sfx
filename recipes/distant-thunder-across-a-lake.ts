@@ -3,6 +3,7 @@ import { biquad } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
+  isolation:'isolated', components:['thunder'],
   id: "distant-thunder-across-a-lake",
   name: "Distant Thunder across a Lake",
   category: "Weather & Ambience",

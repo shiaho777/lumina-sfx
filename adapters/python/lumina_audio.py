@@ -1,7 +1,7 @@
 """Pygame stereo mixer for selective Lumina WAV pools (signed 16-bit PCM)."""
 from array import array
 from collections import OrderedDict
-from math import dist, sqrt
+from math import cos, dist, radians, sin, sqrt
 from pathlib import Path
 from random import Random
 import pygame
@@ -16,11 +16,13 @@ class SoundBank:
             raise ValueError("Initialize pygame.mixer with signed 16-bit stereo")
         self.root = Path(directory)
         self.listener = listener
+        self.listener_yaw = 0.0
         self.pools = {}
         self.cursor = {}
         self.cache = OrderedDict()
         self.random = Random()
         self.loops = {}
+        self.loop_levels = {}
 
     def register(self, cue):
         from json import loads
@@ -52,9 +54,17 @@ class SoundBank:
             self.cache.popitem(last=False)
         return sound
 
+    def set_listener_pose(self, position, yaw_degrees=0.0):
+        """Metres, +X right, -Z forward. Refresh all running loops on a head turn."""
+        self.listener = position
+        self.listener_yaw = radians(yaw_degrees)
+        for channel, (_, _, _, source, volume, _) in self.loops.items():
+            self._position(channel, source, self.loop_levels.get(channel, volume))
+
     def _position(self, channel, position, volume):
         distance = dist(position, self.listener)
-        pan = (position[0] - self.listener[0]) / max(1, distance)
+        right = (position[0] - self.listener[0])*cos(self.listener_yaw) + (position[2] - self.listener[2])*sin(self.listener_yaw)
+        pan = max(-1, min(1, right / max(0.05, distance)))
         gain = min(1, max(0, volume)) / max(1, distance)
         channel.set_volume(gain * sqrt((1-pan)/2), gain * sqrt((1+pan)/2))
 
@@ -70,6 +80,7 @@ class SoundBank:
         channel.play(self._pitched(cue, slot, jitter), loops=-1 if loop else 0)
         self._position(channel, position, volume)
         if loop:
+            self.loop_levels[channel] = volume
             self.loops[channel] = (cue, slot, jitter, position, volume, round(jitter*48))
         return channel
 
@@ -80,10 +91,12 @@ class SoundBank:
         step = round(rate * 48)
         if step != previous:
             channel.play(self._pitched(cue, slot, rate), loops=-1, fade_ms=18)
-        self._position(channel, position, volume * min(1, max(0, weather)))
+        self.loop_levels[channel] = volume * min(1, max(0, weather))
+        self._position(channel, position, self.loop_levels[channel])
         self.loops[channel] = (cue, slot, jitter, position, volume, step)
 
     def stop(self, channel):
         if channel is not None:
             channel.fadeout(25)
             self.loops.pop(channel, None)
+            self.loop_levels.pop(channel, None)

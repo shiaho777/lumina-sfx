@@ -1,5 +1,7 @@
-import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
+import texture from './_recordings/isolated-response-microclick.ts';
+import { biquad } from '../engine/dsp.ts';
+import { seatedContact } from './_shared/screen-foley.ts';
 
 export default {
   id: "glass-diagram-last-frame-tail",
@@ -8,15 +10,17 @@ export default {
   tags: ["glass", "diagram", "last", "frame", "tail"],
   loopable: false,
   durationSec: 1.17,
-  targetRmsDbfs: -26,
+  targetRmsDbfs: -29,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
   mixRole: "interface",
-  render(ctx, { params, seed }) {
-    return scene(ctx, seed, params.intensity, [
-      ["contact", "glass", 0, 0.22, 0.43, 762, 0.002],
-      ["tone", 0.039, 0.83, 0.49, 1043.94, 746.76, 0.064, 0.38],
-      ["tone", 0.291, 0.66, 0.44, 739.14, 678.18, 0.044, 0.25],
-      ["grains", "glass", 0.19, 0.5, 0.19, 3160, 11],
-    ]);
+  isolation: 'isolated', recording: texture.credit,
+  render(ctx, { seed, params }) {
+    const out=seatedContact(ctx,texture,seed,params.intensity,740,3950,.36);
+    const glass=biquad('bandpass',1850+450*params.intensity,2.1,ctx.sampleRate);
+    for(let i=0;i<out.length;i++) {
+      const t=i/ctx.sampleRate;
+      out[i]=out[i]*.45 + glass(ctx.random()*2-1)*.048*Math.exp(-t/.062);
+    }
+    return out;
   },
 } satisfies SoundRecipe;

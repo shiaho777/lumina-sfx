@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "id": "last-departure-in-the-rain",
+  "viewpoint": "Under the edge of an airport hangar. Soft rain pattering on metal overhead stays put as a single departing jet approaches from the left, crosses overhead and recedes to the right.",
+  "output": "headphones",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "layers": [
+    {
+      "id": "drips-over-an-apartment-fire-escape-continuous-patter-loop",
+      "label": "roof-rain",
+      "event": "roof-rain",
+      "offsetSec": 0,
+      "durationSec": 38,
+      "placement": {
+        "kind": "area",
+        "position": [
+          0.8,
+          2.6,
+          0.4
+        ],
+        "refDistance": 2.3,
+        "spread": 0.65
+      },
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.7,
+          0.9
+        ],
+        [
+          36,
+          0.9
+        ],
+        [
+          38,
+          0
+        ]
+      ],
+      "gain": 1.206
+    },
+    {
+      "id": "interceptor-turbofan-dry-thrust-cruise-loop",
+      "label": "departure",
+      "event": "departure",
+      "offsetSec": 0.5,
+      "durationSec": 36,
+      "placement": {
+        "kind": "point",
+        "position": [
+          -78,
+          1.8,
+          -23
+        ],
+        "refDistance": 8,
+        "doppler": true,
+        "path": [
+          {
+            "at": 5,
+            "position": [
+              -57,
+              2,
+              -20
+            ]
+          },
+          {
+            "at": 13,
+            "position": [
+              -24,
+              3,
+              -10
+            ]
+          },
+          {
+            "at": 17,
+            "position": [
+              -9,
+              4,
+              -4
+            ]
+          },
+          {
+            "at": 18.8,
+            "position": [
+              -2.2,
+              6.2,
+              -2
+            ]
+          },
+          {
+            "at": 21,
+            "position": [
+              12,
+              8,
+              -4
+            ]
+          },
+          {
+            "at": 25,
+            "position": [
+              36,
+              15,
+              -12
+            ]
+          },
+          {
+            "at": 31,
+            "position": [
+              73,
+              29,
+              -23
+            ]
+          },
+          {
+            "at": 36,
+            "position": [
+              113,
+              39,
+              -38
+            ]
+          }
+        ]
+      },
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          33,
+          1
+        ],
+        [
+          36,
+          0
+        ]
+      ],
+      "gain": 2.16
+    }
+  ]
+}

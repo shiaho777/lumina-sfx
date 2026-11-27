@@ -22,6 +22,26 @@
     "durationSec": 1.153
   },
   {
+    "id": "product-trailer-interface-edit",
+    "name": "Product trailer · typing, panel swipe and title landing",
+    "category": "UI",
+    "tags": [
+      "product",
+      "trailer",
+      "typing",
+      "panel",
+      "swipe",
+      "title",
+      "card",
+      "landing"
+    ],
+    "kind": "design",
+    "file": "references/scenes/product-trailer-interface-edit.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 3.34
+  },
+  {
     "id": "jet-elimination-dry-latch",
     "name": "Dry HUD latch for a confirmed elimination",
     "category": "UI",
@@ -161,7 +181,7 @@
       "underwater",
       "depth",
       "submerged",
-      "bubbles",
+      "waterline",
       "motor",
       "dive"
     ],
@@ -169,7 +189,7 @@
     "file": "references/scenes/dive-beneath-the-boat.json",
     "isolation": "isolated",
     "loopable": false,
-    "durationSec": 6.3
+    "durationSec": 7.180000000000001
   },
   {
     "id": "wet-road-barrier",
@@ -285,6 +305,7 @@
     "kind": "design",
     "file": "references/scenes/fireside-distant-thunder.json",
     "loopable": false,
-    "durationSec": 10
+    "durationSec": 10,
+    "isolation": "isolated"
   }
 ]

@@ -1,14 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-settle-onto-landing-marker',
   name: 'Survey quadcopter settle onto landing marker',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "settle", "survey", "quadcopter", "onto", "landing", "marker"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "settle", "survey", "quadcopter", "onto", "landing", "marker"],
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: false,
   durationSec: 2.4,
   targetRmsDbfs: -25,

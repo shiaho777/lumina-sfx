@@ -1,6 +1,8 @@
-import { scene, sceneCredits } from './_shared/material-scenes.ts';
+import { propulsion } from './_shared/propulsion.ts';
+import load from './_recordings/isolated-motion-outboard-aeration.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/motion-flatboat-throttle.ts';
+import source from './_recordings/isolated-motion-flatboat-throttle.ts';
 
 export default {
   id: "flat-bottom-riverboat-changing-throttle",
@@ -12,11 +14,11 @@ export default {
   targetRmsDbfs: -26,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
   mixRole: "vehicle",
-  ...sceneCredits(source),
+  isolation:'isolated', components:['boat-engine'],
+  ...sceneCredits(source, load),
   render(ctx, { params, seed }) {
-    return scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 5.51, .9, .06, 4900, .003, .36],
-      ["brush", "water", 0, .21, .15, 417, .003],
-    ]);
+    return propulsion(ctx, seed, params.intensity, .48, 'surge', {
+      kind:'outboard', pulseHz:[22,117], timbre:.44, idleWindow:[.08,.94], powerWindow:[.10,.90],
+    }, source, load);
   },
 } satisfies SoundRecipe;

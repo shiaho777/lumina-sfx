@@ -1,17 +1,13 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import { fieldWeather } from './_shared/weather-field.ts';
-import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/atlas-inferno.ts';
-import wash from './_recordings/atlas-fire.ts';
-import detail from './_recordings/dry-branch-snap.ts';
-
+import { woodFire } from './_shared/wood-fire.ts';
+import burn from './_recordings/isolated-wood-fire.ts';
 export default {
   id: "flames-behind-a-closed-workshop-door-sustained-burn-loop", name: "Flames behind a closed workshop door — sustained burn", category: "Water & Fire",
-  tags: ["fire", "field-recording", "screened", "sustained burn", "flames", "behind", "a", "closed"], loopable: true, durationSec: 7.79,
+  tags: ["fire", "field-recording", "screened", "sustained burn", "flames", "behind", "a", "closed"], loopable: true, sustainMode: 'evolving', durationSec: 7.79,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
-  ...sceneCredits(source, wash, detail),
-  render(ctx, { seed, params }) {
-    return fieldWeather(ctx, seed, params.intensity, { base: source, wash, detail, bodyHz: 970, detailHz: 1450, spacing: 2.4, depth: .34, space: "screened" }, "steady");
+  recording: burn.credit, components: ['fire'], isolation:'isolated',
+  render(ctx, {seed, params}) {
+    return woodFire(ctx, burn, seed, 0.163 + .35 * params.intensity, 0.1212, 'screened', 'steady', 0.1526);
   },
 } satisfies SoundRecipe;

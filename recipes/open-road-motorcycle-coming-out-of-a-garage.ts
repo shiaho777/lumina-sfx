@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/motorcycle-throttle-rev.ts';
+import source from './_recordings/response-trail-bike-surge.ts';
 import source2 from './_recordings/motorcycle-road-pass.ts';
 
 export default {

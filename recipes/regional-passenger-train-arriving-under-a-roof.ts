@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/milestone-train.ts';
+import source from './_recordings/isolated-milestone-train.ts';
 
 export default {
   id: "regional-passenger-train-arriving-under-a-roof",

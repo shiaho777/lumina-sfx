@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "id": "passing-bell",
+  "output": "headphones",
+  "viewpoint": "By a path as a bell approaches and passes",
+  "focus": {
+    "subjects": []
+  },
+  "layers": [
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-1",
+      "offsetSec": 0,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -4,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-2",
+      "offsetSec": 0.58,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -2,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-3",
+      "offsetSec": 1.14,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -0.4,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-4",
+      "offsetSec": 1.7,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          1.9,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-5",
+      "offsetSec": 2.28,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          4.6,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    }
+  ]
+}

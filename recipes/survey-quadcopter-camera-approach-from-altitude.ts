@@ -1,14 +1,16 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-camera-approach-from-altitude',
   name: 'Survey quadcopter camera approach from altitude',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "approach", "survey", "quadcopter", "camera", "from", "altitude"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "approach", "survey", "quadcopter", "camera", "from", "altitude"],
+  perspective: 'authored pass-by perspective',
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: false,
   durationSec: 2.92,
   targetRmsDbfs: -24,

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "id": "hangar-door",
+  "viewpoint": "Inside, rain outside; open and close the door",
+  "output": "stereo",
+  "focus": {
+    "subjects": []
+  },
+  "layers": [
+    {
+      "id": "rainfall-open-air-clean-loop",
+      "label": "rain",
+      "placement": {
+        "kind": "point",
+        "position": [
+          2,
+          0,
+          -3
+        ],
+        "room": "hangar",
+        "obstruction": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2.5,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5.5,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      },
+      "durationSec": 6
+    },
+    {
+      "id": "interceptor-turbofan-ramp-idle-loop",
+      "label": "idle",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -2,
+          0,
+          -3
+        ]
+      },
+      "gain": 0.28,
+      "durationSec": 6
+    }
+  ],
+  "scope": "world",
+  "sourcePolicy": "clean"
+}

@@ -62,11 +62,14 @@ export async function publishAsset(path, bytes) {
   }
 }
 
+export function ffmpegPath() {
+  const local = join(homedir(), '.local/share/lumina-sfx/tools/ffmpeg');
+  return process.env.FFMPEG_PATH || (existsSync(local) ? local : 'ffmpeg');
+}
 export async function encodeDelivery(wav, format) {
   if (format === 'wav') return wav;
   if (!['opus', 'ogg'].includes(format)) throw Error('Unknown audio format: ' + format);
-  const local = join(homedir(), '.local/share/lumina-sfx/tools/ffmpeg');
-  const ffmpeg = process.env.FFMPEG_PATH || (existsSync(local) ? local : 'ffmpeg');
+  const ffmpeg = ffmpegPath();
   const temp = await mkdtemp(join(tmpdir(), 'lumina-encode-'));
   try {
     const source = join(temp, 'master.wav'), output = join(temp, 'delivery.' + format);

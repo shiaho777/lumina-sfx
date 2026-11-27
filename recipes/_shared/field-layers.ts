@@ -33,22 +33,24 @@ export function snippet(ctx: RenderContext, clip: RecordedClip, seed: number, se
 
 // Each overlapping window follows real field audio. Random source offsets and
 // nonuniform window lengths avoid an obvious repeated cycle in sustained beds.
-export function sustain(ctx: RenderContext, clip: RecordedClip, seed: number, speed: number, hz: number) {
+export function sustain(ctx: RenderContext, clip: RecordedClip, seed: number, speed: number, hz: number, variedWindows = false) {
   const draw = rng(seed);
   const result = new Float32Array(ctx.frames);
   let offset = 0;
   let overlap = 0;
   for (let index = 0; offset < ctx.frames; index++) {
-    const take = (seed + index) >>> 0;
+    const take = variedWindows ? Math.floor(draw() * clip.takes.length) : (seed + index) >>> 0;
     const encoded = clip.takes[take % clip.takes.length];
     const sourceSeconds = (encoded.length * .75 - (encoded.endsWith('==') ? 2 : encoded.endsWith('=') ? 1 : 0)) / (2 * clip.sampleRate);
     const stretch = speed * (.978 + .044 * draw());
-    const length = Math.max(.009, sourceSeconds * (.65 + .295 * draw()));
+    const length = Math.max(.009, sourceSeconds * (variedWindows ? .22 + .40 * draw() : .65 + .295 * draw()));
     const start = Math.max(0, (sourceSeconds - length) * draw());
     const frames = Math.max(1, Math.round(length / stretch * ctx.sampleRate));
-    const window = renderRecording({ ...ctx, frames }, clip, { seed: take, speed: stretch, startSec: start, cutoffHz: hz });
+    // A short preview may use only the opening of a long field take.
+    const usedFrames = Math.min(frames, result.length - offset);
+    const window = renderRecording({ ...ctx, frames: usedFrames }, clip, { seed: take, speed: stretch, startSec: start, cutoffHz: hz });
     const nextOverlap = Math.min(Math.round(.18 * ctx.sampleRate), frames >> 2);
-    for (let i = 0; i < frames && i + offset < result.length; i++) {
+    for (let i = 0; i < usedFrames; i++) {
       const fade = Math.min(overlap ? i / overlap : 1, nextOverlap ? (frames - i - 1) / nextOverlap : 1, 1);
       result[i + offset] += window[i] * Math.sin(Math.PI * .5 * fade);
     }

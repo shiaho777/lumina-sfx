@@ -1,7 +1,7 @@
 import { mix } from '../engine/dsp.ts';
 import { atmosphere, scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/demo-carriage-bed.ts';
+import source from './_recordings/isolated-demo-carriage-bed.ts';
 
 export default {
   id: "glass-elevator-interior-air-loop",

@@ -269,3 +269,9 @@ static func _prepare_loop_stream(stream: AudioStream) -> AudioStream:
 					looping_wav.loop_end = sample_frames
 			return looping_wav
 	return stream
+
+
+## Godot and Lumina use metres and -Z forward. Apply this to the emitter Node3D.
+static func scene_pose(position_metres: Vector3, yaw_degrees: float, pitch_degrees: float) -> Transform3D:
+	var basis := Basis(Vector3.UP, -deg_to_rad(yaw_degrees)) * Basis(Vector3.RIGHT, deg_to_rad(pitch_degrees))
+	return Transform3D(basis, position_metres)

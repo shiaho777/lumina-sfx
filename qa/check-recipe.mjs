@@ -1,4 +1,5 @@
 import { renderDurationSec } from '../engine/sculpt.ts';
+import { checkListeningMaster } from './listening-master.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { DEFAULT_SEED, renderSound, renderChannels, SAMPLE_RATE } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
@@ -24,6 +25,13 @@ export async function checkRecipe(recipe, { extremes = false, bothLevels = false
       const seed = DEFAULT_SEED + variant * 8191;
       const entry = extremes ? { seed, setting } : { seed };
       try {
+        if(recipe.preserveTimeline) {
+          const first=setting==='default' && variant===0;
+          const {master,checks}=checkListeningMaster(recipe,{seed,params},first && bothLevels);
+          if(first) candidate=Buffer.from(master);
+          variants.push({...entry,pass:Object.values(checks).every(c=>c.pass),checks});
+          continue;
+        }
         const original = renderSound(recipe, { seed, params });
         const wav = encodeWav(original);
         const pcm = decodeWav(wav, SAMPLE_RATE);

@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import sheepBellJingle from './_recordings/sheep-bell-jingle.ts';
-import sheepBleat from './_recordings/sheep-bleat.ts';
+import sheepBleat from './_recordings/isolated-sheep-voice.ts';
 
 export default {
   id: 'ewe-shaking-a-neck-bell', name: "Ewe shaking a neck bell", category: 'Animals',

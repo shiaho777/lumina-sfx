@@ -1,0 +1,44 @@
+{
+  "estuary":{"format":"product","durationFrames":150,"events":[
+    {"id":"down","frame":25,"action":"press","gesture":"tide-table","device":"mouse","underSpeech":true,"label":"Tide table is depressed"},
+    {"id":"table","frame":26,"action":"tab","gesture":"tide-table","underSpeech":true,"label":"Selected tab and chart content change"},
+    {"id":"marks","frame":69,"action":"toggle-on","device":"mouse","underSpeech":true,"label":"Station mark switch seats on"},
+    {"id":"reading","frame":110,"action":"hold","endFrame":149,"label":"Read the tide table"}
+  ]},
+  "index":{"format":"product","durationFrames":125,"events":[
+    {"id":"over","frame":12,"action":"hover","label":"Cursor crosses search box"},
+    {"id":"caret","frame":26,"action":"focus","label":"Search field outline gains focus"},
+    {"id":"word","frame":44,"endFrame":73,"action":"type","keyFrames":[44,52,66,73],"device":"laptop","label":"Four letters appear at unequal intervals"},
+    {"id":"clipboard","frame":98,"action":"paste","label":"Five characters arrive together"},
+    {"id":"read","frame":104,"action":"hold","endFrame":124,"label":"Result stays on screen"}
+  ]},
+  "prism":{"format":"trailer","durationFrames":120,"events":[
+    {"id":"cut","frame":25,"action":"cut","label":"Plain cut to a study"},
+    {"id":"travel","frame":44,"endFrame":55,"action":"slide","accent":true,"direction":"left","label":"Color bands sweep left and stop"},
+    {"id":"mark","frame":83,"action":"logo","accent":true,"label":"Brand mark appears centered on the end card"},
+    {"id":"end","frame":100,"endFrame":119,"action":"hold","label":"Static brand card"}
+  ]},
+  "causeway":{"format":"game-menu","durationFrames":121,"events":[
+    {"id":"pointer","frame":15,"action":"hover","label":"Pointer appears over already-drawn list"},
+    {"id":"headland","frame":28,"action":"focus","device":"controller","label":"Selection moves to Headland"},
+    {"id":"marsh","frame":35,"action":"focus","device":"controller","label":"Selection moves to Salt marsh"},
+    {"id":"choose","frame":57,"action":"confirm","gesture":"open","device":"controller","label":"Route accepted"},
+    {"id":"map","frame":58,"action":"cut","gesture":"open","label":"Detail panel replaces route list"},
+    {"id":"return","frame":92,"action":"back","device":"controller","label":"Returning to route list"},
+    {"id":"wait","frame":105,"endFrame":120,"action":"hold","label":"Input idle"}
+  ]},
+  "swatch":{"format":"product","durationFrames":128,"events":[
+    {"id":"ochre-grab","frame":21,"endFrame":52,"action":"drag","device":"mouse","label":"Ochre tile lifts and travels to tray"},
+    {"id":"ochre-seat","frame":54,"action":"snap","sourceContact":true,"label":"Tile locks to first tray slot with audible source tap"},
+    {"id":"shale-grab","frame":73,"endFrame":94,"action":"drag","device":"mouse","label":"Shale tile lifts and travels"},
+    {"id":"shale-seat","frame":96,"action":"snap","label":"Second tile seats in the neighbouring slot"},
+    {"id":"tray","frame":108,"endFrame":127,"action":"hold","label":"Read finished tray"}
+  ]},
+  "proofs":{"format":"product","durationFrames":117,"events":[
+    {"id":"push","frame":22,"action":"press","gesture":"queue","device":"mouse","label":"Queue proofs button depresses"},
+    {"id":"accepted","frame":23,"action":"confirm","gesture":"queue","label":"The same button reports queued"},
+    {"id":"list","frame":43,"endFrame":64,"action":"stream","label":"Four proof names populated by the app"},
+    {"id":"watermark","frame":84,"action":"logo","label":"Passive footer watermark appears"},
+    {"id":"batch","frame":97,"endFrame":116,"action":"hold","label":"The operator reads the result"}
+  ]}
+}

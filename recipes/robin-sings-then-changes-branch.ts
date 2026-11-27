@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import naturalRobin from './_recordings/natural-robin.ts';
+import naturalRobin from './_recordings/isolated-robin-call.ts';
 import fieldBirdFlutter from './_recordings/field-bird-flutter.ts';
 import dryVineBrush from './_recordings/dry-vine-brush.ts';
 

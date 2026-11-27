@@ -6,6 +6,7 @@ import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
   isolation: 'isolated',
+  components: ['jet-engine'],
   id: 'interceptor-turbofan-two-thrust-surges',
   name: 'Interceptor turbofan two thrust surges',
   category: 'Aircraft',

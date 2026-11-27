@@ -2,6 +2,7 @@ import { farmBed } from './_shared/farm-foley.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
+  isolation: 'isolated', components: ['water-drops'],
   id: "roof-runoff-barrel-loop", name: "Roof Runoff into a Barrel", category: "Water & Fire",
   tags: ["rain", "roof", "barrel", "runoff", "water", "loop"],
   durationSec: 11.8, loopable: true, targetRmsDbfs: -29,

@@ -5,21 +5,10 @@
   "cues": [
     {
       "id": "working-motorboat-steady-offshore-loop",
-      "blend": {
-        "control": "depth",
-        "side": "out"
-      },
       "lowpass": {
         "control": "depth",
         "openHz": 18000,
-        "closedHz": 300
-      }
-    },
-    {
-      "id": "harbor-motor-through-hydrophone-loop",
-      "blend": {
-        "control": "depth",
-        "side": "in"
+        "closedHz": 360
       }
     },
     {

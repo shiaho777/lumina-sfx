@@ -1,18 +1,10 @@
-import type { SoundRecipe } from '../engine/types.ts';
-import { perform, performanceCredits } from './_shared/field-performance.ts';
-import responseButton from './_recordings/response-button.ts';
-import energyCellSeating from './_recordings/energy-cell-seating.ts';
+import { editorContact } from './_shared/editor-contact.ts';
+import source from './_recordings/isolated-response-button.ts';
 
-export default {
-  id: 'menu-item-snaps-into-a-slot', name: "Menu item snaps into a slot", category: 'Sci-Fi & UI',
-  tags: ["ui", "menu", "drop", "drag", "snap", "slot"],
-  loopable: false, durationSec: 0.204, mixRole: 'interface', targetRmsDbfs: -25,
-  params: { pressure: { label: 'Pressure', min: 0, max: 1, default: 0.52 } },
-  ...performanceCredits(responseButton, energyCellSeating),
-  render(ctx, { seed, params }) {
-    return perform(ctx, seed, params.pressure, [
-      [responseButton, 0.0, 0.084, 0.65, 1, 10500, 0, 0.001, 0.022],
-      [energyCellSeating, 0.043, 0.111, 0.63, 1.19, 7900.0, 0, 0.001, 0.022],
-    ]);
-  },
-} satisfies SoundRecipe;
+const contact = editorContact(
+  'menu-item-snaps-into-a-slot', 'Menu item snaps into a slot', ["ui", "menu", "slot", "snap", "grid", "align", "seat", "card", "magnet"],
+  0.204, source,
+  { bodyHz: 520, decayMs: 14, cutoffHz: 4900, snap: 0.75, rattle: 0.04 },
+  [{ at: 0, weight: 1, pitch: 0.93 }],
+);
+export default { ...contact, category: 'Sci-Fi & UI' as const, params: { pressure: { label: 'Pressure', min: 0, max: 1, default: 0.52 } }, targetRmsDbfs: -26 };

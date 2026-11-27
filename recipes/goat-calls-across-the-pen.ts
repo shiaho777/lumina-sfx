@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import goatDoubleBleat from './_recordings/goat-double-bleat.ts';
-import fieldGoatYoung from './_recordings/field-goat-young.ts';
+import fieldGoatYoung from './_recordings/isolated-young-goat.ts';
 
 export default {
   id: 'goat-calls-across-the-pen', name: "Goat calls across the pen", category: 'Animals',

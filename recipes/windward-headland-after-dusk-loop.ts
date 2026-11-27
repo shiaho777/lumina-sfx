@@ -5,6 +5,7 @@ import source from './_recordings/milestone-ocean.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "windward-headland-after-dusk-loop",
   name: "Windward Headland after Dusk",
   category: "Weather & Ambience",

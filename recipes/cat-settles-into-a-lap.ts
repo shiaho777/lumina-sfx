@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import catMeow from './_recordings/cat-meow.ts';
+import catMeow from './_recordings/isolated-cat-call.ts';
 import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 import naturalPurr from './_recordings/natural-purr.ts';
 

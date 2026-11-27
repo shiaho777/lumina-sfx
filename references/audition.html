@@ -4,9 +4,9 @@
 h1{font-size:2.3rem;margin-bottom:.25em}button,select,input{font:inherit;padding:.5em .7em;border:1px solid #59706b;border-radius:.4rem;background:#233531;color:inherit}button{cursor:pointer;margin:.15rem}label{margin-right:.8rem}output{display:block;min-height:1.5em;color:#a9dccc}input[type=text]{width:min(93%,31rem)}
 </style><main><h1>Listening desk</h1><p id="count"></p>
 <p><button id="play">Play · Space</button><button id="repeat">Play ten takes</button><button id="stop">Stop</button></p>
-<p><label><input id="bed" type="checkbox" checked> Background</label><label><input id="phone" type="checkbox"> Phone speaker</label></p>
+<p><label><input id="bed" type="checkbox"> Background</label><label><input id="phone" type="checkbox"> Phone speaker</label></p>
 <p><label>What did you hear?<br><input id="heard" type="text" autocomplete="off"></label></p>
-<label>Reason <select id="reason"><option></option><option>Background voices or unrelated clicks</option><option>Wrong material</option><option>Too loud</option><option>Too quiet</option><option>Repeats</option><option>Hard to recognize</option><option>Fits the scene</option></select></label>
+<label>Reason <select id="reason"><option></option><option>Background voices or unrelated clicks</option><option>Wrong action</option><option>Wrong material</option><option>Too bright</option><option>Too busy</option><option>Too loud</option><option>Too quiet</option><option>Repeats</option><option>Hard to recognize</option><option>Fits the scene</option></select></label>
 <p><button id="yes">Yes · Y</button><button id="no">No · N</button></p><output id="status" aria-live="polite"></output>
 <p><button id="reset">Review again</button><button id="save">Export votes</button></p></main>
 <script id="audio-data" type="application/json">__AUDIO__</script>

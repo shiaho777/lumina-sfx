@@ -46,3 +46,18 @@ console.log(
     canopyHighShare: canopy,
   }),
 );
+
+// A film-winding lever belongs to cameras and projectors. The ambiguous source
+// name once introduced a camera shutter into environmental wind and rain.
+for (const item of sounds) {
+  if (item.category === 'Weather & Ambience') {
+    const credits = [item.recording, ...(item.additionalRecordings ?? [])];
+    assert.ok(!credits.some(c => /old slr film camera/i.test(c?.title ?? '')), item.id);
+  }
+  const source = await readFile(new URL('../' + item.file, import.meta.url), 'utf8');
+  if (source.includes('/demo-film-wind.ts')) assert.match(item.id, /camera|lens|reel|projector/, item.id);
+}
+const campfire = (await import('../recipes/campfire-crackle-loop.ts')).default;
+const quiet = spectrum(renderSound(campfire, {params:{sparks:0}}),44100);
+const crisp = spectrum(renderSound(campfire, {params:{sparks:1}}),44100);
+assert.ok(quiet.high < crisp.high && quiet.high < .04, 'Wood snaps should soften at low settings');

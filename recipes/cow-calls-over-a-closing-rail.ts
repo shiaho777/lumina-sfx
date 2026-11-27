@@ -2,7 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import fieldFarmCow from './_recordings/field-farm-cow.ts';
 import paddockGateSwing from './_recordings/paddock-gate-swing.ts';
-import fieldCalfContact from './_recordings/field-calf-contact.ts';
+import fieldCalfContact from './_recordings/isolated-barn-call.ts';
 
 export default {
   id: 'cow-calls-over-a-closing-rail', name: "Cow calls over a closing rail", category: 'Animals',

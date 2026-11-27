@@ -1,7 +1,7 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/demo-quadcopter-hover.ts';
-import source2 from './_recordings/demo-quadcopter-run.ts';
+import source from './_recordings/isolated-demo-quadcopter-hover.ts';
+import source2 from './_recordings/isolated-demo-quadcopter-run.ts';
 
 export default {
   id: "ducted-fan-scout-lifts-into-transit",

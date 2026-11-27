@@ -1,14 +1,12 @@
 import { fieldWeather } from './_shared/weather-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/demo-sheltered-wind.ts';
-import wash from './_recordings/demo-film-wind.ts';
-import detail from './_recordings/field-farm-air.ts';
+import source from './_recordings/isolated-demo-sheltered-wind.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { biquad, noise, renderSamples, TAU } from '../engine/dsp.ts';
 
 const original = {
   id: 'howling-wind-loop', name: "Eerie Howling Wind", category: 'Weather & Ambience',
-  tags: ["wind","howl","eerie","ambience","loop"], loopable: true, durationSec: 8,
+  tags: ["wind","howl","eerie","ambience","loop"], loopable: true, sustainMode: 'evolving', durationSec: 8,
   params: { howl: { label: 'Howl', min: 0, max: 1, default: 0.71 } },
   render(ctx, { params }) {
     const wind = noise(ctx.random, 'pink');
@@ -29,12 +27,12 @@ const original = {
 } satisfies SoundRecipe;
 
 export default {
-  ...original,
-  ...sceneCredits(source, wash, detail),
+  ...original, isolation:'isolated', components:['wind'],
+  ...sceneCredits(source),
   render(ctx, opts) {
     const old = original.render(ctx, opts);
     const field = fieldWeather(ctx, opts.seed, opts.params.howl, {
-      base: source, wash, detail, bodyHz: 3650, detailHz: 4900, spacing: 2.01, depth: 0.68, space: "open",
+      base: source, wash: source, detail: source, singlePerformance: true, bodyHz: 3650, detailHz: 4900, spacing: 2.01, depth: 0.68, space: "open",
     }, "steady");
     return field.map((v, i) => v * .81 + old[i] * .16);
   },

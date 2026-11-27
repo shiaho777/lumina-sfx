@@ -1,10 +1,11 @@
 import { mix } from '../engine/dsp.ts';
 import { surfaceRain } from './_shared/weather-textures.ts';
-import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/field-stalk-bed.ts';
+import { sustain } from './_shared/field-layers.ts';
+import rain from './_recordings/isolated-rain-foliage.ts';
 
 export default {
+  isolation: 'isolated', components: ['rain'],
   id: "light-rain-on-dry-straw-loop",
   name: "Light Rain on Dry Straw",
   category: "Weather & Ambience",
@@ -13,13 +14,10 @@ export default {
   durationSec: 9.0,
   targetRmsDbfs: -30,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
-  ...sceneCredits(source),
+  recording: rain.credit,
   render(ctx, { params, seed }) {
     const bed = surfaceRain(ctx, { material: "leaves", duration: 9.0, force: params.intensity, density: .19, pace: 1 });
-    const detail = scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 9.075, .22, 1, 3400, 0, 0],
-    ]);
-    mix(bed, detail);
+    mix(bed, sustain(ctx, rain, seed, .97, 3400), .22);
     return bed;
   },
 } satisfies SoundRecipe;

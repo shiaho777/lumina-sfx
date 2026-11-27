@@ -2,7 +2,7 @@ import { mix } from '../engine/dsp.ts';
 import { atmosphere, scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/demo-station-room.ts';
-import source2 from './_recordings/demo-tram-squeal.ts';
+import source2 from './_recordings/isolated-rail-bend.ts';
 
 export default {
   id: "local-streetcar-far-side-of-street-loop",

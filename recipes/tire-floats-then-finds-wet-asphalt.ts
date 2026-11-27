@@ -4,7 +4,7 @@ import fieldWetRoad from './_recordings/field-wet-road.ts';
 import milestoneSmallwater from './_recordings/milestone-smallwater.ts';
 import carWetAsphaltPass from './_recordings/car-wet-asphalt-pass.ts';
 import carTireSkidLaunch from './_recordings/car-tire-skid-launch.ts';
-import carWetBrakingStop from './_recordings/car-wet-braking-stop.ts';
+import carWetBrakingStop from './_recordings/isolated-tire-scrub.ts';
 
 export default {
   id: 'tire-floats-then-finds-wet-asphalt', name: "Tire Floats Then Finds Wet Asphalt", category: 'Vehicles & Engines',

@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import fieldFarmCow from './_recordings/field-farm-cow.ts';
-import fieldCowGrass from './_recordings/field-cow-grass.ts';
+import fieldCowGrass from './_recordings/isolated-chewing.ts';
 import cowMoo from './_recordings/cow-moo.ts';
 import naturalMud from './_recordings/natural-mud.ts';
 

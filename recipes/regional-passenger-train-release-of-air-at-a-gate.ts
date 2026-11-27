@@ -1,7 +1,7 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/truck-air-brake-release.ts';
-import source2 from './_recordings/milestone-train.ts';
+import source2 from './_recordings/isolated-milestone-train.ts';
 
 export default {
   id: "regional-passenger-train-release-of-air-at-a-gate",

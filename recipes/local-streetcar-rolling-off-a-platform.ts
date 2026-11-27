@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/demo-tram-squeal.ts';
+import source from './_recordings/isolated-rail-bend.ts';
 
 export default {
   id: "local-streetcar-rolling-off-a-platform",

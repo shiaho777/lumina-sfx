@@ -1,6 +1,6 @@
 import { rng } from '../engine/dsp.ts';
 
-function fft(re, im, inverse = false) {
+export function fft(re, im, inverse = false) {
   const n = re.length;
   for (let i = 1, j = 0; i < n; i++) {
     let bit = n >> 1;

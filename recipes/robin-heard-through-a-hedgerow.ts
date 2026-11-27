@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import dryVineBrush from './_recordings/dry-vine-brush.ts';
-import naturalRobin from './_recordings/natural-robin.ts';
+import naturalRobin from './_recordings/isolated-robin-call.ts';
 
 export default {
   id: 'robin-heard-through-a-hedgerow', name: "Robin heard through a hedgerow", category: 'Animals',

@@ -12,6 +12,12 @@ export interface Mechanism {
   plateHz?: number;
 }
 
+interface CapturedMechanism {
+  captured: true;
+  pairedTakes: boolean;
+  cutoffHz: number;
+}
+
 export interface Contact {
   at: number;
   weight: number;
@@ -20,7 +26,7 @@ export interface Contact {
 }
 
 export function editorContact(id: string, name: string, tags: string[], durationSec: number,
-  source: RecordedClip, mechanism: Mechanism, contacts: Contact[]): SoundRecipe {
+  source: RecordedClip, mechanism: Mechanism | CapturedMechanism, contacts: Contact[]): SoundRecipe {
   return {
     id, name, tags, durationSec, category: 'Footsteps & UI', loopable: false, isolation: 'isolated',
     perspective: 'close and dry', contains: tags.includes('typing') ? ['typing phrase'] : ['device contact'],
@@ -30,6 +36,16 @@ export function editorContact(id: string, name: string, tags: string[], duration
       const out = new Float32Array(ctx.frames);
       for (const [index, hit] of contacts.entries()) {
         const release = hit.release === true;
+        if ('captured' in mechanism) {
+          // These takes include the real case or tablet body. Play only the observed side of the switch.
+          const count = source.takes.length / (mechanism.pairedTakes ? 2 : 1);
+          const take = (seed + index) % count + (mechanism.pairedTakes && release ? count : 0);
+          const speed = hit.pitch * (0.99 + 0.02 * ctx.random());
+          const cutoffHz = mechanism.cutoffHz * (0.85 + params.pressure * 0.3);
+          layer(ctx, out, hit.at, durationSec - hit.at, part =>
+            renderRecording(part, source, { seed: take, speed, cutoffHz }), hit.weight);
+          continue;
+        }
         const pitch = hit.pitch * (0.976 + ctx.random() * 0.048) * (release ? 1.19 : 1);
         const decay = mechanism.decayMs * 0.001 * (release ? 0.6 : 1);
         const at = hit.at === 0 ? 0 : hit.at + (ctx.random() - 0.5) * Math.min(.009, hit.at * .09);

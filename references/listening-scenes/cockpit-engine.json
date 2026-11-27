@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 2,
+  "id": "cockpit-engine",
+  "viewpoint": "Pilot inside a canopy during a storm. Directed comparison of the engine and weather.",
+  "output": "stereo",
+  "focus": {
+    "subjects": [
+      "jet"
+    ],
+    "marginDb": 8
+  },
+  "layers": [
+    {
+      "id": "interceptor-turbofan-dry-thrust-cruise-loop",
+      "label": "jet",
+      "durationSec": 8,
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          7.65,
+          1
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "placement": {
+        "kind": "point",
+        "position": [
+          0.5,
+          0.1,
+          -1.2
+        ]
+      }
+    },
+    {
+      "id": "rain-canopy-droplets-clean-loop",
+      "durationSec": 8,
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          7.65,
+          1
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "label": "rain",
+      "placement": {
+        "kind": "area",
+        "position": [
+          -1.4,
+          0.9,
+          -1
+        ],
+        "spread": 0.8
+      }
+    },
+    {
+      "id": "thunder-isolated-rolling-strike",
+      "offsetSec": 2.25,
+      "label": "thunder",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -5,
+          4,
+          -7
+        ],
+        "refDistance": 6
+      }
+    }
+  ],
+  "balance": "directed",
+  "scope": "world",
+  "sourcePolicy": "clean"
+}

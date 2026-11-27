@@ -5,6 +5,7 @@ import source from './_recordings/field-brook-bed.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "shaded-rocky-creek-after-dusk-loop",
   name: "Shaded Rocky Creek after Dusk",
   category: "Weather & Ambience",

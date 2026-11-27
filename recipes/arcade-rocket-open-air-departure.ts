@@ -3,7 +3,7 @@ import { cinematicCut } from './_shared/cinematic-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
 import source from './_recordings/atlas-firecracker.ts';
 import wash from './_recordings/demo-fighter-rise.ts';
-import detail from './_recordings/demo-film-wind.ts';
+import detail from './_recordings/isolated-demo-sheltered-wind.ts';
 
 export default {
   id: "arcade-rocket-open-air-departure", name: "Arcade rocket — open air departure", category: "Missiles",

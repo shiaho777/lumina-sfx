@@ -19,6 +19,8 @@ export interface SpectralExpectation {
 }
 
 export interface RenderContext {
+  /** Start of the continuation supplied for a loop crossfade, in sample frames. */
+  readonly loopFrames?: number;
   readonly sampleRate: number;
   readonly frames: number;
   random(): number;
@@ -56,8 +58,16 @@ export interface RecordingCredit {
 }
 
 export interface SoundRecipe {
+  /** A scene owns its event clock and relative listening level. */
+  preserveTimeline?: boolean;
+  /** Audible issue that should exclude this take from automatic and clean selection. */
+  readonly auditionNote?: string;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
+  /** Optional audition substitutes. The named trait is unverified and must be disclosed. */
+  readonly closeMatches?: readonly { phrases: readonly string[]; term: string; note: string }[];
+  readonly soloQueries?: readonly string[];
+  readonly components?:readonly string[];
   readonly contains?: readonly string[];
   readonly perspective?: string;
   readonly macros?: Readonly<DesignMacros>;
@@ -66,6 +76,10 @@ export interface SoundRecipe {
   readonly category: Category;
   readonly tags: readonly string[];
   readonly loopable: boolean;
+  /** Can generate a continuous performance for arbitrary frame counts. */
+  readonly sustainMode?: 'evolving';
+  /** Re-perform a directional gesture with its accent at a picture landmark, in seconds. */
+  withGestureTiming?(durationSec: number, apexSec: number, motion?: 'turn', screenPath?: readonly (readonly [time: number, progress: number])[]): SoundRecipe;
   readonly durationSec: number;
   readonly params: Readonly<Record<string, SoundParameter>>;
   readonly immediateOnset?: boolean;

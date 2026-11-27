@@ -7,6 +7,10 @@ runtime and sound recipes uses both parts of this license.
 
 The MIT text below covers engine/, scripts/, adapters/, SKILL.md and the
 project's other software, tests and documentation outside the sound library.
+The optional measured headphone impulse responses in engine/hrtf/ retain
+their Apache License 2.0 terms. Include that directory's LICENSE.txt and
+NOTICE.md when distributing the table. The Web Audio native headphone
+renderer uses the browser's own data.
 
 MIT License
 

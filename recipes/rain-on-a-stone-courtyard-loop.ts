@@ -4,6 +4,7 @@ import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
+  isolation: 'isolated', components: ['rain'],
   id: "rain-on-a-stone-courtyard-loop",
   name: "Rain on a Stone Courtyard",
   category: "Weather & Ambience",

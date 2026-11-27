@@ -1,42 +1,24 @@
-import { biquad, envelope, layer, noise, renderSamples, TAU } from '../../engine/dsp.ts';
+import { biquad } from '../../engine/dsp.ts';
+import { renderRecording, type RecordedClip } from '../../engine/recording.ts';
 import type { RenderContext } from '../../engine/types.ts';
 
-// A sheet of water tears into spray. Under the surface, each entrained bubble
-// rings once; pitch, arrival and decay depend on its own size.
-export function waterCrossing(ctx: RenderContext, force: number, entering: boolean) {
-  const out = new Float32Array(ctx.frames);
-  const surface = entering ? 0 : 0.2;
-  const weight = 0.8 + force * 0.4;
-  layer(ctx, out, surface, entering ? 0.53 : 0.45, (part) => {
-    const wash = noise(part.random, 'pink');
-    const edge = biquad('bandpass', entering ? 2850 : 4800, 0.7, part.sampleRate);
-    const deep = biquad('lowpass', 420 * weight, 0.8, part.sampleRate);
-    return renderSamples(part, (t) => {
-      const air = wash(),
-        white = part.random() * 2 - 1;
-      return (
-        weight *
-        (2.2 * deep(air) * envelope(t, 0.001, 0.088) +
-          0.51 * edge(white) * envelope(t, 0.002, 0.056) +
-          0.35 * air * envelope(t, 0.026, entering ? 0.1 : 0.074))
-      );
-    });
-  });
-  const count = entering ? 100 : 55;
-  for (let j = 0; j < count; j++) {
-    const f = (j + ctx.random()) / count;
-    const wet = entering || f < 0.33;
-    const at =
-      j === 0 ? 0 : entering ? 0.045 + 0.98 * f ** 1.5 : f < 0.33 ? 0.54 * f : 0.23 + 0.97 * (f - 0.33);
-    const hz = ((wet ? 290 : 1200) * (1 + 5 * ctx.random() ** 2)) / weight;
-    const decay = (0.008 + 0.011 * ctx.random()) * Math.sqrt(850 / hz);
-    const gain = (0.12 + 0.27 * ctx.random()) * (1 - 0.76 * f) * (j === 0 ? 1.4 : 1);
-    layer(ctx, out, at, Math.min(0.14, decay * 7), (part) =>
-      renderSamples(
-        part,
-        (t) => gain * Math.sin(TAU * hz * (t + (0.17 * t * t) / (t + 0.013))) * envelope(t, 0.0006, decay),
-      ),
-    );
+// Carry one unbroken splash across the waterline. The listener loses air detail
+// on the way down and recovers it as the water sheds on the way back up.
+export function waterCrossing(ctx: RenderContext, clip: RecordedClip, force: number, entering: boolean) {
+  const speed = .96 + .08 * force + .025 * (ctx.random() - .5);
+  const sound = renderRecording(ctx, clip, { speed });
+  const rate = ctx.sampleRate;
+  const submerged = biquad('lowpass', 590 + 400 * force, .66, rate);
+  const clear = biquad('lowpass', Math.min(rate * .43, 5200 + 3800 * force), .68, rate);
+  for (let i = 0; i < sound.length; i++) {
+    const time = i / rate;
+    const fraction = Math.min(1, Math.max(0, (time - (entering ? .055 : .035)) / (entering ? .32 : .24)));
+    const eased = fraction * fraction * (3 - 2 * fraction);
+    const wet = entering ? .92 * eased : .84 * (1 - eased);
+    const dry = clear(sound[i]);
+    const covered = submerged(dry);
+    const release = Math.min(1, (sound.length - 1 - i) / (.16 * rate));
+    sound[i] = (dry + (covered - dry) * wet) * release;
   }
-  return out;
+  return sound;
 }

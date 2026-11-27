@@ -7,6 +7,8 @@ import type { AcousticSpace } from './field-layers.ts';
 export type WeatherMovement = 'scattered' | 'steady' | 'surge' | 'retreat';
 export interface WeatherSite {
   base: RecordedClip;
+  singlePerformance?: boolean;
+  discreteDrops?: boolean;
   wash: RecordedClip;
   detail: RecordedClip;
   bodyHz: number;
@@ -20,10 +22,41 @@ export function fieldWeather(ctx: RenderContext, seed: number, intensity: number
   const draw = rng(seed ^ 0x45a2c3);
   const duration = ctx.frames / ctx.sampleRate;
   const base = sustain(ctx, site.base, seed, .97, site.bodyHz);
-  const wash = sustain(ctx, site.wash, seed ^ 0x9134a, .90 + .13 * intensity, site.detailHz);
+  if (site.discreteDrops) {
+    // Reuse actual material attacks. Pick the strongest onset in each random
+    // neighbourhood and retain its short decay, with quiet between drops.
+    const result = new Float32Array(ctx.frames);
+    const window = Math.round(.062 * ctx.sampleRate);
+    const period = Math.min(ctx.loopFrames ?? ctx.frames, ctx.frames);
+    for (let at = Math.round(.008 * ctx.sampleRate); at + window < period;) {
+      const start = Math.floor(draw() * Math.max(1, base.length - 3 * window));
+      let onset = start;
+      let strongest = 0;
+      for (let j = start + 1; j < start + window; j++) {
+        const change = Math.abs(base[j] - base[j - 1]);
+        if (change > strongest) { onset = j; strongest = change; }
+      }
+      const gain = .35 + .65 * draw();
+      const ingress = Math.round(.0015 * ctx.sampleRate);
+      const from = Math.max(0, onset - ingress);
+      for (let k = 0; k < window && at + k < result.length; k++) {
+        result[at + k] += (base[from + k] ?? 0) * gain * Math.min(1, k / ingress) * Math.exp(-4 * k / window);
+      }
+      at += Math.max(window >> 1, Math.round(ctx.sampleRate * site.spacing *
+        (.12 + .60 * draw() ** 2) / (.65 + intensity)));
+    }
+    // The last drop decays before the next cycle. Pass its real continuation
+    // to the runtime so the crossfade keeps exactly one set of arrivals.
+    for (let i = period; i < result.length; i++) result[i] = result[i % period];
+    // Soften the ring according to the struck material.
+    return result.map(biquad('lowpass', Math.min(site.detailHz * .62, 4200), .67, ctx.sampleRate));
+  }
+  const oneWash = site.singlePerformance && site.base === site.wash;
+  const oneDetail = site.singlePerformance && (site.detail === site.base || site.detail === site.wash);
+  const wash = oneWash ? base : sustain(ctx, site.wash, seed ^ 0x9134a, .90 + .13 * intensity, site.detailHz);
   const accents = new Float32Array(ctx.frames);
   const spacing = site.spacing * (movement === 'scattered' ? 1.55 : movement === 'steady' ? .85 : 1);
-  for (let t = draw() * spacing; t < duration; t += spacing * (.34 + draw() * 1.31) / (.58 + intensity)) {
+  for (let t = draw() * spacing; !oneDetail && t < duration; t += spacing * (.34 + draw() * 1.31) / (.58 + intensity)) {
     const length = Math.min(.62, spacing * (.21 + .4 * draw()));
     const grain = snippet(ctx, site.detail, Math.floor(draw() * 2147483647), length, .87 + draw() * .24, site.detailHz, draw() * .065);
     const rise = Math.min(grain.length, Math.max(3, Math.round(ctx.sampleRate * Math.min(.013, length * .13))));
@@ -44,7 +77,7 @@ export function fieldWeather(ctx: RenderContext, seed: number, intensity: number
     if (movement === 'surge') amount = .10 + .87 * x * x;
     if (movement === 'retreat') amount = .05 + .92 * (1 - x) ** 2;
     const blend = unit(.60 * amount + .40 * intensity + ripple);
-    const near = base[i] * Math.cos(blend * 1.39) + wash[i] * Math.sin(blend * 1.39) * (depth + .36);
+    const near = oneWash ? base[i] * (.64 + .48 * blend) : base[i] * Math.cos(blend * 1.39) + wash[i] * Math.sin(blend * 1.39) * (depth + .36);
     const direct = near + accents[i] * (.21 + .54 * blend);
     base[i] = direct * (1 - cover) + muffled(direct) * cover;
     if (movement === 'surge' || movement === 'retreat') {

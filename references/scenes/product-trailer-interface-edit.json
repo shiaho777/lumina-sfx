@@ -1,0 +1,9 @@
+{
+  "id": "product-trailer-interface-edit",
+  "name": "Product trailer · typing, panel swipe and title landing",
+  "layers": [
+    { "id": "gasket-mount-keyboard-typed-word", "label": "type", "gain": 0.80 },
+    { "id": "silk-swipe-left", "label": "panel", "offsetSec": 1.1, "gain": 0.56 },
+    { "id": "clean-title-reveal-with-soft-hit", "label": "title", "offsetSec": 1.82 }
+  ]
+}

@@ -1,0 +1,101 @@
+case	decision	blind_first_pick	blind_fit	delivery_followup_pick	delivery_followup_fit	listener_reason	followup_reason
+1	single-cue	mechanical-ui-click	yes			Clean, neutral click with no tonal artifacts or buzz	—
+2	single-cue	settings-focus-felt-tick	yes			Subtle, low-fatigue tactile cue appropriate for hovering a settings control.	—
+3	single-cue	settings-tab-walnut-detent	yes			Subtle, clean, non-musical single tap well suited to switching a settings tab.	—
+4	single-cue	settings-apply-overcentre-latch	yes			Clean, restrained tactile click without gratuitous musical notes or buzz fits saving app preferences.	—
+5	single-cue	settings-back-suede-release	yes			Clean, understated tactile click well suited to a back navigation action	—
+6	single-cue	settings-toggle-off-cork	yes			Clean, subtle tactile release with a muted off-state feel and no musical notes or buzz.	—
+7	single-cue	settings-toggle-engage-brass	yes			Clean, defined mechanical UI click well suited to toggling a menu option on.	—
+8	single-cue	settings-slider-knurled-index	yes			Clean, precise single-step click well suited to moving a slider one notch	—
+9	single-cue	menu-confirm-pluck	yes			Tasteful, unobtrusive arrival cue that cleanly draws attention to a toast notification without being a gratuitous jingle.	—
+10	single-cue	settings-focus-felt-tick	yes			Restrained, non-intrusive tactile cue appropriate for a text field gaining focus.	—
+11	single-cue	timeline-playhead-set	yes			Crisp, subtle single-step tick appropriate for one-frame scrubbing	—
+12	single-cue	menu-item-lifted-for-dragging	yes			Subtle, responsive engagement click suited to grabbing a UI drag handle.	—
+13	single-cue	inventory-magnet-seat	yes			Distinct, gentle settling cue that pairs naturally with releasing a drag handle.	—
+14	single-cue	menu-item-snaps-into-a-slot	yes			Clean, decisive snap well matched to a card locking into place	—
+15	single-cue	edit-undo-return	yes			Subtle, non-intrusive descending UI cue that clearly communicates stepping backward to undo an edit.	—
+16	single-cue	edit-redo-seat	yes			Clean, understated ascending UI cue that cleanly mirrors undo in the forward direction for redo.	—
+17	single-cue	settings-list-edge-felt-bumper	yes			Tasteful, subtle blocked-switch cue without harsh buzz or musical error tones	—
+18	single-cue	settings-apply-overcentre-latch	yes			Clean, restrained confirmation tap appropriate for committing a settings change.	—
+19	single-cue	settings-slider-knurled-index	yes			Subtle, clean downward-feeling notch click distinct from other UI clicks	—
+20	single-cue	settings-tab-walnut-detent	yes			Clean, restrained, non-musical click well suited to switching to the next settings tab.	—
+21	single-cue	gasket-mount-keyboard-key-down	yes			Clean, intelligible single key-press down without buzz, pitch, or double trigger.	—
+22	single-cue	laptop-scissor-keyboard-key-down	yes			Clean single downstroke tap matching a laptop scissor-switch key press	—
+23	single-cue	gasket-mount-keyboard-key-down	yes			Authentic thocky mechanical switch sound with no buzz or tonal artifacts	—
+24	single-cue	laptop-scissor-keyboard-typed-word	yes			Authentic soft chiclet laptop typing cadence for a short word.	—
+25	single-cue	laptop-scissor-keyboard-return	yes			Authentic, clean laptop Return keystroke with natural shallow-travel timbre	—
+26	single-cue	laptop-scissor-keyboard-key-up	yes			Matches a single laptop key release cleanly and tastefully.	—
+27	single-cue	laptop-scissor-keyboard-spacebar	yes			Convincing laptop spacebar press, distinct from the UI tick and mouse click.	—
+28	single-cue	desktop-mouse-press	yes			Clean, unmistakable single desktop mouse click at appropriate edit gain.	—
+29	single-cue	desktop-mouse-double-click	yes			Authentic mouse switch texture and natural double-click cadence.	—
+30	single-cue	desktop-mouse-release	yes			Clean, authentic mouse button release transient distinct from a fuller press click.	—
+31	single-cue	glass-trackpad-press	yes			Accurately conveys the tight haptic click of pressing a glass trackpad.	—
+32	single-cue	glass-trackpad-double-click	yes			Authentic tactile transient timbre and timing that read immediately as a trackpad double click.	—
+33	single-cue	stylus-barrel-press	yes			Restrained, damped tactile tap that reads well as a stylus press and is distinct from the mechanical mouse clicks.	—
+34	single-cue	desktop-mouse-press	yes			Clean press-down click with no release click fits holding a mouse button	—
+35	single-cue	gasket-mount-keyboard-typed-word	yes			Distinct, realistic mechanical keyboard typing clearly heavier than the laptop slot.	—
+36	single-cue	clean-title-reveal-with-soft-hit	yes			Clean, restrained whoosh-to-thud motion impact that naturally sells a title card landing without musical clutter.	—
+37	single-cue	silk-panel-reveal	yes			Tasteful, polished reveal sweep with no gratuitous notes or buzz	—
+38	single-cue	silk-whip-cut	yes			Crisp, modern, unobtrusive motion swish appropriate for a product demo.	—
+39	single-cue	delicate-logo-close	yes			Understated, clean settling fade suited to a soft logo outro	—
+40	single-cue	silk-page-wipe	yes			Clean, modern, unobtrusive swipe well suited to a launch video page wipe.	—
+41	single-cue	silk-swipe-left	yes			Crisp, unobtrusive swipe distinct from slot 3 and fitting a leftward panel swipe.	—
+42	single-cue	silk-swipe-right	yes			Tasteful, clean motion cue fitting a smooth left-to-right panel slide.	—
+43	single-cue	silk-swipe-left	yes			Clean directional swipe matching the requested right-to-left trailer motion	—
+44	single-cue	silk-title-rise	yes			Clean upward motion suited to a rising title without harshness	—
+45	single-cue	wide-product-reveal-swell	yes			Polished, spacious reveal swell free of gratuitous melody or harsh buzz	—
+46	single-cue	soft-air-match-cut	yes			Sharp, focused transition sound appropriate for a short trailer cut	—
+47	single-cue	soft-air-match-cut	yes			Tasteful, understated air transition with no musical notes or harsh artifacts.	—
+48	single-cue	celluloid-whip-cut	yes			High-energy, clean trailer swipe with strong impact and clear contrast from a minimal transition.	—
+49	single-cue	logo-felt-signature	yes			Tasteful, polished musical sting appropriate for an end-card logo.	—
+50	single-cue	silk-swipe-right	yes			Tasteful, directional UI motion without harsh buzz or gratuitous musical tones.	—
+51	single-cue	rainfall-open-air-clean-loop	yes			Authentic, consistent rain texture that cleanly delivers rain only without extraneous layers or synthetic buzz.	—
+52	single-cue	thunder-isolated-rolling-strike	yes			Convincing isolated thunder crack and rumble matches the brief for just thunder.	—
+53	single-cue	light-rain-loop	yes			Natural light rain bed without audible wind or harsh static.	—
+54	single-cue	heavy-storm-rain-loop	yes			Natural, intelligible heavy rain bed with nothing else mixed in.	—
+55	single-cue	distant-rolling-thunder	yes			Convincing, atmospheric distant thunder roll with authentic low-end texture.	—
+56	single-cue	interceptor-turbofan-canopy-interior-cruise-loop	yes			Convincing dry cockpit ambience with no audible rain.	—
+57	single-cue	campfire-crackle-loop	yes			Realistic, tasteful crackling fire texture with no synthetic buzz or harshness.	—
+58	single-cue	canopy-rain-on-broad-banana-leaves-continuous-patter-loop	yes			Clearly conveys rain striking a canopy and is distinct from the open heavy rain in slot 3.	—
+59	single-cue	wave-wash-on-a-shingle-berm-water-surging-in	yes			Clear wave build, crash, and wash-out envelope that reads naturally as a wave breaking on shore.	—
+60	single-cue	swimmer-breaks-into-air	yes			Natural, clear water eruption that reads immediately as breaking the surface.	—
+61	single-cue	hearth-fire-behind-an-iron-grate-low-simmer-loop	yes			Natural, contained fireplace texture fitting a small fire behind a grate	—
+62	single-cue	windblown-rain-on-a-loose-garage-door-continuous-patter-loop	no	windblown-rain-on-a-loose-garage-door-downpour-recedes	yes	Overly loud, abrasive, and indistinct; sounds like harsh static/heavy roar shaking sheet metal rather than intelligible rain patter.	Natural, intelligible rain patter with subtle loose door rattle and no artifacts.
+63	single-cue	canopy-rain-on-broad-banana-leaves-continuous-patter-loop	yes			Natural steady downpour with convincing broad-leaf raindrop texture matching banana leaves.	—
+64	single-cue	distant-thunder-across-a-lake	yes			Soft low-passed rolling envelope with no harsh close crack convincingly conveys distant thunder over open water.	—
+65	single-cue	working-motorboat-steady-offshore-loop	yes			Convincing offshore distance and smooth cruising motorboat sound without artificial buzz.	—
+66	single-cue	indoor-hardwood-shoe-step	yes			Distinct indoor hardwood knock and sole impact match the brief	—
+67	single-cue	indoor-hardwood-shoe-step	yes			Clean wooden floor step that explicitly avoids any creaking board sound.	—
+68	single-cue	indoor-floorboard-brief-flex	yes			Convincing, concise floorboard flex with natural wood character	—
+69	single-cue	stride-metal-stairs	yes			Single grounded footstep impact with hollow metal resonance matches one foot landing on metal stairs.	—
+70	single-cue	stride-snow	yes			Immediately intelligible single snow footstep with realistic texture and clean gain.	—
+71	single-cue	stride-mud	yes			Clear, realistic mud texture and single-step timing.	—
+72	single-cue	stride-sand	yes			Natural particulate crunch and weight fit a footstep on dry sand	—
+73	single-cue	stride-grass	yes			Natural, intelligible single footstep on grass with realistic weight and blade crunch	—
+74	single-cue	stride-concrete	yes			Clean, realistic concrete footstep with no artifacts.	—
+75	single-cue	stride-gravel	yes			Authentic single gravel footstep, clearly distinct in stony texture from the snow step.	—
+76	single-cue	portal-unfold	yes			Tasteful, intelligible cinematic portal-opening sweep with controlled dynamics and no gratuitous musical notes.	—
+77	single-cue	portal-snap-closed	yes			Clear closing direction and crisp snap termination with no gratuitous musicality or buzz.	—
+78	single-cue	energy-shield-block	yes			Clearly reads as an impact absorbed by an energy barrier without harsh buzz	—
+79	single-cue	energy-shield-collapse	yes			Clear, intelligible energy shield collapse without harsh raw buzz.	—
+80	single-cue	quiet-mouse-press	yes			Understated, non-electronic quiet click fitting a fantasy UI	—
+81	single-cue	farm-trailer-coupling	yes			Convincing heavy steel hardware engagement matching a farm trailer coupling.	—
+82	single-cue	cow-moo	yes			Authentic, intelligible cow vocalization without synthetic artifacts	—
+83	single-cue	chicken-clucks	yes			Unmistakable, authentic chicken clucking at clean gain.	—
+84	single-cue	plant-large-seeds	yes			Crisp, natural foley that reads plausibly as large dry seeds dropping into soil	—
+85	single-cue	stall-straw-fork-toss	yes			Natural dry rustling texture and scatter motion fit tossing hay	—
+86	single-cue	tractor-diesel-ignition	yes			Authentic, immediately intelligible tractor engine startup.	—
+87	single-cue	light-propeller-plane-cockpit-loop	yes			Plausible interior propeller cockpit ambience with appropriate cabin filtering.	—
+88	single-cue	jet-pass-overhead	no	jet-pass-overhead	yes	Conspicuous artificial buzz and gritty close texture, not a distant rolling jet flyby	Convincing distant rolling jet pass with clean dynamics and no artificial buzz.
+89	single-cue	phone-ring-bell	yes			Clear metallic bell timbre with convincing pass-by motion and downward Doppler pitch shift.	—
+90	single-cue	settings-tab-walnut-detent	yes			Clean, responsive single-action click suited to racing UI tab switching	—
+91	silence		yes			Deliberate silence is tasteful and appropriate since moving a cursor over static non-interactive text should not trigger sound.	—
+92	silence		yes			Deliberate silence directly matches the brief	—
+93	silence		yes			Deliberate silence directly matches the brief calling for no feedback on a disabled toggle.	—
+94	silence		yes			Brief explicitly requests leaving the reading pause silent.	—
+95	silence		yes			Deliberate silence directly satisfies the brief asking for no added sound.	—
+96	review					Selector requested clarification. No audio to score.	—
+97	review					Selector requested clarification. No audio to score.	—
+98	review					Selector requested clarification. No audio to score.	—
+99	review					Selector requested clarification. No audio to score.	—
+100	review					Selector requested clarification. No audio to score.	—

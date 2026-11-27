@@ -1,15 +1,22 @@
-import { magicPassage } from "./_shared/game-magic.ts";
-import type { SoundRecipe } from "../engine/types.ts";
+import type { SoundRecipe } from '../engine/types.ts';
+import texture from './_recordings/isolated-wind-fabric.ts';
+import contact from './_recordings/isolated-wooden-chest-latch-release.ts';
+import { shapedPass, seatedContact, screenAir } from './_shared/screen-foley.ts';
+import { layer, mix } from '../engine/dsp.ts';
 
 export default {
   id: "portal-snap-closed", name: "Portal Snap Closed", category: "Sci-Fi & UI",
-  tags: ["portal", "close", "warp", "spell"],
+  tags: ["portal", "close", "warp", "spell", 'energy', 'fantasy'],
+  isolation: 'isolated',
+  recording: texture.credit, additionalRecordings: [contact.credit],
   loopable: false, durationSec: 0.76, targetRmsDbfs: -22,
   params: { shimmer: { label: "Shimmer", min: 0, max: 1, default: 0.55 } },
-  render(ctx, { params }) {
-    return magicPassage(ctx, [
-      { at: 0, from: 735, to: 145, attack: 0.027, decay: 0.145, wind: 0.73, level: 0.81 },
-      { at: 0.199, from: 259, to: 100, attack: 0.005, decay: 0.089, wind: 0.32, level: 0.71 },
-    ], params.shimmer);
+  render(ctx, { seed, params }) {
+    const amount = params.shimmer;
+    const out = shapedPass(ctx, texture, seed, amount, .25, 3600, .73);
+    const air = screenAir(ctx, seed, amount, .46, 540, 4200, true);
+    mix(out, air, .40);
+    layer(ctx, out, .37, .16, part => seatedContact(part, contact, seed, amount, 340, 3000, .64), .33);
+    return out;
   },
 } satisfies SoundRecipe;

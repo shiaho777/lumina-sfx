@@ -170,3 +170,21 @@ test('native export gives distinct mono files per side and preserves an existing
     assert.deepEqual(await readdir(dir),['takes']);
   } finally { await rm(dir,{recursive:true,force:true}); }
 });
+
+test('headphone routes distinguish front from rear on the same dry take and follow the listener heading', async () => {
+  const route = (x, z, yaw = 0) => [{surface:'hardwood',steps:1,firstFoot:'left',
+    from:{x:x+.13,z,yaw:0},to:{x:x+.13,z,yaw:0},listener:{x:0,z:0,yaw,earHeightM:1.5}}];
+  const render = (x,z,yaw,output='headphones') => renderRoute(route(x,z,yaw),72,output);
+  const [front, rear, rotated, right, left] = await Promise.all([
+    render(0,-2,0), render(0,2,0), render(0,-2,Math.PI), render(2,0,0), render(-2,0,0)]);
+  assert.equal(front.events[0].take,rear.events[0].take);
+  assert.ok(energy(front.channels[0].map((v,i) => v-rear.channels[0][i])) > energy(front.channels[0]) * .1);
+  assert.ok(energy(rear.channels[0].map((v,i) => v-rotated.channels[0][i])) < energy(rear.channels[0]) * 1e-9);
+  assert.ok(energy(right.channels[1]) > 2*energy(right.channels[0]));
+  assert.ok(energy(left.channels[0]) > 2*energy(left.channels[1]));
+  const [a,b] = await Promise.all([render(0,-2,0,'stereo'),render(0,2,0,'stereo')]);
+  assert.deepEqual(a.channels,b.channels);
+  assert.equal(a.events[0].gain,front.events[0].gain);
+  assert.ok(front.channels[0].length > a.channels[0].length);
+  await assert.rejects(renderRoute(route(0,1),72,'binaurall'), /output/);
+});

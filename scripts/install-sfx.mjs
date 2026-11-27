@@ -6,16 +6,16 @@ import { selectRecipes, checkIsolatedRecipes, installRecipes } from './install-f
 
 async function main() {
   const { values, positionals } = parseArgs({
-    options: { isolated: { type:'boolean' }, dest: { type: 'string' }, project: { type: 'string' }, engine: { type: 'string' }, help: { type: 'boolean' } },
+    options: { clean: { type:'boolean' }, isolated: { type:'boolean' }, dest: { type: 'string' }, project: { type: 'string' }, engine: { type: 'string' }, help: { type: 'boolean' } },
     allowPositionals: true,
   });
   if (values.help || !positionals.length) {
-    console.log('node scripts/install-sfx.mjs <id> [id ...] [--isolated] [--project GAME] [--engine web|godot|unity|unreal|python|wav] [--dest DIR]');
+    console.log('node scripts/install-sfx.mjs <id> [id ...] [--clean] [--isolated] [--project GAME] [--engine web|godot|unity|unreal|python|wav] [--dest DIR]');
     if (!values.help) process.exitCode = 1;
     return;
   }
   const selected = await selectRecipes(positionals);
-  if (values.isolated) await checkIsolatedRecipes(selected);
+  if (values.clean || values.isolated) await checkIsolatedRecipes(selected, {clean:values.clean});
   const { detectProject, installEngine } = await import('./install-engine.mjs');
   const target = await detectProject(values.project ?? values.dest ?? process.cwd());
   // Preserve the existing TypeScript-only --dest interface for browser projects.

@@ -1,15 +1,16 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { thunderChannel } from './_shared/weather-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/atlas-thunder-left.ts';
-import wash from './_recordings/atlas-thunder-right.ts';
-import detail from './_recordings/atlas-thunder-roll.ts';
+import source from './_recordings/isolated-thunder-attack.ts';
+import wash from './_recordings/isolated-storm-right.ts';
+import detail from './_recordings/isolated-storm-body.ts';
 
 const path = { space: "screened", cutoff: 1700, rolls: [0.006, 0.237, 0.881], decay: 2.15, width: 0.045 } as const;
 
 export default {
   id: "thunder-inside-a-parked-car-sharp-clap-and-return", name: "Thunder inside a parked car — sharp clap and return", category: "Weather & Ambience",
   tags: ["thunder", "lightning", "storm", "stereo", "screened"], loopable: false, durationSec: 3.81,
+  isolation:'isolated', components:['thunder'],
   mixRole: "impact", targetRmsDbfs: -20,
   params: { distance: { label: "Distance", min: 0, max: 1, default: 0.39 } },
   ...sceneCredits(source, wash, detail),

@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/field-goat-young.ts';
+import source from './_recordings/isolated-young-goat.ts';
 import source2 from './_recordings/goat-double-bleat.ts';
 
 export default {

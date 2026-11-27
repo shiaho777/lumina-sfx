@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "id": "under-the-launch",
+  "viewpoint": "A swimmer rests alongside a launch, dives under as it passes overhead, then surfaces to hear the same boat heading away.",
+  "output": "headphones",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "layers": [
+    {
+      "id": "harbor-launch-inboard-channel-cruise-loop",
+      "label": "launch",
+      "event": "boat",
+      "offsetSec": 0,
+      "durationSec": 38.25,
+      "placement": {
+        "kind": "point",
+        "position": [
+          -12,
+          0.4,
+          -4
+        ],
+        "refDistance": 4,
+        "path": [
+          {
+            "at": 7.6,
+            "position": [
+              -8,
+              0.4,
+              -3
+            ]
+          },
+          {
+            "at": 8.2,
+            "position": [
+              -7.7,
+              1.1,
+              -2.9
+            ]
+          },
+          {
+            "at": 15,
+            "position": [
+              -1.5,
+              2.5,
+              -1
+            ]
+          },
+          {
+            "at": 19,
+            "position": [
+              2,
+              2.4,
+              0
+            ]
+          },
+          {
+            "at": 27.8,
+            "position": [
+              8,
+              1.25,
+              3
+            ]
+          },
+          {
+            "at": 28.5,
+            "position": [
+              8.5,
+              0.4,
+              3.3
+            ]
+          },
+          {
+            "at": 32,
+            "position": [
+              12,
+              0.3,
+              6
+            ]
+          },
+          {
+            "at": 38,
+            "position": [
+              22,
+              0.3,
+              9
+            ]
+          }
+        ]
+      },
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8,
+          0.86
+        ],
+        [
+          7.4,
+          1
+        ],
+        [
+          8.1,
+          0.86
+        ],
+        [
+          27.7,
+          0.86
+        ],
+        [
+          28.4,
+          1
+        ],
+        [
+          36.5,
+          0.91
+        ],
+        [
+          38.25,
+          0
+        ]
+      ],
+      "gain": 2.8,
+      "muffle": {
+        "cutoffHz": 360,
+        "envelope": [
+          [
+            0,
+            0
+          ],
+          [
+            7.49,
+            0
+          ],
+          [
+            7.68,
+            0.54
+          ],
+          [
+            7.92,
+            0.94
+          ],
+          [
+            8.12,
+            0.994
+          ],
+          [
+            13.2,
+            0.992
+          ],
+          [
+            16.9,
+            0.971
+          ],
+          [
+            22.5,
+            0.996
+          ],
+          [
+            26,
+            0.985
+          ],
+          [
+            27.76,
+            0.994
+          ],
+          [
+            27.98,
+            0.94
+          ],
+          [
+            28.18,
+            0.42
+          ],
+          [
+            28.43,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "dive-breaks-the-surface",
+      "label": "dive",
+      "offsetSec": 7.52,
+      "placement": {
+        "kind": "point",
+        "position": [
+          0.18,
+          -0.25,
+          -0.55
+        ],
+        "refDistance": 1
+      },
+      "gain": 0.79
+    },
+    {
+      "id": "swimmer-breaks-into-air",
+      "label": "surface",
+      "offsetSec": 27.8,
+      "placement": {
+        "kind": "point",
+        "position": [
+          -0.12,
+          0.12,
+          -0.6
+        ],
+        "refDistance": 1
+      },
+      "gain": 0.86
+    }
+  ]
+}

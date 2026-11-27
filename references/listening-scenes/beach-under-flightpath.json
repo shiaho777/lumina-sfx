@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "id": "beach-under-flightpath",
+  "viewpoint": "On a beach under the flightpath",
+  "output": "headphones",
+  "focus": {
+    "subjects": [
+      "rain"
+    ]
+  },
+  "layers": [
+    {
+      "id": "rainfall-open-air-clean-loop",
+      "label": "rain",
+      "placement": {
+        "kind": "area",
+        "position": [
+          0,
+          1,
+          -2
+        ],
+        "spread": 0.75
+      },
+      "durationSec": 7
+    },
+    {
+      "id": "surf-heard-below-a-reef-ledge-gentle-laps-loop",
+      "label": "surf",
+      "placement": {
+        "kind": "area",
+        "position": [
+          -3,
+          0,
+          -4
+        ],
+        "spread": 0.8
+      },
+      "durationSec": 7
+    },
+    {
+      "id": "interceptor-turbofan-augmented-exhaust-roar-loop",
+      "label": "jet",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -12,
+          8,
+          -4
+        ],
+        "path": [
+          {
+            "at": 3,
+            "position": [
+              0,
+              7,
+              -1
+            ]
+          },
+          {
+            "at": 7,
+            "position": [
+              14,
+              8,
+              3
+            ]
+          }
+        ],
+        "doppler": true,
+        "refDistance": 3
+      },
+      "durationSec": 7
+    }
+  ],
+  "scope": "world"
+}

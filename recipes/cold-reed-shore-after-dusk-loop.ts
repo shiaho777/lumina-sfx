@@ -5,6 +5,7 @@ import source from './_recordings/field-farm-marsh.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "cold-reed-shore-after-dusk-loop",
   name: "Cold Reed Shore after Dusk",
   category: "Weather & Ambience",

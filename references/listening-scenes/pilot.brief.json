@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "id": "pilot-weather",
+  "viewpoint": "Pilot cruising through rain. A flash off the left bow precedes the distant roll.",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "output": "headphones",
+  "focus": {
+    "subjects": [
+      "jet"
+    ]
+  },
+  "layers": [
+    {
+      "query": "interceptor turbofan",
+      "prefer": "canopy interior cruise",
+      "label": "jet",
+      "event": "aircraft",
+      "durationSec": 10.8,
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          10.35,
+          1
+        ],
+        [
+          10.8,
+          0
+        ]
+      ],
+      "acoustics": {
+        "source": "turbine",
+        "distanceM": 3.5,
+        "bearingDeg": 152,
+        "elevationDeg": -7
+      },
+      "gain": 1
+    },
+    {
+      "query": "canopy droplets",
+      "label": "rain",
+      "event": "canopy-rain",
+      "durationSec": 10.8,
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          10.35,
+          1
+        ],
+        [
+          10.8,
+          0
+        ]
+      ],
+      "acoustics": {
+        "source": "rainfall",
+        "distanceM": 1.4,
+        "bearingDeg": 8,
+        "elevationDeg": 39
+      },
+      "gain": 0.84
+    },
+    {
+      "query": "thunder-isolated-rolling-strike",
+      "label": "thunder",
+      "event": "discharge",
+      "offsetSec": 0.85,
+      "acoustics": {
+        "source": "thunder",
+        "distanceM": 686,
+        "bearingDeg": -37,
+        "elevationDeg": 12,
+        "through": "canopy",
+        "travel": true
+      }
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { interfaceFeedback } from './_shared/interface-feedback.ts';
 export default {
   id: 'menu-confirm-pluck', name: 'Menu Confirm Pluck', category: 'Footsteps & UI',
   tags: ['menu', 'select', 'enter', 'confirm', 'positive', 'button', 'ui'],
+  isolation: 'isolated',
   loopable: false, durationSec: 0.21, targetRmsDbfs: -28,
   params: { pressure: { label: 'Pressure', min: 0, max: 1, default: 0.55 } },
   render(ctx, { params }) {

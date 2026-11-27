@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2, "id": "rain-shelter", "viewpoint": "The walker enters an open-sided steel-roofed shelter, turns and returns to the same exposed pavement.",
+  "scope": "world", "sourcePolicy": "clean", "balance": "natural", "output":"stereo",
+  "listener": {"position":[-4.5,1.65,0],"yaw":90,"path":[
+    {"at":0.6,"position":[-4.5,1.65,0],"yaw":90},
+    {"at":6.5,"position":[2.25,1.65,0],"yaw":90},
+    {"at":7.45,"position":[2.5,1.65,0],"yaw":145},
+    {"at":8.2,"position":[2.5,1.65,0],"yaw":-90},
+    {"at":8.65,"position":[2.25,1.65,0],"yaw":-90},
+    {"at":14.55,"position":[-4.5,1.65,0],"yaw":-90}
+  ]},
+  "layers":[
+    {"id":"rainfall-open-air-clean-loop","label":"open-air","event":"rain-on-exposed-paving","durationSec":15.25,"gain":1.4,
+     "params":{"intensity":0.64},"placement":{"kind":"area","position":[-3.7,1.1,-1.4],"refDistance":3,"rolloff":0.45,"spread":0.69,
+       "obstruction":[[0,0],[3.46,0],[4.2,0.13],[4.65,0.47],[5.35,0.84],[6.2,0.89],[8.95,0.89],[9.8,0.84],[10.5,0.47],[10.95,0.13],[11.7,0],[15.25,0]]},
+     "envelope":[[0,0],[0.18,1],[15,1],[15.25,0]]},
+    {"id":"corrugated-metal-roof-rain-loop","label":"roof-patter","event":"drops-on-steel","durationSec":15.25,"gain":0.75,
+     "params":{"tension":0.55},"placement":{"kind":"area","position":[2.1,3.1,-0.7],"refDistance":1.8,"rolloff":0.85,"spread":0.52},
+     "envelope":[[0,0],[0.4,0.19],[2.8,0.2],[4.0,0.28],[5.1,0.82],[5.8,1],[9.35,1],[10.05,0.82],[11.15,0.28],[12.35,0.2],[15,0.19],[15.25,0]]}
+  ]
+}

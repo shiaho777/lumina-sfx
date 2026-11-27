@@ -73,3 +73,15 @@ npm run --silent footsteps -- --surface gravel --gait sprint --footwear boot --b
 ```
 
 `footsteps.json` lists the takes assigned to each foot and their credits. On a marker, draw from that foot's shuffled pool, exhausting it before refilling and avoiding an immediate repeat. Use the engine's own positioning for the actor. The WAVs carry the selected gait and footwear profile.
+
+### A walker circling a headphone listener
+
+Render a route of positioned contacts with the headphone output. For a complete circle, give each plant its own one-step segment around the listener. Use the actor's heading (radians) at each point to place the alternating soles accurately.
+
+```sh
+npm run --silent footsteps -- --route references/hardwood-circle-route.json --output headphones --seed 72 --out /path/to/wood-circle.wav
+```
+
+The route report includes the sample frame, selected take and listener-relative XYZ position in metres for each plant. Positive X is right, negative Z is ahead, and negative Y is below the ears. The listener's optional `earHeightM` defaults to 1.6 metres above the ground. The headphone renderer uses measured SADIE II filters for front, rear, side and elevation. The default `stereo` output uses speaker pan. A headphone WAV is ready for direct playback.
+
+For live markers, use `new FootstepPlayer(context, { output: foleyBus, seed: 72, spatialOutput: 'headphones' })`. Pass the current actor and listener poses or an exact sole position on every plant. Each short contact keeps the bearing heard at its marker. A native game can still install a mono take bank and use its own spatialiser.

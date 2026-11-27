@@ -2,7 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import atlasBubbles from './_recordings/atlas-bubbles.ts';
 import atlasThunderRoll from './_recordings/atlas-thunder-roll.ts';
-import demoFilmWind from './_recordings/demo-film-wind.ts';
+import demoFilmWind from './_recordings/isolated-demo-sheltered-wind.ts';
 import wateringGardenSoak from './_recordings/watering-garden-soak.ts';
 import wateringCanRose from './_recordings/watering-can-rose.ts';
 

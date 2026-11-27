@@ -1,7 +1,6 @@
-import { mix } from '../engine/dsp.ts';
-import { atmosphere, scene, sceneCredits } from './_shared/material-scenes.ts';
+import { propulsion } from './_shared/propulsion.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/tractor-diesel-idle-loop.ts';
+import engine from './_recordings/isolated-milestone-prop-steady.ts';
 
 export default {
   id: "light-propeller-plane-cockpit-loop",
@@ -13,17 +12,10 @@ export default {
   targetRmsDbfs: -29,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
   mixRole: "vehicle",
-  ...sceneCredits(source),
+  recording: engine.credit, isolation: 'isolated', components: ['prop-engine'],
   render(ctx, { params, seed }) {
-    const bed = atmosphere(ctx, {
-      body: 244, edge: 1340, drift: .188, density: 2.1, material: "air", texture: .22,
-    }, params.intensity);
-    const detail = scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 8.075, .35, 0, 2350, 0, 0],
-      ["motor", 0, 8.075, .077, 94, 91, .037, .58],
-      ["motor", 0, 8.075, .039, 187, 185, .07, .36],
-    ]);
-    mix(bed, detail);
-    return bed;
+    return propulsion(ctx, seed, params.intensity, .55, 'cabin', {
+      kind: 'prop', pulseHz:[26,94], timbre:.72, idleWindow:[.05,.49], powerWindow:[.48,.95],
+    }, engine, engine);
   },
 } satisfies SoundRecipe;

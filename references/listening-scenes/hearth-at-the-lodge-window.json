@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "id": "hearth-at-the-lodge-window",
+  "viewpoint": "Beside a wood fire. Rain becomes audible through a window to the right as it opens, thunder rolls beyond the ridge, and the window closes again.",
+  "output": "headphones",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "layers": [
+    {
+      "id": "campfire-crackle-loop",
+      "label": "hearth",
+      "event": "hearth",
+      "offsetSec": 0,
+      "durationSec": 40,
+      "placement": {
+        "kind": "point",
+        "position": [
+          -0.85,
+          -0.48,
+          -1.05
+        ],
+        "refDistance": 1.25,
+        "room": "small_room"
+      },
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          39,
+          1
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "gain": 1.1,
+      "params": {
+        "sparks": 0.24
+      }
+    },
+    {
+      "id": "rainfall-open-air-clean-loop",
+      "label": "rain",
+      "event": "rain",
+      "offsetSec": 0,
+      "durationSec": 40,
+      "placement": {
+        "kind": "area",
+        "position": [
+          2.2,
+          0.55,
+          -1.5
+        ],
+        "refDistance": 2.2,
+        "spread": 0.55,
+        "obstruction": [
+          [
+            0,
+            0.94
+          ],
+          [
+            7,
+            0.94
+          ],
+          [
+            10,
+            0.12
+          ],
+          [
+            28,
+            0.12
+          ],
+          [
+            31,
+            0.94
+          ],
+          [
+            40,
+            0.94
+          ]
+        ]
+      },
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.7
+        ],
+        [
+          11,
+          0.86
+        ],
+        [
+          15.4,
+          1.02
+        ],
+        [
+          19.2,
+          0.78
+        ],
+        [
+          23,
+          0.93
+        ],
+        [
+          27.5,
+          0.84
+        ],
+        [
+          32,
+          0.65
+        ],
+        [
+          39,
+          0.65
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "gain": 0.95
+    },
+    {
+      "id": "thunder-isolated-rolling-strike",
+      "label": "far-ridge",
+      "event": "far-ridge",
+      "offsetSec": 11,
+      "acoustics": {
+        "source": "thunder",
+        "distanceM": 560,
+        "bearingDeg": -50,
+        "elevationDeg": 16,
+        "through": "open",
+        "travel": true
+      },
+      "gain": 0.85
+    },
+    {
+      "id": "thunder-isolated-rolling-strike",
+      "label": "east-ridge",
+      "event": "east-ridge",
+      "offsetSec": 25,
+      "acoustics": {
+        "source": "thunder",
+        "distanceM": 420,
+        "bearingDeg": 63,
+        "elevationDeg": 16,
+        "through": "open",
+        "travel": true
+      },
+      "gain": 0.95
+    }
+  ]
+}

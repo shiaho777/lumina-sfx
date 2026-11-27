@@ -1,5 +1,8 @@
-import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
+import texture from './_recordings/isolated-tire-scrub.ts';
+import contact from './_recordings/isolated-response-rocker.ts';
+import { shapedPass, seatedContact } from './_shared/screen-foley.ts';
+import { layer } from '../engine/dsp.ts';
 
 export default {
   id: "fictional-arc-blade-emergency-power-down",
@@ -11,13 +14,10 @@ export default {
   targetRmsDbfs: -25.5,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
   mixRole: "vehicle",
-  render(ctx, { params, seed }) {
-    return scene(ctx, seed, params.intensity, [
-      ["contact", "iron", 0, .074, .65, 733, .001],
-      ["motor", 0, .91, .59, 242, 45, .0025, .82],
-      ["tone", 0, .74, .32, 1640, 154, .0042, .6],
-      ["brush", "air", .09, .82, .32, 1340, .016],
-      ["contact", "iron", .88, .15, .49, 560, .0016],
-    ]);
+  isolation: 'isolated', recording: texture.credit, additionalRecordings: [contact.credit],
+  render(ctx, { seed, params }) {
+    const field = shapedPass(ctx, texture, seed, params.intensity, 0.36, 1750, 0.85);
+    layer(ctx, field, 0, .12, part => seatedContact(part, contact, seed, params.intensity, 420, 2625, .41), 0.45);
+    return field;
   },
 } satisfies SoundRecipe;

@@ -10,7 +10,7 @@ export default {
   name: 'Harbor launch inboard channel cruise loop',
   category: 'Vehicles & Engines',
   tags: ["boat", "outboard", "engine", "cruise", "harbor", "launch", "inboard", "channel", "loop"],
-  loopable: true,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 3.85,
   targetRmsDbfs: -24,
   mixRole: 'vehicle',

@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motorcycle-throttle-rev.ts';
+import idle from './_recordings/isolated-bike-idle-core.ts';
 import loaded from './_recordings/motorcycle-road-pass.ts';
 
 export default {

@@ -1,0 +1,1809 @@
+{
+  "revisions": {
+    "a-sudden-burst-of-rain": {
+      "previous": "ea0dda8cb6f9ad61fd22f360d6883bca3e8b422638a5e64a776fea451ba423b0",
+      "current": "f3e9b00427604834b61ee4f5e6d68d1b5494771ac06b8d87e7449cb4fef3e390",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "alpine-treeline-scattered-rain-loop": {
+      "previous": "5a6e6f19b948894d4586bd16f6eff5eafad8eb8c759664981edd84aad43593af",
+      "current": "5cf6a7a0086d28b490a58418d131db1716d6c7972b33440c97e297bc87bbada0",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "arcade-rocket-camera-pass-and-tail": {
+      "previous": "9dcc9913b7773017d5a49dbb16a588d26ea3eee9139c6f73a1151daa8275fc1a",
+      "current": "61cf22e34580378f531ba034c81775408ba7518169d2c9e7524cead286586da2",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "arcade-rocket-flypast-beyond-a-concrete-wall": {
+      "previous": "317ca234bfa40b03f84ccd1630ecfa631a63c88d19517207f32eec267719faba",
+      "current": "5e6fde61b83f45c7d65a3faab5298eb9a0a4045a1aecaf18a6e439ed291db13e",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "arcade-rocket-open-air-departure": {
+      "previous": "101b415672b7a22e9538586c570d9911844cfef87dac0229088b58545d167c7a",
+      "current": "e072657515582ce14979549a5e78b068fdce9a76f6713c04c11c76884908c84f",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "autumn-meadow-edge-scattered-rain-loop": {
+      "previous": "664f85c3f7fa6533e66820acb6ef9561aa7c67a12e143e50d08a500b5a3270ba",
+      "current": "99815517af16db9c77db6d70455138492251ed3f56ec15fd2f268598e919e130",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "barn-cat-at-a-warm-windowsill-loop": {
+      "previous": "65b28496a932975477d5eec1760164915223833fa1eff20a211bea58cc1739e2",
+      "current": "d528915c726c940c13dd40ab846da83b931732d9989f8a0943e232c86e192715",
+      "reason": "Remove the unrelated location bed from this performance."
+    },
+    "burning-pallet-stack-in-a-loading-yard-fire-settling": {
+      "previous": "383978db144b9b0b086c6aac7d7538e56a97a8f266608ebba401d89fabc924f9",
+      "current": "b5ed68f7459a5a0930096c6402e59290a7b8df9e8ec2a7a5c55f58325ade6095",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "burning-pallet-stack-in-a-loading-yard-flames-catching": {
+      "previous": "fe0175f869e07e11d696c55fbbb53b7fea07b0bc6f96ed47bac3f7409b6745b0",
+      "current": "d0740f34da04c6453b56323c6aa81cfce6e97aa0f6a61018fb0b58d08a3ab198",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "burning-pallet-stack-in-a-loading-yard-low-simmer-loop": {
+      "previous": "01e7555b605be1946a9505e07932ecf55945b5cdd34e920d37e27e5ccfcf1d16",
+      "current": "8449450e8ea1f7360a592c3ccb10df9fa03241be07eaa7b0416b634da528a040",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "burning-pallet-stack-in-a-loading-yard-sustained-burn-loop": {
+      "previous": "4aaacb2b6ae80afc6e818fdf927aef0b6724f66bc0315bec8d31898f141cac84",
+      "current": "28092e4fc52d20c7f28b47997204386a63afbc327363d4c5e3def626e6f95ce5",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "calf-calling-under-a-barn-roof": {
+      "previous": "e7b05871bd5aa414641fceaee182a626a9a04f209572ed9fd14a15e0da2ddbac",
+      "current": "986620f0f624626310925007caf6407cc24f4ee953ebac034df1627ae8377bb8",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "calf-waits-for-its-mother": {
+      "previous": "cc1e6681080f0bb42d1fd48a4d55daf7fca2fd1f38e8687668dd5bfc47f0dcd0",
+      "current": "7010e23ce9bac4688b9eeb1b0192b8ef690885626d3311c6b0e0809bebfb1d0a",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "campfire-crackle-loop": {
+      "previous": "e8f13a9b7487deb00fb07c461582b4249da7e4664c526598e6ed25b005ffce1c",
+      "current": "b471df64957ed7dfe1fe2d7dabb111f060cac4a4c37dfacd2f4075a0e25f867e",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
+    },
+    "canopy-rain-on-broad-banana-leaves-continuous-patter-loop": {
+      "previous": "988c81311a11196dc1a5cd3e0295694250d1731e831e9aafa364956746965335",
+      "current": "3fb63f84db0cdc16ba2d37c388395c2d689b682dda16f93b898ab051d9d49e2d",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "canopy-rain-on-broad-banana-leaves-downpour-recedes": {
+      "previous": "c33a0f22552e358d645496eac17c4b8450f6f41cdb1f0bab4b2402d764163f0c",
+      "current": "e7b1e63418654b2bd27f2ab62b06a6fe043d35c514563aeccc62dd07a8c4a5d1",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "canopy-rain-on-broad-banana-leaves-individual-drops-loop": {
+      "previous": "0ec1c4489cb4742abef3701ce8226cd53472113c1e99bf588f4bb1787357aa5f",
+      "current": "d38312ae72e4d2a5ce507f4677cc642b284e2031d183d96fde307892fa4f2157",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "canopy-rain-on-broad-banana-leaves-shower-builds": {
+      "previous": "e14228b721230a9906875be2f4c97bf6cd56b899670d052f740bd5750635e2db",
+      "current": "01d6ab1d21db947bcd8424a06c150752fe4c6843976495198c4a7e03cf4b00aa",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "car-wet-braking-stop": {
+      "previous": "abc9c77dc0e0245d3149dbb3f4a9421217b8b64aa4c40bb777ba07d36b46dc53",
+      "current": "afe19fb142b3b96b3a204794d6e9c53e2b3e4604ff710589ff2a69bb98825fb7",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "cat-calls-at-a-kitchen-door": {
+      "previous": "ef509b9c120c6aaae5ed3fbbaaade2998cfe219eacfa0b1b99b4c6a21a028137",
+      "current": "b72ab4037e24c16ca27c24c6e4c04345019d70099f2eeba986b825645f4ddb66",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cat-meow": {
+      "previous": "5da433fbf0f8292ad50de0c73d5cca92b2cc15297a1786dc6f2b3ba03a0edc20",
+      "current": "2f183598642b481bd5b3d6958577eacdea06cfe3ec5e64253e45ac1920f1bb67",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cat-settles-into-a-lap": {
+      "previous": "689256cade63a0b25657ea07dc256dfa9c63076932a9e30057a7b413379a56af",
+      "current": "af5e097a806131b47c1a6b6650c384724bcd419791a202cf1d4f0bfaeca420ad",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cat-stirs-beside-a-sleeping-player": {
+      "previous": "678742056cc4e70f75f1c3310d3288213b6f1b4a1663cf7e58adb5988dcb8568",
+      "current": "fd54ff90351d998742a4db29137fc6530910803291c831e9540239484ff7d0db",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cattle-drift-past-a-trough": {
+      "previous": "ab0d3dce8d6b3cb1f9750fb8a56c3a6bbd6bb3df23d1ef87c630ff9d302f7b90",
+      "current": "8533f4bf905cb63fa731205f9e79bbaa79c9d5cdb83915a73d5205730e3ec039",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "celluloid-whip-cut": {
+      "previous": "77ece7a0d6b98985ea50f10dbcc3b9f8f54238bf3e46f0a02230776ecbd94b1e",
+      "current": "ba7bca5577e372148d6f792e522d54d57552470d90ce10b93514d86d5f0a95ec",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "cinematic-c4-pressure-front": {
+      "previous": "65c70fcde82306b42e664495ad9430b8a869b10dfb1c5526a2f035a289254cfd",
+      "current": "4ed0620808dad78679f35c5de1e7eedfe38de8b06173648001450e0c4da1c9db",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "clean-title-reveal-with-soft-hit": {
+      "previous": "90d2d2912893a0dbeea8797e501e5afb547c98e9653bcc503071eda839b1d97b",
+      "current": "e10f573c316c9d11222e00981a5a1a651b010993956f649536ff65927b02ce83",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
+    },
+    "click-jacket-keyboard-typed-word": {
+      "previous": "afd289fc180af1471479ed18c1fb8a69dcdaaee739e462bdde9ed830050eb889",
+      "current": "2e25eb01405a25a71b407ee4230c91f257dda2a27fd205c70d4b151c092b9e5d",
+      "reason": "Shorten the keyboard case ring and temper the spring transient."
+    },
+    "clipped-energy-shot-in-a-tunnel": {
+      "previous": "a345e785d4aeac0f89ee09a76f433eddc58f0966199d50f5344a845c87868b7d",
+      "current": "bb78e5312cbd1a641b20c6284b6148c2a5e15eeadadfe52eecc8012c6ff2a95f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "close-lightning-thunder": {
+      "previous": "3628076ff96652f2a3ec64bc84ee97c868f374693e1fb474c735180253fc2ba3",
+      "current": "02294a2d898ec5b4c2b84001e5f682411fdb3d3fa382758615f7e5ec28435994",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "cold-reed-shore-scattered-rain-loop": {
+      "previous": "dbf3d15bf65570d0ab7a973a6802d73472b2276b0efdb5c13d40de7cf30e198f",
+      "current": "0920c1d46a902fd26dc123106bc2154d2bc5ecc8a54f5838dc49b20a746afcd3",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "cow-calls-over-a-closing-rail": {
+      "previous": "d0a3a966f5d503568f06bcca2518147f704689711587993b42dd1bb283a6c0fd",
+      "current": "68dc8f10b3f6d40fa7822297c1fe12dc9bd7a1910c28e94c4cd2c2a282c61cdd",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "cow-drinking-from-a-trough": {
+      "previous": "1247f9b90b0f386c696e0019fd1e63ae8bef3cff8122502ae41ad6ce6411e6e5",
+      "current": "5daa9e4e50f604077889bb8c8c29c8ca98dca94aa7e05193428fe9df0c9c5aa4",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cow-moo": {
+      "previous": "2367691c48aba39ed44cf23e288f33f557f9e5710d79227f9fd0ef2dad9b0e71",
+      "current": "9d429554bce5f5d829db7cd6b128df69f170e2233c8c3130f621fea9ee332fee",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "cow-mouthful-of-pasture": {
+      "previous": "7161dcaf0c09bc6e1e8fb9684e58015a2160b243c04c559529bf52ea699ba4a5",
+      "current": "d618af1c5b3087ed03d925107987075c6ff6c5d34ee793a7be4d6f2c66ba3a9e",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cow-snorting-at-the-feed-rail": {
+      "previous": "29fa3ea4518fcf9bd0538e9de079a9fc06f3cff51f2793cf50bd3daaae1aead2",
+      "current": "5704dc4de89037c1508211a827aa7b10aee716d9743593a9df7b0c009712918f",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "cows-chewing-beside-a-field-gate-loop": {
+      "previous": "554c453282f5d61439d15c1a35e84184e016c6766fa3f502be94800e07252da5",
+      "current": "59a31fe5f61a4f5d39ac05eb02cb920a7a73e8e783fe92141999a723034b86b9",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "crosswind-at-a-bridge-flagstaff-gust-front-arriving": {
+      "previous": "9e1290a5ea594dcd0bb05d4b18dded463a81980b7c25fb1545b6ddcfbe75ac5a",
+      "current": "84cc81f126eacd894564624bf23978c31f5767790e81d3a71962aa5d6d9e1a87",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "crosswind-at-a-bridge-flagstaff-intermittent-lulls-loop": {
+      "previous": "721c7f2d597d4f8cbb0d28735501247b4b579b5c93551e1ead0a31b3d662b728",
+      "current": "63fe94384f18be053006b52df90ce28ae5b5b3e7064a02d3919c372d0357387e",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "crosswind-at-a-bridge-flagstaff-sustained-current-loop": {
+      "previous": "d7926fadf24a2cc986d067e9a4d67664667cdebab96f52157b91c38185400d76",
+      "current": "7b3e9d9ef3717bf5ae3675ff493b659aa7970eabfc1c53b00f7d6770a9a7dfe9",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "crosswind-at-a-bridge-flagstaff-wind-dying-away": {
+      "previous": "af869b96e4c5d1562e3e8495452d61cb1facab0d43fd66f034ea622c66fc23ba",
+      "current": "785391579a931b4cc2cc97630a689549c424a5c8e51f47b561bb44211f44f44c",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "decommissioned-conduit-arc": {
+      "previous": "6c44061f46b2f16dd484190cdc5b85a9d6a424425380c267be366b93a998323c",
+      "current": "d5528f13ca6a35de08ae047d388dcb8755d37e046990187a60b6058f3b830141",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "delicate-logo-close": {
+      "previous": "2a71c045d76e28054776e13379e9c909a0935807dfdf4fc8209ce7a2579e1b60",
+      "current": "5403bd822046287ad753fb1440403c076c0eb2ae69185340c73b1b369488813a",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
+    },
+    "displacement-cargo-vessel-approach-to-breakwater": {
+      "previous": "daee200ea4aa32211ddf7165650d91543a59924bb76bf7feeb50f53d5ae11f69",
+      "current": "7a9d61c93e44c8c3620eea100353eef2e9911a76a750cc90c8843f92baf0213e",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-departure-beyond-harbor-mouth": {
+      "previous": "fd7326f7af772a9c5b79a59eb61d883efb8ae2a0cbaa3a37a14f9a787cba1787",
+      "current": "def9e50cc6bac9507504c08c34d64d44cdfb0e81c7c6277e852dbc8463f23bad",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop": {
+      "previous": "50fa2ed810db55945852246fcba5af87a1167bb960550418117a8170f00929ea",
+      "current": "2156cadb9f9b6d20579180c458ce26a5e200db441618c7cb64cd10e7fdf0df02",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-harbor-idle-machinery-loop": {
+      "previous": "06ab6459c563253af94d52da1fda1c374a31852e733a1e7a98a86dd5d85d0150",
+      "current": "dbe3ca33429dfcbf9f1443ce61b9bb5d28646738a6486520fafddfb48dc74927",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-loaded-shaft-propulsion-loop": {
+      "previous": "99c63d91c70606ae885ef82d4ea6b20d0948c5e6b406af4fb7a149cc3fb374c3",
+      "current": "00a2873335799dc6b56b691f2f6e3b7383fbeae33044098f88f10efba43b65ea",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-passage-cruise-loop": {
+      "previous": "9f7ae862ffa3c965dd07f2db1f589da4a9cc921baf05128c6b264dccad1f0d74",
+      "current": "b7dfc37825111f6238ee6c37972a46f9d111adfda249da33cdfad926c948cfb2",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-reduce-to-harbor-speed": {
+      "previous": "dbd7770b64d726d3aa4a80f1abd240b340ecee716281b1d23a0789fac3a5b750",
+      "current": "54d848e832acd6fdb3d31cf336ac55abf23c64da7a90aab1a957a8eff4ce42e4",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-ring-up-full-ahead": {
+      "previous": "62d89fdb3a31abfa531ca7a229cc0def769426629384e31dca6b6127f5e832ad",
+      "current": "7489bc0ea010a115c6676bc483e00afb19a61e56655aaef88f58f05420f0d6b3",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-settle-alongside-berth": {
+      "previous": "9f148c1982b2316ed4f7770af3df1a5f924ddcd648dad0689b67ef5664caaf0e",
+      "current": "9bd8431c39585d63ca8c75831ff5be39744702b93b2ebac68bc6489b7a8138f2",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-two-docking-throttle-corrections": {
+      "previous": "5b8c5391a9d103b8ef679e7bf189b767f9b2780cb897920fc3887bb3b9cd8d75",
+      "current": "0e7ebe20bde81600fb9e405487d6bf649c6fbb499adf8772f53d1bbb13abe0b3",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "distant-rolling-thunder": {
+      "previous": "dd620fbaef2114f69fca3157b2b5d8a9a040d2931ce5d7c6369cd5aab10884c0",
+      "current": "61aa0bc5a7f89c8938c1aa360844820afefd2361f71c0b97be3a07e341869d61",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "dive-breaks-the-surface": {
+      "previous": "3eb766f4af6af045df96f519c725afa2273d3a4e688de20c0f005dc0ad73c534",
+      "current": "e02a69aed2425e912b45c45c7517973986763fb24a0762497f581d30e4d1ccce",
+      "reason": "Preserve the recorded waterline gesture and change listening perspective through contact."
+    },
+    "double-thunder-roll": {
+      "previous": "669dbd7fcb873bcb20319b006c5815304dc71616a061b6ea10bf6ea2015085c4",
+      "current": "347a40d2638700f61c9dfcaa8da3fe2151ffd746429d5a5d7f17e552b3806c19",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "draft-across-an-empty-station-platform-gust-front-arriving": {
+      "previous": "1b486f2dde03298d8c0b93b28ad95284af8ba6a726566cf15eeddc99798ada82",
+      "current": "f36b5dc946c8706d616361530bf862837b14dcb96a9e40b9853806154b1c80e9",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "draft-across-an-empty-station-platform-intermittent-lulls-loop": {
+      "previous": "5827dd1e6494d2486fbeedcccbdfb6b6a2164f8afe5febe4a8b75244e4a01acc",
+      "current": "ab396a62e6e31bbdce8fb2ab59e6984a6c4f86e7b45125b1c82aca9325297c90",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "draft-across-an-empty-station-platform-sustained-current-loop": {
+      "previous": "3fdf32a83a5a598ef731474eb81ffc96609c1882d1554db3b8209ca00410b25a",
+      "current": "030437d92bd5aa1278a14ae4b83d3ee496cac46df40d067f50a1d14b703653c7",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "draft-across-an-empty-station-platform-wind-dying-away": {
+      "previous": "5ee386d41f9a8d7a71390c0b5e2162345fa58ce487e71bf590d11653a1a86a1e",
+      "current": "40ad333cd5ed9e27783b03bad9b2f89d5b15d2ab139262e74f3bc9a6b6ae9276",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "drips-over-an-apartment-fire-escape-continuous-patter-loop": {
+      "previous": "ab4477066af250a38d435a9476b3588616732b9673ed20636f4b7e5e4090e1c7",
+      "current": "f45a84261c1812ebc6e40d94c055661fd37612178fb5ea4d017065bfc55ae2eb",
+      "reason": "Use longer, clean field takes of rain on a metal roof."
+    },
+    "drips-over-an-apartment-fire-escape-downpour-recedes": {
+      "previous": "a30ab349452e28448782fe8d4ac1f3ad588fb774789582b2bb84a0bd0af08d4f",
+      "current": "84e7199fa3a7f8c7f36091151e7f9d61d326baf355647e08599a4cb192840f14",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "drips-over-an-apartment-fire-escape-individual-drops-loop": {
+      "previous": "9d4c4944f4df81540031506a3e21a692e406a01f673286b1375fdc02ed00b14e",
+      "current": "19eda8eb049c932258718b97ee39de863694c172bd6d5ffbbd4d38f9a03f2d3c",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "drips-over-an-apartment-fire-escape-shower-builds": {
+      "previous": "9b4da56d5af3f38b3f106eafecb4b41bacd10240c047e304620304eded571de4",
+      "current": "8a5c0658bcf8224d33107605c8984699d686cf5854275c111a40967f5e927b1a",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "drone-crossing-behind-a-wall": {
+      "previous": "0f513cd7cb79b9d40185401b40b931362f22e1240f93a0824285b6d361d65b67",
+      "current": "1249162a792f7eaea10f0f89908bfda62da58eb737aa8321ed7e732716098584",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "ducted-fan-scout-lifts-into-transit": {
+      "previous": "bc92b58442239e0205f0ad216cd686fa63110401a21262d83adef46f00f20b57",
+      "current": "95deba50ab9aa8b5a81dc166e9d2ea5d24bf0603f616062853828a306d2ad667",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "ember-bed-under-damp-kindling-fire-settling": {
+      "previous": "90e63f0cbe91c098d50d3a1e3e09bed8bc8e093e752828f424e2e954b5ef0dce",
+      "current": "63e39e6504b8870f1e593b1e573bf9b3e73ae8a012f460e03f078192648268d4",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "ember-bed-under-damp-kindling-flames-catching": {
+      "previous": "a7fc4fc8dc4f68aa52166c807d807fb7359833132c9c176a113c952e1c523996",
+      "current": "358255e95b60fc10a8068358eb26aa2f833e39e6f008502192858ef25d78ac0a",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "ember-bed-under-damp-kindling-low-simmer-loop": {
+      "previous": "db31c064bf72a266ac5247d8998cb8ad19d9da37d4a9f9b616fa6b43acc17814",
+      "current": "40a2b60fca4fec978fd00169718a6fb5c4644eeb2d3882f8cb7ccb4ffaeccb09",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "ember-bed-under-damp-kindling-sustained-burn-loop": {
+      "previous": "af5acb6452a00286216d481a31e8716baea31a0ec38ea67e1dca95d703bb44e5",
+      "current": "94db24fcf623e2a100af65f433afcd2b1045d5b19aab7fea9b0090b1bae77734",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "energy-shield-block": {
+      "previous": "899949fd2706c576cfd532ac7c2bfb9ec58f67a6a8bf37d43aa89cde4c057d42",
+      "current": "8751e0b1d9d1fe9ec1572dfef4b9284dd8f128157fdb6e6e8ab27db25bf3ff5a",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "energy-shield-collapse": {
+      "previous": "99676b15b6936b6698ebd1f61ef722542ccb12349ac04c83fd5d1aa8d09c193e",
+      "current": "31850fdf77029dd36ef70120b699fba13213a8b94f2b8a32f88be5f682ceb796",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "energy-shield-overload-collapse": {
+      "previous": "a10424ec21e5dd9c3c768150e17052b8ee341db10941806c531194acdb342e4a",
+      "current": "2a15c5b36c43207e7b19f7841779bc8ad68b9758d1eefd2bc38cbfffba525118",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "ewe-and-lamb-reunite": {
+      "previous": "d7099d8fdbcd49d98e57e7034e3aff73db2b2c434bbf54e77caae2f21bbceb89",
+      "current": "d782b35655e5a6a56951b2170a5154986cd877a33f566380564f6932776df424",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "ewe-shaking-a-neck-bell": {
+      "previous": "7d2be447875b1ed7e3e69a72868a876d2eedd382bcd06faf15634e982eebffc2",
+      "current": "23bd21197ec93cf30d9165459b026cf3418bd57c8d0d773a7a324d2334b538e9",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "fictional-arc-blade-emergency-power-down": {
+      "previous": "bd5d4a693900bdddf483273bcf32aeae63b34f68b2c3a5a0e8f7d69a1341097a",
+      "current": "631f1a5a0f52b60821bb5adc78f40a708c197882f0b6c9560f3dcb0668f90bd9",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "fine-grain-pull-away": {
+      "previous": "6c3a5818c140a241872c5dd93ca737dabd1bceedda228e937eced0649d058ea2",
+      "current": "58faa0a6e296f6f68fc6ac30e893737539890144b294b4a55654be6625a56d92",
+      "reason": "Soften the high-frequency sweep and reduce the reflected tonal tail."
+    },
+    "fire-breathing-up-a-stone-chimney-fire-settling": {
+      "previous": "8079ddaa5f6d889aa97fc30f27342a94c621d8fb32f0063e75bbc2a97fecc8c7",
+      "current": "05c218be6bd82352bd79755a12f100f38ae7a7a662195d948bd9980303bdc95a",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-breathing-up-a-stone-chimney-flames-catching": {
+      "previous": "4a5af772e1bd475f5bf555198007978bc62286b6dce6f820060158fecf286086",
+      "current": "aeb54813c060c5f5afc0cfe3b6c35246e7a7d32cd4b1c664fa7f43d6499578f9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-breathing-up-a-stone-chimney-low-simmer-loop": {
+      "previous": "18d4992f7fe69bdd7a286bc20ce6806ee7e7562eedff6d710cd221c58d45bb48",
+      "current": "2dca5126eab2161a2fdc518917edf04b9e10a1a0ebc1d6bf35345796ec022234",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-breathing-up-a-stone-chimney-sustained-burn-loop": {
+      "previous": "a5be3f91deb1708d59be084b7ee12150c5f1e8ba162f5e97d8cddefe0061a99d",
+      "current": "c086e6423c8dc6ca8729cd73117340c98bb309a05adf82f49f066176fac3ad43",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-in-a-sheltered-outdoor-brazier-fire-settling": {
+      "previous": "5e395b2ad0f506ca22a8f87224d06f637e3fbd399ad041c9fab91598b08d3fff",
+      "current": "58aef83483598211c6b60bda241e4822956749b1cf113fd600c4c77f264b181e",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-in-a-sheltered-outdoor-brazier-flames-catching": {
+      "previous": "bba324cf2d87e2dbeb9745c7fa6aa1a69cee174d316dcea976506d55f10ff5a1",
+      "current": "5dd475f331690536c01b5928f47ef220f95785a31b4f298a053fa42500280aaa",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-in-a-sheltered-outdoor-brazier-low-simmer-loop": {
+      "previous": "01c144725e86e62d8a2893ad6d4a78195b4ef80abdd43e7aaf660d10e81e5b41",
+      "current": "e6797b855ca28cc30b9b286e03aac2b3d63c5bbd250c1e49a5ebd8bb55c06e2f",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fire-in-a-sheltered-outdoor-brazier-sustained-burn-loop": {
+      "previous": "91b914b726116e74a3adc6f038a0104be13bcb8c121645edbbb6f3d788008cf0",
+      "current": "8e2acfe99d1451794375fe099469d9612183b2af1ebd151d48c722295b5b61f0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "fishing-skiff-tiller-motor-approach-from-open-water": {
+      "previous": "6bc15f0c9520d29d1c00ba59a4ca0e17f7c130ffeca9ab140c10d571980a43cc",
+      "current": "fd2ed0ba6ae2dd13ea04051a4b0600afa8622fc3faf6bc60d219f4beb9e9b3a5",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-channel-cruise-loop": {
+      "previous": "20ffdc4ea97247716bbe3854b2d9f87150d479cc37501883ca268886d953711f",
+      "current": "bae570dbd740fd82c950bbbd3583b840afaa52f42a7875ff438b48e087b7cde5",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-climb-onto-plane": {
+      "previous": "8573c8a5731b0dfbd6c47031af8bba782b66f45de7aaa4e921a1ba7e50eddc2b",
+      "current": "f8ddf39fe5d3b19fe2687ced3ebf0e1f5c31928640b9b697bbe90cafa634e7fd",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-come-off-plane": {
+      "previous": "813519efaea0c6c0f62799ef4095b1c48279c1770b924a16aba50c3beaca871c",
+      "current": "8297f216137defc69842484cc33d04e47504ff8b8f1cd3267cffd96fffba39e0",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-helm-shelter-vibration-loop": {
+      "previous": "f7d8955b05aea3a0cf841754029dfa54523d385dcd62cfd63e933b8c5d7f8a2d",
+      "current": "2b6973501421fe525f2a478875a017eef9a651df3aecc6d010651982684bd356",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-mooring-idle-loop": {
+      "previous": "8f27c21e35e91f37fa6006891d7ad435edd4961c73bf04616e3e4ad773940992",
+      "current": "718d1b13453cd034a1d2c217d4351b5de2886c5bcbad37bbc202faaaddbd99fb",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-planing-throttle-loop": {
+      "previous": "f1d66ff909e0569bff8332dfc76d5133b58aa5a94d9fcb8066ddf13b2e8bfe8d",
+      "current": "81f40b24613e34099b9da70f28d44f97e819fe64b35ae8abdc7817254a5aa5fd",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-return-to-idle-at-pontoon": {
+      "previous": "89cb0b95d5b4b649bb8e7f1754439f09e51690dd4335c60cb889583e60e5cb14",
+      "current": "27a46aec1ef4dd566f5a68f3a824679fb738504523d493b45892eb0734930284",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-two-throttle-corrections": {
+      "previous": "c7dfa120c9288edaaf1e60e2d81f68b65061a692ebdfa51af3592380dfa76471",
+      "current": "2f0b74689fb50f4a5440b66e1e89147aa3416c1e2139110f555666a4db48d49d",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-wake-recedes-past-dock": {
+      "previous": "157db3a293b0f35cf12abc662bdd3fe1eaca5cd1bb4644fcc713f2b213bf08a4",
+      "current": "4efd14fec1bb25e2bef59742549fdfe583a699564bd8c47b0e86794ae95a1f6a",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "flames-behind-a-closed-workshop-door-fire-settling": {
+      "previous": "39330a32aff8adafb3a387ebc7ee4f93bf77e97aa0ed4129726e9b5cbebf3bad",
+      "current": "b8b9cb218b2395c58204140ca8ed3671abf8d175d72052cece137bf395a1e638",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-behind-a-closed-workshop-door-flames-catching": {
+      "previous": "8afbe915e6f491577b5d2ed42d67aa75ee02c5513db54f76f4b2263ff89f654e",
+      "current": "b97002af35727c2f00d5015f2bd1a29695e4f3fdac32aeb8f9d8868b1d635849",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-behind-a-closed-workshop-door-low-simmer-loop": {
+      "previous": "6540a5f0b5208793b87968b38e75947f379e3dad303fc413ec44e0bb1ebf7b88",
+      "current": "0692fb28c297b673184ca559c614c3a1d33b382839b8f4f6d93947fa862d1495",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-behind-a-closed-workshop-door-sustained-burn-loop": {
+      "previous": "215e5c5ff3dac48d45b70a1fa1f8204328e70e68957d0c91b9bb0077861f7b11",
+      "current": "38c2c6f925ed4c0d0a0b764c920989ea3a798adb8b04b7f64f1198b19dc3e7a9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-moving-through-straw-bedding-fire-settling": {
+      "previous": "d8adbbeb240fb317e111abae21da9915ae587f2da4b7825403f53c76ee378423",
+      "current": "fd4594960a4e8d5a1f9a8114f1f057f98cb0e5060f937a7195d854bc153e0b53",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-moving-through-straw-bedding-flames-catching": {
+      "previous": "b6723c4efd817e4539d230b583fa80fef91fcbac8e69d2b5b392bafc6ae20663",
+      "current": "99b0b51ec69972a7e66520e19174af5e5dcf93af176a53bcc0bd056ae23443bb",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-moving-through-straw-bedding-low-simmer-loop": {
+      "previous": "ce8305d25dd1577b7cb09105d64e3c783458a6862871c80ae86f37d47282a306",
+      "current": "533ad1b7613a92e65406f0ded9ee4caa2b37898664907f723b732e6d0dfef9d3",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flames-moving-through-straw-bedding-sustained-burn-loop": {
+      "previous": "9aa28f62b4dde1fdcb9812997be3516d543b488ef9691e6e4cf6bc275c5f63c4",
+      "current": "f8546a403b1ab79cb091518ef496ca2cbd5a31627373167f11dd4ecdd5d582e5",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "flat-bottom-riverboat-changing-throttle": {
+      "previous": "127dd276b5fec6d8b99c031b4c572d8f3a185aca0d21222ee1fa5510a8cc1357",
+      "current": "8f003ca5654aea8a5bd2b18a1866594e5abb917deae3618f91d6c2feb90dc172",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "forked-lightning-with-a-late-hill-return": {
+      "previous": "717db3baf554ddf6abe664a1744f5fc580206f85cc7ac55ee946f8c38585d940",
+      "current": "34655036e6754b7a949bb086c9f6bf832cfe386733c9c623c6e326b7df8a8c4b",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "four-cylinder-sportbike-exhaust-receding-downhill": {
+      "previous": "2fed9b3b1c4496dc6d60ab58787df844fd8845867e3e6684b09180c5a1e8d4f9",
+      "current": "bb56dacefc6935ee68c60e104a28243714939eb888f5b390939ddb92b90d2254",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-hard-climb-throttle-loop": {
+      "previous": "657e5531ade0958c0cd0319d12729695bcf35df2062f351737743887c00aade4",
+      "current": "5631073cf4e2c8865567057645769378de8e5d75a351bef4a390095793a0e545",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-helmet-muffled-ride-loop": {
+      "previous": "11bf3a8f1e795564d9a095d506ab6aec7cefefd47b112c25205fa2ba080db1a7",
+      "current": "f10f174c8c072621123a86ae3c5d3fdac81dcf2a22e6baa359eca95fc1548b8f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-kickstand-idle-loop": {
+      "previous": "4b19170d3f91a99cdf4f9e7d72821f7a2b42fe28c99607261a86c81c771bedb7",
+      "current": "de08b867edb3bf00fe3581ce5ef96abe5f0e0f392edd9d9a94c9661a12674ff6",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-rider-approaching-roadside": {
+      "previous": "f13cf81e333c085dbc96c554f0445f1c4c26b55e7485ebe3c615e6e0015763f7",
+      "current": "699102b3acdb4e8924b474cf369cc80d99005013c867d13943d56a478bf265f5",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-road-pace-engine-loop": {
+      "previous": "8e587b816f667836b19ce29cbf57c440271b7803f5e4cdb9ccbe5478fd6c5e58",
+      "current": "d257c891ea2037809afd301ca18c2a4666e569efbafb4fe7bfe3f8b2b30d225a",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-roll-on-through-a-bend": {
+      "previous": "7fe4da7137cea04f1d39b08a0f30ef826a01cb35a5e844b2a1dfea208728e1f6",
+      "current": "38dac16437fef79b12bc3522f9ce0a3064726c97e5506c1b215277c5114ffc39",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-roll-to-junction-idle": {
+      "previous": "85830ce997e6619884a249c29e71b3cafe621c7390a6f483d7ec8b3e9e4539d9",
+      "current": "133643546bf3e2c1933b5058a894de3b17f2b17e06cc8d98b99828b967699ad8",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-snap-throttle-closed": {
+      "previous": "19cb6f1d86a292f4f03054303bdae681be437da184ab40f897f621ae54adeff3",
+      "current": "1d7ce472b39a537cb9e37543f3033f10ce827b559a8d60728b47877c8ff2fd5c",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-two-throttle-blips": {
+      "previous": "2a0dbf62b708ba176f3f986118958cb0f5b30e31c0a61d14702055dd85021188",
+      "current": "03d812a187f72cba52a9b94191295f93a12a40cb608d407e3debb1b39c31b1a2",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "freezing-rain-on-bare-branches-loop": {
+      "previous": "30a3dc6a4c0f9ff89b5e45c8fffc17084b79b9f01de5faca9df1f646fe97dd93",
+      "current": "2b36c0d842195e5c40279a3ccf0b04cd260272a84f60777ebc9cc8060b3d79f7",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "front-tires-chirp-over-a-painted-line": {
+      "previous": "87eb85ef132b35000f88274048710f20f4fc2e689d59747e0d85e82a4b44b65f",
+      "current": "92ca5db41f2181de14b2bd8b1e21eadddb05f388c5bfe518783879804dce4c20",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "geyser-lifts-then-rains-back": {
+      "previous": "87d4723149837298918f2de052f9784d3ba3e784fb5eebe5ab5b3a4097af8821",
+      "current": "47868b55a65ec612d6801d4a1c3d77f4e070380a79e6b4135766a38e8e3ff972",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "glass-diagram-last-frame-tail": {
+      "previous": "86777f094826ab13ac390425411499f26fd7c489db3c8193a057617d6386ff4c",
+      "current": "d7ac01c2f49ccc7bbdba640032344529aceaba48b788d74440bb0ab23c983fe2",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "glass-elevator-interior-air-loop": {
+      "previous": "4792fdb99e36abc3b5e2df8ccc0331d478656ee380f3315eeaa150440b5a4764",
+      "current": "ce4407b5342cc1bcf9021209af4c44f033c527fd0fd9cac29f2f72dcfccfd80d",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "goat-bell-swings-as-it-turns": {
+      "previous": "43aa86583e986ddbf8dc3c272839e018137b542f73fd24b0ae485a1283759649",
+      "current": "0bf5cb2443614000893ce1c99b0e63a3506b0a73a44609375fb40a8428673ab5",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "goat-browsing-a-leafy-stem": {
+      "previous": "6c3c4cb70736398f6ce407a822c3f180190bd728a8c86e1be80fc2b637867b83",
+      "current": "3003a6c37f8b2498764eb4423d64b14242488416a14d69b3997dd1d26dd97e5e",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "goat-calls-across-the-pen": {
+      "previous": "654a1db083f9bb7ff351f463427c50c5a6a24e4fdee19e5ce7033072634205b6",
+      "current": "bb0cfb96981bd2f0c85737e000547b76db7ab18d88a626b7f707180718e89bfb",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "goat-kids-calling-together": {
+      "previous": "dc9415ba56662c44e78bb90a6e66c4ff3f95ec574107d12bf8700c6237b0786a",
+      "current": "659dd26470cffc2da22d4239e3fc36587e43d38630cad27d2bf38b1d8ec6265c",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "goat-noses-a-feed-sack": {
+      "previous": "e8133ad65b1aa67e7d89de733c9dabf2814d89aa40d61bda154e3fa731d0e163",
+      "current": "4f51dca4a21e23f40194b44b5fd88e5d626f09dc212dfa6d772a8e4db16e2aab",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "gusts-pushing-through-dry-maize-gust-front-arriving": {
+      "previous": "9846715d68002a5af5c5ef38af145e1de310467d7186bedfa227e79b1a4c74a1",
+      "current": "22358384cb474e0227d729f4ffb3cde8aabeb55e61f0657c903642031cccad8d",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-pushing-through-dry-maize-intermittent-lulls-loop": {
+      "previous": "668835ac7fdae7027a580beef4b7f71bd528a95fe4618b5fd0b5656fd2531747",
+      "current": "1b49395b30d574ee5fd0cb71026cf92d6f09eedd9e79a1ddc31201e905070cd5",
+      "reason": "Retain individual dry leaf rubs in the recorded maize gust."
+    },
+    "gusts-pushing-through-dry-maize-sustained-current-loop": {
+      "previous": "2866929a8d00d0a3f746f1cf4610f5d97678c5e4b07d732514d94992ea2e2a14",
+      "current": "384e0fde62379fabc483dc2b8372cd8bebad070d7e7d5b5c19190442facb6a77",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-pushing-through-dry-maize-wind-dying-away": {
+      "previous": "4bedd2798b7d7ea8ae126c80486959e57df0626bd3bf559b1f78c8b65b6e8b59",
+      "current": "be5fbfaa4f236dac91ee38162e1ce9ecd1ab6642f6682a30ed8cfdf9af28a3e5",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-rolling-a-dry-leaf-bed-gust-front-arriving": {
+      "previous": "ee6a027fccc85153f2609528ca8e717ad1dc0e652f5c907f842a511a4c961a89",
+      "current": "ee3c641bc8ef429d5881986c979fe7e6e6e2c5e8c4480cad4d6b35c09075a96a",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-rolling-a-dry-leaf-bed-intermittent-lulls-loop": {
+      "previous": "bfbdabd86702677c883b8b685e60e55a7d32d4373c04e7ac69e893161f19ad8e",
+      "current": "fe8c8f42af10f9440ee31ca60393b59122b105c390d070781b76d8df2c8ad5be",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-rolling-a-dry-leaf-bed-sustained-current-loop": {
+      "previous": "90f1a3f98b2de339ec8fa23294fd5c9f2f47c8c34ea1b9bf1fd3b52fd6618ce5",
+      "current": "5a506067b2b6a1e8069c2e511af12bc411a89cb186eb2a0f0881b64616abb6b7",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "gusts-rolling-a-dry-leaf-bed-wind-dying-away": {
+      "previous": "154cb38a794297826f2a4e6230cf51a509aac2df0e7022f99602b7c8c91f248a",
+      "current": "f4ed704931b0c0fae2dc1e0430ccaf307160f7daa05d16c71d18bcd32b6790c5",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "hearth-fire-behind-an-iron-grate-fire-settling": {
+      "previous": "6afa643a15d77dff6cdb0ff95be5116411310e5ed40e40473a8c4ae90fd3044b",
+      "current": "3b0994bb3207aa1976c6456daed8b6b227780c6eb9aa98a245860c5da45f2226",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "hearth-fire-behind-an-iron-grate-flames-catching": {
+      "previous": "f60d8d113c641b00b04198d95c1366abaa4fb251b7c2c657daeef5af66faab59",
+      "current": "a2f49a65339cb691972ad2b98a5d504685c50831ebc01c4fd455b2932343c3d9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "hearth-fire-behind-an-iron-grate-low-simmer-loop": {
+      "previous": "6d6736f4ce318d86a16fcbeacc8a01a68732fea4769b133d418380a70bab1b38",
+      "current": "a55926198abada228892f7894ce79c91412434e56ecd88117a8cf50a00b373b0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "hearth-fire-behind-an-iron-grate-sustained-burn-loop": {
+      "previous": "6c0f232624153546c9011f5eb27cd5fd611b5c4629054ad0265d3b6304a2a049",
+      "current": "f8180954f8c70befa5e3462c318f7c2fa0919579dc87da1566f60195fb7b5626",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "heavy-storm-rain-loop": {
+      "previous": "249d2032c5fc2dfe88a50eb5a86e4adee847344510ab5c0c1e0764ca0c268967",
+      "current": "b8232e8e22738101fbcf16ac7e7b1b7fb14f177a24f4fc223938f2be9af88900",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "hedgerow-after-rain-loop": {
+      "previous": "2eb8d0e7aa36ed92fe27ae2c8fdaddf334b92d37fbf688e8d166a34f8f631213",
+      "current": "66278e7b3b220ad8dbfcd808acb3647dc4f92ad06490fda84cdbe24636efaa8c",
+      "reason": "Remove the unrelated location bed from this performance."
+    },
+    "heritage-rail-coach-far-side-of-street-loop": {
+      "previous": "c0e87424595d918fccc8b42ca024cce55953d42ff930c692615fdb27ac61afc5",
+      "current": "dd60f0cdeddbeeaa2f6104e4ab6593bf7a130ca0d9aa8288dddda90d3991acbc",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "heritage-rail-coach-rattle-between-cars-loop": {
+      "previous": "2e60cdb970305048e651ac1e6a699eb551d4bba39c3c618e71151a45ae9ea588",
+      "current": "dc17746bc29ee2c47fa717efaad39edbe16219040ac7876dee9ddb0a525a92d9",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "horses-shifting-in-loose-straw-loop": {
+      "previous": "4d5aca5e02f398d936a37888a0fd3b4bef99b8cadfa65c84e814c73b4ac554a0",
+      "current": "f727e6f62153ae94f39306ab0d1bf1343d9fc34870b3b26a8d516f012af10983",
+      "reason": "Remove the unrelated location bed from this performance."
+    },
+    "howling-wind-loop": {
+      "previous": "4349577d7340c2505ba9999676b08d31b0924c719373fdaa5a3ef245e6ea6198",
+      "current": "bdbf4527873c895ac56bb2b0d2cff28288911dd301e6bfb155b78c943ee54658",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "incoming-artillery-game-cue-camera-pass-and-tail": {
+      "previous": "39b6e9cf7ec332b601f67e6c964a8557412b154e84a347a86434cafbc1302001",
+      "current": "d2c2ed478db693923c474d61770bb63296beb5b11f28b139a5169217e7ea8a36",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "incoming-artillery-game-cue-flypast-beyond-a-concrete-wall": {
+      "previous": "ff40a32241319cdae48203a278e8c66c9fd7c768ed80d4cb8392b821e5f111cf",
+      "current": "429d49e50e43f159a32e1460fee9632d9c02a46b1aecbefa97f06e0477424210",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "incoming-artillery-game-cue-open-air-departure": {
+      "previous": "b58636cfcd173cc41410fb8bc3fc9522244ea133a0bd230ac580f4ec19f65d50",
+      "current": "beeda970f24c88090cff289b3f91c0e57fa98e161c2ee6355ddb723d7db83873",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "indoor-floorboard-brief-flex": {
+      "previous": "2f5bec95cd6776a8eff9904f893b94aa68039e5eaf08bee8bbd8cf38faf7cb35",
+      "current": "3b2d18131a102e141cd06deee97e489f30bb31413eba17b36e139a6f5c751992",
+      "reason": "Carry board strain through loading and release with coupled timber resonances."
+    },
+    "interceptor-turbofan-canopy-interior-cruise-loop": {
+      "previous": "bf7f8ac08a137f7cfa39b932660250b0783bc988d9dd96eb1a7ab5d78ff7a4ff",
+      "current": "c7884b706b6509317f2957552cdfe6321bf9f6177d3b8afea215f57832a3c813",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
+    },
+    "jet-pass-overhead": {
+      "previous": "42978f89942146b9eeefd2631a31ae1de37f518dee9e275f441dfd524d2e3884",
+      "current": "de4740b7a94be79767e5890e2de5e7c54f1e9a9948f3d14f3ffd6d4fc63d3776",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "jet-taxi-past-the-ramp": {
+      "previous": "564414071c03ff5f845a649a56633926cacb31fda0d07ae48d691c867e7cbd6c",
+      "current": "4b41ba3d2a9b052d8ce039b6eeab4be5e63e75448517111c2815c1046dd89405",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "jet-warm-idle-on-ramp-loop": {
+      "previous": "3b7a1e24c4a7d4e427ca2ed7072a37da3d982ff59f9a139122bd1b17633fc992",
+      "current": "a5aaa75db5863ea22227afcf03215f4c87096709adb58fa77778ba4d3715e86a",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "lamb-calls-from-beside-the-barn": {
+      "previous": "178627b3ff85f91d83ef0ea08d7a96367826453bf442d411a14c248107e6d915",
+      "current": "e5a03ca0bf4d48bfc0748aad9b59f21073f9f70b0547c8ea4269221e12bf938a",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "lamb-following-its-ewe": {
+      "previous": "0e1406cb9b159cefcfeaadfcf7ed14d6f22f86db792384eba58001508c032607",
+      "current": "ceb8b9be55e8b83077e38fd2366b87107ceda92e49cc8e67574ded4472b7c0ff",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "lambs-between-two-pasture-fences-loop": {
+      "previous": "fc73ea07a6689a6b4998d71433fcf7d7e6b86f92db01a9b5efba1840a518a0fb",
+      "current": "e584b7112311760b3358c0757ca98f7395bb11907943a918efd3ebb9898536b5",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "laptop-scissor-keyboard-shortcut": {
+      "previous": "eeb9438ae97137e2a6c540c1cde1cf065fcc9afe72fdcf074dbdc2af814de1f1",
+      "current": "80c7997ce76c4d10471edee205b839812f366044ff32e33efaea8e8ada370f76",
+      "reason": "Keep the modifier and letter together with lighter key returns."
+    },
+    "light-propeller-plane-cockpit-loop": {
+      "previous": "54b2cee489070ea610b56e7f993febff52f4248d67f4f9494028a8d6af26ace6",
+      "current": "be2d42ba570eaef106660d34b2a25ed96cb295dad5afa8b557737036d0f91218",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "light-rain-loop": {
+      "previous": "789a8d61b5c46f7a94a69e8443a63ce9adf2655786302342ef105fa6218405b6",
+      "current": "aa9ffdafca5ef69bdffebcf5d9c81f31100faf3ed1e1e9adc232883060193ce3",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
+    },
+    "light-rain-on-dry-straw-loop": {
+      "previous": "3a4ca63590e39c387effdec8330c500ad4d5118757628ef44570af610063dd04",
+      "current": "87957b2214fbf0cce1a43ab2a5aedaaa1b6543d9c95e987c1ae4e72269f753c5",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "local-streetcar-arriving-under-a-roof": {
+      "previous": "dfac66e54df76ccc9769a0a80cdf57042ea6d32b53e555e7380a836041b4e220",
+      "current": "23ac73a9671eab574a28e7a725f31da08a265cf100aa0160808b8f5088b7cd74",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "local-streetcar-far-side-of-street-loop": {
+      "previous": "467bc71dd5c7a00572bfde5675712d49aa17a7a4244fd0f11df3b849d9944ae5",
+      "current": "5666f63b2e536e2e051f23978617451bbbb02dccc71d92ee64164d9f3d53d233",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "local-streetcar-rattle-between-cars-loop": {
+      "previous": "627f2d75e94d03a80e1ced1c4d5f8f48db18ecc629d563d3f31d896df501d05b",
+      "current": "86d0282380489e14704d9aa3c7d56c3629a1f5d8f398b4ff7d8b8a7d5fedf3d9",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "local-streetcar-release-of-air-at-a-gate": {
+      "previous": "052b4e86bf2fd9623bf23fa284fa0aadd8180307945eee01aac289fa18e83292",
+      "current": "b2983bfb94e10b3e495b4d487fce924532c56a65199d22fa647b64ed3c2b0558",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "local-streetcar-rolling-off-a-platform": {
+      "previous": "05c4582902377bf654fa2ccf70487cb9adb722d28bbce6dc6e730c531c628deb",
+      "current": "f9871f21d752dbedf25b023efda4ec24d1c7bdd265a2d5cf330c2c4229a39bd4",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "low-jet-downwash-churns-the-inlet": {
+      "previous": "ae65d6b921529a6d983fc654f47a9b4b23d7d291c99ebf01c267d6f046097950",
+      "current": "852b14149f7311db399b469339862e4d5b93a8f0059f651a05adbfcd9f1d6cb0",
+      "reason": "Replace the misidentified film-winding source with wind."
+    },
+    "mechanical-ui-click": {
+      "previous": "ba344fe10fdf4df04d52fd4a33d9bbbfdba4a27ae7326d7e9007268d705c7e15",
+      "current": "a8d84f17c9d6e1f5a8750cc89ea7acebc4833efd736985643fb06e3090b02d18",
+      "reason": "Seat the recorded mechanical contact in a short damped housing."
+    },
+    "menu-confirm-spring-detent": {
+      "previous": "9bc94856abd72f655df55ee46238e68daacd00f452130b380dba1abcb553de60",
+      "current": "ecad9708c7a87003d0c1c427cdb15d07a0938c5743412c13eb6b84be93122b7b",
+      "reason": "Seat the recorded mechanical contact in a short damped housing."
+    },
+    "menu-item-lifted-for-dragging": {
+      "previous": "8cbbf6a625c156d759e6b77ea4003b2995281684d493c3e8d69265e75a2a1e85",
+      "current": "33f392fd29a311876c2eaca28e1a030bde8e06f465a6b99c935be07cdd7fe764",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "menu-item-snaps-into-a-slot": {
+      "previous": "1b9aa89728ff41224c37ab59b0b37caf180fd688d9078560a035e80651da7c11",
+      "current": "e702ca3fef25548fe70ba67a2023e891339d38ad00d1445bf8c1e307c2410b66",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "motorcycle-throttle-rev": {
+      "previous": "2d9996fec24cf097d24140038bacc066f520a6fa7224e62dd0af2528a32299f0",
+      "current": "d45302252a85be4b4a9d2597a3a83a59edaf45c4e8f9437e9fa1fdee6519a632",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "mountain-wind-in-an-unlatched-tent-flap-gust-front-arriving": {
+      "previous": "3684178f98d8411e27bbbdbb26e4655a02e7ba99379da8c9d1b70537713e41d8",
+      "current": "1e910c3bd09e15f4883a6ee3e928c24b34ad57602644cd2def864cc94eaf56c6",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "mountain-wind-in-an-unlatched-tent-flap-intermittent-lulls-loop": {
+      "previous": "3315d978f7d17d58a422857cd8c59b1765d41ee45a67958fa2148b788d55e8f5",
+      "current": "48d4e52e57c2120dd636924c18c404ac8c125e7a2b29a48da682c6b720f3b509",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "mountain-wind-in-an-unlatched-tent-flap-sustained-current-loop": {
+      "previous": "102ee5f5841edac2f355191f4c2796dfcde2cc996b2e5ac05e7164e2a7b828a9",
+      "current": "3db1271b000e7b271fa59697bfa1e3fc24feb543662828928b47b7260125ff57",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "mountain-wind-in-an-unlatched-tent-flap-wind-dying-away": {
+      "previous": "7928f09765f96a08f711442027bbaf8e1e8410bd11f32568b0eefc2cb140b6cf",
+      "current": "56399883734a6b9046f525e27641be76660d74612eef0203e08b11b1200560e9",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "narrow-sandstone-canyon-scattered-rain-loop": {
+      "previous": "1e4bb98928a090386f1be1c09d90ae3d9b2c26b3df38f80dd8e32824c589e561",
+      "current": "d6a4dd6cabd7ac23581fff9b945973186be6949359cce328ed30dfde80164d4a",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "open-road-motorcycle-coming-out-of-a-garage": {
+      "previous": "2f632c904fa0333bdb94586d056911c711b900086a66258f04359bb288af7139",
+      "current": "18d001b16ac0b22223c8a90d072f98a606d7e3dca7d324f2eabc89e88a417f5d",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "open-road-motorcycle-first-power-under-load": {
+      "previous": "023bb55a21297da39ec4b613be3842bfe5d0439a2f9109c131a45f8646463e16",
+      "current": "a0f853ec0c8016f3a7aaec4fd94646f550e4233bd5d4d0112d9c941de3438e2f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "portal-snap-closed": {
+      "previous": "b2d8bb3a664530d7ea65bb88d9463f99f624be7d5ba65f1d58d49166abab062c",
+      "current": "5bef84555ba76728dd73988a73f38d5025dff8eedc14f4dd2b5e905aee57c688",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "portal-unfold": {
+      "previous": "907bc8ac5655e12f5f2a096a0e26b5892ecdf7e0a389e36d1b4b2d0611b23079",
+      "current": "6a505fe53ecfd0ecbb480bf863cbf2c45e9105968a883538794e50b308b7477a",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "quiet-interview-split-view-slide": {
+      "previous": "785facb9fb53d2e9dd94b1262e56c89711a59f686bdb811f62b3820db597c2b3",
+      "current": "a02e04b3e93f2888684f7ed1de92f100b6c8fc7b7fdda29f8352254594926a3a",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "rail-cabin-rolling-loop": {
+      "previous": "db49d97ed7a9bb36875212047fdfcb52ca3f180d23514508d2499da47bf09036",
+      "current": "5370060a35817de17577369789bb0e4b4f4563ce284721ff691f657e508d7226",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "rain-across-woven-reed-roofing-continuous-patter-loop": {
+      "previous": "c557dc30ff6e916078c1954884e4eb23ae30ccd79dec069aeaaf2d57e0bcfc4e",
+      "current": "730d42e4cc1b33d4e6147f3ba285d2c9c020bd30836efa3949a18c83efa17fd7",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-across-woven-reed-roofing-downpour-recedes": {
+      "previous": "ca53f14833750e0e11a40a74afe17e3f5f787bea6154fa7940fc595834f337bc",
+      "current": "3ad57b2009af45d9f447deef8bea1292625523fbfd13a2bc35ef6e6fb5b03f8a",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-across-woven-reed-roofing-individual-drops-loop": {
+      "previous": "0043f071e45ece341605398a80d73f7972882c41577755f2f1731a21d5cf6bb5",
+      "current": "7ca26caaaee16174962ab629cfecba8e9051ae8a96db7783424dee16339029a3",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-across-woven-reed-roofing-shower-builds": {
+      "previous": "efcb182956caccbb7de9a8ca2f720d061e3da7285b964339b983218da96a0d60",
+      "current": "1601fc91c5231553e3223bfacebb99767f81c9f5f0bcc5e1e027fd296f9a199b",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-along-a-canvas-market-awning-continuous-patter-loop": {
+      "previous": "f427206e23dbae42dfaf9152c1e49aaa253d30bdb7afbe1af13d57acacc6d22a",
+      "current": "cf534e662f7f77b4cb7ec655d26a211245f4ffe4d35eef9aa8596d17fe270239",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-along-a-canvas-market-awning-downpour-recedes": {
+      "previous": "9a21299c18d2ce7d108c892af4ff3b42bb73c8d8c9acb0c6a2dc4525fa455351",
+      "current": "57b9339406f368f06fb3c5f970d6edfbd284efedcd6c880dc2ca65ff871f9d95",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-along-a-canvas-market-awning-individual-drops-loop": {
+      "previous": "95d82dc7ed4070e052ef39d1099a9b6d90392b4ffa21cdda1ff3ed8cee085682",
+      "current": "aad20deeb0ac5512ccaebd462820f526ac179e4e6fdadacc864090c1ced384ac",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-along-a-canvas-market-awning-shower-builds": {
+      "previous": "ba21cfac86586f9773c09056f6e6d66e650d222c7f19017e1ff519a7235e584c",
+      "current": "29144474a73518d4af2987c5f8d48bbabbb31a02792784445db39cc8c25741f2",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-at-a-storm-drain-mouth-continuous-patter-loop": {
+      "previous": "6476a2cc76121979076afd2940a158457f2115817fa99fc63299aa7990c1dcc4",
+      "current": "e0c40ae9b635357e0fe5ce57bc8bc85c907d20d76a1d6718848157859d0905c9",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-at-a-storm-drain-mouth-downpour-recedes": {
+      "previous": "b0e5ce034abf5d637169e7fae8023ff243c0068e22e345588edbf4f5cbe2c0e9",
+      "current": "999eb4bcc8863126fe15ead329d5a9c6899e4398c07395e6f1d2d99919fb8912",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-at-a-storm-drain-mouth-individual-drops-loop": {
+      "previous": "1cb57dff4305170e0bbb4bed330cc55d28768eb414447c88135959a1c2d8e373",
+      "current": "4a9930d0be0d0d7c8a874d0c0fd8380ee78743793b83125e0c100c7d9e850181",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-at-a-storm-drain-mouth-shower-builds": {
+      "previous": "1b80300ac74f08e0f308e6a513b77f78e57834242116241e1422b3ce1901cf48",
+      "current": "ee470844dfaebc9b3c7586e23cfcdcfb85f3422f6f6cd2c8dd969cbee2159c46",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-behind-a-closed-wooden-shutter-loop": {
+      "previous": "29e55298a2c9528147fd3bd1b3ebd4df985b25d47804bedf4c89204a63a23ba1",
+      "current": "a0b597aeef55aabbc911ff4db274e994143a77b76ae2928317b1d7feb717ef37",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-filling-a-clay-pot-loop": {
+      "previous": "c6e505568e018bf29987e5c515aac929274ec35f614dcc90ad99ef2d083918a4",
+      "current": "3a6fae0958f294f323a38c5c198d83fabe904e17eef8242c8f20729ae66d755c",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-in-a-covered-bus-shelter-continuous-patter-loop": {
+      "previous": "d36f8c2efff113fa818bb1784bdc8e8c0e9d1ca7e4b1e050a1e88aae860381c4",
+      "current": "31fb4f93ac30392690ad05124906e158adad5fc82cf9de96a68c12a1a3ccdc98",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-in-a-covered-bus-shelter-downpour-recedes": {
+      "previous": "a7dbbf66b2112afc13aeee80fe8546c293fddb0f35136dbd793fd25ec0ca9bd7",
+      "current": "a0db453f607a5523734c26e56ba1c4957d01acd94ca79bdefdbe0790504f220f",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-in-a-covered-bus-shelter-individual-drops-loop": {
+      "previous": "5cee0dc335662ffe26671153ca4dcb05d99c18598a86511d6566d10e20138233",
+      "current": "f52a0aac66b4c14d4894691d1a87b76ccbba4dfb35948894da3b228abdeb3a39",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-in-a-covered-bus-shelter-shower-builds": {
+      "previous": "27a50842bb2a9216b47f78eff4bd697197060c58003d0167f5f4365a82025f55",
+      "current": "4da8808997bbb38e711d53e4a4de3c3c852c272c09a0c59907eedb03535c6fc4",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-fabric-parasol-loop": {
+      "previous": "55fbbfcb89ed40022498729e2b913d337ad74cd26c9ceabc0df0c9b89408ca0e",
+      "current": "2ec36134a9b015c0ad0201186ba89da43f9a2d85ab943a923268bff2b6d3b21e",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-greenhouse-glazing-bar-continuous-patter-loop": {
+      "previous": "8d7489f1c96a4ea3a8b47f3547e1d62b72490c8bb738a89c2d24dd9a47b46204",
+      "current": "fdf0c5cd85c5d0a0e83dfe8c04ce586707898aa057af1a7ff58d8543aa5cef62",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-greenhouse-glazing-bar-downpour-recedes": {
+      "previous": "56c7b5844feea7ab2082821c74a6289c2f99b50b0f1bea69817c14d24dcf8d25",
+      "current": "fd9db717600cbf1a9e90065431f8c0b7c57489aa4a01d5126a9b951d1bb93211",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-greenhouse-glazing-bar-individual-drops-loop": {
+      "previous": "0e9483d3e06d78e3572d9d69468cf7d11bb7eed8416ae408c97b697b1dafea33",
+      "current": "d2d34b45f5d5902a5410042363f6a2f60b5acac4387333dfea7792c9e4ceb458",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-greenhouse-glazing-bar-shower-builds": {
+      "previous": "252f7eaa1f04729f978031b0a15630878ebf56154a598602b977523944359572",
+      "current": "f86eb5359903fe526c92a848a5a1960c2336c679716d5fab10aaf6656649ae11",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-a-parked-car-canopy-loop": {
+      "previous": "d4eaef13364886918f12e5ae30c0e3f24084715f8b1e52e2d7e4a548736dc85c",
+      "current": "ee97efe8762843261b85f733b605dc39cb0c9c04b624c6a814d6d2a5e6e75315",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "rain-on-plastic-row-cover-loop": {
+      "previous": "2ea17c0df051e03cca1e27e14eb1e83a3fd765de8648e3595ee69426aa296259",
+      "current": "0a66445c8fcc786a5b59524b535d16879ae10d754b4108ac529f5cde4e807151",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-on-puddles-loop": {
+      "previous": "3ebe17a9662a68dc5d111051c2273e9a38b8df5563e8fb33f39305a6d026c2e7",
+      "current": "1bc30cc1ca6f55b5e76e0c6b9258393561bb9130b20ea0a14162d1ec7825556a",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "rain-on-window-loop": {
+      "previous": "4c5a11cb8886f971f6281958b8b00e888988ea453672a7bc3e056feae97712d1",
+      "current": "cdf91224304003f4205380cbc90dd5d71b1849ee2ce473e34ec53566e0b3d50a",
+      "reason": "Use close recorded impacts on glass and remove low-frequency mounting vibration."
+    },
+    "rain-under-a-farm-cart-loop": {
+      "previous": "55430790478521422a36f8aa2a37dcb6cdf5c53f8bf33f8d76124d139be0b34b",
+      "current": "d262b35a0358820e77f85e849c3f17c705f8ec78d4ecdeecffc915680061940f",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-under-a-wooden-footbridge-continuous-patter-loop": {
+      "previous": "2194c3bd4de1e115a732e63a69229e1a6df34e472d13d3c71ec5eea7a0cd5dac",
+      "current": "c3e9a525d9227ca820971f55eca5ba631dfb4664bb8997f789fa19ae25d0b7c8",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-under-a-wooden-footbridge-downpour-recedes": {
+      "previous": "3440ba84787535613c8db55cb69abf608aeff6e997ae7cb992ceff2c221233f1",
+      "current": "1c5bb0fb2318de0c943146218cbca36415b8c4cca4591fc35833714d4fb910e5",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-under-a-wooden-footbridge-individual-drops-loop": {
+      "previous": "d0be3645fc5a9e6ea0103cf21dc8540643e31b50026afc05123694a782b37cf9",
+      "current": "0a94592106129eb306e215b419aca881cbf300ad7c434966bdada6534fac7110",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rain-under-a-wooden-footbridge-shower-builds": {
+      "previous": "74a06994a1a8e1ab57351aa45d85be4691aa14f3af12897dc499d093eed27ab9",
+      "current": "3232df3c7a575b524f6fdccce29e091aacc59b947964f54dfc67cec2849caf81",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "raindrops-in-a-galvanized-feed-trough-continuous-patter-loop": {
+      "previous": "47786c151637a6657d6d4b07ca704c139d97b735617e1b3317f2c639cb58931f",
+      "current": "bba325b1779beb476433e6697b10411f702cf37f48d47986929051adb6d7f849",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "raindrops-in-a-galvanized-feed-trough-downpour-recedes": {
+      "previous": "1896d1830b7b44597c487ed5a65ae932b051b6613888dc0cd336dfd1364ace3b",
+      "current": "56cdb7389bc41cce90ca34e0931d71997d5e8f26853e49403584f69c22c555dc",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "raindrops-in-a-galvanized-feed-trough-individual-drops-loop": {
+      "previous": "b02f649b8a30b72bea01903b1eb1a4b80a2520d68e6a9edc60c8f78eba1a7488",
+      "current": "8334aaa4440381471448d23c3387ca6f9aba8b2413290dc24c991323f71f4899",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "raindrops-in-a-galvanized-feed-trough-shower-builds": {
+      "previous": "3ffc1c78a8bdc74a12d082d881efab0c0cc0bfa8053ac3d7b563af36ab7980a9",
+      "current": "ad44e63e163ecfc7c54112d1fea8d33970d90af2ab209de974e75d6a4f7b1fdf",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rainwater-passing-a-blocked-downspout-continuous-patter-loop": {
+      "previous": "a875408a4cd6171524006f076fe2f50c7bcfd79c5212032d6e4f80d7e7a07813",
+      "current": "9cc4ad58bc721843b382eb49cd21c3728dd1df211de635c2db71253b54aa7a7d",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rainwater-passing-a-blocked-downspout-downpour-recedes": {
+      "previous": "8a2b36449ffe8de593fc78752c1b4786f48dc16b51b1eff0ec587d8677d2a8e0",
+      "current": "069ffce3f2a2dec672eb93c0eb75f24b4d43a6cebe93a62a4c107e431dac2286",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rainwater-passing-a-blocked-downspout-individual-drops-loop": {
+      "previous": "bc9faa652895db6febcd67002d1734e1a48c6ceaa3235c80e53cc41c41c220a2",
+      "current": "5a79328bec033856981c790a3a57cb2b471ea04cddbf6378e35e0a44d5e8483c",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "rainwater-passing-a-blocked-downspout-shower-builds": {
+      "previous": "b0f13b27b5c7616f798d1d0a6465e49ce528d21854f51473f9b901eee89bb873",
+      "current": "5c56039371247eccc88a21d940e2b71a95aa12e32d83a52a1905a7b7a0fa95f4",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "regional-passenger-train-arriving-under-a-roof": {
+      "previous": "2210c8589359a0616e4a6ea8a42ded7099fb2fe56b39f7526181073b235980c6",
+      "current": "5f7108c4fb4926c2449b8fdce5b75143e86c2b3d7d748ac991d56f7787ccdc0c",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "regional-passenger-train-far-side-of-street-loop": {
+      "previous": "619d1b8e974d08f47d4c234f22213c9afbbba69fd8ca6f1aae8cbd7693c487f0",
+      "current": "e66d355eb9beaeceffabd2d202ad3aebe0eac9852a17d5545b58711c7508f5fb",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "regional-passenger-train-rattle-between-cars-loop": {
+      "previous": "83d6eac016411f0c9ee3b8f19f0b8781ecf695dd4d762be5c24fd1978cd3408c",
+      "current": "5ed744a67fc50e3ea36329cd148cc4bb9ed7ca4bb6fb3f687c6858fe0bcf5c35",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "regional-passenger-train-release-of-air-at-a-gate": {
+      "previous": "5e3f700b78d4ee6b02c4d53e5864138a301797d7790c84a80b9e23975c8c2aef",
+      "current": "1f4a58f2a0064d92af24489d4c884f8c0ecd0ae5d66ea83d4ba596e6aa6b1e6d",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "regional-passenger-train-rolling-off-a-platform": {
+      "previous": "ad7c02861bc7741beb1ef725976e0444d7bbca9df3912e245214a0649a39aba3",
+      "current": "7c1345dee95aa32661d0021acb71e4f2d1403da89d0eda5683f8cb02de9fd844",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "robin-heard-through-a-hedgerow": {
+      "previous": "f5a6886425aa04e06ff38d35dd8dad2255f172c5a8411cf3fb3d0a3de22bd885",
+      "current": "5f6f3ae3a46e633f560c8da6fd265f34c250e0adcc24c0b06426f6b9c95130e0",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "robin-on-a-nearby-fence": {
+      "previous": "d9a5e2bc272344e4ded1a703eac02c3d408177d671bde23c035db940e282e0fe",
+      "current": "11e5669cca9917d3e955595ff272785aeb240ba2cfae33df37e123b8045eed31",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "robin-singing-over-a-brook-loop": {
+      "previous": "7ad947111bbdba83ea713188756fe628bf24df96747e28b443455e2b72acd801",
+      "current": "5afb5a802bc59f38af3a9138649c4f93d6826b84241bc8d9a7ab1ef7968eaca8",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "robin-sings-then-changes-branch": {
+      "previous": "bdfda695acd8d2de705f0a044c6a1d50df79c249ec73bcb134b8849cfb33d695",
+      "current": "1085310e5460b7a0709dd51bd2e46a3cdf36d38beebd1d352ca5149cac9d23f4",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "robin-song": {
+      "previous": "a2d0406f2e1ea7075d98ec820f103cecc1706149a5357cca3390c992826b8f3c",
+      "current": "374855f0fef43c361fec0241c0d657c856c754053304b558d9ec95017d4d4b29",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "scatter-feed-trough": {
+      "previous": "fe0c29114e9d634b2f8f4e7b272fc88104023445ac3d0f27a1c9a9213d1ad4d5",
+      "current": "d6ce3ed76af8b3274bd92ff15abbc4aeb53555a08ad1074dd08c4b19ceab4138",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "shaded-rocky-creek-scattered-rain-loop": {
+      "previous": "a884e9bca10a005afb79b61640cacc8a9ef59389b36be569261f3ac429849ff3",
+      "current": "4d1f65934a422e969f8b5481028aba2f56b1f2dc8d7e687146172b782a0b79c3",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "sheep-bleat": {
+      "previous": "1b74fb0cb751a6c2998a656fa095bf4b02deb9a2bede10fea7e3028e5dcd3f1f",
+      "current": "83905a2dbbb274808c644f6cefc2a6d741322627034145a8b29835efe1a882e2",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "sheep-grazing-close": {
+      "previous": "81e0f3930a0a0b29a9721e3d28f2c6473ae217235002341b14d6329471af124e",
+      "current": "a554a9f3027f17496b3fad3a4cc459cf0cd57f979a019bf15e63710e43d6ddf0",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "sheep-moves-from-straw-pen": {
+      "previous": "184df592fb402ac72a219c8e8c509c23dfb673a91617a1bbd5f92db45b676739",
+      "current": "9a129635e074607701097ef0e2a5c31b704f0120d8e84215cd6d40a0a8ac7fa5",
+      "reason": "Use species-specific takes and remove competing background events."
+    },
+    "sheltered-barn-during-rain-loop": {
+      "previous": "fceaca707005dfe1bcf599562d04a171709a4967f54954b1bdb453b1657597ce",
+      "current": "f461d8b7dc647fffb4fd3798048b5363a79602a27c6d48342811910e62fb49ee",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "shower-inside-a-parked-delivery-van-continuous-patter-loop": {
+      "previous": "91731a66630f812553fb7459b782003ab1cac054df6cb465870a23ea73dc5c85",
+      "current": "f0c41d610df8a15bb9acadbf22ac5a039720d8e7a873c08c02a17d8e2e9ee158",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "shower-inside-a-parked-delivery-van-downpour-recedes": {
+      "previous": "e211eb4298d61bc2a12cc7de09c5a6add0e16b9022b43b48bf4588fc17ac565e",
+      "current": "245890160496a308b230f6cb14b63a86e0b9735102aa6996d667d040dbf19727",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "shower-inside-a-parked-delivery-van-individual-drops-loop": {
+      "previous": "a0914b14171acb5f01853c205beda680a968d44ce4fe8a74170c6ff20908b92f",
+      "current": "7d0512742e66db6812e425a1e86369bb42cddb651314f002d2845eded6f443ff",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "shower-inside-a-parked-delivery-van-shower-builds": {
+      "previous": "440fdaf5a4e57ff1d36585082a933119b89d9f78497816b37058944e700c13f5",
+      "current": "4c4bb143d0b3215ea4f1ec46ee63b935bbe614567623060424a635dda732e935",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "silk-panel-reveal": {
+      "previous": "a65ab61bc1c3559e3831039d4370e485f4935b18bf6474ab9bc31d3f6c2d6764",
+      "current": "d3ff45970ad621e9595fa88ba3855a85757057a11590dd38cc0a0cfacff6206f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "silk-whip-cut": {
+      "previous": "7077591fb093c6857462d3a4c61a3f07bb46b85c269bb9cf41b10c9bf958ece6",
+      "current": "96ebbf3829198a08fc30435594028614c521294ae4bab67ddb0d6849e2c34b70",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "small-drone-close-hover-loop": {
+      "previous": "74e9006b06ef8f3a23bf192bf479f25ae035c4d67665d7f98a8e4b97a5d20270",
+      "current": "0bd785c76bbaee54541ae65cb373c4f6198f659cf0f907992c87fd1725ee01c0",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "small-drone-liftoff": {
+      "previous": "135843e3bb8736124bbf5941e57d0393490da87d659b32008a47ec7142f09f55",
+      "current": "12db6270dba60b1e0afec516aaa3c8849d0109677eab18f8c2cdd8bb77fa0dd4",
+      "reason": "Rebuild propulsion from the intended motor texture and motion."
+    },
+    "stall-straw-fork-toss": {
+      "previous": "2b7b658e98cc9a7f3aa83b729e74d0b347ba647d2571151ab4deacb80d7f4f07",
+      "current": "780878272931d50d94c1118bf57e67601b591b8a24a53f29e5092fb67d10a82c",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "streetcar-departure-through-a-junction": {
+      "previous": "4e8478592fea32c9d525d3caaf0a55a2fba874117119c06837d313507005fd5f",
+      "current": "d5bb4e48e6de99e9d427fc910cbc9e9038d6825e2ba20b1667d426e9dd402ca9",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "survey-drone-bay-loses-power": {
+      "previous": "1892351eeff59e6fb79f806b5c36da2f028c661d32aac3febe048fcc65bce0de",
+      "current": "3927d6cc90cfe6a347aeaa3a78e2a36e1d483cb8158b345f09c50769d8439b0a",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "survey-quadcopter-accelerate-away-from-camera": {
+      "previous": "7af72a3365d70b24fb1f24d7d5ec64bcc56b81fac86e9d74982bb817ea429e1c",
+      "current": "e03d21e272a4676c659e52f52c1f54d9879bdf7b966597b1f166023f779e55b5",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-camera-approach-from-altitude": {
+      "previous": "c5eb93943b2b1b0abfab71b7020b5ecd5abe8cda5c652c6a4451b889d09de123",
+      "current": "ad2aef981ebf2acc338bd2371d394912c80adc0160b37a5e6e337191292bbd65",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-cut-thrust-for-descent": {
+      "previous": "a7ed6f8d00375215bb9484a3c7703a1456d5de1248861b9af4025866b56d9907",
+      "current": "76c4a7ca4442ff2ac812fe2bacdb1d613ad2fe600267a2a74ed76c3b20a1dd97",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-full-climb-rotor-loop": {
+      "previous": "8c638d2e3eeafa0ea3918709c1df9a989f7b1b71e45101fdd4679ee079a84e29",
+      "current": "7ecdfc604c2199f74be2787ea0442265eb50da55e8cce15aad70b4c1e047b174",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-onboard-frame-vibration-loop": {
+      "previous": "b696a4a905d97b95dae367010f015f590ae424cf3f2c6996949903b3e9de4aaa",
+      "current": "2629efd6763e5752400d784e0877254f29fcebb36c7d8166cb146b563658ab2e",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-props-armed-idle-loop": {
+      "previous": "b0dfb0d662a27cd9ee95941e2381704ee5ad8348ceece4b8e908d2c294f79d13",
+      "current": "00a5f07d96c5b11a3492cc28691c76123afa3e21582748e9ca2d2196f7a782a3",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-settle-onto-landing-marker": {
+      "previous": "5fcb3c2535ea45e925f4ac0c5d809d3a8111053d80858a1aae30825603559a6d",
+      "current": "4c16940a58648312736c6bfb9bbb8a5e63a371cf9fa7a1daf8d5c369b1d68305",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-survey-cruise-loop": {
+      "previous": "e322d754f53fb6a602d293c49f2c4bc507fd3a0e0ebd3ab7f3a8749d79a2e03a",
+      "current": "8e2c89629261628a2e7bf6d06cf458a0d1d20a55f34a1ed556f0e913a12a1c83",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-two-altitude-corrections": {
+      "previous": "d91933147e24347e2f8f51fdaae282f91ef2b2136838c4fa66bcc8b14614b1d1",
+      "current": "022ff881d86097ddd3c445e075ae74918e9ff4f9d1b18fcc3e6746b1431d47b7",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "survey-quadcopter-vertical-launch": {
+      "previous": "4b68537fb7536212273b593b50ff1fd4a666a9d24cad080c65b18862507b4c7f",
+      "current": "42be8baa62619f1ae713669361b058faa246485154eebd0375d6dd313fcba733",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
+    },
+    "swimmer-breaks-into-air": {
+      "previous": "57495e7efdc66ac2259333dcaa8ce55414b26c36835a4e5ef51b9980eccd3783",
+      "current": "27be9cf937838bc459c9292c1b101ec87c2e70b2a10c3507ab5d50cc698092e0",
+      "reason": "Preserve the recorded waterline gesture and change listening perspective through contact."
+    },
+    "thunder-across-a-reed-lake-long-rolling-front": {
+      "previous": "d320fa423907554cf98bfd7c43cb848754c418f1a8c40e80ef572e3ede4d8164",
+      "current": "3a0c2cfbb40a4a19c185fd3b21992829f88a4aad48cf9353c2b3a16bdbbcfd0d",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-across-a-reed-lake-sharp-clap-and-return": {
+      "previous": "faada747b8703401cf174fd2ca6f6451a2ebda5bfa768478f409782bfe65856e",
+      "current": "cf389e336143cb4805b8df2713051bc0cddee6a695e40179ac621751844ff0e0",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-across-a-reed-lake-split-peal-crossing-overhead": {
+      "previous": "d4cb0b98d4fbc6f6286a8df3947498d179f55a5ffe83daa95b919f5159292233",
+      "current": "006f427fa67f289f654e62f2b6b0a9f7a9809fc0e96bace1f39886294fc4d7e0",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-at-a-quarry-floor-long-rolling-front": {
+      "previous": "4a26cb078ca01dbf8599b3e3d34bff5a3b5ce86b165ee1841af854b9b62b48cd",
+      "current": "3f85547a5fc4b4f270523ec3573c922490c01c7e368c52f6d189cf7eaacac6cc",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-at-a-quarry-floor-sharp-clap-and-return": {
+      "previous": "879ab95545cf2bc73d0d574ec530b6f60ad5d7f5ec7c5a2b1971885c804ed12a",
+      "current": "65e2c01a24ac66f9120e5e3793f63ec01678f91231be22a7cfd91c3d7dce771b",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-at-a-quarry-floor-split-peal-crossing-overhead": {
+      "previous": "a700234439ec5bc4196f5aed225f71ed28033ba868193a7a22c3080ece69e485",
+      "current": "bf37ba3375e7a068ad1043ba183776f281ad14802a776b35ab92c34b23330f11",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-between-tenement-blocks-long-rolling-front": {
+      "previous": "9dbf8d77a906c93463aead7a03ec4727ff7f6240be1d9742af745b356ef3c89e",
+      "current": "8bc0a7fb53d4188e27e78b11cca5442e75864435b8d37c1def21fa16c5e3c4d1",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-between-tenement-blocks-sharp-clap-and-return": {
+      "previous": "e5066eec797d9597faa43f35c18f5ffde8391d18f7e00411b0fbbd6ef1a1e513",
+      "current": "43a61b3247ed6f8cfda94048e58008ba9d663fe480b87c7302437bc5546c7bc5",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-between-tenement-blocks-split-peal-crossing-overhead": {
+      "previous": "e5705d32bdd075e820d1f17639ebf1d152f0d977e927c98323b20606e4ba7a5d",
+      "current": "ebab12fc2d5d10b3ef4f9bc8de579db54686e5a2fd114f25134583e3b831626a",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-in-a-shuttered-loft-long-rolling-front": {
+      "previous": "c5a87aef06e15b2dc3fb8901bcf3f7342d9e4c2bec2a83a57c65516ce365bfa6",
+      "current": "119c9da1e2e59d8dae036e5ba74dcc68035ac7bbbfb647b5909933c43953b6f1",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-in-a-shuttered-loft-sharp-clap-and-return": {
+      "previous": "ddcec35c400388c8945e1c604edea9ab8a960566096c8c6bcf8272cf825961fb",
+      "current": "abd02fbad81bcd4185e8d64dba59f08ca72138163b77b7b99b86f54975edef8f",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-in-a-shuttered-loft-split-peal-crossing-overhead": {
+      "previous": "ffed56830d3dab41cf2bc5d07cfc2217cd4b2d00fb9adf5bcbb52721e3ad11d1",
+      "current": "69290f593dbae4156181669f0242ba7a12afdbd37592f01a5ba5a4101775bc22",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-harbor-boathouse-long-rolling-front": {
+      "previous": "ac27786d8e4b7b9f1acfd4fecd350c9e4900a1a9f5705ac020fd714e5faab472",
+      "current": "25e0bfd7b0345d7c8c4cfb25cf504720e45ac11f87291e3dee74b560be62e37f",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-harbor-boathouse-sharp-clap-and-return": {
+      "previous": "c79c919ddc1c8a363de556bb9e7f5f1d279e0ade4dcb9823fb8dc05f29636577",
+      "current": "2e305f1759ee7cc455b0aacfe431ea76bc54ccc6bbe83fd7c1a77d6c5db6071e",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-harbor-boathouse-split-peal-crossing-overhead": {
+      "previous": "b2356e900d49f68f1a6c8aa0e77ce85477e5e6dc68d72ea9596303eb71a50d21",
+      "current": "705bfb6131a64a4bdc5b0b98635ea1a63d757f256764cec74db1d6dacdb07797",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-parked-car-long-rolling-front": {
+      "previous": "81dfae13cb6f14041af73e451eea2f8343a28868867202027f6fdc3effd6d933",
+      "current": "0ada468add138fc7f4bf462834e7ed77636531ca199addf89c737bce4c9f18b8",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-parked-car-sharp-clap-and-return": {
+      "previous": "f51a11dd21ad9da1339844ab7d5208c0f8cf122e1d855d13dad256ee57873b4a",
+      "current": "faba3452d001f10b35814e968bf0ff20cf208f901dcd3d289f91755190b1f2e8",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-inside-a-parked-car-split-peal-crossing-overhead": {
+      "previous": "e771d37433fbf0601aa003fa91eef552f795fc6507bdc197f75e63a95c435994",
+      "current": "5ba96e1d0e8a8d89e319fa18bfb5bb9797e932c8aedab1fb938cbd3965e0e922",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-on-an-exposed-alpine-spur-long-rolling-front": {
+      "previous": "077738e422d1ed1d25d0162e04f6b5d6e9ea24163793482030f5a4f1f5be543e",
+      "current": "3dfb63d3893594c07c9dbfb76389b5864d79e64ec44db07af01ae0890d910be0",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-on-an-exposed-alpine-spur-sharp-clap-and-return": {
+      "previous": "98c8f88bd34f7bdc2eb7c1700000743dd41f8288ab9501feb78ab16b44b91266",
+      "current": "a3b7231c26105446356e2b4ed9306ed943eab9a771e0591aed8d8d64b16c02f4",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-on-an-exposed-alpine-spur-split-peal-crossing-overhead": {
+      "previous": "842436b8d7bfb540136acad89e799de07d47eefba92c371b8cc751eaca0fc8be",
+      "current": "caa917090418cce50910f5ed43d57755cbdd713d1eb83853cc34ee0cda1a72cf",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-over-a-flat-salt-pan-long-rolling-front": {
+      "previous": "fb7192ecb3abb404a72f473908a7866e5e4d0f8df08d98dc1238acb81df99f4b",
+      "current": "3d1a959142f1745c32b1be941d657e2d72decdb138cada5d3a6dd5aa452a10a1",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-over-a-flat-salt-pan-sharp-clap-and-return": {
+      "previous": "2a8a888653795c91ea9c77bb9e99a9aef9b2a7e163555bc514a161f61aed5a49",
+      "current": "8eee849b467b1a2dd02e74e45f878ebc1b8f0666b7806ec56f5340b4bb544124",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-over-a-flat-salt-pan-split-peal-crossing-overhead": {
+      "previous": "83385e88fcaa51fb9b1252e9f279e2c8b540d20ec754e01d80ab5b0a326a97bc",
+      "current": "b1c11b746d81c5d4e77d984f7d79ff77ab6d4022099a192ac0e18aef71964766",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-under-a-motorway-deck-long-rolling-front": {
+      "previous": "7b8d26f845ca1fdbb6880c221abd606a7efb359c9673b75bc5f54fa13adfd7a4",
+      "current": "3f421e701c579a390c747b583dfcd61986ba36b82292b0454898a61cf938016b",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-under-a-motorway-deck-sharp-clap-and-return": {
+      "previous": "ba24e4428d6c47eace535c6cf223c0ac4f014c51238fd3f75625802969acfd1e",
+      "current": "f9b6f07593fd28d5075a4de6c5b11b82ef42df1987f1196bf0bd5421105b7b5a",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "thunder-under-a-motorway-deck-split-peal-crossing-overhead": {
+      "previous": "719092be43dd09ba9c95d7d4ad9b55a9e45e81475a5383d332e29459829f3c5e",
+      "current": "b87935fa2a8a0638289ca710532040ae3cf717120c5b2d7cb2eefb05219a3f82",
+      "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "timeline-playhead-set": {
+      "previous": "8d5487bce215431495bc38dc5f71dba086097ba7e618ac5ce0b209430446b382",
+      "current": "ded16eb5813519cf587bfc1000facc25be0b2dc7b1588d8926d1d5d56223b3b4",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "tire-floats-then-finds-wet-asphalt": {
+      "previous": "175403c511712468476f3ae56b4204a4c29142b9d7b8b818be96a8b1984495d6",
+      "current": "9d6a41f8e5782bfeaa38519998b64c041dc53e42d3d95e4f243c199d30020e34",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "tire-skid-halt": {
+      "previous": "40ca0ee121596a368a618aed197f71446bc41c4b1a301eb49582a91463d69926",
+      "current": "13ae6666a2d1394d5e92e093b1814f8eb574416916a80bb8b5e679d308cad47e",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "tracing-paper-pull-away": {
+      "previous": "2c9700982090289e8c7a1106e9f7e69384af97b63fd8033e73cf1f9b858726a9",
+      "current": "0803ded8186ce5ecc9c2d2764fccc2aecdb31ce796686f80acf5e6b7f29c8059",
+      "reason": "Soften the high-frequency sweep and reduce the reflected tonal tail."
+    },
+    "train-concourse-quiet-night-loop": {
+      "previous": "fe0c87a779819010055a32d938118ca0ab197b4c0e76fde794237fc75dd43cad",
+      "current": "62f15e929df32dc89664a8aa4b23ef3b819c16f106ef529776131aa9b55537e8",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "tram-wheels-squeal-round-curve": {
+      "previous": "7fc81173cc4221264326648725c1551ce5e873f178912893eb656370c2a500ea",
+      "current": "8053ff29f99354721a7401853ace7d6bf347a39daecb4fce289b0ddd383aae89",
+      "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "twin-cylinder-road-bike-exhaust-receding-downhill": {
+      "previous": "54236b8c16d1df6871a42c01ffeaca57c0f44a89e03af7147d5c03ba33a5e6d8",
+      "current": "dd9610643d59958b11e55190dc02f261d02d860adbefa94f82850194034a092a",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-hard-climb-throttle-loop": {
+      "previous": "0f080ae6d7153d1940dc7f001d7c3800bdd7b5818cd4a07a459140958954086c",
+      "current": "dd73c5918212f8f13d837e38620229985d26731dbfb5fa741c932177d3568fe7",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-helmet-muffled-ride-loop": {
+      "previous": "51f34c847c62dea965747996adb98ee5b6ccb147ba1867c1892048e893e0eb25",
+      "current": "ce196a8ccad6baf139fc9a2371817c86c2e202ec7e38e23367f22ffefe0542af",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-kickstand-idle-loop": {
+      "previous": "d2a6087f602d8a56497da1675cb2eb47ce3780ea8c99f8aa86e6251d3fed2a35",
+      "current": "8d2ad9fe220fb65ce4b698b467bdaf966712f592117f89e4fa66ff61fb6a2fa6",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-rider-approaching-roadside": {
+      "previous": "475fa8be90d133713e0dbec2ac0f7b8439568390b7ce58cfba767044a8dc2d89",
+      "current": "a43c1530e61e5d14e239d2e5dddac750d3675370ba770e3225ac218d99d2db86",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-road-pace-engine-loop": {
+      "previous": "6805f5a5e3e16c9ca4a78896f63357fc8b90b9b710398c7e5ce73adf820bd340",
+      "current": "ac1e213c997c015f3d7178d6075bbbbf4694bd3d93dbc1d21bef4f156aa46a70",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-roll-on-through-a-bend": {
+      "previous": "8a0ebd8a879910ad49cd08770df33b640917bdd9c3396e81a532501d42c8e360",
+      "current": "ce8b202cd5cd96d67dfd18e7ba30eeb9010020af4a333bb978bdbd12f273effd",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-roll-to-junction-idle": {
+      "previous": "221b5e19b80fc0f16f8a5e43dc85f8328479a7cecc6add686ec25d63778f6b28",
+      "current": "1e3bb56307d87fbbc439db137d66609c6b0a762a07ebde12b25a76b4250d5f33",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-snap-throttle-closed": {
+      "previous": "350f768718563a857b2cb249f8acece021937ad7455d50e9f08654789849ec95",
+      "current": "0d55e9b58acb4de31aa3eb2bf3e74d46c6bb6779835831f4057f8523bbe0b368",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-two-throttle-blips": {
+      "previous": "1528987b2056e3453051ce2b42c15cf6426424b91769b56a994f70a27c56e222",
+      "current": "653e82e6ca59e9bf1fb6bd8286894815cbe2886b50aad3b1b55cddbf6331a71f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "water-hissing-on-stove-coals-fire-settling": {
+      "previous": "f1e46975c356862827b4d52334a62c5515b2a6d69bbb51f86e9aab4728b4143d",
+      "current": "699d1d3fcf45aad2a2c1e9affcc2798e2c1b8d2b03d234bc4d67fa6bad727ae0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "water-hissing-on-stove-coals-flames-catching": {
+      "previous": "44ae5384cd027f325b39abdd968114d3c88c551d31f0199f3e89940e1e98097b",
+      "current": "b367bd43fc8578c5e5eb86fe3a38cb81e777ce7b312b4303ad88303bed6139ae",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "water-hissing-on-stove-coals-low-simmer-loop": {
+      "previous": "9e528b14236a4227081cff61e1d4103c99e599111d391abbedac11bdd77bfce3",
+      "current": "a196e4c2c71a6c05368487b03b077439d52d31331b593e6b31875967996abeb4",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "water-hissing-on-stove-coals-sustained-burn-loop": {
+      "previous": "d8e2089f7ab43c37a67d56fcbe3a0d8209d7a174e75c3e9f63219e10ee8da75b",
+      "current": "0c02abb40f1abb8cf516728ba85c67eb64316ae57b07c47cbed2dea9ac86d776",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "wet-asphalt-slide-throws-a-fan-of-spray": {
+      "previous": "2862c13133d83c454aed19c23315d65fd9393b23cd42b78859a07fba973e218d",
+      "current": "dacca553226a92a3ae3080e820c4706b2a8f1a3155e01f072cc2ce21362de226",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "wet-tire-contact-patch-loop": {
+      "previous": "1c684997e50eeef7334dcd92348e338ec2f99b34f13452d2b14aad1b942dccf5",
+      "current": "ad22fa44ed6fe0cf417b80df1bc739c648651f2cd74bcb4a435b2247b9e9112b",
+      "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "wide-product-reveal-swell": {
+      "previous": "8a8123b65f8c6038c9477253955d8ea8d856018fdefc2e6a028f238c633085f5",
+      "current": "041568905b8eafcd6dc97ff8e051f2a8168a251b7b6136c5faacd31c34408acb",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
+    },
+    "wind-against-a-sail-locker-hatch-gust-front-arriving": {
+      "previous": "93fb1ecf05d064488a4e36e699254ce3dc4045214213c589438eb04784f3ff1c",
+      "current": "84608d912738104f6b7dabc1ac4455253481d60365438ebffaa30038e0253126",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-against-a-sail-locker-hatch-intermittent-lulls-loop": {
+      "previous": "564d8e3dcd8db0ad616d6d0a10b9f94ac15547adddff040cc22974bcad0f9d6d",
+      "current": "2fa48fe9036d5b0fec701c65e3bf66dff9843d5ba4e8eafc013e4c112acb8de0",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-against-a-sail-locker-hatch-sustained-current-loop": {
+      "previous": "b629d8d410e555f4765504b48969f907a51d325a7b2aeb2ce71cae2a96cc040c",
+      "current": "effb230e6681045d609aca651d118f543b53d4b0e2584906675cc2fb89b5766f",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-against-a-sail-locker-hatch-wind-dying-away": {
+      "previous": "58ea3299d9657c0add6844d15f37f27f54454328cbd6e3b95f60ad2ce250ff6d",
+      "current": "060328a4ccb7236fadaf45b25244f136ea88fa4e6456d16f81b3829ac78ac2cc",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-at-a-saltmarsh-boardwalk-gust-front-arriving": {
+      "previous": "0726bc2502f0bc59241dd8ed3a7ff13c944cbfeb87e4cf198554cd955f748676",
+      "current": "ebcffac3f08af39027aed3deca7c2e8dac081c905adb7b3c5002d9b60e06511a",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-at-a-saltmarsh-boardwalk-intermittent-lulls-loop": {
+      "previous": "253700401c506fae1f4837d29dd6c3da20e1c41d8fdc35dd0114c6ef3a229c7b",
+      "current": "a5edc5b7ff37aacc075d61c84ffd705f9945fd87c4244e89c28832ab3fe2ec83",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-at-a-saltmarsh-boardwalk-sustained-current-loop": {
+      "previous": "753bcf5d2c865a4d794b6f9b0df2a0f2ec73b2dd36b47836454f7c06deebd284",
+      "current": "ea4799892a96fd19a382000e7df409a9f1db3dc320654d787f96b1c913030c1f",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-at-a-saltmarsh-boardwalk-wind-dying-away": {
+      "previous": "4fdaed3187439a4fdf07569d5d88615c4a2c2272a57b6685b9463bb7e0670ce0",
+      "current": "6c994aba7b9b0c4b278fb0dfecc6966130acfedf9d9c1c270dfa9fdcda366965",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-in-a-bare-orchard-crown-gust-front-arriving": {
+      "previous": "add6ae8d803d9bac282cfdadd2c0ce7358a51d04bdd74c5d321b701ac2a6ecd4",
+      "current": "c5f16514c87082d2fb8d4fab6b22b9051056c768a05091bc11f539073a4607dc",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-in-a-bare-orchard-crown-intermittent-lulls-loop": {
+      "previous": "a9c1d070d515baf912da941239b6cdc6aee7c38a7b5ecdc40138ccde3fa352fc",
+      "current": "8f734cc5e4128b166547cf95d0986f1f2d01af408a5a14df24d985b09b5d9bd8",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-in-a-bare-orchard-crown-sustained-current-loop": {
+      "previous": "c7769dc2fb9b0d0fa51a38f05055b50f8bcab0c654f63949f78427c80a2a03cb",
+      "current": "e8bd90491ba26950dcf097755153ef92540d5fd71934bd6c4a97aaaafc5cdc5f",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-in-a-bare-orchard-crown-wind-dying-away": {
+      "previous": "63c5ada84a930289a72483e4ff8e28c4ef196d6177ab6342d5d67ef47a674eb9",
+      "current": "7574ad5ec9fb362691a1de6340008d29509b11ae01138e27f912c94399e33286",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-pushing-through-a-narrow-rock-slot-gust-front-arriving": {
+      "previous": "bae7aac48ffb0a2799e327f48299a060678de79ab965e46e78777ffd77b1e70d",
+      "current": "6a5ff414803468ab830a1a06d978cfac9cc7d26e6a2b64b7602e2583c792465d",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-pushing-through-a-narrow-rock-slot-intermittent-lulls-loop": {
+      "previous": "9dcfbd0c81a7bad498970b5b475550b39195c58466a69c4bb984ec8f79974160",
+      "current": "3ccd01e062d719066afb12cd8123c37778ea720c8dbf7bb902c366f0d80aac24",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-pushing-through-a-narrow-rock-slot-sustained-current-loop": {
+      "previous": "6549c581cce371340aaa9b0fb5864ec457aa8dff4a609a84ae771116293fa471",
+      "current": "63571bbaceec4d1cfec8dae3c9b42644072c5b5ced0df099879559707cad9c0f",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-pushing-through-a-narrow-rock-slot-wind-dying-away": {
+      "previous": "d160b485168f9aac5dc67fdc48283944214b346108c90137cc9c3d87365254b8",
+      "current": "cb931f6e5539098f4f88a3550b15ce9cb1a6153bc42e0470d2953a5e95cfc540",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "wind-through-open-hangar-loop": {
+      "previous": "8417f4ccccbeda371fc9c45d99e880927b03ec7cec49a2fc2da3c8e1a6ded7ac",
+      "current": "96ba9fd43ef35d5a1a77698bda51a00b1a5405653c5c87b53a377af092d280d9",
+      "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "windblown-rain-on-a-loose-garage-door-continuous-patter-loop": {
+      "previous": "98cb2c54ebd6285b042634f16b9b503cc7c746d76e98431af0950925bbda6e0a",
+      "current": "3ecd8fd941ed59c9250796eedf45291328538883faadeb22ef24077437eb846f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "windblown-rain-on-a-loose-garage-door-downpour-recedes": {
+      "previous": "fd714f12022b81ddb53cfd0acfc2d9adc33607c324d5369238792cbc14095233",
+      "current": "fd968120a8411841d22b895b17347151067ee94a75e16de8ce10c6b8af18c744",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "windblown-rain-on-a-loose-garage-door-individual-drops-loop": {
+      "previous": "1977af63bf1891d50eeec8cb1599c245ea6e94984d2662d9148dd07e5a8cdc8c",
+      "current": "fd925edfb3d38b564974e400caf21801d8ed17eee2e746d0756af96708e4f0ae",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "windblown-rain-on-a-loose-garage-door-shower-builds": {
+      "previous": "186ecea72e62ad25e1e4a8ec6b437fa62ed8617b013ee4914d56a2ef45eccb78",
+      "current": "8d3aa53dbb2be7314001889a9f2ae9b324ef44d3f030278faa0b69104354cdab",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "windward-headland-scattered-rain-loop": {
+      "previous": "d2f5cd8ed1fb4beaf87322d4e529c5623b89de7d26a3c1247a1957cf58f78d64",
+      "current": "dcb848d64e5136b8c67ac2eac1f207c6234d5aa900ac2b6fadbfba4478469b52",
+      "reason": "Keep only rainfall and its specified impact surface."
+    },
+    "windward-side-of-a-brush-fire-fire-settling": {
+      "previous": "b271bda9637a7048a120c39f9537edbc8b9c6f6977511fa9f3bcc171ff5661e4",
+      "current": "d3f86e8cca6f7385b0bf1d378d8bb7efb1a87fbc98480969e67b54a6fe387847",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "windward-side-of-a-brush-fire-flames-catching": {
+      "previous": "92042d04681626fc9731f8b5019eef6450350e1b8c1b65a0efd07d4d554d6e29",
+      "current": "927eba291b289ae88597b9eef41f953cfd2b950e487cf0a0ecac06c64bdfb350",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "windward-side-of-a-brush-fire-low-simmer-loop": {
+      "previous": "e2c9fefefa640e10a47b3efab121df789c61dc960e480da6a60b2b54dd419e87",
+      "current": "9f9c37cda423d0d71733674267351e752dd2a2805b75bdc2f29f24b0a56b85f1",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "windward-side-of-a-brush-fire-sustained-burn-loop": {
+      "previous": "f1ed86b5b0fc20041797b2982b55315107d312a1b47220402f62744d10a4a207",
+      "current": "e2250a876f6dd333f88bf99c8dc86177d280771fbd8dd20f612d9cedf026b718",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "working-motorboat-steady-offshore-loop": {
+      "previous": "75ff98d2f90cb51ad8ef2db2da690f0efda16d0c220166cc6f4e35100de8734b",
+      "current": "55be90d88c5a636fbcb47d5dd630f7b21eb34a411a8aafd8b0c3b08bf2c6bbed",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "linear-mechanical-keyboard-spacebar": {
+      "previous": "994790b2cae1157114e7fc6db69eba4eb39e0d23d8afdbdd0cd7bd9223ae9192",
+      "current": "574e5597cf6208668a32d93b406ff997ff4fec7a8ef699a3ff36eeb15c56af91",
+      "reason": "Use the individual wide spacebar recorded on the matching physical keyboard."
+    },
+    "linear-mechanical-keyboard-shortcut": {
+      "previous": "2f0daf27c09bf10774e2f09232e72f9fdaaa1a8761643797bd8c071c1c8cc2ea",
+      "current": "18f81dfa6e7b20d745f941f45d0fff432c8dce239e0539edc929fdf690b1f1cb",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "linear-mechanical-keyboard-backspace-pair": {
+      "previous": "f284abf05efd012b701ab358035c4a7a40f98708aa7e0e570643db2e6d6158e4",
+      "current": "bf83dff356addf3301126e1f976b36e778979526e2deb394a0821146e2af30e4",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "linear-mechanical-keyboard-typed-word": {
+      "previous": "cb7a133b7701f1773f6275cf7cb4f37f278478588e23e5c7db21d28c26185dd6",
+      "current": "90500478279be8a8a79c5e2d07d6e68afed958741e7e615daec70cbdac0607e7",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "linear-mechanical-keyboard-key-up": {
+      "previous": "c3579842e1fa10ef6a84dd2a1bfd976a63e45c1f7cecc2e237158f86d16c6115",
+      "current": "64b2acc4e7605dc9f93e3941e80692a56ff638e570d3ed41bf88e31c2ae8259b",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "linear-mechanical-keyboard-key-down": {
+      "previous": "4ed70e8482a778087f9c43d6c0ae451c0b0c4c6a1e19a7f93c9849d3ae3c148b",
+      "current": "7a9b5141f5c767d7f8ffe229a97ed74ff84180a885bb9feed5756f0199a76564",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "linear-mechanical-keyboard-return": {
+      "previous": "74fcd6660617f3f4480685cecc4fb039abd9a41f55f18a4cb646dcd910235b99",
+      "current": "32f68aeac0244c5d177d1ad6609f3460d44e533ce31e8173612a40eaf9aa6e8c",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-command-line": {
+      "previous": "eeabdd8182a779392b116b1ab6f7a76d61bc83a7e65ff55eeabc0511e95129eb",
+      "current": "a62614aa54e471704243df05d92f378e99560b6472deaaed011c52fe4563b47b",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
+    },
+    "glass-trackpad-press-and-hold": {
+      "previous": "cbff55fdd04b7e67972f45f5cd087d63c9a8c85aa048cb9bbec533d3eaede646",
+      "current": "c4f3b3382ec6344b6b50e724f22d35083d47b55971f9a37e65b3112bf112eb7e",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-double-click": {
+      "previous": "a149654092f00d2a0d223cdcd4c1f209dc3892e8df7ae78ff4181f65f01c1e43",
+      "current": "023fbc1bb6b3b0412281d3a05f9ee9d2f8ab27ef17e915c4845dbed37c229094",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-three-taps": {
+      "previous": "7cadced8452c5e4a5484399c59820cafc5dc965022d6ffbb6729d5c1948d5711",
+      "current": "048e0bdcd792a59f5640cd3e5d76a3a15739e1dfebfe204bdcdcde2a8b1e859d",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-release": {
+      "previous": "ec689a02fb1aea817188f09fdb738916b14db11dd1e42e8b1bcb36ad6acd02ad",
+      "current": "a3df1ee55910912bc016ffcd4ce448920e8d2d1062fc1912f7807e98796827da",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-press": {
+      "previous": "a65896a2e9d75e4b36fffa7035f101fc9ac446c8192572c61b8ffd790f64a275",
+      "current": "f1b94242bb25738a4369928128bd15cb290214a684ce368f6fad802375a06428",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "stride-gravel": {
+      "previous": "b4d04655666e318e41d469138a9fc4d5af2512dc28e9ec43f202e97d2e3a49d9",
+      "current": "18e8781c3c837d51f9818a935993c8df4c5e2ce1be81cc424501d2dd122cc16a",
+      "reason": "Retain the recorded shoe plant and bring out loose stones under the rolling boot."
+    },
+    "laptop-scissor-keyboard-spacebar": {
+      "previous": "14b1cc42b8daa45f128c6961463f6b223e12942e4d184f9a966fb0405c991614",
+      "current": "6accff191c7341e934257e51e6dcd3eb0fa90513f93fcf237ea7715a769f81f1",
+      "reason": "Use the individual wide spacebar recorded on the matching physical keyboard."
+    },
+    "basketball-hardwood-single-dribble": {
+      "previous": "f4f163f32175aaa661c5935cfc16e6e2c894b6cabbe2b06a40a799f7d0de4c81",
+      "current": "4c81c9137adfaf46829e7d88ec1c649a2867cd5142c72c4af3ac9217913d8c39",
+      "reason": "Retain the shell, floor impact and short court reflections from a basketball recorded on hardwood. The original recording used carpet."
+    },
+    "desktop-mouse-double-click": {
+      "previous": "2ca00dc2d56bcb6f8a2ac1b8fb53a278070065da83eef63f05b942d8ca7917aa",
+      "current": "a20d58b193f8c0422918830a8353380184bb247e947140ed74c26ff8f2f87302",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-press": {
+      "previous": "cf65166f656b9213278e5cc9cc9acb4e9b663a3fc1b755e375d1d6929e92fab9",
+      "current": "8d609081e548cdac64985c7cea72341abc39f423bbcc6da9c3d8869206e77347",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-press-and-hold": {
+      "previous": "cb7a052f178c67a8dac57b08be0f1173f3911cce9a9ea597452f4c7dc1b06da1",
+      "current": "4400cebf4977049f49ee4f8557b7f46804049b2097c5e350eeb004748cf3461e",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-release": {
+      "previous": "a4b4f6ce2de45357d4c7241f9f86ae68bbaeec4199136c6022c7cf7ec0d4c27b",
+      "current": "4c90b29941933d996ac6455a64d25e03d6028886e42bd2d593547cf6cedc62ec",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-three-taps": {
+      "previous": "7f468d410ec43a70aae7ad77c7a3d8982d5772c70a61a08afc3a89bfee39021e",
+      "current": "c13ed54a38a47f8593273709c6b5631cf24f06022a0d3a2d52ceb2eee0fa7241",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-double-click": {
+      "previous": "c826a9332a9df35be899656d8d6c9aaafc2ec8b0b48f927e783029f18a3b0e23",
+      "current": "1bee659eb25beece94397f0486c7d888e39798727e9944afcbda7aa98ca3f81c",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-press": {
+      "previous": "c7e2803f8b9e2300734059106e10cdbf4af69b83d982f3bfff34a4e28c544944",
+      "current": "9d3a66b4cb82eaa11bb0830bf32e7f0a32dfcbd0aacb2c00941fae92f29443d2",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-press-and-hold": {
+      "previous": "7960c7d6e9ccedca22ceea6c73f58d843e7762f4efe2dc20f7d6686cf8522f4e",
+      "current": "477d20d4d78745244a893802143623218d69ceb296c48ab746d8e70cf56f3060",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-release": {
+      "previous": "3d15b00351105b493b5ea27a450e939f6682edc9171e6590319b41d57e39e138",
+      "current": "1993e53b438ca2d58a0a7811e0797e2687571c687e2e086f2f3dcbd57e3f0987",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-three-taps": {
+      "previous": "276e7db46032f0ec5658884eb2264bda79f2bfeef7042d34c251efeb7ea83291",
+      "current": "6aefa1dfea9aaa4b6101f337474b988dd2d48df79b03073d8cbd68eff5f9959e",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    }
+  }
+}

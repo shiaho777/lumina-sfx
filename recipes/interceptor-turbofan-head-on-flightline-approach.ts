@@ -6,6 +6,7 @@ import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
   isolation: 'isolated',
+  components: ['jet-engine'],
   id: 'interceptor-turbofan-head-on-flightline-approach',
   name: 'Interceptor turbofan head-on flightline approach',
   category: 'Aircraft',

@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import recording1 from './_recordings/car-tire-skid-launch.ts';
-import recording2 from './_recordings/car-wet-braking-stop.ts';
+import recording2 from './_recordings/isolated-tire-scrub.ts';
 
 export default {
   id: 'front-tires-chirp-over-a-painted-line', name: 'Front tires chirp over a painted line', category: 'Vehicles & Engines',

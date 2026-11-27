@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "id": "hill-under-load",
+  "output": "stereo",
+  "viewpoint": "Passenger hearing the same drivetrain at held revs",
+  "focus": {
+    "subjects": [
+      "motor"
+    ]
+  },
+  "layers": [
+    {
+      "id": "turbo-straight-six-rally-car-back-straight-partial-throttle-loop",
+      "label": "motor",
+      "params": {
+        "rpm": 0.55,
+        "intensity": 0.88
+      },
+      "durationSec": 4,
+      "placement": {
+        "kind": "point",
+        "position": [
+          0.4,
+          -0.2,
+          -1
+        ]
+      },
+      "envelope": [
+        [
+          0,
+          0.1
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          3.85,
+          1
+        ],
+        [
+          4,
+          0
+        ]
+      ]
+    }
+  ]
+}

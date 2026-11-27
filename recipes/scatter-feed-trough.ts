@@ -1,4 +1,6 @@
-import { farmFoley } from './_shared/farm-foley.ts';
+import grain from './_recordings/plant-large-seeds.ts';
+import { renderRecording } from '../engine/recording.ts';
+import { biquad } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
@@ -6,12 +8,11 @@ export default {
   tags: ["grain", "feed", "trough", "scatter", "animal", "feeding"],
   durationSec: .69, loopable: false, targetRmsDbfs: -25,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.55 } },
-  render(ctx, { params }) {
-    return farmFoley(ctx, params.force, [
-      [0, 'grain', .72, 3900, .066],
-      [.024, 'wood', .32, 349, .056],
-      [.117, 'grain', .55, 3380, .086],
-      [.144, 'metal', .11, 625, .053],
-    ]);
+  recording: grain.credit,
+  render(ctx, { seed, params }) {
+    const out = renderRecording(ctx, grain, { seed, speed: .84 + params.force * .29, cutoffHz: 4300 + params.force * 2200 });
+    const trough = biquad('bandpass', 315, 1.2, ctx.sampleRate);
+    for(let i=0;i<out.length;i++) out[i] += .35 * trough(out[i]);
+    return out;
   },
 } satisfies SoundRecipe;

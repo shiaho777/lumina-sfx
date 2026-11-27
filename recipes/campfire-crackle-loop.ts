@@ -1,43 +1,55 @@
-import { fieldWeather } from './_shared/weather-field.ts';
-import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/atlas-fire.ts';
-import wash from './_recordings/atlas-inferno.ts';
-import detail from './_recordings/atlas-fire.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import { biquad, layer, noise, punch, renderSamples, TAU } from '../engine/dsp.ts';
-
-const original = {
-  id: 'campfire-crackle-loop', name: "Campfire Crackle", category: 'Weather & Ambience',
-  tags: ["campfire","fire","embers","crackle","loop"], loopable: true, durationSec: 7,
-  params: { sparks: { label: 'Sparks', min: 0, max: 1, default: 0.61 } },
-  render(ctx, { params }) {
-    const bedNoise = noise(ctx.random, 'brown');
-    const air = noise(ctx.random, 'pink');
-    const body = biquad('lowpass', 460, 0.7, ctx.sampleRate);
-    const fizz = biquad('bandpass', 1450, 0.65, ctx.sampleRate);
-    const sound = renderSamples(ctx, (t) => (0.49 + 0.17 * Math.sin(TAU * t * 4 / 7)) * body(bedNoise()) + 0.27 * fizz(air()));
-    const events = Math.round(79 + params.sparks * 88);
-    for (let i = 0; i < events; i++) {
-      const at = ctx.random() * (ctx.frames / ctx.sampleRate);
-      const size = 0.07 + ctx.random() ** 3 * 0.85;
-      const decay = 0.003 + ctx.random() * 0.021;
-      layer(ctx, sound, at, 0.095, (shot) => punch(shot, [
-        { color: 'white', kind: 'highpass', hz: 1100 + ctx.random() * 3800, gain: 1.1, attack: 0.0002, decay },
-        { color: 'pink', kind: 'bandpass', hz: 420 + ctx.random() * 970, gain: 0.87, attack: 0.00035, decay: decay * 1.14 },
-      ]), size);
-    }
-    return sound;
-  },
-} satisfies SoundRecipe;
+import { woodFire } from './_shared/wood-fire.ts';
+import { biquad } from '../engine/dsp.ts';
+import hearth from './_recordings/isolated-hearth-wood.ts';
+import burn from './_recordings/isolated-wood-flame.ts';
 
 export default {
-  ...original,
-  ...sceneCredits(source, wash, detail),
-  render(ctx, opts) {
-    const old = original.render(ctx, opts);
-    const field = fieldWeather(ctx, opts.seed, opts.params.sparks, {
-      base: source, wash, detail, bodyHz: 5650, detailHz: 7600, spacing: 1.29, depth: 0.44, space: "open",
-    }, "scattered");
-    return field.map((v, i) => v * .81 + old[i] * .16);
+  id: 'campfire-crackle-loop',
+  name: 'Campfire · steady wood flame',
+  category: 'Weather & Ambience',
+  tags: ['campfire', 'fire', 'embers', 'wood', 'flame', 'small', 'hearth', 'quiet', 'soft', 'crackle', 'loop'],
+  soloQueries: ['fire', 'campfire', 'wood fire', 'quiet fire', 'fire crackle', 'campfire crackle'],
+  components: ['fire'],
+  contains: ['small wood fire burning steadily with quiet ember crackle'],
+  isolation: 'isolated',
+  loopable: true,
+  sustainMode: 'evolving',
+  durationSec: 7,
+  mixRole: 'ambience',
+  recording: burn.credit,
+  additionalRecordings: [hearth.credit],
+  params: { sparks: { label: 'Wood snap presence', min: 0, max: 1, default: 0.32 } },
+  render(ctx, { params, seed }) {
+    const bed = woodFire(ctx, burn, seed, params.sparks * 0.73, 0.61, 'open', 'steady', 0.49, true);
+    const coals = woodFire(
+      ctx,
+      hearth,
+      seed ^ 0x529bd17,
+      params.sparks * 0.55,
+      0.48,
+      'open',
+      'steady',
+      0.36,
+      true,
+    );
+    const mellow = biquad('lowpass', 2400, 0.69, ctx.sampleRate);
+    const low = biquad('lowpass', 660, 0.7, ctx.sampleRate);
+    let activity = 0.45,
+      target = 0.45,
+      next = 0;
+    const glide = 1 - Math.exp(-1 / (ctx.sampleRate * 0.55));
+    for (let i = 0; i < bed.length; i++) {
+      if (i >= next) {
+        target = 0.28 + 0.38 * ctx.random();
+        next = i + Math.round((1.1 + ctx.random() * 4.7) * ctx.sampleRate);
+      }
+      activity += (target - activity) * glide;
+      const warm = mellow(bed[i]);
+      const body = low(warm),
+        edge = warm - body;
+      bed[i] = body + 0.16 * Math.tanh(edge * 4.5) + (coals[i] - body * 0.22) * activity;
+    }
+    return bed;
   },
 } satisfies SoundRecipe;

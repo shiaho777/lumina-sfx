@@ -1,6 +1,6 @@
 import { renderRecording } from '../engine/recording.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import braking from './_recordings/car-wet-braking-stop.ts';
+import braking from './_recordings/isolated-tire-scrub.ts';
 
 export default {
   id: 'wet-tire-contact-patch-loop', name: 'Wet tire sliding under load', category: 'Vehicles & Engines',

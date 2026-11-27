@@ -1,0 +1,870 @@
+{
+  "method": "Machine screening leads. Apply the two-seed listening dispositions in qa/flag-auditions.json before clean selection. sha256 identifies the screened default PCM master.",
+  "holds": {
+    "air-pulse-prop-seal-vents-and-cools": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "ff6fbed43c2f96a911e34ea74f708f1cf600398d208f15141eb64a51af50fe0e"
+    },
+    "amber-guidance-console-loses-power": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "6ed2f4382b0423d271bb3434b021f1505fb1d0bd1989682a819d00bd6baa065d"
+    },
+    "arcade-drum-fed-support-gun-close-dry-report": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "0ba2423f5e91ea363394b9b96d7b73f2f524f6a3db09646b5b27618e9d36310f"
+    },
+    "arcade-ricochet-on-hanging-steel-panel": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "ed86b9e206aa97c827b3c4336fd42810a130d5c71ae9da506c3d9a4806b3b570"
+    },
+    "armored-elevation-motor-free-play": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "851a8bb39a2f95b80eda3422068f063a88f21ce6fd15a40d19553df9a04f3d8d"
+    },
+    "armored-hatch-latch-dogs-engage": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "e8e1b374ef6d64bf0b6b5a09921cfa014226358b1b8384dab6a71ce35b105e4f"
+    },
+    "armored-suspension-pressure-bleed": {
+      "labels": [
+        "mosquito_buzz",
+        "speech"
+      ],
+      "sha256": "46d3a45e76e3f85e8132a939cc938a82b5e37800f48c8c3f5655662098ac63f8"
+    },
+    "broken-relay-chatters-then-dies": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "d3eb04b1910e0a224317c90076588040383dd00925ed3476fdf12ddacb3d5953"
+    },
+    "car-exhaust-under-an-overpass": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "569439e68f3db80370311f7fcd808f30a7e12043a6793ac684c9155e25170ecf"
+    },
+    "ceramic-shield-frame-loses-power": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "4f6a6f94ace88a704f57ac54f129c01a9f48ca0d6139c8a382642150fc42b18e"
+    },
+    "click-jacket-keyboard-typed-word": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "2e25eb01405a25a71b407ee4230c91f257dda2a27fd205c70d4b151c092b9e5d"
+    },
+    "clipped-energy-shot-in-a-tunnel": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a345e785d4aeac0f89ee09a76f433eddc58f0966199d50f5344a845c87868b7d"
+    },
+    "coin-counter-count-batch": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "d9f2c3a00326d16100df1039230fc99964d63ebf1f4e302779dbff8ca5d08e8f"
+    },
+    "coins-swept-into-a-purse": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "b48618416b7e00fb49695649ef72728528f17ed4f1e4ad96abb97de18071f694"
+    },
+    "commuter-sedan-approach-to-a-pedestrian-crossing": {
+      "labels": [
+        "shout"
+      ],
+      "sha256": "33bba5014a496dc1affb4856d96a2379ae4c298c180672c74e0c224de25543d8"
+    },
+    "commuter-sedan-traffic-light-pullaway": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "f2eeecda099586ac94fc1e0db3472d22fac2b2f8f862d16a69fb5b8e0a6d79de"
+    },
+    "compact-service-sidearm-close-dry-report": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "460a108945b0b4859399d5ac8e05cd1eb7cb4ea11a2c3bdb7f4d9659015fa605"
+    },
+    "compact-service-sidearm-pair-across-a-loading-court": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "ac1eec4c5cc486536e8f15a61ff7b0a2a60c02c6a815c8f0a28e72d777110850"
+    },
+    "cow-lifts-muzzle-from-feed": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "6fb228291896d90a0eeacf473ac77b3a49f6604823729f8a42969463df4fbd22"
+    },
+    "cow-moo": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "9d429554bce5f5d829db7cd6b128df69f170e2233c8c3130f621fea9ee332fee"
+    },
+    "dashboard-ignition-accessory-click": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "b4e851c7d72463be4a1694ee5fccb841bbbe67a61d7b15c540db8abacdc20707"
+    },
+    "dawn-at-a-cow-pasture-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "4eec033fb2e8b2a25a3016290c9eaceda0d473e70f37c34dd2fc11cafd4b4f1f"
+    },
+    "decommissioned-conduit-arc": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "6c44061f46b2f16dd484190cdc5b85a9d6a424425380c267be366b93a998323c"
+    },
+    "deep-space-anomaly-wake": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "ddad1c311b5beebf326c9051eb7ca345bd92b44ababbcb57a4359d5dde7b3b9c"
+    },
+    "diesel-truck-ignition": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "3ca5ff47b1818800b9a1cc3286c73b9071bdc2b8e17315bdb8cd1ab4748bff92"
+    },
+    "diesel-yard-loader-take-up-a-heavy-load": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "b119d8d9e2895ef9c8bef937af3cd46bedec63ab5ffbfbfa0dd4d94af6988691"
+    },
+    "diesel-yard-loader-worksite-standstill-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a034a50c3640630136b04cc60c6669793cfcefeeccb2fc0a063e9afcbf525f37"
+    },
+    "donkey-bray": {
+      "labels": [
+        "bird",
+        "crow_caw"
+      ],
+      "sha256": "dd614dccb583ad7d41273c9f0701a6ece5ccc7d9fc916305b39f7bc04827ac7b"
+    },
+    "donkey-brays-across-a-paddock": {
+      "labels": [
+        "bird",
+        "crow_caw"
+      ],
+      "sha256": "c6e0282b664fc3c8d916017b049c3f0777f5ca5aa848ec81db1743c3cd0f13f8"
+    },
+    "double-elimination-double-seal": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "fc7f28d4bd4b97effc8ed263536deb1152f884151c8a1a88e14988d7f8a70b80"
+    },
+    "drone-crossing-behind-a-wall": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "1249162a792f7eaea10f0f89908bfda62da58eb737aa8321ed7e732716098584"
+    },
+    "drone-landing-gear-deploy": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "084bf743e1d7e0a622b5776c02375c4456e6370707a43ad717ee1624b04e8d36"
+    },
+    "dry-stone-wall-in-farmland-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "caf709b4a073c442c460f372cc29b331f30381958f9dcfd3031c7296d88be0eb"
+    },
+    "ducati-twin-cold-starter-catch": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "28c2ab0737c9667ef6eea9078762d36d073982c14c6146467438e1d5720ae4b6"
+    },
+    "ducks-shelter-in-a-reed-channel-loop": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "b79b8da3623a8bf7b30b100fbd52b4583c6a187c900dd08efc3ffd4881799cf8"
+    },
+    "electric-delivery-van-uphill-motor-load-loop": {
+      "labels": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "8c230f05d0849fb69a561fda0acc6dfb2979d16565c9b4a3612e15ebcdf25bd2"
+    },
+    "energy-cell-seating": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "6667f864af3c5263112d0396f6714d2e616d53e668393887858d518d190bf491"
+    },
+    "energy-shield-overload-collapse": {
+      "labels": [
+        "typing",
+        "typing_computer_keyboard"
+      ],
+      "sha256": "a10424ec21e5dd9c3c768150e17052b8ee341db10941806c531194acdb342e4a"
+    },
+    "factory-crane-warning-single-close-buzzer": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "b855fdd429ce9f04f3abbdacec41e277cf8ca626b8879d5edae707302dbeccd7"
+    },
+    "factory-door-warning-two-unequal-buzzes": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "9cdc1aabc751e33e8d9b107d44dd94d134dabec5a002e923411fba114f753678"
+    },
+    "farm-market-between-customers-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "28463183478183aa2cbfc1655cc132c08a30a8ef3621b0b4ed547c2840ed8d5a"
+    },
+    "fictional-arc-blade-emergency-power-down": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "bd5d4a693900bdddf483273bcf32aeae63b34f68b2c3a5a0e8f7d69a1341097a"
+    },
+    "forklift-valve-spool-shuts-off": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "7bd64e323a001babef1257d3ceb28e9afe656e25121216bae1991a7c961a384e"
+    },
+    "frogs-audible-through-reeds": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "792e80329478cb25926753d93babb9ddb678bd877686a2caaab702c3d40fd202"
+    },
+    "frogs-beyond-a-garden-wall-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect",
+        "owl_hoot"
+      ],
+      "sha256": "51330267194c5d28b671cfd36c390d7ac4b4bd0a6ecac9c1957c9eb5555839a6"
+    },
+    "frogs-subside-after-a-splash": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "110ebc2433d170482124bb4c491c2a39e14ba013a70526ac316ecf7e36b9cd8b"
+    },
+    "geese-lift-from-shallow-water": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "247a48c3906efd682a4bd649b92baaddc3d561c1993e4ed50bb3f0765f2dae0e"
+    },
+    "geese-resting-at-a-river-bend-loop": {
+      "labels": [
+        "insect",
+        "mosquito_buzz",
+        "speech"
+      ],
+      "sha256": "d5087a692c07e715e7c57bf2be07e94cb23d289d13b1cfc3eba07fb51d08bae3"
+    },
+    "glass-diagram-last-frame-tail": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "86777f094826ab13ac390425411499f26fd7c489db3c8193a057617d6386ff4c"
+    },
+    "goat-calls-across-the-pen": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "bb0cfb96981bd2f0c85737e000547b76db7ab18d88a626b7f707180718e89bfb"
+    },
+    "goat-double-bleat": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "3b1b5582d08c0da76f90d23ffcb0545bad04ed5e8978df098cd240ea8de27d32"
+    },
+    "goat-kids-calling-together": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "659dd26470cffc2da22d4239e3fc36587e43d38630cad27d2bf38b1d8ec6265c"
+    },
+    "goat-noses-a-feed-sack": {
+      "labels": [
+        "fly_buzz"
+      ],
+      "sha256": "4f51dca4a21e23f40194b44b5fd88e5d626f09dc212dfa6d772a8e4db16e2aab"
+    },
+    "grizzly-feeding-in-low-brush-loop": {
+      "labels": [
+        "mosquito_buzz",
+        "speech"
+      ],
+      "sha256": "970277d4649f73da0a7abb0edcebbc32e14ff05c93000b8255425e1e44ccc2ee"
+    },
+    "hen-scratching-straw": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a040a1f77b9367e6b42da1647c4f8c89541bb7c6ab69b59c78c2d1be9b79b94d"
+    },
+    "hive-lid-lifted-to-a-swarm": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "39c988df4702f57f485c1f5db151bacf2f7de7c266e89ade5127f4eb98a6c811"
+    },
+    "industrial-forklift-key-start-close": {
+      "labels": [
+        "laughter"
+      ],
+      "sha256": "a85424d78e82786cc33d1e174bb7b6592303259dfeb11ddca817584606755bc8"
+    },
+    "ion-blaster-shot": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "2b3decfb74a4b5ce381262871562f67739852433ef6f02430090d86045ab44c0"
+    },
+    "key-turn-in-lock": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "5b2a0ea3a80a291389cf8c030efbc419c8ba8f58165f5a4f364b3c08e6414379"
+    },
+    "lambs-between-two-pasture-fences-loop": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "e584b7112311760b3358c0757ca98f7395bb11907943a918efd3ebb9898536b5"
+    },
+    "lion-calls-into-the-dark": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "cde3551611f5f610e0086257fd738e22ad6db2d546971405963d53ef05c30af6"
+    },
+    "lions-beyond-a-night-camp-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect",
+        "owl_hoot"
+      ],
+      "sha256": "135cbe845e482542ec76a10ed3e447f68aec9b1fa970a135feb66a280851e702"
+    },
+    "local-streetcar-arriving-under-a-roof": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "23ac73a9671eab574a28e7a725f31da08a265cf100aa0160808b8f5088b7cd74"
+    },
+    "local-streetcar-rattle-between-cars-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "86d0282380489e14704d9aa3c7d56c3629a1f5d8f398b4ff7d8b8a7d5fedf3d9"
+    },
+    "local-streetcar-rolling-off-a-platform": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "f9871f21d752dbedf25b023efda4ec24d1c7bdd265a2d5cf330c2c4229a39bd4"
+    },
+    "lock-opens-and-chain-slips-loose": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "a8d8e19fcf586c8803a23cad10c3dfb2e41f8acb0ea2cfe76f5b2427cc7e849c"
+    },
+    "low-orbit-recovery-beacon-loses-power": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "6d919723e83a61fc1ca944d11db020517ef3b1b921a0e8f2e5da0af750f68fc1"
+    },
+    "marksman-rifle-close-dry-report": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "2caaca3130fede28021eba5809e98f9fe3ec52de978a95b39c5f11cd9ccb4a25"
+    },
+    "marsh-frogs-night-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "e0c6c918475b328efef96952d13c8f3e5292f7c59c319c5644a6fdc2a43bbf3b"
+    },
+    "micro-gravity-work-lamp-loses-power": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "cc39690fb004cf4d14c05e347d17c84423b3e3070b153417b83fb9941295e417"
+    },
+    "moped-courtyard-rev-and-let-off": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "95e732302d4590d2c86df37710b7fc225fab250f1f97b17b47df2f245a870483"
+    },
+    "narrow-sandstone-canyon-after-dusk-loop": {
+      "labels": [
+        "owl_hoot"
+      ],
+      "sha256": "5aa4d26de3b0e9db51b84fa8c1c7205e1c9220da4991d33655f3b1264ddc44f1"
+    },
+    "open-pasture-at-first-frost-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "f0b4049157818aa3e669ea79d057c7372ad953b6c73579d14836ba4bbbd6c363"
+    },
+    "orchard-at-dusk-loop": {
+      "labels": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization",
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "2eddcc67f567ef384f692b99a4d638bf7a74a6956a5d4b5e713a23456c228c3c"
+    },
+    "pigs-eating-in-a-timber-pen-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "1026e0f2badad6e88182b593e51fbc81072c05bf2e32ae250a7c7778186032da"
+    },
+    "pond-surface-in-a-morning-breeze-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "ca3224927f1963eb82e28f96977fb184432c13863dfac8315850f507e50eb209"
+    },
+    "pressing-curds-in-a-mold": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "aef2478e28fc667742759e9a92ab033d8fef4db35ebbdbd6dce14a804a7c9431"
+    },
+    "prop-aircraft-brake-and-fairing-settle": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "f3d117c26c003c92acb8087729aac48fd07d078393759f9b4d86b2bbb6146eb6"
+    },
+    "quiet-interview-split-view-slide": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "785facb9fb53d2e9dd94b1262e56c89711a59f686bdb811f62b3820db597c2b3"
+    },
+    "radar-warning-beep": {
+      "labels": [
+        "owl_hoot"
+      ],
+      "sha256": "19e13c2d41bc98d53f9eba9e3d2ef70e8bfea27c8569e5f20fc1a1487e16661a"
+    },
+    "rally-upshift": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "2b9d2beb59167ce454411df4832c3527406099575389f61ee03140d4391952fe"
+    },
+    "relay-panel-brownout-warning": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "bce78e3429c7ed1a529fb4e301332d1fef9099d50d92f0ca983fcc120546c8a4"
+    },
+    "reward-drawer-delivered": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "223279f871601661bb824c78d79c496d1a498dff34c39c6e6394f4f96d02753f"
+    },
+    "rockpool-spill-over-a-low-lip-gentle-laps-loop": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "138e9d6d8892c6f2c5ef8df2c57488a204e531c9adab4d8ad0a552c96c768ea6"
+    },
+    "rockpool-spill-over-a-low-lip-water-receding": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "af72cbf67de6d42e3cb1a7d55e8791427d8e1afa47d66ceccf37d9693cab2d27"
+    },
+    "scatter-feed-trough": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "fe0c29114e9d634b2f8f4e7b272fc88104023445ac3d0f27a1c9a9213d1ad4d5"
+    },
+    "sci-fi-interceptor-missile-camera-pass-and-tail": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "3075197c8944da10031ef352b7e833f85ea3bd689e42ff9afd11d42e0684fe68"
+    },
+    "sci-fi-interceptor-missile-flypast-beyond-a-concrete-wall": {
+      "labels": [
+        "mosquito_buzz",
+        "speech"
+      ],
+      "sha256": "db4ff7f6debbd2b25426d9121fffabceca48f9a209f41fe5d00d2512a026034a"
+    },
+    "sheep-moves-from-straw-pen": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "9a129635e074607701097ef0e2a5c31b704f0120d8e84215cd6d40a0a8ac7fa5"
+    },
+    "small-car-pull-out-across-a-driveway": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "9b0ff387c44d54a429ca1e9193d901d78cd7aa8ce6156db35e04c61106a03db4"
+    },
+    "small-drone-landing-and-power-down": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "c3c401d28475b5555ff11890fc0448a24821b06b6fa3025cd89f2f024910b296"
+    },
+    "sports-car-distant-acceleration": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "32553feca2db77c029709f1edff11d82a66ccad73ad67bc69005fcf7247adfa0"
+    },
+    "sports-car-full-pull-from-driver-seat": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "5c96c3059c169db47f8de7ee91adc6ca7f2a984e20254e83fa85c163157b82f8"
+    },
+    "steel-parry-and-release": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "e20062d215caa4f92e98500772d4a8eaec57f97c5a7206f175cf9f319d83c57a"
+    },
+    "steel-shelving-unit-first-piece-gives-way": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "7996e66df7321779aa78581269497b00e45eaa6c1bc67e580457c8b3dcba7f95"
+    },
+    "steel-tunnel-liner-fragments-skipping-across": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "f09af56999b81998513c723f4c7e9c21bf24d6af1716a14671af4166d8610b39"
+    },
+    "steel-tunnel-liner-glancing-projectile-hit": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "929166c0474fc892078087ae1ac9b0df2d2571ca8e6abc88a4d37a570a8c7736"
+    },
+    "streetcar-departure-through-a-junction": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "d5bb4e48e6de99e9d427fc910cbc9e9038d6825e2ba20b1667d426e9dd402ca9"
+    },
+    "survey-drone-bay-loses-power": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "1892351eeff59e6fb79f806b5c36da2f028c661d32aac3febe048fcc65bce0de"
+    },
+    "swallows-above-a-farmyard-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "63e72e48ea14048db1260c6673c3db85c23d4053848e35f273ebf97b6bdd9f08"
+    },
+    "swinging-chain-gate-hard-impact-and-scatter": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "8c88e8c6e4c3d1d88e7b0956abf80e4a4b6b1dec0c7557e13524b8c96f39cfba"
+    },
+    "tactile-suit-wrist-module-loses-power": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "27a5f86e64263b15214d27aa59aaae1b9681237f2e481d6275033620b756bb8b"
+    },
+    "terrain-proximity-warning-rough-buzz": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "3d4c886403fc9edd785ef4e5b393d22f5bf6657410dafd85f51f8fef3bfcc3ee"
+    },
+    "tire-clearing-sticky-mud": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "22ec18f8003999090d4acddbceb7b3c669d0096dc97aa3c4b45a027a673a49d0"
+    },
+    "tracing-paper-pull-away": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "0803ded8186ce5ecc9c2d2764fccc2aecdb31ce796686f80acf5e6b7f29c8059"
+    },
+    "tracked-earthmover-steady-steel-run-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "f8fd86dbbb2a7696b8c61e0ce912e1910bde578b4bf10e8858c133ebd1b612fb"
+    },
+    "tractor-hitch-pin-dropped-into-hole": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "edbd0a4ae31c6744012b41df86342071fe5ea2c7940896cc186a72c66c123f12"
+    },
+    "tram-wheels-squeal-round-curve": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "8053ff29f99354721a7401853ace7d6bf347a39daecb4fce289b0ddd383aae89"
+    },
+    "turbo-straight-six-rally-car-corner-exit-throttle-roll-on": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "8ddaab51107f1c98e46d18df2abf73bb064acebcc7f818765e681523903acf8f"
+    },
+    "turbo-straight-six-rally-car-grandstand-approach": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "b9a58cb10c25f61f9c3a9e7b53cb82af96ceb5ea5ef02309f5f11dc2b8a62fe1"
+    },
+    "turbo-straight-six-rally-car-wide-open-exhaust-loop": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "2c516731ec851d641177d917833d903cba2ef5af02a2ae0a5df742d88ae280b5"
+    },
+    "twin-cylinder-road-bike-road-pace-engine-loop": {
+      "labels": [
+        "insect",
+        "mosquito_buzz",
+        "speech"
+      ],
+      "sha256": "ac1e213c997c015f3d7178d6075bbbbf4694bd3d93dbc1d21bef4f156aa46a70"
+    },
+    "twin-cylinder-road-bike-roll-to-junction-idle": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "1e3bb56307d87fbbc439db137d66609c6b0a762a07ebde12b25a76b4250d5f33"
+    },
+    "two-lions-call-across-an-enclosure": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "e918f6bc29f34d3d12c5c8726aab29a6d527b4b9350198492f9de0b498e8f20f"
+    },
+    "two-stroke-step-through-scooter-rider-approaching-roadside": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "f1b1ef8e0f2733e2ae6579395587908c1a55ed6a6d2c8a812f0990216b3d38ef"
+    },
+    "two-stroke-step-through-scooter-road-pace-engine-loop": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "589066e79426ebfef0f602e111cb96a3b42a89370bc134de3d2877c91eedf59e"
+    },
+    "two-stroke-step-through-scooter-roll-to-junction-idle": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "6d97551bc5fb52a94927d8d47ccf0d5ae8ad2fd17a18a36f697b3699db2ade90"
+    },
+    "two-stroke-step-through-scooter-snap-throttle-closed": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "d138c006c78aa88510caa4f3a6d4f48c14fd53a0de84db342410462eaa48ff1a"
+    },
+    "two-stroke-step-through-scooter-two-throttle-blips": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "421eca1476ba51f01c703455cbc3b13dd12b70f1f3d82f4f207a01e6953e7b12"
+    },
+    "v12-inspired-touring-coupe-full-power-pit-wall-departure": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "58a94d7851f972a695bbe7d2daa6bbbdfb297e14a90a89ac565c9d01b71e652a"
+    },
+    "v12-inspired-touring-coupe-grandstand-approach": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "f4f9f5688575ee4f6acf25e7b97856a2f5ce7c12c0f2c07f090bb847d4406e48"
+    },
+    "v12-inspired-touring-coupe-wide-open-exhaust-loop": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "59bb968aa4012ad61188d759310d7490d3ea9095a93d57fc7f0caa7d3a357868"
+    },
+    "vintage-runabout-passing-on-loose-ground": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "d217ca9aef42171f28bf44dba9b42934ab0b084bf6aff7cec8bec422185ec1a1"
+    },
+    "water-at-a-stony-ford-water-receding": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "3c3779375b035de53ba80121470b7e400877de19fb36d00f65b411f94c064201"
+    },
+    "wet-ladder-rung-careful-edge-step": {
+      "labels": [
+        "mosquito_buzz"
+      ],
+      "sha256": "4686ac74a0109d3ec15b9537d731eb647f1dcb3ea8fb7e1e58dd735d952d705d"
+    },
+    "wild-wolves-in-a-wooded-valley-loop": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "b5183f2a3c7c036b2298ddddf10ac1088fa738db2e556040fe1dcf630ad94a9d"
+    },
+    "wolf-howl-behind-the-treeline": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "9d3569ebebd6320c6830272b7696297042c09298871df7daecbb079f7ea83d44"
+    },
+    "wolf-pack-joins-a-valley-call": {
+      "labels": [
+        "fly_buzz",
+        "insect",
+        "mosquito_buzz",
+        "shout"
+      ],
+      "sha256": "7ecd605536e2f1ebe01367f44cf133d34820a43e99102cc396acd518b0eadb79"
+    },
+    "wolf-replies-over-moving-water": {
+      "labels": [
+        "insect",
+        "mosquito_buzz"
+      ],
+      "sha256": "97b52d55836ce408dab79019cee5849be5e69f52313ee496996ea6aca456d026"
+    }
+  }
+}

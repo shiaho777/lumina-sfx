@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "id": "orbit-and-turn",
+  "viewpoint": "One idling turbine orbits the airport listener, who turns toward it.",
+  "output": "headphones",
+  "listener": {
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "path": [
+      {
+        "at": 5.2,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yaw": 0
+      },
+      {
+        "at": 6.3,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yaw": -90
+      }
+    ]
+  },
+  "focus": {
+    "subjects": []
+  },
+  "layers": [
+    {
+      "id": "interceptor-turbofan-ramp-idle-loop",
+      "label": "turbine",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -2,
+          0.3,
+          -0.1
+        ],
+        "refDistance": 1.5,
+        "path": [
+          {
+            "at": 1.3,
+            "position": [
+              0,
+              0.4,
+              -2
+            ]
+          },
+          {
+            "at": 2.6,
+            "position": [
+              2,
+              0.5,
+              0
+            ]
+          },
+          {
+            "at": 3.9,
+            "position": [
+              0,
+              2.2,
+              1
+            ]
+          },
+          {
+            "at": 5.2,
+            "position": [
+              -2,
+              0.3,
+              0
+            ]
+          },
+          {
+            "at": 7,
+            "position": [
+              -2,
+              0.3,
+              0
+            ]
+          }
+        ]
+      },
+      "durationSec": 7,
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          6.7,
+          1
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "event": "aircraft"
+    }
+  ],
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean"
+}

@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import burlapFeedSackOpen from './_recordings/burlap-feed-sack-open.ts';
-import fieldGoatYoung from './_recordings/field-goat-young.ts';
+import fieldGoatYoung from './_recordings/isolated-young-goat.ts';
 import bundleDryStalks from './_recordings/bundle-dry-stalks.ts';
 
 export default {

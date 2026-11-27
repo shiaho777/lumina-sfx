@@ -4,6 +4,7 @@ import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
+  isolation: 'isolated', components: ['rain'],
   id: "heavy-rain-on-wooden-shingles-loop",
   name: "Heavy Rain on Wooden Shingles",
   category: "Weather & Ambience",

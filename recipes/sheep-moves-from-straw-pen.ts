@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import bundleDryStalks from './_recordings/bundle-dry-stalks.ts';
-import sheepBleat from './_recordings/sheep-bleat.ts';
+import sheepBleat from './_recordings/isolated-sheep-voice.ts';
 import pressPottingSoil from './_recordings/press-potting-soil.ts';
 import sheepBellJingle from './_recordings/sheep-bell-jingle.ts';
 

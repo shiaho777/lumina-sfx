@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picture mix comparison</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#171d21;color:#ecf1e9}
+main{max-width:940px;margin:4vh auto;padding:0 16px}h1{font-size:1.4rem}video{display:block;width:100%;border-radius:12px;background:#101417}
+.controls{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:1rem 0}button{font:inherit;color:inherit;background:#303a3f;border:1px solid #5b686e;border-radius:8px;padding:.5rem .9rem;cursor:pointer}button[aria-pressed="true"]{background:#c1dac7;color:#17291d}input{min-width:130px;flex:1}
+</style>
+<main><h1>Picture mix comparison</h1><video id="picture" playsinline preload="auto"></video><video id="other" playsinline preload="auto" hidden style="display:none"></video>
+<div class="controls"><button id="play">Play</button><input id="seek" type="range" min="0" max="1" step=".01" value="0" aria-label="Picture time">
+<button id="a" aria-pressed="true">Mix A</button><button id="b" aria-pressed="false">Mix B</button><button id="c" hidden aria-pressed="false">Mix C</button><button id="keep" hidden>Save choice</button><button id="passage" hidden>Play full cut</button><button id="reveal">Reveal mixes</button></div><output id="status" aria-live="polite"></output></main>
+<script type="application/json" id="transport"><!--TRANSPORT--></script><script type="application/json" id="ballot"><!--BALLOT--></script><script type="application/json" id="files"><!--MIXES--></script>
+<script>
+const $=id=>document.getElementById(id), files=JSON.parse($('files').textContent), tracks=[$('picture'),$('other')];
+for(let i=files.length-1;i>0;i--){const j=crypto.getRandomValues(new Uint32Array(1))[0]%(i+1);[files[i],files[j]]=[files[j],files[i]];}
+if(files.length===3){const third=$('other').cloneNode();third.removeAttribute('id');$('other').after(third);tracks.push(third);$('c').hidden=false;}
+const transport=JSON.parse($('transport').textContent), span=transport.passage;
+let current=0,operation=0,excerpt=Boolean(span);
+function bounds(v){return excerpt ? [span.start,Math.min(span.end,v.duration)] : [0,v.duration];}
+function setRange(v){const [start,end]=bounds(v);$('seek').min=start;$('seek').max=end;}
+if(span){$('passage').hidden=false;$('passage').onclick=()=>{
+ excerpt=!excerpt;const v=tracks[current];setRange(v);v.currentTime=excerpt?span.start:0;
+ $('passage').textContent=excerpt?'Play full cut':'Play busiest passage';
+};}
+function display(i){tracks.forEach((v,k)=>{v.style.display=k===i?'block':'none';v.hidden=k!==i;v.muted=k!==i;});$('a').setAttribute('aria-pressed',String(i===0));$('b').setAttribute('aria-pressed',String(i===1));$('c').setAttribute('aria-pressed',String(i===2));}
+tracks.forEach((v,k)=>{
+ v.volume=transport.volumes?.[decodeURIComponent(files[k].split('/').pop())]??1;
+ v.src=files[k];v.addEventListener('loadedmetadata',()=>{if(excerpt)v.currentTime=span.start;if(k===current)setRange(v);});
+ v.addEventListener('timeupdate',()=>{if(k===current){if(excerpt&&!v.paused&&v.currentTime>=span.end){v.pause();v.currentTime=span.start;}$('seek').value=v.currentTime;}});
+ v.addEventListener('play',()=>{if(k===current)$('play').textContent='Pause';});
+ v.addEventListener('pause',()=>{if(k===current)$('play').textContent='Play';});
+ v.addEventListener('error',()=>{$('status').textContent='Keep both movie files at their original paths.';});
+});
+const ballot=JSON.parse($('ballot').textContent);
+if(ballot){$('keep').hidden=false;$('keep').onclick=()=>{
+ const choice=ballot[decodeURIComponent(files[current].split('/').pop())];
+ const url=URL.createObjectURL(new Blob([JSON.stringify(choice,null,2)],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download='cue-choice.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ $('status').textContent='Choice saved for this cue.';
+};}
+display(0);
+async function select(i){
+ if(i===current)return;
+ const old=tracks[current],wasPlaying=!old.paused,time=old.currentTime;old.pause();
+ const token=++operation;current=i;const v=tracks[i];display(i);
+ if(Math.abs(v.currentTime-time)>.005){v.currentTime=time;if(v.seeking)await new Promise(ok=>v.addEventListener('seeked',ok,{once:true}));}
+ if(token===operation&&wasPlaying)await v.play();
+}
+$('play').onclick=()=>{operation++;const v=tracks[current];if(v.paused)v.play();else v.pause();};
+$('seek').oninput=e=>{tracks[current].currentTime=Number(e.target.value);};
+$('a').onclick=()=>select(0);$('b').onclick=()=>select(1);$('c').onclick=()=>select(2);
+$('reveal').onclick=()=>{$('status').textContent=files.map((x,i)=>'Mix '+'ABC'[i]+' · '+decodeURIComponent(x.split('/').pop())).join('     ');};
+</script></html>

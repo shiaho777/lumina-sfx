@@ -1,5 +1,3 @@
-import { mix } from '../engine/dsp.ts';
-import { airTransient } from './_shared/air-transients.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/demo-jet-pass.ts';
@@ -8,7 +6,7 @@ export default {
   id: "jet-pass-overhead",
   name: "Jet pass overhead",
   category: "Aircraft",
-  tags: ["jet", "pass", "overhead"],
+  tags: ['flyby', 'distant', 'roll', "jet", "pass", "overhead"],
   loopable: false,
   durationSec: 3.64,
   targetRmsDbfs: -25,
@@ -16,15 +14,8 @@ export default {
   mixRole: "vehicle",
   ...sceneCredits(source),
   render(ctx, { params, seed }) {
-    const bed = airTransient(ctx, {
-      motion: "flyby", focus: .43, width: .27, whistle: 228,
-      weight: .72, cutoff: 6800, reflection: 0,
-    }, params.intensity);
-    const detail = scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 3.64, .81, .62, 8300, .004, .39],
-      ["brush", "air", .78, 1.35, .43, 2900, .10],
+    return scene(ctx, seed, params.intensity, [
+      ['clip', source, 0, 3.64, .92, .62, 3100 + 3500 * params.intensity, .004, .39],
     ]);
-    mix(bed, detail);
-    return bed;
   },
 } satisfies SoundRecipe;

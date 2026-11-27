@@ -1,17 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { fieldWeather } from './_shared/weather-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/atlas-glass.ts';
-import wash from './_recordings/atlas-tin.ts';
-import detail from './_recordings/water-drops-from-spout.ts';
+import source from './_recordings/isolated-rain-glazing.ts';
 
 export default {
   id: "rain-on-a-greenhouse-glazing-bar-continuous-patter-loop", name: "Rain on a greenhouse glazing bar — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "interior", "continuous patter", "on", "a", "greenhouse"], loopable: true, durationSec: 6.51,
+  tags: ["rain", "field-recording", "interior", "continuous patter", "on", "a", "greenhouse"], loopable: true, sustainMode: 'evolving', durationSec: 6.51,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
-  ...sceneCredits(source, wash, detail),
+  ...sceneCredits(source), isolation: 'isolated', components: ['rain'],
   render(ctx, { seed, params }) {
-    return fieldWeather(ctx, seed, params.intensity, { base: source, wash, detail, bodyHz: 4700, detailHz: 7800, spacing: .52, depth: .66, space: "interior" }, "steady");
+    return fieldWeather(ctx, seed, params.intensity, { base: source, wash: source, detail: source, singlePerformance: true, bodyHz: 4700, detailHz: 7800, spacing: .52, depth: .66, space: "interior" }, "steady");
   },
 } satisfies SoundRecipe;

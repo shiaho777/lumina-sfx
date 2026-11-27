@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "id": "porch-to-roadside",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "balance": "natural",
+  "output": "headphones",
+  "viewpoint": "Stay beside the porch rain until the cut to the bike at the gate.",
+  "listener": {
+    "position": [
+      -1.5,
+      0,
+      0
+    ],
+    "path": [
+      {
+        "at": 4.15,
+        "cut": true,
+        "position": [
+          9,
+          0,
+          -1
+        ],
+        "yaw": 35
+      }
+    ]
+  },
+  "layers": [
+    {
+      "id": "canopy-rain-on-broad-banana-leaves-continuous-patter-loop",
+      "label": "shower",
+      "event": "weather",
+      "durationSec": 8.4,
+      "placement": {
+        "kind": "area",
+        "position": [
+          -3,
+          1,
+          -2.4
+        ],
+        "refDistance": 2.7,
+        "spread": 0.52
+      }
+    },
+    {
+      "id": "motorcycle-steady-engine-loop",
+      "label": "rider",
+      "event": "engine",
+      "durationSec": 8.4,
+      "params": {
+        "rpm": 0.66,
+        "intensity": 0.72
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          17,
+          0,
+          -3.4
+        ],
+        "path": [
+          {
+            "at": 8.4,
+            "position": [
+              3,
+              0,
+              -3.4
+            ]
+          }
+        ],
+        "refDistance": 2.5,
+        "doppler": true
+      }
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-turbine-idle.ts';
-import loaded from './_recordings/demo-fighter-taxi.ts';
+import idle from './_recordings/isolated-demo-turbine-idle.ts';
+import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
+  isolation:'isolated', components:['jet-engine'],
   id: "jet-warm-idle-on-ramp-loop",
   name: "Jet Warm Idle on Ramp",
   category: "Aircraft",

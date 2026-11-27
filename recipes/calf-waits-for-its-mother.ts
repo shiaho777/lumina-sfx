@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import fieldCalfContact from './_recordings/field-calf-contact.ts';
-import cowMoo from './_recordings/cow-moo.ts';
+import fieldCalfContact from './_recordings/isolated-barn-call.ts';
+import cowMoo from './_recordings/field-farm-cow.ts';
 
 export default {
   id: 'calf-waits-for-its-mother', name: "Calf waits for its mother", category: 'Animals',
@@ -11,8 +11,8 @@ export default {
   ...performanceCredits(fieldCalfContact, cowMoo),
   render(ctx, { seed, params }) {
     return perform(ctx, seed, params.presence, [
-      [fieldCalfContact, 0.0, 1.64, 1.0, 1, 10500, 0, 0.001, 0.022],
-      [cowMoo, 1.99, 1.79, 0.43, 0.99, 4800.0, 0, 0.001, 0.022],
+      [fieldCalfContact, 0.0, 1.32, 1.0, 1.14, 2500, 0, 0.001, 0.022],
+      [cowMoo, 1.99, 1.35, 0.43, 0.96, 2700.0, 0, 0.001, 0.022],
     ], { taps: [0.042, 0.102], send: 0.055, dampingHz: 2600 });
   },
 } satisfies SoundRecipe;

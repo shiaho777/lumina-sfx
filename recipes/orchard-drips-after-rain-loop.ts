@@ -2,6 +2,7 @@ import { farmBed } from './_shared/farm-foley.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
 export default {
+  isolation: 'isolated', components: ['water-drops'],
   id: "orchard-drips-after-rain-loop", name: "Orchard Leaves Dripping after Rain", category: "Weather & Ambience",
   tags: ["orchard", "rain", "leaf", "drip", "afternoon", "loop"],
   durationSec: 12.6, loopable: true, targetRmsDbfs: -32,

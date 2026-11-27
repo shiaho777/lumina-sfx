@@ -1,5 +1,6 @@
 {
   "stationaryTexture": [
+    "city-bus-engine-idle-loop",
     "motion-marine-engine",
     "motion-outboard-aeration",
     "motion-harbor-hydrophone",
@@ -7,7 +8,16 @@
     "demo-turbine-idle",
     "motion-flatboat-throttle",
     "motion-outboard-cranking",
-    "response-diesel-loaded"
+    "response-diesel-loaded",
+    "tractor-diesel-idle-loop",
+    "demo-rotor-bed",
+    "demo-carriage-bed",
+    "milestone-train",
+    "demo-sheltered-wind",
+    "field-corn-rustle",
+    "demo-quadcopter-run",
+    "demo-quadcopter-hover",
+    "milestone-prop-steady"
   ],
   "transient": [
     "clarity-pistol",
@@ -21,7 +31,30 @@
     "milestone-key-single",
     "hardwood-footstep"
   ],
+  "intactTakes": [
+    "natural-sparrow",
+    "natural-gravel",
+    "natural-gravel-drag"
+  ],
   "windows": {
+    "small-clapper-strike": {
+      "source": "sheep-bell-jingle",
+      "cuts": [[0, 0.118, 0.091], [1, 0.733, 0.106]],
+      "matchStrike": true
+    },
+    "running-outboard": {
+      "source": "motion-flatboat-throttle",
+      "cuts": [[0, 0.18, 2.28], [0, 2.74, 2.46]]
+    },
+    "paperboard-seat": {
+      "source": "cardboard-package-open",
+      "cuts": [[0, 0.014, 0.105]],
+      "matchStrike": true
+    },
+    "dry-maize-leaf": {
+      "source": "field-corn-rustle",
+      "cuts": [[0, 4.66, 0.86], [0, 7.72, 1.08], [0, 11.67, 0.94], [0, 17.21, 1.03]]
+    },
     "key-firm": {
       "source": "milestone-key-single",
       "cuts": [
@@ -138,6 +171,699 @@
           0.147
         ]
       ]
+    },
+    "canopy-droplets": {
+      "source": "atlas-glass",
+      "cuts": [
+        [
+          0,
+          3.266,
+          0.044
+        ],
+        [
+          0,
+          2.612,
+          0.058
+        ],
+        [
+          0,
+          1.004,
+          0.07
+        ],
+        [
+          0,
+          0.002,
+          0.049
+        ],
+        [
+          0,
+          2.954,
+          0.063
+        ],
+        [
+          1,
+          0.002,
+          0.044
+        ],
+        [
+          1,
+          0.98,
+          0.058
+        ],
+        [
+          1,
+          2.03,
+          0.07
+        ],
+        [
+          1,
+          1.64,
+          0.049
+        ],
+        [
+          1,
+          0.422,
+          0.063
+        ]
+      ],
+      "matchStrike": false
+    },
+    "thunder-attack": {
+      "source": "atlas-thunder-left",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.19
+        ]
+      ],
+      "matchStrike": false,
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "barn-call": {
+      "source": "cow-moo",
+      "cuts": [
+        [
+          0,
+          0.015,
+          1.16
+        ]
+      ]
+    },
+    "turbine-core": {
+      "source": "demo-fighter-rise",
+      "cuts": [
+        [
+          0,
+          2.65,
+          1.53
+        ]
+      ]
+    },
+    "bike-idle-core": {
+      "source": "motorcycle-throttle-rev",
+      "cuts": [
+        [
+          0,
+          0.08,
+          1.12
+        ]
+      ]
+    },
+    "wood-fire": {
+      "source": "atlas-fire",
+      "cuts": [
+        [
+          0,
+          0.1,
+          2.92
+        ],
+        [
+          1,
+          0.15,
+          3.4
+        ]
+      ]
+    },
+    "storm-right": {
+      "source": "atlas-thunder-right",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.19
+        ]
+      ],
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "storm-body": {
+      "source": "atlas-thunder-roll",
+      "cuts": [
+        [
+          0,
+          0,
+          2.65
+        ],
+        [
+          1,
+          0.01,
+          2.42
+        ]
+      ],
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "cat-call": {
+      "source": "cat-meow",
+      "cuts": [
+        [
+          0,
+          0.004,
+          0.72
+        ]
+      ]
+    },
+    "lamb-call": {
+      "source": "field-lamb-call",
+      "cuts": [
+        [
+          0,
+          0.008,
+          0.93
+        ]
+      ]
+    },
+    "chewing": {
+      "source": "field-cow-chew",
+      "cuts": [
+        [
+          0,
+          0.02,
+          0.83
+        ],
+        [
+          1,
+          0.03,
+          1.26
+        ]
+      ]
+    },
+    "wind-fabric": {
+      "source": "demo-tent-tension",
+      "cuts": [
+        [
+          0,
+          0.18,
+          0.67
+        ],
+        [
+          1,
+          0.56,
+          0.74
+        ]
+      ]
+    },
+    "wind-leaf": {
+      "source": "dry-vine-brush",
+      "cuts": [
+        [
+          0,
+          0.025,
+          0.43
+        ],
+        [
+          1,
+          0.035,
+          0.49
+        ]
+      ]
+    },
+    "rain-roof": {
+      "source": "atlas-tin",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "rain-foliage": {
+      "source": "atlas-leaves",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "rain-drain": {
+      "source": "atlas-drain",
+      "cuts": [
+        [
+          0,
+          1.82,
+          1.04
+        ],
+        [
+          1,
+          0.94,
+          1.06
+        ]
+      ]
+    },
+    "rain-glazing": {
+      "source": "atlas-glass",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "hearth-wood": {
+      "source": "hearth-wood",
+      "cuts": [
+        [
+          0,
+          0.01,
+          3.96
+        ],
+        [
+          1,
+          0.01,
+          3.96
+        ],
+        [
+          2,
+          0.01,
+          3.96
+        ]
+      ]
+    },
+    "rail-bend": {
+      "source": "demo-tram-squeal",
+      "cuts": [
+        [
+          0,
+          2.44,
+          1.06
+        ],
+        [
+          0,
+          4.14,
+          1.13
+        ]
+      ],
+      "extendSec": 7.2
+    },
+    "tire-scrub": {
+      "source": "car-tire-skid-launch",
+      "cuts": [
+        [
+          0,
+          0.14,
+          1.55
+        ],
+        [
+          0,
+          0.37,
+          1.66
+        ]
+      ]
+    },
+    "robin-call": {
+      "source": "natural-robin",
+      "cuts": [
+        [
+          0,
+          0.005,
+          1.72
+        ],
+        [
+          1,
+          0.04,
+          2.21
+        ]
+      ]
+    },
+    "sheep-voice": {
+      "source": "sheep-bleat",
+      "cuts": [
+        [
+          0,
+          0.004,
+          1.17
+        ],
+        [
+          1,
+          0.005,
+          1.1
+        ]
+      ]
+    },
+    "young-goat": {
+      "source": "field-goat-young",
+      "cuts": [
+        [
+          1,
+          0.003,
+          0.86
+        ]
+      ]
+    },
+    "ring-fire": {
+      "source": "ring-fire",
+      "cuts": [
+        [
+          0,
+          0.006,
+          3.48
+        ],
+        [
+          1,
+          0.006,
+          3.48
+        ]
+      ]
     }
+  },
+  "fieldTakes": {
+    "van-engine-running": [
+      {
+        "startSec": 0.015,
+        "frames": 58800,
+        "sha256": "eec437ff123fc3495c3733a549522a60f4fcd69a64b23894264e688559db7aba"
+      }
+    ],
+    "asphalt-tire-texture": [
+      {
+        "startSec": 23.6,
+        "frames": 96000,
+        "sha256": "37d1fdde0ba6f649235dfeaf82c1f3bd87b05ec0f902adb2dc819a695757decd"
+      }
+    ],
+    "desk-fan-air": [
+      {
+        "startSec": 5.0,
+        "frames": 175200,
+        "sha256": "3c54f6c5e674904a3c5a9f8036b80931a6ddaee591005b501a4530c9ca40b693"
+      },
+      {
+        "startSec": 9.9,
+        "frames": 175200,
+        "sha256": "84b8f57b15497628fd27c5ee2b7e26925913b24a8f82c5923e21b72f79773666"
+      }
+    ],
+    "poplar-leaves": [
+      {
+        "startSec": 24.1,
+        "frames": 121200,
+        "sha256": "529a80beac9a491144d0c7f0359b1886ade5d01f11278f32d7f27d962ea1fd09"
+      },
+      {
+        "startSec": 38.4,
+        "frames": 123600,
+        "sha256": "2b349d573b2816ec2544a18f802819f7a76baa08967ed4a9e6ff1ad3de8e3017"
+      }
+    ],
+    "hardwood-basketball": [
+      {
+        "startSec": 9.697,
+        "frames": 10080,
+        "sha256": "351cf603db051686aed76eeb303f1c399a7da04a772966c665753beb363cab3d"
+      },
+      {
+        "startSec": 18.358,
+        "frames": 10080,
+        "sha256": "6a5062e84d4314dcb9b99dcb8d80cf314de4e16ee9df325cac60bb79e0de82ac"
+      }
+    ],
+    "quad-hover-blades": [{"startSec":37.35,"frames":68400,"sha256":"a13babde93072b2852abf05d70a80dbbdf7afc4a524c3dd99fc6de0b90756dc0"}],
+    "quad-loaded-blades": [{"startSec":40.0,"frames":69600,"sha256":"f9d8198cfd772f84c7ddc91ca2a0403f859898920fd757846b74933ef8580817"}],
+    "shelter-roof-patter": [{"startSec":2,"frames":80400,"sha256":"d2fa343e1311d41a7280cf9bda3070e16dca352e92fe7cb1dd2d474424b04583"},{"startSec":11.8,"frames":85200,"sha256":"0475e24ec0031de3af8a7e673113c059c0605170def2cb48aab6944b2b7b14bb"}],
+    "dry-meadow-breeze": [{"startSec":18.8,"frames":61200,"sha256":"db1dc55829fcaa888fe52c8b3366c7132b738f630e77bada7291b3078ef834ca"},{"startSec":21.4,"frames":62400,"sha256":"c265c20b769505dacfde9c34b72c54a72155f67b40be41a2e2c0331e1e871746"}],
+    "glass-trackpad": [{"startSec":0.6244063,"frames":2003,"sha256":"2fdc4a8b6c38e737ff138dfc4b58e8d7d94968dd23c219906fedc11a7d7b1f55"},{"startSec":1.070875,"frames":2084,"sha256":"93e447c24d21380aabd6b41e7b6ac8663bc0aa749422b46f2cbd785577971e5d"},{"startSec":2.6514062,"frames":2099,"sha256":"3a0ca6b025dbb9db2a6cecf333bcb7c68d08354e20258411ac358d678dc31913"},{"startSec":0.7810625,"frames":1374,"sha256":"29ae0e6a726ada5f667dc01a746d383baa92ca08345fcc26a4efe6d69dbb95fa"},{"startSec":1.245125,"frames":1276,"sha256":"03acb31ef6b85ecbf62e7a621f6c63305227e2e1afd6c5ca944a09dbe7328689"},{"startSec":2.801125,"frames":1404,"sha256":"8332fd11ebf83964f13cb6084fe6b3edf1057bbf9e62fe340b8a3cfd17fe96dd"}],
+    "drawing-pen-tip": [{"startSec":4.3494062,"frames":1139,"sha256":"ba20248013b855f095b8f61269bcff195cf013e7b7bd2c7a3341994d89339f28"},{"startSec":4.8194688,"frames":1137,"sha256":"e06b05de5b51c4b6aa4e9a3ed3663c20ac8f70219975495ea4849bbf8e58aab7"},{"startSec":5.0174375,"frames":1234,"sha256":"fb360dee16751a35d566445f148f9d0e846a55b442c2c66b058edf43166a5e3d"},{"startSec":6.9066562,"frames":1227,"sha256":"0bd82225164fd16ae70c05541818629305af9e9902f94c0becbeb5cab85def0f"}],
+    "linear-key-travel": [{"startSec":0.02825,"frames":2840,"sha256":"7b793ed11efa5a5ff3e2d1a0949e11425ebd1a8c2b8cb17bfe7233903e066706"},{"startSec":0.13275,"frames":2056,"sha256":"ed7cf55df626a9875a9dc2939fb0a929031f12c9ca6cd4b07119189d352ee38c"}],
+    "wide-return-travel": [{"startSec":0.0158125,"frames":2886,"sha256":"f0ffcbc6ef9c229355ea9971bc033e28efa27625f27968582ef19582c7582c7b"},{"startSec":0.1129375,"frames":1954,"sha256":"3ddcca27098907bdb425df3071d2503f652204a5f25ce6f38eba980c3837cae3"}],
+    "motorcycle-under-load": [
+      {
+        "startSec": 39.95,
+        "frames": 126000,
+        "sha256": "842560630b08c8b763174fcec28965a3ab94fc9c0d3745675395951814987a97"
+      },
+      {
+        "startSec": 50.45,
+        "frames": 124800,
+        "sha256": "ba17b1320430c2979cc64fa5b544379fd3fddc4ae362f6c91b1313f7f70070e8"
+      }
+    ],
+    "wood-flame": [
+      {
+        "startSec": 37,
+        "frames": 240000,
+        "sha256": "3d79c6a9439019e97c575dc0a8e738feb3ba7d3a22b569a36282819fe2c512bd"
+      },
+      {
+        "startSec": 21,
+        "frames": 240000,
+        "sha256": "110e4bb4ba8d0c4193d0889d7b9dd72a0c4f321f945d2bcc5525c795fef6fa7d"
+      }
+    ],
+    "garden-shower": [
+      {
+        "startSec": 0.7,
+        "frames": 288000,
+        "sha256": "0429865a38b601e33c294e457e56256fcc1e2b7626d4e061be025660e5bf69ca"
+      },
+      {
+        "startSec": 13,
+        "frames": 288000,
+        "sha256": "0f3ed1bea33e1edee16a4ee16c5be88cd4f8ef7e0bf49effc2af162b596177ac"
+      }
+    ],
+    "aluminium-roof-shower": [
+      {
+        "startSec": 6,
+        "frames": 336000,
+        "sha256": "67704f201e972f15558ec0f3baf46473d70e989ec12ca4ff1fdd2f20238985b1"
+      },
+      {
+        "startSec": 31,
+        "frames": 336000,
+        "sha256": "d079840e4576e5fdddbdaa6938749ee3498b522f174e7ccaaae12d817cc16ecc"
+      },
+      {
+        "startSec": 55,
+        "frames": 336000,
+        "sha256": "b7e4f0f850ca9bcf8a2507553c78ff872eddd6a28b9c4f6782946726f316f84a"
+      }
+    ],
+    "swimmer-entry": [
+      {
+        "startSec": 0.557,
+        "frames": 51360,
+        "sha256": "161382f3d6742999d6106f008016ae47f4baddcb9edbd962cd4cc7be3ddb86cb"
+      }
+    ],
+    "water-lift": [
+      {
+        "startSec": 0.092,
+        "frames": 51840,
+        "sha256": "7b811d129a38dab184a1ce09d0061e3809f7e0cd05197ebaa417b61b23c32cd4"
+      }
+    ],
+    "coasting-freehub": [
+      {
+        "startSec": 6.13,
+        "frames": 126000,
+        "sha256": "4af13d36a732b8dd62f5b83b6e5151048b2f2f356f9859e61e37b3e42f4b4dd2"
+      },
+      {
+        "startSec": 10.08,
+        "frames": 107520,
+        "sha256": "2444b09e38677137d137231ba8088e92682d9e658dff23370e9cbd3af75ba238"
+      }
+    ],
+    "breaking-shore": [
+      {
+        "startSec": 25.14,
+        "frames": 152400,
+        "sha256": "7d7725a64320d9dd6ab7a01c9d176bb8ae3e548490febb7bf4530c5b474d8121"
+      },
+      {
+        "startSec": 41.03,
+        "frames": 154080,
+        "sha256": "1c8815c726c4657f959b812fce1a79d78c36306cf165ec19b8e7bac8822bb663"
+      }
+    ],
+    "shutting-latch": [
+      {
+        "startSec": 0.146,
+        "frames": 2848,
+        "sha256": "15b6ea62a166f905e7b2f548942acbcbc586fa85d8e4b8ef1a23ce6a7b18cc3b"
+      }
+    ],
+    "keys-on-table": [
+      {
+        "startSec": 2.627,
+        "frames": 12768,
+        "sha256": "012da1a3b376896b0d39607211915d0d8e4d4868eaa35282b5e539aef554aee0"
+      },
+      {
+        "startSec": 14.727,
+        "frames": 13792,
+        "sha256": "6d97c47327c6edd1ae3b0c60d922ef61d5413e0c50e6f3b4bef8da3f6722d4c3"
+      }
+    ],
+    "finger-on-phone": [
+      {
+        "startSec": 4.76925,
+        "frames": 1472,
+        "sha256": "6fd5d43bdfaf4c1da9275ca9fcd599363c6e8d0cbd3954e1c4db5ff3c5d42821"
+      },
+      {
+        "startSec": 9.55125,
+        "frames": 1600,
+        "sha256": "869a8c1a546c59c334faccae0f57ffc9e71fc623eca66a65d2ddd1c4ea7b9c5c"
+      },
+      {
+        "startSec": 10.427,
+        "frames": 1536,
+        "sha256": "8d7d7b38e398020e8b9a72755cae8f72aca09cebb178b0eb3722083d89efba38"
+      }
+    ],
+    "linear-mechanical-spacebar": [
+      {
+        "startSec": 0.006,
+        "frames": 6848,
+        "sha256": "1be2d677bf83393827d9287e93370d502fe26b6646125014e22a458ed938d607"
+      }
+    ],
+    "laptop-scissor-spacebar": [
+      {
+        "startSec": 0,
+        "frames": 5184,
+        "sha256": "000a52f078f40f2822c11cc992bf1415b20e825e1f7d8c1ab114324ea078e4e0"
+      }
+    ],
+    "mx-desktop-switch": [
+      {
+        "startSec": 0.2980045,
+        "frames": 2426,
+        "sha256": "33551331cc2cbca6898af6211884eb7b5661e575c7956a1de901bcaaea0d690d"
+      },
+      {
+        "startSec": 1.5319955,
+        "frames": 2426,
+        "sha256": "c1029ab81442871caaba02f2cedfe880b0816ab6d9bbf32c3b65669d82f3ae8b"
+      },
+      {
+        "startSec": 2.9590023,
+        "frames": 2426,
+        "sha256": "80c2eca14340b8aa9f4e3a7916a01681335dc7d13aef1840baebb09706269e50"
+      },
+      {
+        "startSec": 4.2280045,
+        "frames": 2426,
+        "sha256": "ad77dbc61ded3ade986700faba9ab17deeb116c008dc909ab9ea8a2c3faeeefc"
+      },
+      {
+        "startSec": 0.42,
+        "frames": 2426,
+        "sha256": "d87a21eb53f8d9752bca91f5935dc410840532617e8dded0bf155e74f4787c1a"
+      },
+      {
+        "startSec": 1.6809977,
+        "frames": 2426,
+        "sha256": "58add65f63a9b88e55726b16d9f6a16ad054e4f3705a7b35e58bd676bb52ae65"
+      },
+      {
+        "startSec": 3.0880045,
+        "frames": 2426,
+        "sha256": "4daa5b2d25cb93bca819137121c84fde4bf66df12261677ff729011ca38aeeca"
+      },
+      {
+        "startSec": 4.3670068,
+        "frames": 2426,
+        "sha256": "4c69ab9b0899eeec27939e13bce8a465d813f4a6459632d98a478af00cfbb610"
+      }
+    ],
+    "mx-soft-switch": [
+      {
+        "startSec": 9.4019955,
+        "frames": 2822,
+        "sha256": "bfb811a6b5cce0a7c7356a3afb0d882d770122107f9a6ad37e50b2599f514c0a"
+      },
+      {
+        "startSec": 11.3509977,
+        "frames": 2822,
+        "sha256": "c2b3c2516be4349223a6e7631d70c419d130fa42960df8422d1d6bee2312b681"
+      },
+      {
+        "startSec": 9.6339909,
+        "frames": 2822,
+        "sha256": "972ea77b24f65cce726964227aedb91bb84ef1e31886d679ee5c7b72aba98b76"
+      },
+      {
+        "startSec": 11.5819955,
+        "frames": 2822,
+        "sha256": "0ab9d6e0fb0d8a0fba2c8f7d61c70067e312bfdcdd3872649602d44d74fe9937"
+      }
+    ],
+    "linear-row-keys": [
+      {
+        "startSec": 0.2490023,
+        "frames": 2470,
+        "sha256": "72655cf5b664642aa1d2802bb3244c285a2a08a020cce670d72809df8dfff9d2"
+      },
+      {
+        "startSec": 2.0639909,
+        "frames": 2470,
+        "sha256": "66a969988fa224fa7d038c6c928e7b7b3e80107699ceb730b380ab6a5858e012"
+      },
+      {
+        "startSec": 3.01,
+        "frames": 2470,
+        "sha256": "c2c96021fd05185c66b4664d015275fbf04165f067e3bfba74c5377a9b37d58d"
+      },
+      {
+        "startSec": 4.0049887,
+        "frames": 2470,
+        "sha256": "e80b92b6cc72b24e0459b330283d3a80cdfee60e29df45a690a2784ed7a2e174"
+      },
+      {
+        "startSec": 0.3270068,
+        "frames": 2470,
+        "sha256": "00fb28be88ef60d4fae3ddf1e8dd99caca5633a4ff875503e044081a9480942d"
+      },
+      {
+        "startSec": 2.1229932,
+        "frames": 2470,
+        "sha256": "debc7f030294b612b15ce08fbc4d725d19f89f975e4a2a785859691ab86194f1"
+      },
+      {
+        "startSec": 3.0839909,
+        "frames": 2470,
+        "sha256": "dfa82b695c5662a44bf973454252446374f5f49ae611a9b228b62dabc19c4d13"
+      },
+      {
+        "startSec": 4.0729932,
+        "frames": 2470,
+        "sha256": "83f1b5649acf1389dc97d5a9e311023168d002fa0c0a841c3f2aea395ce95fff"
+      }
+    ]
   }
 }

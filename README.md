@@ -1,6 +1,10 @@
 # Lumina SFX
 
-An offline sound studio for coding agents. Find a sound among 2,853 editable effects, layer it with others, and export a WAV or wire it into your game. Compose instrumental game music and export an editable score, stereo WAV and track stems.
+An offline sound studio for coding agents. Find a sound among 2,882 editable effects, layer it with others, and export a WAV or wire it into your game. Compose instrumental game music and export an editable score, stereo WAV and track stems.
+
+Describe where the listener is and what they should hear first. A pilot can follow an engine through rain while someone on the beach hears the same aircraft pass overhead. Choose a speaker mix, binaural headphone WAV or independently moving game emitters. [Spatial audio and scene mixing](references/listening-scenes.md)
+
+**New in v1.5.0** — Hear footsteps circle the listener on headphones, move from open rain into shelter, or sync a recorded swipe to a moving panel. [Watch the demo](https://github.com/LuminaBench/lumina-sfx/releases/download/v1.5.0/LuminaSFXv1.5.mp4) · [Release notes](references/v1.5-release.md)
 
 This development fork maintains the native instrument models, editable music scores, and adaptive music workflow. LuminaBench maintains the original repository and sound library. [Upstream repository](https://github.com/LuminaBench/lumina-sfx) · [Music workflow](references/music-workflow.md)
 
@@ -13,6 +17,8 @@ This development fork maintains the native instrument models, editable music sco
 | [▶ Heavy rain and close thunder](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/storm-front.mp3) · 5 s | A gust moves through heavy rain. A close thunderclap breaks over it. |
 | [▶ Three shots on steel](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/pistol-steel-ricochet.mp3) · 2.85 s | Three sharp reports, each answered by a steel impact and a ricochet. |
 | [▶ Fireside storm](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/fireside-distant-thunder.mp3) · 10 s | The fire crackles up close. Thunder rolls in the distance. |
+
+For a demo video, the skill can spot gestures to picture, reuse a recorded click and deliver a separate effects track. [Score a demo edit](references/launch-audio.md#score-a-finished-edit)
 
 ## Install
 
@@ -61,6 +67,7 @@ Run these from the installed skill directory or a clone of this repository. Repl
 
 ```sh
 node scripts/choose.mjs "thocky mechanical keyboard click" --isolated
+node scripts/choose.mjs "settings tab" --palette soft
 node scripts/choose.mjs "fire crackle" "distant thunder" --scene
 node scripts/search.mjs rain --loop
 node scripts/search.mjs moored hull --background-checked

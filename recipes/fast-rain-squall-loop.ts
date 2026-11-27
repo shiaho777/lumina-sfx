@@ -2,6 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { surfaceRain } from './_shared/weather-textures.ts';
 
 export default {
+  isolation: 'isolated', components: ['rain'],
   id: "fast-rain-squall-loop", name: "Fast Rain Squall", category: 'Weather & Ambience',
   tags: ["rain","downpour","squall","fast"], loopable: true, durationSec: 6.8,
   params: { gusts: { label: "Gusts", min: 0, max: 1, default: 0.74 } },

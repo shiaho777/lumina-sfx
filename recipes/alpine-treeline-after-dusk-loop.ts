@@ -5,6 +5,7 @@ import source from './_recordings/field-corn-rustle.ts';
 import source2 from './_recordings/field-night-crickets.ts';
 
 export default {
+  contains: ['night insects', 'crickets'],
   id: "alpine-treeline-after-dusk-loop",
   name: "Alpine Treeline after Dusk",
   category: "Weather & Ambience",

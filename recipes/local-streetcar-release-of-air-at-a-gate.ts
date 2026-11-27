@@ -1,7 +1,7 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/truck-air-brake-release.ts';
-import source2 from './_recordings/demo-tram-squeal.ts';
+import source2 from './_recordings/isolated-rail-bend.ts';
 
 export default {
   id: "local-streetcar-release-of-air-at-a-gate",

@@ -1,0 +1,100 @@
+clean UI click	@press
+hover a settings control	@focus
+switch one settings tab	@tab
+save preferences in my app	@confirm
+back in the settings menu	@back
+a toggle turns off	toggle-off
+toggle on in a menu	toggle-engage
+move a slider one notch	@scroll
+a toast notification arrives	@notice
+text field gains focus	@focus
+scrub the timeline one frame	@scrub
+drag handle grabs	@grab
+release a UI drag handle	@drop
+a card snaps into place	@snap
+undo last edit	@undo
+redo the interface edit	@redo
+try a disabled toggle	@disabled
+commit a settings change	@confirm
+scroll down a menu list one notch	@scroll
+open the next settings tab	@tab
+a keyboard key goes down	keyboard-key-down
+a laptop scissor key down	laptop-scissor-keyboard-key-down
+a thocky mechanical keyboard click	gasket-mount-keyboard-key-down
+a short word typed on a laptop	laptop-scissor-keyboard-typed-word
+press Return on a laptop	laptop-scissor-keyboard-return
+release the laptop keyboard key	laptop-scissor-keyboard-key-up
+hit the laptop spacebar	laptop-scissor-keyboard-spacebar
+single desktop mouse click	desktop-mouse-press$
+a mouse double click	mouse-double-click
+mouse button release	mouse-release
+press a glass trackpad	glass-trackpad-press$
+trackpad double click	trackpad-double-click
+a stylus press	!review
+hold the mouse button	mouse-press$
+typing a word on a mechanical keyboard	keyboard-typed-word
+a title card lands	@land
+smooth product logo reveal	@reveal
+quick swish for a product demo	@whip
+a soft logo outro	@close
+page wipe in a launch video	@wipe
+a leftward panel swipe	swipe-left
+slide the panel left to right	swipe-right
+right to left swipe for a trailer	swipe-left
+a title rises into frame	@rise
+a wide product reveal swell	@swell
+a short trailer cut	@cut
+a minimal launch video transition	@cut
+a high energy trailer swipe	@whip
+logo sting on the end card	@close
+a panel slides into view	@slide
+rain only	rainfall-open-air-clean-loop
+just thunder	thunder-isolated-rolling-strike
+light rain without wind	light-rain-loop
+heavy rain alone	heavy-storm-rain-loop
+a distant thunder roll	distant-.*thunder|thunder-isolated
+cockpit without rain	interceptor-turbofan-canopy-interior-cruise-loop
+a fire crackling	campfire-crackle-loop
+rain hitting a canopy	canopy.*(droplet|rain)|rain-canopy
+a wave breaking on shore	surf|shore-break|wave
+a swimmer breaks the surface	swimmer-breaks-into-air
+small hearth fire behind a grate	hearth-fire-behind-an-iron-grate-.*loop
+rain patter on a loose garage door	garage-door-(continuous-patter|downpour-recedes)
+banana leaves in a steady downpour	banana-leaves-continuous-patter
+distant thunder across a lake	distant-thunder-across-a-lake
+a motorboat cruising offshore	motorboat-steady-offshore
+a shoe step on indoor hardwood	indoor-hardwood-shoe-step
+a wooden floor step without a barn creak	indoor-hardwood-shoe-step|stride-.*wood
+a short floorboard flex	indoor-floorboard-brief-flex
+one foot lands on metal stairs	stride-metal-stairs
+one step on snow	stride-snow|snow-footstep
+one step in mud	stride-mud|mud-footstep
+a footstep on sand	stride-sand|sand-footstep
+a footstep on grass	stride-grass|grass-footstep
+a footstep on concrete	stride-concrete|concrete-footstep
+a footstep on gravel	stride-gravel|gravel-footstep
+a portal opens in a game trailer	portal-unfold
+a portal snaps closed	portal-snap-closed
+an energy shield blocks an impact	energy-shield-block
+a game energy shield collapses	energy-shield-collapse
+a quiet UI click in a fantasy game	@press
+a farm trailer coupling	farm-trailer-coupling
+a cow moo	cow-moo|cow-.*(low|call|moo)
+a chicken clucking	chicken.*cluck|hen.*cluck
+plant large seeds	plant-large-seeds
+scatter hay for livestock	hay|fodder|stall-straw-fork-toss
+a tractor starts	tractor.*(start|ignition)
+a propeller plane cockpit	light-propeller-plane-cockpit-loop
+a distant rolling jet flyby	jet.*(fly|pass)|fly.*jet
+a bell passing the listener	bell
+a controller changes one tab in a racing game	@tab
+cursor moves across static text	!silence
+hold on the still logo in silence	!silence
+a disabled toggle gives no feedback	!silence
+leave this reading pause silent	!silence
+a slow camera push in with no added sound	!silence
+a trailer with no action specified	!review
+something nice for my app	!review
+a ceramic jellyfish teleporter	!review
+a velvet comet made of marbles	!review
+a sound for a product video	!review

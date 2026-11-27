@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { digest, encodeDelivery, publishAsset } from './audio-export.mjs';
 import { spawnSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
-import { checkIsolatedRecipes, installRecipes } from './install-files.mjs';
+import { checkIsolatedRecipes, installRecipes, selectRecipes } from './install-files.mjs';
 
 
 const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --dest <game/audio>
@@ -19,13 +19,17 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
   --mood neutral|calm|dramatic (also applies to the root of --spec)
   --style natural|cinematic|arcade
   --format ts|wav|ogg|opus (default ts)
+  --report path/to/report.json (listener-level focus diagnostics for a version 2 scene)
+  --stems path/to/stems (dry independent sources, positioned solos and playback manifest)
+  --orbit (move a single unmodified catalog performance around the listener on headphones)
+  --clean (require isolated sources with no open background-review flag)
   --isolated (require isolated source layers)
   --extremes (also test native control limits)
 `;
 async function main() {
   const names = ['punch', 'size', 'distance', 'space', 'grit', 'wetness', 'speed', 'pitchShift'];
   const options = Object.fromEntries(
-    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'params', 'style', 'mood'].map((k) => [k, { type: 'string' }]),
+    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'report', 'stems', 'params', 'style', 'mood'].map((k) => [k, { type: 'string' }]),
   );
   const { values: v, positionals } = parseArgs({
     allowPositionals: true,
@@ -33,7 +37,8 @@ async function main() {
       ...options,
       help: { type: 'boolean' },
       inspect: { type: 'boolean' },
-      isolated: { type: 'boolean' },
+      orbit: { type: 'boolean' },
+      clean: { type:'boolean' }, isolated: { type: 'boolean' },
       extremes: { type: 'boolean' },
     },
   });
@@ -41,14 +46,16 @@ async function main() {
     console.log(usage);
     return;
   }
-  if (v.inspect && (v.dest !== undefined || v.format !== undefined || v.extremes)) {
-    throw Error('--inspect reads the design. Omit --dest, --format and --extremes');
+  if (v.inspect && (v.dest !== undefined || v.format !== undefined || v.extremes || v.report || v.stems)) {
+    throw Error('--inspect reads the design. Omit --dest, --format, --extremes, --report and --stems');
   }
   if (!v.inspect && !v.dest) throw Error('Specify --dest for the target game audio directory');
   const format = v.format ?? 'ts';
   if (!['ts','wav','ogg','opus'].includes(format)) throw Error('Expected --format ts, wav, ogg or opus');
   let spec;
   const fit = v['fit-seconds'];
+  if (v.orbit && (v.spec || positionals.length !== 1 || fit || v.params || v.mood || v.style || names.some(k => v[k] !== undefined)))
+    throw Error('--orbit takes one catalog id. Use a listening design for a custom trajectory or timing.');
   if (v.spec) {
     if (positionals.length || [fit, v.id, v.name, v.params, v.style, ...names.map((k) => v[k])].some((x) => x !== undefined)) {
       throw Error('Supply the design in either --spec or command-line options');
@@ -74,10 +81,18 @@ async function main() {
       })),
     };
   }
+  if(v.orbit){
+    const [entry]=await selectRecipes(positionals);
+    const {orbitDesign}=await import('./orbit-design.mjs');
+    spec=await orbitDesign(entry,{id:entry.id},{id:v.id,name:v.name,clean:v.clean});
+  }
   const { loadDesign } = await import('./remix-design.mjs');
-  const { recipe, selected, source, layout } = await loadDesign(spec, process.cwd(), v.mood);
-  if (v.isolated) {
-    await checkIsolatedRecipes(selected);
+  let scene;
+  const capture = v.report || v.stems ? value => { scene ??= value; } : undefined;
+  const { recipe, selected, source, dependencies, layout } = await loadDesign(spec, process.cwd(), v.mood, capture);
+  if (capture && !recipe.preserveTimeline) throw Error('--report and --stems require a version 2 scene');
+  if (v.clean || v.isolated) {
+    await checkIsolatedRecipes(selected, { clean: v.clean });
     if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');
   }
   if (v.inspect) {
@@ -105,6 +120,10 @@ async function main() {
     process.exitCode = 1;
     return;
   }
+  if(capture){
+    const {exportSceneReview}=await import('./scene-review.mjs');
+    await exportSceneReview(scene,v.report,v.stems);
+  }
   if (format !== 'ts') {
     const file = resolve(v.dest, recipe.id + '.' + format);
     const bytes = await encodeDelivery(wav, format);
@@ -114,7 +133,7 @@ async function main() {
     return;
   }
   const file = 'recipes/' + recipe.id + '.ts';
-  await installRecipes(selected, v.dest, { file, source });
+  await installRecipes(selected, v.dest, { file, source, dependencies });
   console.log(
     JSON.stringify(
       {

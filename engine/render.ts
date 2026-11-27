@@ -107,8 +107,18 @@ function renderContext(recipe: SoundRecipe, opts: RenderOptions, sampleRate: num
     return [key, value === undefined || !Number.isFinite(value) ? spec.default : clamp(value, spec.min, spec.max)];
   }));
   const seed = Number.isFinite(opts.seed) ? opts.seed! >>> 0 : DEFAULT_SEED;
-  const ctx = { sampleRate, frames: frames + overlap, random: rng(seed) };
+  const ctx = { sampleRate, frames: frames + overlap, loopFrames: overlap ? frames : undefined, random: rng(seed) };
   return { ctx, resolved: { seed, params }, frames, overlap };
+}
+
+function sceneCeiling(channels: Float32Array[]): Float32Array[] {
+  let peak = 0;
+  for (const channel of channels) for (const sample of channel) {
+    if (!Number.isFinite(sample)) throw Error('Non-finite scene sample');
+    peak = Math.max(peak,Math.abs(sample));
+  }
+  const gain = Math.min(1,dbToGain(PEAK_LIMIT_DB-.08)/Math.max(peak,1e-12));
+  return gain===1 ? channels : channels.map(c=>c.map(v=>v*gain));
 }
 
 export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array {
@@ -122,8 +132,9 @@ function renderMono(recipe: SoundRecipe, opts: RenderOptions, sampleRate: number
   if (!(raw instanceof Float32Array) || raw.length !== ctx.frames) {
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
+  if (recipe.preserveTimeline) return { samples: sceneCeiling([raw])[0], sourceStartFrame: 0 };
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
-  const sourceStartFrame = recipe.loopable ? 0 : findShotStart(raw, sampleRate);
+  const sourceStartFrame = recipe.loopable || recipe.immediateOnset === false ? 0 : findShotStart(raw, sampleRate);
   const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : alignAttack(raw, sourceStartFrame, sampleRate);
   const output = master(prepared, sampleRate, target);
   const samples = opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
@@ -146,6 +157,7 @@ export function renderWithTiming(recipe: SoundRecipe, opts: RenderOptions = {}, 
   if (raw.length !== 2 || raw.some(c => !(c instanceof Float32Array) || c.length !== ctx.frames)) {
     throw new Error(recipe.id + ': stereo renderer must return two equal-length channels');
   }
+  if (recipe.preserveTimeline) return { channels: sceneCeiling([...raw]), sourceStartFrame: 0 };
   let peak = 0;
   for (const c of raw) for (const x of c) {
     if (!Number.isFinite(x)) throw new Error('Non-finite stereo sample');
@@ -153,7 +165,7 @@ export function renderWithTiming(recipe: SoundRecipe, opts: RenderOptions = {}, 
   }
   let onset = 0;
   while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.035) onset++;
-  const sourceStartFrame = recipe.loopable ? 0 : shotStart(onset, sampleRate);
+  const sourceStartFrame = recipe.loopable || recipe.immediateOnset === false ? 0 : shotStart(onset, sampleRate);
   const channels = raw.map(c => recipe.loopable
     ? closeLoop(c, frames, overlap)
     : alignAttack(c, sourceStartFrame, sampleRate));

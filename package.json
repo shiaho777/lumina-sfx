@@ -1,6 +1,6 @@
 {
   "name": "lumina-sfx-studio",
-  "version": "1.1.0",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "qa": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/run.mjs",
-    "test:scenes": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/scene.test.mjs qa/scene-mood.test.mjs qa/intent-search.test.mjs qa/editorial.test.mjs",
+    "test:scenes": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/scene.test.mjs qa/scene-mood.test.mjs qa/intent-search.test.mjs qa/editorial.test.mjs qa/world-brief.test.mjs",
     "test:music": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/music.test.mjs qa/music-render.test.mjs qa/production-audio.test.mjs qa/adaptive-music.test.mjs qa/harmony-performance.test.mjs",
     "music": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/music.mjs",
     "scene:install": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/install-scene.mjs",
@@ -26,7 +26,13 @@
     "bank:3d": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build-3d-bank.mjs",
     "remix": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/remix.mjs",
     "footsteps": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/footsteps.mjs",
-    "test:movement": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/footsteps.test.mjs"
+    "test:movement": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/footsteps.test.mjs",
+    "test:listening": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/listening-scene.test.mjs",
+    "qa:legacy": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/verify-legacy.mjs",
+    "qa:selection": "node qa/selection-benchmark.mjs",
+    "qa:repeats": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/repeated-use.mjs",
+    "score:edit": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/score-edit.mjs",
+    "test:edit": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/edit-score.test.mjs qa/edit-context.test.mjs qa/editorial-continuity.test.mjs qa/editorial-family-review.test.mjs qa/editorial-contact-and-seat.test.mjs qa/ribbon-reversal.test.mjs qa/edit-travel.test.mjs qa/edit-delivery.test.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

@@ -174,3 +174,36 @@ const deck = await loadDesign(fileURLToPath(new URL('../references/scenes/settin
 assert.equal(deck.recipe.isolation, 'isolated');
 assert.ok(deck.recipe.markers['apply.commit'] > deck.recipe.markers['toggle.seat']);
 console.log('Passed named anchors, overlap, fit duration, crop, tails and editable settings scene.');
+
+// An ambience may be authored as a short loop while a scene needs a fresh,
+// continuous performance. Timing, stereo phase, and rhythmic loops still matter.
+{
+  const rate = 8000, seconds = .4, native = Math.round(seconds * rate);
+  const bed = { ...tone, id: 'weather-bed', loopable: true, durationSec: seconds,
+    markers: { begin: .1 }, sustainMode: 'evolving',
+    render(ctx) { return Float32Array.from({length:ctx.frames}, () => ctx.random() * .2 - .1); } };
+  function take(source, durationSec, macros, marker, seed = 300) {
+    const recipe = make({recipe:source, durationSec, macros, fromMarker:marker});
+    return renderSound(recipe, {seed}, rate);
+  }
+  function correlation(pcm, lag, start, frames) {
+    let aa = 0, ab = 0, bb = 0;
+    for (let i = start; i < start + frames; i++) {
+      const a = pcm[i], b = pcm[i + lag];
+      aa += a*a; ab += a*b; bb += b*b;
+    }
+    return ab / Math.sqrt(aa*bb);
+  }
+  const evolving = take(bed, 2.4);
+  assert.deepEqual(evolving, take(bed, 2.4));
+  assert.notDeepEqual(evolving, take(bed, 2.4, undefined, undefined, 301));
+  assert.ok(Math.abs(correlation(evolving, native, native, 3*native)) < .08);
+  assert.ok(correlation(take({...bed, sustainMode:undefined}, 2.4), native, native, 3*native) > .999);
+  // At high source speed this crosses the bounded-render join. Check continuity
+  // in both sides of the overlap using an offset source marker.
+  const stretched = take(bed, 13, {speed:4, pitchShift:24}, 'begin');
+  assert.equal(stretched.length, 13*rate);
+  for (let i = Math.round(11.6*rate); i < 12.3*rate; i += 64) {
+    assert.ok(stretched.subarray(i,i+64).some(x => Number.isFinite(x) && Math.abs(x) > .002));
+  }
+}

@@ -137,6 +137,20 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Game Audio")
 	bool IsLoopPlaying(FName LoopId) const;
 
+    /** Convert a Lumina metre position (+X right, +Y up, -Z forward) to Unreal centimetres. */
+    UFUNCTION(BlueprintPure, Category = "Game Audio")
+    static FVector FromSceneMetres(FVector Position)
+    {
+        return FVector(-Position.Z, Position.X, Position.Y) * 100.0;
+    }
+
+    /** Convert the canonical facing into Unreal rotation. The source faces -Z at zero yaw. */
+    UFUNCTION(BlueprintPure, Category = "Game Audio")
+    static FRotator FromSceneFacing(float YawDegrees, float PitchDegrees)
+    {
+        return FRotator(PitchDegrees, YawDegrees, 0.0);
+    }
+
 protected:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 

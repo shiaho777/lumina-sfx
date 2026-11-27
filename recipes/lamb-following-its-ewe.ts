@@ -1,9 +1,10 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/field-lamb-call.ts';
-import source2 from './_recordings/sheep-bleat.ts';
+import source from './_recordings/isolated-lamb-call.ts';
+import source2 from './_recordings/isolated-sheep-voice.ts';
 
 export default {
+  isolation: 'isolated',
   id: "lamb-following-its-ewe",
   name: "Lamb Following Its Ewe",
   category: "Animals",
@@ -15,8 +16,8 @@ export default {
   ...sceneCredits(source, source2),
   render(ctx, { params, seed }) {
     return scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 1.04, .88, .009, 11300],
-      ['clip', source2, .59, .94, .29, .03, 7000, .025, .15],
+      ['clip', source, 0, .89, .84, .01, 6700],
+      ['clip', source2, .99, .69, .37, .02, 4800, .025, .15],
     ]);
   },
 } satisfies SoundRecipe;

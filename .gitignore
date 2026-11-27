@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 dist/
 qa/output/
 .DS_Store
@@ -8,7 +8,6 @@ sources/raw/
 
 # Personal listening desk and local hosting configuration
 /demo/
-/scripts/compare.mjs
 /.openai/
 *.wav
 *.ogg

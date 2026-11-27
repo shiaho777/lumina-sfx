@@ -1,14 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-cut-thrust-for-descent',
   name: 'Survey quadcopter cut thrust for descent',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "lift", "survey", "quadcopter", "cut", "thrust", "for", "descent"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "lift", "survey", "quadcopter", "cut", "thrust", "for", "descent"],
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: false,
   durationSec: 1.7,
   targetRmsDbfs: -24,

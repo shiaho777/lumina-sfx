@@ -6,6 +6,7 @@ import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
   isolation: 'isolated',
+  components: ['jet-engine'],
   id: 'interceptor-turbofan-turbine-spool-to-takeoff',
   name: 'Interceptor turbofan turbine spool to takeoff',
   category: 'Aircraft',

@@ -1,11 +1,19 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import { surfaceRain } from './_shared/weather-textures.ts';
+import { biquad } from '../engine/dsp.ts';
+import { sustain } from './_shared/field-layers.ts';
+import glazing from './_recordings/isolated-rain-glazing.ts';
 
 export default {
-  id: "rain-on-window-loop", name: "Rain on Window Glass", category: 'Weather & Ambience',
-  tags: ["rain","glass","window","inside"], loopable: true, durationSec: 7.2,
-  params: { drops: { label: "Drops", min: 0, max: 1, default: 0.62 } },
-  render(ctx, { params }) {
-    return surfaceRain(ctx, { duration: 7.2, material: 'glass', force: 0.29, density: 0.36 + params.drops * 0.62, pace: 2 });
+  id: 'rain-on-window-loop', name: 'Rain on Window Glass', category: 'Weather & Ambience',
+  tags: ['rain', 'rainfall', 'glass', 'window', 'pane', 'inside', 'steady'],
+  isolation: 'isolated', components: ['rain'], recording: glazing.credit, mixRole: 'ambience',
+  loopable: true, sustainMode: 'evolving', durationSec: 7.2, targetRmsDbfs: -30,
+  params: { drops: { label: 'Drops', min: 0, max: 1, default: 0.62 } },
+  render(ctx, { seed, params }) {
+    // Keep the small unequal impacts on the pane and roll off vibration below their body.
+    const amount = params.drops;
+    const rain = sustain(ctx, glazing, seed, .90 + amount * .13, 4800 + 2600 * amount, true);
+    const glass = biquad('highpass', 330 - amount * 85, .68, ctx.sampleRate);
+    return rain.map(glass);
   },
 } satisfies SoundRecipe;

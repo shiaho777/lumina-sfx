@@ -1,8 +1,9 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import naturalRobin from './_recordings/natural-robin.ts';
+import naturalRobin from './_recordings/isolated-robin-call.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'robin-on-a-nearby-fence', name: "Robin on a nearby fence", category: 'Animals',
   tags: ["robin", "songbird", "close", "call"],
   loopable: false, durationSec: 3.742, mixRole: 'voice', targetRmsDbfs: -25,

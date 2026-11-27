@@ -1,0 +1,14 @@
+{
+  "id": "tint-studio",
+  "format": "trailer",
+  "fps": 30,
+  "durationFrames": 255,
+  "events": [
+    {"id":"name","frame":34,"endFrame":79,"action":"type","device":"mechanical","label":"Tidepool","keyFrames":[34,39,44,49,58,63,70,78]},
+    {"id":"pick-up","frame":118,"action":"drag","label":"Lift the sea-glass swatch"},
+    {"id":"seat","frame":153,"action":"snap","label":"Swatch seats in its new position"},
+    {"id":"preview-button","frame":193,"action":"press","sourceContact":true,"label":"Preview click in the original"},
+    {"id":"reveal","frame":193,"syncFrame":203,"endFrame":213,"action":"slide","accent":true,"direction":"right","label":"Print reveals across the frame"},
+    {"id":"print","frame":214,"action":"hold"}
+  ]
+}

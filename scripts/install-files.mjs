@@ -1,8 +1,9 @@
 import { constants } from 'node:fs';
 import { mkdir, readFile, writeFile, copyFile, link, rm } from 'node:fs/promises';
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
-import { randomUUID } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { ROOT } from './recipes.mjs';
+import { pathToFileURL } from 'node:url';
 
 const runtime = 'engine/index.ts';
 
@@ -20,14 +21,37 @@ async function collect(file, files) {
   }
 }
 
-export async function checkIsolatedRecipes(selected) {
+// Some packaged recordings already consist entirely of separately cut contacts.
+export async function verifyIntactTakes(names) {
+  if (!names.length) return;
+  const manifest = JSON.parse(await readFile(resolve(ROOT, 'sources/recordings.json'), 'utf8'));
+  for (const name of names) {
+    const file = 'recipes/_recordings/' + name + '.ts';
+    const expected = manifest.sources.find(source => source.file === file);
+    const { default: clip } = await import(pathToFileURL(resolve(ROOT, file)));
+    if (!expected || clip.credit.license !== 'CC0-1.0' || clip.credit.url !== expected.url ||
+        clip.sampleRate !== expected.sampleRate || clip.takes.length !== expected.takes.length)
+      throw Error('Unexpected original contacts in ' + file);
+    for (const [index, encoded] of clip.takes.entries()) {
+      const raw = Buffer.from(encoded, 'base64'), take = expected.takes[index];
+      if (raw.length !== take.frames * 2 || createHash('sha256').update(raw).digest('hex') !== take.sha256)
+        throw Error('Original contact changed in ' + file + ' take ' + index);
+    }
+  }
+}
+
+export async function checkIsolatedRecipes(selected, {clean = false} = {}) {
   const inputs = JSON.parse(await readFile(resolve(ROOT, 'sources/isolated-inputs.json'), 'utf8'));
-  const allowed = new Set([...inputs.stationaryTexture, ...inputs.transient, ...Object.keys(inputs.windows)].map(name => 'recipes/_recordings/isolated-' + name + '.ts'));
+  const allowed = new Set([...inputs.stationaryTexture, ...inputs.transient, ...Object.keys(inputs.windows), ...Object.keys(inputs.fieldTakes)].map(name => 'recipes/_recordings/isolated-' + name + '.ts'));
+  const intact = inputs.intactTakes ?? [];
+  for (const name of intact) allowed.add('recipes/_recordings/' + name + '.ts');
   const files = new Map();
   for (const item of selected) {
+    if (clean && (item.cleanHold || item.auditionNote)) throw Error('Source awaits background review: ' + item.id);
     if (item.isolation !== 'isolated') throw Error('Unreviewed for isolated playback: ' + item.id);
     await collect(item.file, files);
   }
+  await verifyIntactTakes(intact.filter(name => files.has('recipes/_recordings/' + name + '.ts')));
   for (const file of files.keys()) {
     if (file.startsWith('recipes/_recordings/') && !allowed.has(file)) throw Error('Unreviewed recording in isolated selection: ' + file);
   }
@@ -59,6 +83,11 @@ export async function installRecipes(selected, dest, custom) {
   await collect(runtime, files);
   for (const recipe of selected) await collect(recipe.file, files);
   // The generated recipe is published last, after all its dependencies exist.
+  for(const dep of custom?.dependencies??[]) await collect(dep,files);
+  if(files.has('engine/hrtf/sadie-h3.ts')) for(const name of ['NOTICE.md','LICENSE.txt']) {
+    const path='engine/hrtf/'+name;
+    files.set(path,await readFile(resolve(ROOT,path),'utf8'));
+  }
   if (custom) files.set(custom.file, custom.source);
   dest = resolve(dest);
   const pending = [];

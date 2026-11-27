@@ -8,6 +8,35 @@ using UnityEngine;
 /// </summary>
 public sealed class GameAudioHelper : MonoBehaviour
 {
+    /// Map a Lumina scene position or forward vector into Unity's +Z-forward world.
+    public static Vector3 FromSceneVector(Vector3 vector)
+    {
+        return new Vector3(vector.x, vector.y, -vector.z);
+    }
+
+    /// Call on a game-owned voice. Set position/facing using FromSceneVector on the world pose.
+    public static void ConfigureSceneVoice(AudioSource voice, bool listenerLocked, float referenceMetres,
+        float spread, bool doppler)
+    {
+        voice.spatialBlend = listenerLocked ? 0f : 1f;
+        voice.minDistance = Mathf.Max(0.01f, referenceMetres);
+        voice.maxDistance = Mathf.Max(voice.minDistance, voice.maxDistance);
+        voice.rolloffMode = AudioRolloffMode.Logarithmic;
+        voice.spread = 180f * Mathf.Clamp01(spread);
+        voice.dopplerLevel = doppler ? 1f : 0f;
+    }
+
+    public static float SceneConeGain(Transform emitter, Vector3 listener, float innerAngle,
+        float outerAngle, float outerGain)
+    {
+        Vector3 ray = listener - emitter.position;
+        if (ray.sqrMagnitude < 0.000001f) return 1f;
+        float angle = 2f * Vector3.Angle(emitter.forward, ray);
+        if (angle <= innerAngle) return 1f;
+        return Mathf.Lerp(1f, Mathf.Clamp01(outerGain),
+            Mathf.Clamp01((angle - innerAngle) / Mathf.Max(0.001f, outerAngle - innerAngle)));
+    }
+
     private sealed class SoundPool
     {
         public readonly AudioClip[] Clips;

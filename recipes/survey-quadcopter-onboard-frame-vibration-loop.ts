@@ -1,14 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-onboard-frame-vibration-loop',
   name: 'Survey quadcopter onboard frame vibration loop',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "cabin", "survey", "quadcopter", "onboard", "frame", "vibration", "loop"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "cabin", "survey", "quadcopter", "onboard", "frame", "vibration", "loop"],
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: true,
   durationSec: 2.71,
   targetRmsDbfs: -28,

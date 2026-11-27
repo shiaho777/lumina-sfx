@@ -7,7 +7,7 @@ import detail from './_recordings/natural-gravel-drag.ts';
 
 export default {
   id: "wave-wash-on-a-shingle-berm-water-surging-in", name: "Wave wash on a shingle berm — water surging in", category: "Water & Fire",
-  tags: ["water", "field-recording", "open", "water surging in", "wave", "wash", "on", "a"], loopable: false, durationSec: 5.02,
+  tags: ['shore', 'break', "water", "field-recording", "open", "water surging in", "wave", "wash", "on", "a"], loopable: false, durationSec: 5.02,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.72 } },
   ...sceneCredits(source, wash, detail),

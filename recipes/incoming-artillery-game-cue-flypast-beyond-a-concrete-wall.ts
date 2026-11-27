@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { cinematicCut } from './_shared/cinematic-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/demo-film-wind.ts';
+import source from './_recordings/isolated-demo-sheltered-wind.ts';
 import wash from './_recordings/atlas-stone.ts';
 import detail from './_recordings/response-street-pressure.ts';
 

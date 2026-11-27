@@ -1,0 +1,141 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Original editorial test films</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 640px; height: 360px; overflow: hidden; font: 17px Arial,sans-serif; color: #162d32; }
+  main { height: 360px; padding: 28px 36px; position: relative; overflow: hidden; }
+  h1, h2, p { margin: 0; }
+  h1 { font-size: 36px; letter-spacing: -1.8px; }
+  h2 { font-size: 23px; }
+  small, header { font-size: 12px; font-weight: bold; letter-spacing: 1.8px; }
+  header { display: flex; justify-content: space-between; margin-bottom: 24px; }
+  header span { opacity: .7; letter-spacing: 1px; }
+  button, input { font: inherit; color: inherit; }
+  .rule { height: 1px; background: currentColor; opacity: .25; margin: 14px 0; }
+  .row { display: flex; gap: 10px; align-items: center; }
+  .card { border: 1px solid #77838377; border-radius: 13px; padding: 14px 20px; }
+  .pill { border: 1px solid currentColor; border-radius: 18px; padding: 5px 12px; }
+  .active { background: #254f50; color: white; }
+  .muted { opacity: .62; }
+  .cursor { position: absolute; width: 13px; height: 19px; background: #f8b854;
+    clip-path: polygon(0 0,100% 63%,57% 64%,39% 100%); transform: rotate(-9deg);
+    filter: drop-shadow(1px 1px black); }
+</style>
+<main></main>
+<script>
+const main = document.querySelector('main');
+const cursor = (x,y) => `<b class="cursor" style="left:${x}px;top:${y}px"></b>`;
+const head = (brand,corner) => `<header>${brand}<span>${corner}</span></header>`;
+const by = (frame,start,end,a,b) => a + (b-a)*Math.max(0,Math.min(1,(frame-start)/(end-start)));
+const last = (frame,stops) => stops.filter(x=>x<=frame).length;
+
+function estuary(f) {
+  const detailed = f>=26, on = f>=69;
+  const mouse = f<25 ? cursor(74,102) : f<65 ? cursor(177,147) : cursor(218,304);
+  return ['#e9f4ec', `${head('ESTUARY','FIELD GUIDE  /  04')}
+    <h1>Harbour forecast</h1><div class="rule"></div>
+    <div class="row">
+      <span class="pill ${!detailed?'active':''}">Overview</span>
+      <span class="pill ${detailed?'active':''}" style="background-color:${f===25?'#b2cebf':''}">Tide table</span>
+    </div>
+    <div class="card" style="margin-top:16px;display:flex;align-items:center;justify-content:space-between">
+      <div><small>${detailed?'NEXT HIGH WATER':'TODAY'}</small><h1>${detailed?'09:24':'4.2 m'}</h1></div>
+      <svg width="185" height="54"><path d="M1,40 Q25,1 48,22 T94,22 T142,22 T186,22" fill="none" stroke="#357f7b" stroke-width="5"/></svg>
+    </div>
+    <p style="margin-top:14px">Show station marks <b style="display:inline-block;width:40px;border-radius:10px;background:${on?'#387767':'#a8b8ab'};text-align:${on?'right':'left'};color:white;padding:0 3px">●</b></p>${mouse}`];
+}
+
+function index(f) {
+  const word = f>=98 ? 'reed beds' : 'reed'.slice(0,last(f,[44,52,66,73]));
+  const outline = f>=26 ? '#3f7454' : f>=12 ? '#abb9a9' : '#dedbcb';
+  return ['#f6f1e6', `${head('FIELD INDEX','PRIVATE COLLECTION')}
+    <h1>Find a field note</h1><div class="rule"></div>
+    <input aria-label="Search notes" value="${word}" placeholder="Search your notebook"
+      style="width:100%;padding:12px 16px;border:2px solid ${outline};border-radius:9px;outline:0;background:#fffcf5">
+    <div style="margin-top:18px"><small>NOTES</small>
+      <p style="margin-top:8px">${word?'Reed beds near Ash Point':'Ash Point survey'}</p>
+      <p class="muted" style="margin-top:10px">${word?'4 photographs · June 18':'Marsh transect · June 07'}</p>
+    </div>${f>=12?cursor(369,145):cursor(583,281)}`];
+}
+
+function prism(f) {
+  const title = head('HALATION','LENS STUDY');
+  if (f<25) return ['#24233d', `${title}<div style="padding:45px 0;color:#faedcf">
+    <small>FILM  1 / 3</small><h1 style="font:52px Georgia;margin-top:15px">Into the light.</h1></div>`];
+  if (f<83) {
+    const shift = by(f,43,55,0,-186);
+    return ['#785cbd', `${title}
+      <div style="position:absolute;inset:95px 0 35px;transform:translateX(${shift}px);
+        background:repeating-linear-gradient(108deg,#ffcf76 0 65px,#ef825f 65px 130px,#6a384e 130px 195px)"></div>
+      <h2 style="position:absolute;bottom:13px;color:white">Chromatic studies</h2>`];
+  }
+  return ['#eeece3', `${title}<div style="margin:64px auto;text-align:center">
+    <div style="width:46px;height:46px;margin:0 auto 12px;transform:rotate(45deg);background:#974b6c"></div>
+    <h1>Halation</h1></div>`];
+}
+
+function causeway(f) {
+  const selected = f<28 ? 0 : f<35 ? 1 : 2;
+  const inMap = f>=58 && f<92;
+  const rows = ['Jetty','Headland','Salt marsh'].map((name,i)=>{
+    const active = i===selected;
+    const fill = active ? (f===57 ? '#f0d093' : '#92d3ae') : '#243b3a';
+    return `<div style="margin:6px 0;padding:8px 16px;border-radius:4px;color:${active?'#101c20':'#a2bcb6'};background:${fill}">${name}</div>`;
+  }).join('');
+  return ['#142b2b', `<div style="color:#e5ebda">${head('CAUSEWAY','EXPEDITION   ◆')}
+    <div class="row" style="justify-content:space-between">
+      <div style="width:240px"><small>NORTH COAST</small>
+        <h1 style="margin:6px 0 14px">${inMap?'Salt marsh':'Select a route'}</h1>${inMap?'Low water · 3.1 km':rows}
+      </div>
+      <svg width="218" height="185" viewBox="0 0 218 185">
+        <rect width="218" height="185" fill="#244640"/>
+        <path d="M0,150 L48,117 L63,119 L95,77 L135,79 L160,50 L211,25" stroke="#9dd09f" stroke-width="5" fill="none"/>
+        <circle cx="${[48,95,160][selected]}" cy="${[117,77,50][selected]}" r="${inMap?12:7}" fill="#f6cf8a"/>
+      </svg>
+    </div></div>${!inMap&&f>=15?cursor(227,265):''}`];
+}
+
+function swatch(f) {
+  const x = f<54 ? by(f,21,52,93,304) : 318;
+  const y = f<54 ? by(f,21,52,151,194) : 200;
+  const x2 = by(f,73,94,96,421) + (f>=96?7:0);
+  const y2 = by(f,73,94,239,194) + (f>=96?6:0);
+  const tile = (label,color,left,top,held) => `<div style="position:absolute;left:${left}px;top:${top}px;
+    width:88px;height:56px;padding:17px 10px;background:${color};border-radius:5px;
+    box-shadow:${held?'0 7px 12px #66584055':'none'}">${label}</div>`;
+  return ['#efeae4', `${head('CLAY ROOM','PALETTE BOARD')}<h1>Coastal glaze</h1>
+    <div style="position:absolute;top:128px;left:290px;width:250px;height:160px;
+      border:2px dashed #a99e90;border-radius:14px;padding:12px"><small>TRAY  02</small></div>
+    ${tile('Ochre','#d8ab62',x,y,f>=21&&f<54)}
+    ${tile('Shale','#9eafa6',x2,y2,f>=73&&f<96)}
+    ${f>=73?cursor(x2+55,y2+37):cursor(x+55,y+37)}`];
+}
+
+function proofs(f) {
+  const done = f>=23;
+  const count = last(f,[43,50,57,64]);
+  const fill = f===22 ? '#a5b0b9' : done ? '#c7d8c9' : '#293941';
+  const rows = ['Cover','Index','Plate 1','Plate 2'].slice(0,count).map(name=>
+    `<div style="width:300px;margin:4px 0;padding:3px 10px;border-left:4px solid #7999a1">${name}</div>`).join('');
+  return ['#edeff3', `${head('MARGIN PRESS','PRINT ROOM')}<h1>Proofs</h1><div class="rule"></div>
+    <div class="row">
+      <button style="border:0;padding:8px 16px;border-radius:5px;background:${fill};color:${done?'#17312a':'white'}">${done?'Queued ✓':'Queue proofs'}</button>
+      <small>${done?'BATCH 08':'4 SHEETS'}</small>
+    </div>
+    <div style="margin-top:18px">${rows}</div>
+    ${f>=84?'<small style="position:absolute;bottom:30px;right:38px;color:#7f898b">MARGIN / PRINTED PROOFS</small>':''}
+    ${f>=22?cursor(130,155):cursor(223,185)}`];
+}
+
+const films = { estuary, index, prism, causeway, swatch, proofs };
+let previous = '';
+window.paint = (name,frame) => {
+  const [background,html] = films[name](frame);
+  if (background+html===previous) return false;
+  main.style.background = background;
+  main.innerHTML = html;
+  previous = background+html;
+  return true;
+};
+</script>

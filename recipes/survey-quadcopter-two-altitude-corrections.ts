@@ -1,14 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-two-altitude-corrections',
   name: 'Survey quadcopter two altitude corrections',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "surge", "survey", "quadcopter", "two", "altitude", "corrections"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "surge", "survey", "quadcopter", "two", "altitude", "corrections"],
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: false,
   durationSec: 2.35,
   targetRmsDbfs: -23,

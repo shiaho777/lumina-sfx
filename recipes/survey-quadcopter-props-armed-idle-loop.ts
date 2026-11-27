@@ -1,14 +1,15 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-quadcopter-hover.ts';
-import loaded from './_recordings/demo-quadcopter-run.ts';
+import idle from './_recordings/isolated-quad-hover-blades.ts';
+import loaded from './_recordings/isolated-quad-loaded-blades.ts';
 
 export default {
   id: 'survey-quadcopter-props-armed-idle-loop',
   name: 'Survey quadcopter props armed idle loop',
   category: 'Aircraft',
-  tags: ["aircraft", "fan", "engine", "idle", "survey", "quadcopter", "props", "armed", "loop"],
+  tags: ["drone", "rotor", "aircraft", "fan", "engine", "idle", "survey", "quadcopter", "props", "armed", "loop"],
+  isolation: 'isolated', components: ['electric-rotors'],
   loopable: true,
   durationSec: 2.29,
   targetRmsDbfs: -25,

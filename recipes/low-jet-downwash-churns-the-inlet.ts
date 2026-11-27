@@ -2,7 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
 import demoJetPass from './_recordings/demo-jet-pass.ts';
 import motionJetWaterApproach from './_recordings/motion-jet-water-approach.ts';
-import demoFilmWind from './_recordings/demo-film-wind.ts';
+import demoFilmWind from './_recordings/isolated-demo-sheltered-wind.ts';
 import demoJetTakeoff from './_recordings/demo-jet-takeoff.ts';
 import motionJetWaterRetreat from './_recordings/motion-jet-water-retreat.ts';
 

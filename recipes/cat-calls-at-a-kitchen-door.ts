@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import catMeow from './_recordings/cat-meow.ts';
+import catMeow from './_recordings/isolated-cat-call.ts';
 
 export default {
   id: 'cat-calls-at-a-kitchen-door', name: "Cat calls at a kitchen door", category: 'Animals',

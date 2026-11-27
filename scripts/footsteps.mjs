@@ -3,7 +3,7 @@ import { parseArgs } from 'node:util';
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { contactGain, contactSamples, FootstepWalker, gaitEffort, stepIntervalSec } from '../engine/footsteps.ts';
+import { contactEarFilters, contactGain, contactSamples, FootstepWalker, gaitEffort, stepIntervalSec } from '../engine/footsteps.ts';
 import { rng } from '../engine/dsp.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { loadRecipes } from './recipes.mjs';
@@ -24,8 +24,9 @@ function fields(input, keys, label) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) throw Error('Invalid ' + label);
   for (const k of Object.keys(input)) if (!keys.includes(k)) throw Error('Unknown ' + label + ' field ' + k);
 }
-function pose(input) {
-  fields(input, ['x','z','yaw'], 'pose');
+function pose(input, listener = false) {
+  fields(input, listener ? ['x','z','yaw','earHeightM'] : ['x','z','yaw'], 'pose');
+  if (listener) number(input.earHeightM ?? 1.6, 0, Infinity, 'earHeightM');
   for (const axis of ['x','z']) number(input[axis], -10000, 10000, axis);
   number(input.yaw ?? 0, -1000, 1000, 'yaw');
   return input;
@@ -44,7 +45,8 @@ function segment(input) {
   number(input.wetness ?? 0, 0, 1, 'wetness');
   if (!!input.from !== !!input.to) throw Error('Supply both from and to for a moving actor');
   if (input.listener && !input.from) throw Error('A listener needs an actor path');
-  for (const p of [input.from,input.to,input.listener]) if (p !== undefined) pose(p);
+  for (const p of [input.from,input.to]) if (p !== undefined) pose(p);
+  if (input.listener !== undefined) pose(input.listener, true);
   return input;
 }
 function actorAt(s, fraction) {
@@ -64,7 +66,8 @@ async function recipeMap(segments) {
 }
 
 /** Render the same movement decisions used by animation-driven playback. */
-export async function renderRoute(inputs, seed = 104729) {
+export async function renderRoute(inputs, seed = 104729, output = 'stereo') {
+  choice(output, ['stereo','headphones'], 'output');
   if (!Array.isArray(inputs) || !inputs.length || inputs.length > 256) throw Error('Expected an array of movement segments');
   number(seed, 0, 0xffffffff, 'seed', true);
   const segments = inputs.map(segment);
@@ -95,18 +98,31 @@ export async function renderRoute(inputs, seed = 104729) {
     }
     previousGait = gait;
   }
+  if (output === 'headphones') end += contactEarFilters(hits[0].hit, rate)[0].length - 1;
   if (end > 120 * rate) throw Error('Use a route under two minutes');
   const channels = [new Float32Array(end),new Float32Array(end)];
   const events = [];
   for (const {hit,offset,motion} of hits) {
     const pcm = contactSamples(hit, rate);
-    const angle = (hit.pan + 1) * Math.PI / 4;
-    const left = hit.gain * Math.cos(angle), right = hit.gain * Math.sin(angle);
-    for (let i = 0; i < pcm.length; i++) {
-      channels[0][offset+i] += pcm[i] * left;
-      channels[1][offset+i] += pcm[i] * right;
+    if (output === 'headphones') {
+      // Convolve the same dry take and ear responses that the live Web Audio player uses.
+      for (const [ch, filter] of contactEarFilters(hit, rate).entries()) {
+        const dest = channels[ch];
+        for (let tap = 0; tap < filter.length; tap++) {
+          const gain = filter[tap] * hit.gain;
+          if (gain === 0) continue;
+          for (let i = 0; i < pcm.length; i++) dest[offset + tap + i] += pcm[i] * gain;
+        }
+      }
+    } else {
+      const angle = (hit.pan + 1) * Math.PI / 4;
+      const left = hit.gain * Math.cos(angle), right = hit.gain * Math.sin(angle);
+      for (let i = 0; i < pcm.length; i++) {
+        channels[0][offset+i] += pcm[i] * left;
+        channels[1][offset+i] += pcm[i] * right;
+      }
     }
-    events.push({frame:offset, id:hit.recipe.id, foot:hit.foot, motion, take:hit.take, pan:hit.pan, gain:hit.gain});
+    events.push({frame:offset, id:hit.recipe.id, foot:hit.foot, motion, take:hit.take, pan:hit.pan, gain:hit.gain, relativePosition:hit.relativePosition});
   }
   let peak = 0;
   for (const channel of channels) for (const x of channel) peak = Math.max(peak, Math.abs(x));
@@ -115,7 +131,7 @@ export async function renderRoute(inputs, seed = 104729) {
   if (peak > ceiling) for (const channel of channels) for (let i = 0; i < end; i++) channel[i] *= ceiling / peak;
   const credits = new Map();
   for (const r of recipes.values()) for (const credit of [r.recording, ...(r.additionalRecordings ?? [])]) credits.set(credit.url,credit);
-  return {channels, events, sampleRate:rate, peakDbfs:20*Math.log10(Math.min(peak,ceiling)), credits:[...credits.values()]};
+  return {channels, events, output, sampleRate:rate, peakDbfs:20*Math.log10(Math.min(peak,ceiling)), credits:[...credits.values()]};
 }
 
 // A portable take pool for games that already have their own animation, mixer and panner.
@@ -160,14 +176,15 @@ async function exportBank(s, dir) {
 }
 
 async function main() {
-  const options = Object.fromEntries(['surface','steps','gait','footwear','foot','wetness','weight','travel','motion','seed','route','out','bank'].map(k=>[k,{type:'string'}]));
+  const options = Object.fromEntries(['surface','steps','gait','footwear','foot','wetness','weight','travel','motion','seed','route','out','bank','output'].map(k=>[k,{type:'string'}]));
   const {values:v} = parseArgs({options:{...options,help:{type:'boolean'}}});
   if (v.help) {
-    console.log('node scripts/footsteps.mjs --surface hardwood --steps 8 --gait walk --out walk.wav\nUse --route segments.json --out scene.wav for mixed movement, or --surface grass --bank /path/to/takes for native game audio.');
+    console.log('node scripts/footsteps.mjs --surface hardwood --steps 8 --gait walk --out walk.wav\nUse --route segments.json --out scene.wav for mixed movement, add --output headphones for front/back localisation, or use --surface grass --bank /path/to/takes for native game audio.');
     return;
   }
   if (!!v.out === !!v.bank) throw Error('Choose --out file.wav or --bank directory');
-  if (v.route && Object.keys(v).some(k => !['route','seed','out'].includes(k))) throw Error('A route supplies its own movement settings');
+  if (v.route && Object.keys(v).some(k => !['route','seed','out','output'].includes(k))) throw Error('A route supplies its own movement settings');
+  if (v.bank && v.output !== undefined) throw Error('Use --output with --out. A native take bank contains mono files.');
   if (v.bank && [v.steps,v.seed,v.foot].some(x=>x!==undefined)) throw Error('A bank exports every foot and take');
   if (!v.route && !v.surface) throw Error('Specify --surface or --route');
   const s = v.route ? undefined : segment({surface:v.surface,steps:Number(v.steps ?? 1),gait:v.gait,footwear:v.footwear,
@@ -175,7 +192,7 @@ async function main() {
   if (v.bank) { console.log(JSON.stringify(await exportBank(s,resolve(v.bank)))); return; }
   if (!v.out.toLowerCase().endsWith('.wav')) throw Error('--out expects a WAV path');
   const route = v.route ? JSON.parse(await readFile(v.route,'utf8')) : [s];
-  const {channels,...report} = await renderRoute(route,Number(v.seed ?? 104729));
+  const {channels,...report} = await renderRoute(route,Number(v.seed ?? 104729),v.output ?? 'stereo');
   await publishAsset(resolve(v.out),Buffer.from(encodeWav(channels)));
   console.log(JSON.stringify({file:resolve(v.out),...report}));
 }

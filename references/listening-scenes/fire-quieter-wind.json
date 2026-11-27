@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "id": "fire-quieter-wind",
+  "viewpoint": "Beside a fire on a windy beach",
+  "output": "stereo",
+  "focus": {
+    "subjects": [
+      "fire"
+    ],
+    "marginDb": 7
+  },
+  "layers": [
+    {
+      "id": "campfire-crackle-loop",
+      "label": "fire",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -0.4,
+          0,
+          -0.8
+        ]
+      },
+      "durationSec": 5
+    },
+    {
+      "id": "wind-at-a-saltmarsh-boardwalk-intermittent-lulls-loop",
+      "label": "wind",
+      "placement": {
+        "kind": "area",
+        "position": [
+          1,
+          0,
+          -3
+        ]
+      },
+      "gain": 0.22,
+      "durationSec": 5,
+      "locked": true
+    }
+  ]
+}

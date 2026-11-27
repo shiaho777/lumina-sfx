@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import fieldGoatYoung from './_recordings/field-goat-young.ts';
+import fieldGoatYoung from './_recordings/isolated-young-goat.ts';
 import sheepBellJingle from './_recordings/sheep-bell-jingle.ts';
 import pressPottingSoil from './_recordings/press-potting-soil.ts';
 

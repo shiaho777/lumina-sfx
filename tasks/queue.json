@@ -192,7 +192,8 @@
       "loopable": true,
       "brief": "Rain on Window Glass",
       "blueprint": "light-rain-loop",
-      "acceptance": "Listen for the surface and natural variation across the loop."
+      "acceptance": "Listen for the surface and natural variation across the loop.",
+      "revision": 2
     },
     {
       "id": "rain-on-tin-roof-loop",
@@ -366,7 +367,7 @@
       "collection": "Alerts & phones",
       "durationSec": 2.1,
       "loopable": false,
-      "brief": "Phone Ring · Mechanical Bell",
+      "brief": "Phone Ring · Electronic Bell Cadence",
       "blueprint": "radar-warning-beep",
       "acceptance": "The pattern is recognizable at a comfortable level and the edges stay clean."
     },
@@ -1177,7 +1178,8 @@
       "durationSec": 0.69,
       "loopable": false,
       "brief": "Grain Scatter into a Feed Trough",
-      "acceptance": "Dry grains rattle brightly on a hollow feeding trough."
+      "acceptance": "Dry grains rattle brightly on a hollow feeding trough.",
+      "revision": 2
     },
     {
       "id": "shake-straw-bedding",
@@ -2355,7 +2357,8 @@
       "durationSec": 0.54,
       "loopable": false,
       "brief": "Energy Shield Block",
-      "acceptance": "Short crack and a springy double resonance after the impact."
+      "acceptance": "Short crack and a springy double resonance after the impact.",
+      "revision": 2
     },
     {
       "id": "energy-shield-collapse",
@@ -2365,7 +2368,8 @@
       "durationSec": 0.73,
       "loopable": false,
       "brief": "Energy Shield Collapse",
-      "acceptance": "A bright rupture drops away through several lower sputters."
+      "acceptance": "A bright rupture drops away through several lower sputters.",
+      "revision": 2
     },
     {
       "id": "hardwood-footstep",
@@ -3106,7 +3110,7 @@
       "loopable": false,
       "brief": "Portal Unfold",
       "acceptance": "A slow tearing swell settles into a low harmonic lock distinct from teleportation.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "portal-snap-closed",
@@ -3116,7 +3120,8 @@
       "durationSec": 0.76,
       "loopable": false,
       "brief": "Portal Snap Closed",
-      "acceptance": "A broad downward fold ends in a brief, pitched closure."
+      "acceptance": "A broad downward fold ends in a brief, pitched closure.",
+      "revision": 2
     },
     {
       "id": "blink-teleport",
@@ -3950,7 +3955,8 @@
       "loopable": false,
       "brief": "Stall Straw Fork Toss",
       "blueprint": "pig-feeding-at-trough",
-      "acceptance": "Close fibrous rush reaches a larger bedding pile."
+      "acceptance": "Close fibrous rush reaches a larger bedding pile.",
+      "revision": 2
     },
     {
       "id": "leather-halter-buckle-fasten",
@@ -5457,7 +5463,8 @@
       "loopable": false,
       "brief": "Decommissioned Conduit Arc",
       "blueprint": "energy-blade-hum-loop",
-      "acceptance": "Uneven isolated sputters with a dark pitch fall."
+      "acceptance": "Uneven isolated sputters with a dark pitch fall.",
+      "revision": 2
     },
     {
       "id": "overloaded-cable-loop",
@@ -5811,7 +5818,8 @@
       "loopable": false,
       "brief": "Clipped Energy Shot in a Tunnel",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "A quick dry report and clearly separated spaced repeats."
+      "acceptance": "A quick dry report and clearly separated spaced repeats.",
+      "revision": 2
     },
     {
       "id": "bright-energy-impact-on-armor",
@@ -6725,7 +6733,8 @@
       "brief": "Clean Title Reveal with Soft Hit",
       "durationSec": 1.52,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "wide-product-reveal-swell",
@@ -6736,7 +6745,8 @@
       "brief": "Wide Product Reveal Swell",
       "durationSec": 2.32,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "quick-blur-cut",
@@ -6835,7 +6845,8 @@
       "brief": "Delicate Logo Close",
       "durationSec": 1.15,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "cinematic-chapter-card-thump",
@@ -8848,7 +8859,8 @@
       "status": "review",
       "durationSec": 1.17,
       "loopable": false,
-      "acceptance": "The close reads as a descending ending with soft trailing detail."
+      "acceptance": "The close reads as a descending ending with soft trailing detail.",
+      "revision": 2
     },
     {
       "id": "quiet-interview-short-entry",
@@ -8881,7 +8893,8 @@
       "status": "review",
       "durationSec": 1.01,
       "loopable": false,
-      "acceptance": "One directional texture crosses a softer secondary material layer."
+      "acceptance": "One directional texture crosses a softer secondary material layer.",
+      "revision": 2
     },
     {
       "id": "quiet-interview-last-frame-tail",
@@ -9688,14 +9701,15 @@
     },
     {
       "id": "basketball-hardwood-single-dribble",
-      "brief": "Basketball Hardwood Single Dribble",
+      "brief": "Basketball hits a hardwood gym floor",
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
       "status": "review",
       "durationSec": 0.72,
       "loopable": false,
-      "acceptance": "A clean initial contact reads as the named material before its short tail."
+      "acceptance": "One contact and short natural ring from a basketball on an actual wood court.",
+      "revision": 3
     },
     {
       "id": "basketball-two-dribbles-and-a-catch",
@@ -10278,7 +10292,8 @@
       "status": "review",
       "durationSec": 1.21,
       "loopable": false,
-      "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
+      "acceptance": "The drive fades through an electrical fall and a soft physical discharge.",
+      "revision": 2
     },
     {
       "id": "ceramic-shield-frame-connects",
@@ -10606,7 +10621,8 @@
       "durationSec": 3.64,
       "mixRole": "vehicle",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "rocket-launch-whoosh",
@@ -11623,7 +11639,7 @@
       "mixRole": "vehicle",
       "status": "review",
       "loopable": true,
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "outboard-primer-cranks-and-catches",
@@ -12380,7 +12396,8 @@
       "durationSec": 1.67,
       "mixRole": "impact",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "prism-repeater-capacitor-charge-loop",
@@ -12428,7 +12445,8 @@
       "durationSec": 1.2,
       "mixRole": "vehicle",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "menu-option-focus-microswitch",
@@ -12464,7 +12482,8 @@
       "durationSec": 0.174,
       "mixRole": "interface",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "menu-cancel-felt-stop",
@@ -16024,7 +16043,7 @@
       "durationSec": 2.85,
       "loopable": false,
       "brief": "Displacement cargo vessel approach to breakwater",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
@@ -16034,7 +16053,7 @@
       "durationSec": 2.63,
       "loopable": false,
       "brief": "Displacement cargo vessel departure beyond harbor mouth",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
@@ -16044,7 +16063,7 @@
       "durationSec": 2.65,
       "loopable": true,
       "brief": "Displacement cargo vessel enclosed wheelhouse vibration loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
@@ -16054,7 +16073,7 @@
       "durationSec": 2.24,
       "loopable": true,
       "brief": "Displacement cargo vessel harbor idle machinery loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
@@ -16064,7 +16083,7 @@
       "durationSec": 2.47,
       "loopable": true,
       "brief": "Displacement cargo vessel loaded shaft propulsion loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-passage-cruise-loop",
@@ -16074,7 +16093,7 @@
       "durationSec": 2.95,
       "loopable": true,
       "brief": "Displacement cargo vessel passage cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
@@ -16084,7 +16103,7 @@
       "durationSec": 1.66,
       "loopable": false,
       "brief": "Displacement cargo vessel reduce to harbor speed",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
@@ -16094,7 +16113,7 @@
       "durationSec": 2.11,
       "loopable": false,
       "brief": "Displacement cargo vessel ring up full ahead",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-settle-alongside-berth",
@@ -16104,7 +16123,7 @@
       "durationSec": 2.35,
       "loopable": false,
       "brief": "Displacement cargo vessel settle alongside berth",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
@@ -16114,7 +16133,7 @@
       "durationSec": 2.3,
       "loopable": false,
       "brief": "Displacement cargo vessel two docking throttle corrections",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "distant-impact-through-a-floor",
@@ -17177,7 +17196,7 @@
       "durationSec": 3.85,
       "loopable": false,
       "brief": "Fishing skiff tiller motor approach from open water",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
@@ -17187,7 +17206,7 @@
       "durationSec": 3.98,
       "loopable": true,
       "brief": "Fishing skiff tiller motor channel cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
@@ -17197,7 +17216,7 @@
       "durationSec": 2.84,
       "loopable": false,
       "brief": "Fishing skiff tiller motor climb onto plane",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-come-off-plane",
@@ -17207,7 +17226,7 @@
       "durationSec": 2.24,
       "loopable": false,
       "brief": "Fishing skiff tiller motor come off plane",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
@@ -17217,7 +17236,7 @@
       "durationSec": 3.58,
       "loopable": true,
       "brief": "Fishing skiff tiller motor helm shelter vibration loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
@@ -17227,7 +17246,7 @@
       "durationSec": 3.03,
       "loopable": true,
       "brief": "Fishing skiff tiller motor mooring idle loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
@@ -17237,7 +17256,7 @@
       "durationSec": 3.33,
       "loopable": true,
       "brief": "Fishing skiff tiller motor planing throttle loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
@@ -17247,7 +17266,7 @@
       "durationSec": 3.17,
       "loopable": false,
       "brief": "Fishing skiff tiller motor return to idle at pontoon",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
@@ -17257,7 +17276,7 @@
       "durationSec": 3.11,
       "loopable": false,
       "brief": "Fishing skiff tiller motor two throttle corrections",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
@@ -17267,7 +17286,7 @@
       "durationSec": 3.55,
       "loopable": false,
       "brief": "Fishing skiff tiller motor wake recedes past dock",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "flames-behind-a-closed-workshop-door-fire-settling",
@@ -18158,7 +18177,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 6.99,
       "loopable": true,
-      "brief": "Gusts pushing through dry maize — intermittent lulls"
+      "brief": "Gusts pushing through dry maize — intermittent lulls",
+      "revision": 2
     },
     {
       "id": "gusts-pushing-through-dry-maize-sustained-current-loop",
@@ -19009,7 +19029,7 @@
       "durationSec": 4.19,
       "loopable": true,
       "brief": "Interceptor turbofan canopy interior cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "interceptor-turbofan-dry-thrust-cruise-loop",
@@ -20007,7 +20027,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.205,
       "loopable": false,
-      "brief": "Menu item lifted for dragging"
+      "brief": "Menu item lifted for dragging",
+      "revision": 2
     },
     {
       "id": "menu-item-snaps-into-a-slot",
@@ -20016,7 +20037,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.204,
       "loopable": false,
-      "brief": "Menu item snaps into a slot"
+      "brief": "Menu item snaps into a slot",
+      "revision": 2
     },
     {
       "id": "metal-tin-opened-with-a-tool",
@@ -23864,7 +23886,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.69,
       "loopable": false,
-      "brief": "Survey quadcopter accelerate away from camera"
+      "brief": "Survey quadcopter accelerate away from camera",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-camera-approach-from-altitude",
@@ -23873,7 +23896,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.92,
       "loopable": false,
-      "brief": "Survey quadcopter camera approach from altitude"
+      "brief": "Survey quadcopter camera approach from altitude",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-cut-thrust-for-descent",
@@ -23882,7 +23906,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 1.7,
       "loopable": false,
-      "brief": "Survey quadcopter cut thrust for descent"
+      "brief": "Survey quadcopter cut thrust for descent",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-full-climb-rotor-loop",
@@ -23891,7 +23916,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.52,
       "loopable": true,
-      "brief": "Survey quadcopter full climb rotor loop"
+      "brief": "Survey quadcopter full climb rotor loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-onboard-frame-vibration-loop",
@@ -23900,7 +23926,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.71,
       "loopable": true,
-      "brief": "Survey quadcopter onboard frame vibration loop"
+      "brief": "Survey quadcopter onboard frame vibration loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-props-armed-idle-loop",
@@ -23909,7 +23936,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.29,
       "loopable": true,
-      "brief": "Survey quadcopter props armed idle loop"
+      "brief": "Survey quadcopter props armed idle loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-settle-onto-landing-marker",
@@ -23918,7 +23946,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.4,
       "loopable": false,
-      "brief": "Survey quadcopter settle onto landing marker"
+      "brief": "Survey quadcopter settle onto landing marker",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-survey-cruise-loop",
@@ -23927,7 +23956,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.02,
       "loopable": true,
-      "brief": "Survey quadcopter survey cruise loop"
+      "brief": "Survey quadcopter survey cruise loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-two-altitude-corrections",
@@ -23936,7 +23966,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.35,
       "loopable": false,
-      "brief": "Survey quadcopter two altitude corrections"
+      "brief": "Survey quadcopter two altitude corrections",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-vertical-launch",
@@ -23945,7 +23976,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.16,
       "loopable": false,
-      "brief": "Survey quadcopter vertical launch"
+      "brief": "Survey quadcopter vertical launch",
+      "revision": 2
     },
     {
       "id": "swarm-recedes-into-blossom",
@@ -24458,7 +24490,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.132,
       "loopable": false,
-      "brief": "Timeline playhead set"
+      "brief": "Timeline playhead set",
+      "revision": 2
     },
     {
       "id": "tire-sidewall-scrubs-a-wet-curb",
@@ -25805,7 +25838,8 @@
       "collection": "Field ambiences — rain",
       "durationSec": 6.98,
       "loopable": true,
-      "brief": "Windblown rain on a loose garage door — continuous patter"
+      "brief": "Windblown rain on a loose garage door — continuous patter",
+      "revision": 2
     },
     {
       "id": "windblown-rain-on-a-loose-garage-door-downpour-recedes",
@@ -26210,7 +26244,8 @@
       "collection": "Studio originals · Weather & Ambience",
       "durationSec": 7,
       "loopable": true,
-      "brief": "Campfire Crackle"
+      "brief": "Campfire Crackle",
+      "revision": 2
     },
     {
       "id": "close-lightning-thunder",
@@ -26294,7 +26329,8 @@
       "collection": "Studio originals · Weather & Ambience",
       "durationSec": 6,
       "loopable": true,
-      "brief": "Light Rain"
+      "brief": "Light Rain",
+      "revision": 2
     },
     {
       "id": "low-health-heartbeat-loop",
@@ -26312,7 +26348,8 @@
       "collection": "Studio originals · Footsteps & UI",
       "durationSec": 0.18,
       "loopable": false,
-      "brief": "Mechanical UI Click"
+      "brief": "Mechanical UI Click",
+      "revision": 2
     },
     {
       "id": "melee-swing",
@@ -26758,7 +26795,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-key-up",
@@ -26769,7 +26806,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-spacebar",
@@ -26780,7 +26817,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-return",
@@ -26791,7 +26828,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-backspace-pair",
@@ -26802,7 +26839,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-shortcut",
@@ -26813,7 +26850,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-typed-word",
@@ -26824,7 +26861,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-command-line",
@@ -26835,7 +26872,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 4
     },
     {
       "id": "tactile-mechanical-keyboard-key-down",
@@ -27308,7 +27345,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "laptop-scissor-keyboard-return",
@@ -27341,7 +27378,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "laptop-scissor-keyboard-typed-word",
@@ -27638,7 +27675,7 @@
       "loopable": false,
       "brief": "Desktop mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-release",
@@ -27649,7 +27686,7 @@
       "loopable": false,
       "brief": "Desktop mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-double-click",
@@ -27660,7 +27697,7 @@
       "loopable": false,
       "brief": "Desktop mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-press-and-hold",
@@ -27671,7 +27708,7 @@
       "loopable": false,
       "brief": "Desktop mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-three-taps",
@@ -27682,7 +27719,7 @@
       "loopable": false,
       "brief": "Desktop mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-press",
@@ -27693,7 +27730,7 @@
       "loopable": false,
       "brief": "Silent mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-release",
@@ -27704,7 +27741,7 @@
       "loopable": false,
       "brief": "Silent mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-double-click",
@@ -27715,7 +27752,7 @@
       "loopable": false,
       "brief": "Silent mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-press-and-hold",
@@ -27726,7 +27763,7 @@
       "loopable": false,
       "brief": "Silent mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-three-taps",
@@ -27737,7 +27774,7 @@
       "loopable": false,
       "brief": "Silent mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "trackball-press",
@@ -27803,7 +27840,7 @@
       "loopable": false,
       "brief": "Glass trackpad single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-release",
@@ -27814,7 +27851,7 @@
       "loopable": false,
       "brief": "Glass trackpad release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-double-click",
@@ -27825,7 +27862,7 @@
       "loopable": false,
       "brief": "Glass trackpad double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-press-and-hold",
@@ -27836,7 +27873,7 @@
       "loopable": false,
       "brief": "Glass trackpad press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-three-taps",
@@ -27847,7 +27884,7 @@
       "loopable": false,
       "brief": "Glass trackpad three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "stylus-barrel-press",
@@ -28100,7 +28137,7 @@
       "loopable": false,
       "brief": "Silk whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "silk-panel-reveal",
@@ -28111,7 +28148,7 @@
       "loopable": false,
       "brief": "Silk panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "silk-pull-away",
@@ -28360,11 +28397,11 @@
       "category": "Sci-Fi & UI",
       "status": "review",
       "collection": "Launch video · Transitions",
-      "durationSec": 0.12,
+      "durationSec": 0.29,
       "loopable": false,
       "brief": "Celluloid whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "celluloid-panel-reveal",
@@ -28965,11 +29002,11 @@
       "category": "Props & Interactions",
       "status": "review",
       "collection": "Household · Floors",
-      "durationSec": 0.212,
+      "durationSec": 0.34,
       "loopable": false,
       "brief": "Brief flex of a domestic floorboard",
       "acceptance": "One isolated action, suitable for close indoor use.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stride-hardwood",
@@ -29002,7 +29039,7 @@
       "loopable": false,
       "brief": "One recorded gravel foot plant with gait and sole controls.",
       "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stride-grass",
@@ -29068,6 +29105,234 @@
       "loopable": false,
       "brief": "One recorded foot plant on sand.",
       "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
+      "revision": 1
+    },
+    {
+      "id": "edit-undo-return",
+      "collection": "Tactile menus · Editing",
+      "brief": "Undo · felt key return",
+      "category": "Footsteps & UI",
+      "durationSec": 0.097,
+      "loopable": false,
+      "status": "review"
+    },
+    {
+      "id": "edit-redo-seat",
+      "collection": "Tactile menus · Editing",
+      "brief": "Redo · forward index detent",
+      "category": "Footsteps & UI",
+      "durationSec": 0.115,
+      "loopable": false,
+      "status": "review"
+    },
+    {
+      "id": "logo-felt-signature",
+      "brief": "Damped felt signature for a logo sting",
+      "collection": "Launch video · Titles",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.58,
+      "loopable": false
+    },
+    {
+      "id": "stylus-tip-on-tablet-glass",
+      "brief": "Close tablet pen tip contact",
+      "collection": "Launch video · Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.054,
+      "loopable": false,
+      "revision": 2
+    },
+    {
+      "id": "fingertip-on-display-glass",
+      "brief": "Close finger pad contact on glass",
+      "collection": "Launch video · Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.062,
+      "loopable": false,
+      "revision": 2
+    },
+    {
+      "id": "paper-title-card-seat",
+      "brief": "Restrained paperboard contact as a short title settles",
+      "collection": "Launch video · Titles",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.12,
+      "loopable": false,
+      "revision": 2
+    },
+    {
+      "id": "desk-telephone-bell-ring",
+      "brief": "One mechanical clapper burst from a desk telephone",
+      "collection": "Alerts & phones",
+      "status": "review",
+      "category": "Props & Interactions",
+      "durationSec": 0.96,
+      "loopable": false,
+      "revision": 1
+    },
+    {
+      "id": "motorcycle-steady-engine-loop",
+      "brief": "One motorcycle under steady load for independent placement",
+      "collection": "Road engines",
+      "category": "Vehicles & Engines",
+      "status": "review",
+      "durationSec": 2.68,
+      "loopable": true,
+      "revision": 2
+    },
+    {
+      "id": "dry-grass-wind-loop",
+      "brief": "Dry grass blades rubbing in a field breeze",
+      "collection": "Weather",
+      "category": "Weather & Ambience",
+      "durationSec": 6.5,
+      "loopable": true,
+      "status": "review",
+      "revision": 2
+    },
+    {
+      "id": "corrugated-metal-roof-rain-loop",
+      "brief": "Rain drops and damped panel resonance under a sheet roof",
+      "collection": "Weather",
+      "category": "Weather & Ambience",
+      "durationSec": 7.8,
+      "loopable": true,
+      "status": "review",
+      "revision": 2
+    },
+    {
+      "id": "linear-mechanical-keyboard-return-down",
+      "brief": "A recorded wide Return key pressed once, independent of release",
+      "collection": "Launch video · Keyboards",
+      "category": "Footsteps & UI",
+      "durationSec": 0.1,
+      "loopable": false,
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "soft-touch-acknowledgement",
+      "brief": "One rounded electronic acknowledgement for a deliberately audible phone or tablet control.",
+      "collection": "Launch video · Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.072,
+      "loopable": false,
+      "revision": 1,
+      "acceptance": "One soft pulse on the marked input, a short decay and audible body in a mono phone mix."
+    },
+    {
+      "id": "linear-mechanical-keyboard-spacebar-down",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Launch video · Keyboards",
+      "durationSec": 0.106,
+      "loopable": false,
+      "brief": "Linear mechanical keyboard spacebar downstroke",
+      "acceptance": "Match the named action, timing and material at edit gain.",
+      "revision": 1
+    },
+    {
+      "id": "laptop-scissor-keyboard-spacebar-down",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Launch video · Keyboards",
+      "durationSec": 0.083,
+      "loopable": false,
+      "brief": "Laptop scissor keyboard spacebar downstroke",
+      "acceptance": "Match the named action, timing and material at edit gain.",
+      "revision": 1
+    },
+    {
+      "id": "bicycle-coasting-freewheel",
+      "category": "Vehicles & Engines",
+      "collection": "Motion · Road and workshop",
+      "durationSec": 6.3,
+      "loopable": true,
+      "brief": "Coasting bike freewheel",
+      "acceptance": "A continuous freewheel mechanism; an emitter carries travel and distance.",
+      "status": "review",
+      "revision": 2
+    },
+    {
+      "id": "small-door-latch-close",
+      "category": "Props & Interactions",
+      "collection": "Props · Doors & Storage",
+      "durationSec": 0.103,
+      "loopable": false,
+      "brief": "Small door latch closes",
+      "acceptance": "One short closing catch without a door slam or a second handle action.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "keys-set-down-on-wood",
+      "category": "Props & Interactions",
+      "collection": "Foley · Hands and equipment",
+      "durationSec": 0.47,
+      "loopable": false,
+      "brief": "Set a keyring down on wood",
+      "acceptance": "One placement with the wooden contact and settling metal in the source performance.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "ocean-shore-break-loop",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 8.5,
+      "loopable": true,
+      "brief": "Breaking surf at the shore",
+      "acceptance": "Continuous natural wash, breaking crest and recession, at neutral world position.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "diesel-van-road-loop",
+      "category": "Vehicles & Engines",
+      "collection": "Motion · Road and workshop",
+      "durationSec": 2.1,
+      "loopable": true,
+      "brief": "Van engine and tire roll",
+      "acceptance": "A steady diesel cargo van engine and tire wash share a single spatial emitter.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "desk-fan-running-loop",
+      "category": "Props & Interactions",
+      "collection": "Foley · Hands and equipment",
+      "durationSec": 5.8,
+      "loopable": true,
+      "brief": "Running table fan",
+      "acceptance": "A sustained tabletop fan motor and its natural airflow.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "poplar-canopy-rustle-loop",
+      "category": "Weather & Ambience",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 6.4,
+      "loopable": true,
+      "brief": "Breeze in a poplar canopy",
+      "acceptance": "Retain the natural rustles of a living broadleaf canopy under a light breeze.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "house-sparrow-contact-call",
+      "category": "Animals",
+      "collection": "Animals",
+      "durationSec": 0.34,
+      "loopable": false,
+      "brief": "Single house sparrow call",
+      "acceptance": "One naturally timed sung chirp from the recorded sparrow, followed by quiet.",
+      "status": "review",
       "revision": 1
     }
   ]

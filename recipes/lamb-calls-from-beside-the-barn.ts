@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import fieldLambCall from './_recordings/field-lamb-call.ts';
+import fieldLambCall from './_recordings/isolated-lamb-call.ts';
 
 export default {
   id: 'lamb-calls-from-beside-the-barn', name: "Lamb calls from beside the barn", category: 'Animals',

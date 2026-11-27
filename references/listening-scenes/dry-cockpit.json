@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 2,
+  "id": "dry-cockpit",
+  "viewpoint": "Pilot at cruise in clear air.",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "output": "headphones",
+  "focus": {
+    "subjects": [
+      "jet"
+    ]
+  },
+  "layers": [
+    {
+      "id": "interceptor-turbofan-canopy-interior-cruise-loop",
+      "label": "jet",
+      "event": "aircraft",
+      "durationSec": 10.8,
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          10.35,
+          1
+        ],
+        [
+          10.8,
+          0
+        ]
+      ],
+      "acoustics": {
+        "source": "turbine",
+        "distanceM": 3.5,
+        "bearingDeg": 152,
+        "elevationDeg": -7
+      },
+      "gain": 1
+    }
+  ]
+}

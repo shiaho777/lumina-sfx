@@ -1,13 +1,9 @@
 import { editorContact } from './_shared/editor-contact.ts';
-import attack from './_recordings/isolated-key-office.ts';
+import capture from './_recordings/isolated-laptop-scissor-spacebar.ts';
 
 export default editorContact(
-  "laptop-scissor-keyboard-spacebar", "Laptop scissor keyboard spacebar tap",
-  ["keyboard", "key", "launch", "video", "normal", "notebook", "low-profile", "space", "bar", "stabilizer"], 0.152, attack,
-  {"bodyHz": 1050, "decayMs": 5, "cutoffHz": 6700, "snap": 1.25, "rattle": 0.016},
-  [
-    {"at": 0, "weight": 1, "pitch": 0.6},
-    {"at": 0.007, "weight": 0.2, "pitch": 1.36},
-    {"at": 0.085, "weight": 0.38, "pitch": 0.74, "release": true}
-  ],
+  'laptop-scissor-keyboard-spacebar', 'Laptop scissor keyboard spacebar tap',
+  ["keyboard", "key", "launch", "video", "space", "bar", "spacebar", "stabilizer", "single", "tap", "laptop", "scissor", "normal"], 0.152, capture,
+  { captured: true, pairedTakes: false, cutoffHz: 11800 },
+  [{ at: 0, weight: 1, pitch: 1 }],
 );

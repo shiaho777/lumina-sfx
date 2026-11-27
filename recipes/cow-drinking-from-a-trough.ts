@@ -2,7 +2,7 @@ import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/field-cow-feeding.ts';
 import source2 from './_recordings/metal-pail-pour.ts';
-import source3 from './_recordings/field-cow-grass.ts';
+import source3 from './_recordings/isolated-chewing.ts';
 
 export default {
   id: "cow-drinking-from-a-trough",

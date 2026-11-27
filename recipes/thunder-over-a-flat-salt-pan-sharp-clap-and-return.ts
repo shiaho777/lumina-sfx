@@ -1,15 +1,16 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { thunderChannel } from './_shared/weather-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import source from './_recordings/atlas-thunder-left.ts';
-import wash from './_recordings/atlas-thunder-right.ts';
-import detail from './_recordings/atlas-thunder-roll.ts';
+import source from './_recordings/isolated-thunder-attack.ts';
+import wash from './_recordings/isolated-storm-right.ts';
+import detail from './_recordings/isolated-storm-body.ts';
 
 const path = { space: "open", cutoff: 6200, rolls: [0.01, 0.4, 1.487], decay: 2.15, width: 0.13 } as const;
 
 export default {
   id: "thunder-over-a-flat-salt-pan-sharp-clap-and-return", name: "Thunder over a flat salt pan — sharp clap and return", category: "Weather & Ambience",
   tags: ["thunder", "lightning", "storm", "stereo", "open"], loopable: false, durationSec: 4.42,
+  isolation:'isolated', components:['thunder'],
   mixRole: "impact", targetRmsDbfs: -20,
   params: { distance: { label: "Distance", min: 0, max: 1, default: 0.39 } },
   ...sceneCredits(source, wash, detail),

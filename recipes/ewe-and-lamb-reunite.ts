@@ -1,7 +1,7 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { perform, performanceCredits } from './_shared/field-performance.ts';
-import fieldLambCall from './_recordings/field-lamb-call.ts';
-import sheepBleat from './_recordings/sheep-bleat.ts';
+import fieldLambCall from './_recordings/isolated-lamb-call.ts';
+import sheepBleat from './_recordings/isolated-sheep-voice.ts';
 
 export default {
   id: 'ewe-and-lamb-reunite', name: "Ewe and lamb reunite", category: 'Animals',
